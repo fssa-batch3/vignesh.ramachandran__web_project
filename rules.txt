@@ -1,0 +1,80 @@
+*/...Colours..../*
+
+Green: #00ff00
+Blue: #0000cc
+
+*/...font family.../*
+
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Kurale', serif
+
+
+
+*/...images.../*
+
+	(main food image)https://wallpaperaccess.com/full/5674820.jpg
+
+	(ingrediant) https://www.veganfoodandliving.com/wp-content/uploads/2018/05/GettyImages-695984364.jpg
+	(breakfast image) https://sixnutri.com/pub/media/catalog/product/cache/3fe306bc201fc02c0eb20eb7c78503f9/b/r/breakfast-meal-box.jpg
+	(lunch image) https://sulcdn.azureedge.net/biz-live/img/rannveer-catering-tiffin-services-10026786-206e7246.jpeg
+	(high tea image) https://wallpaperaccess.com/full/2069188.jpg
+	(dinner image) https://www.coimbatorecatering.com/img/home/menu4.webp
+	(custom menu image) https://im1.dineout.co.in/images/uploads/restaurant/sharpen/8/q/m/p86730-16058673405fb7974cb7d4c.jpg?tr=tr:n-xlarge
+
+	(icon for why choose us) https://cdn.iconscout.com/icon/free/png-256/restaurant-149-529964.png
+	(4 collage image in why our catering service) https://antojitosalgusto.com/wp-content/uploads/2020/09/PMX-Food-Collage-1024x768-1.jpg
+
+*/...images for About us .../*
+
+	(desert image) https://images.unsplash.com/photo-1545396872-a6682fc218ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZGVzZXJ0JTIwZm
+	9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60
+
+	(imoji icon) https://iconscout.com/icon/emoji-123
+
+/*...images for contact us .../*
+
+	(contact us image) https://rakskitchen.net/wp-content/uploads/2013/12/11247326833_0f99d56b4f_z.jpg
+
+/*...images for morning menu...*/
+
+	(all food images link) https://www.google.com/search?q=tiffin+in+plate+images&rlz=1C1GCEA_enIN1022IN1022&ei=xeJ8Y7jTAtSQseMPyNec0Aw&ved=
+	0ahUKEwj4yezZhcL7AhVUSGwGHcgrB8oQ4dUDCA8&uact=5&oq=tiffin+in+plate+images&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCA
+	AQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwA0oECEEYAEoECEYYAFAAWABg7gNoAXABeACAAQCIAQCSAQCYAQDIAQjAAQ
+	E&sclient=gws-wiz-serp#imgrc=9C_dq332Gw5OfM
+
+	(ordinary tiffin) http://www.jasweddingplanner.com/images/planning/catering/morning_tiffin_img.png
+	(special tiffin) https://www.coimbatorecatering.com/img/menu/m5.webp
+	(VIP tiffin) https://www.coimbatorecatering.com/img/menu/m6.webp
+
+/*...images for lunch menu...*/
+
+	(ordinary lunch) https://p4.wallpaperbetter.com/wallpaper/635/587/595/cute-green-kerala-meals-nature-deserts-hd-art-wallpaper-preview.jpg
+	(special lunch) https://farm8.staticflickr.com/7671/17269221094_6c0b6605a8_z.jpg
+	(VIP lunch) https://b.zmtcdn.com/data/pictures/3/18984433/1dd70a28ff96f3f8ffe2c2c7b3a5b0ef.jpg
+
+/*...images for hightea menu...*/
+
+	(ordinary hightea) https://images.unsplash.com/photo-1589301773859-bb024d3ad558?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx
+	8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60
+	(special hightea)https://media.istockphoto.com/id/187928578/photo/pink-macaroon-on-a-white-background.jpg?s=170667a&w=0&k=20&c=GYiMQJ47l_
+	wM2S2Xx2JMvoR6KkewP7S35Y00dRGT0Tc=
+	(VIP hightea) https://media.istockphoto.com/id/837475974/photo/different-kind-of-delicious-donuts.jpg?s=170667a&w=0&k=20&c=h0BtDyk30E8zbc
+	By4qMywvP399SXFwW68boSGQineO4=
+
+/*...images for dinner menu...*/
+
+	(ordinary dinner) https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/2017/4-july/Meal_Plate_with_Chicken_kofta_curry_peas_pulao_phulka_and_raita-7569.jpg
+	Cabbage_Thoran_Roti_Tadka_Raita-2.jpg
+	(special dinner) https://www.indianhealthyrecipes.com/wp-content/uploads/2020/12/vegetarian-indian-dinner-recipes.jpg
+	(VIP dinner) https://static.toiimg.com/photo/84866316.cms
+
+/*...soup menu...*/
+	(soup) https://images.immediate.co.uk/production/volatile/sites/30/2021/03/Classic-Minestrone-Soup-13720e5.jpg
+	(roti) https://media.istockphoto.com/id/516359240/photo/bhendi-masala-or-bhindi-masala-ladies-finger-curry-with-chapati.jpg?s=612x612&w=0&k=20&c=0mGnvNM2lxl-dTTJlhAfVJE5WidxYmmvrvNs1NZUKvs=
+	(parotta) https://media.istockphoto.com/id/1205482203/photo/kerala-parotta-popularly-known-as-paratha-or-porotta-is-a-delicacy-from-the-state-of-kerala.jpg?s=612x612&w=0&k=20&c=Yv6GQkzNErLM7NUA4q6S27FnFMT7yuC6RSCij5e2m0Y=
+	(non-vegetarian) https://b.zmtcdn.com/data/pictures/chains/8/6508318/b1950c18903605c4730b28017d014df0.jpg
+	(biriyani) https://www.dokan.co.in/wp-content/uploads/2020/01/Special-Chicken-Dum-Biriyani.jpg
+	(welcome drinks)
+	(deserts) https://media.istockphoto.com/id/139885298/photo/baked-goods.jpg?s=612x612&w=0&k=20&c=jCRsN7QOZ8Lh2SWP_uVy-2ydi1mF2jZzA-i44EilGNM=
+	(starters)https://www.foodfusion.com/wp-content/uploads/2018/03/2-1.jpg
+	(dosa)
