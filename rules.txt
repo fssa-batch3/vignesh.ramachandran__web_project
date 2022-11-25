@@ -68,7 +68,7 @@ font-family: 'Kurale', serif
 	(special dinner) https://www.indianhealthyrecipes.com/wp-content/uploads/2020/12/vegetarian-indian-dinner-recipes.jpg
 	(VIP dinner) https://static.toiimg.com/photo/84866316.cms
 
-/*...soup menu...*/
+/*...custom menu...*/
 	(soup) https://images.immediate.co.uk/production/volatile/sites/30/2021/03/Classic-Minestrone-Soup-13720e5.jpg
 	(roti) https://media.istockphoto.com/id/516359240/photo/bhendi-masala-or-bhindi-masala-ladies-finger-curry-with-chapati.jpg?s=612x612&w=0&k=20&c=0mGnvNM2lxl-dTTJlhAfVJE5WidxYmmvrvNs1NZUKvs=
 	(parotta) https://media.istockphoto.com/id/1205482203/photo/kerala-parotta-popularly-known-as-paratha-or-porotta-is-a-delicacy-from-the-state-of-kerala.jpg?s=612x612&w=0&k=20&c=Yv6GQkzNErLM7NUA4q6S27FnFMT7yuC6RSCij5e2m0Y=
@@ -77,4 +77,4 @@ font-family: 'Kurale', serif
 	(welcome drinks)
 	(deserts) https://media.istockphoto.com/id/139885298/photo/baked-goods.jpg?s=612x612&w=0&k=20&c=jCRsN7QOZ8Lh2SWP_uVy-2ydi1mF2jZzA-i44EilGNM=
 	(starters)https://www.foodfusion.com/wp-content/uploads/2018/03/2-1.jpg
-	(dosa)
+	(dosa) https://www.archanaskitchen.com/images/archanaskitchen/32_Delicious_Dosa_Recipes_You_Must_Try-1.jpg

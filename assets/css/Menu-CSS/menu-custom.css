@@ -70,54 +70,10 @@ header {
     font-weight: 700;
     font-family: var(--heading-fontfamily);
 }
-
-.dropdown {
-    position: relative;
-    
-}
-.dropdown span {
-    padding: 20px;
-    color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 700;
-    font-family: var(--heading-fontfamily);
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--other-color);
-    padding: 10px 10px;
-    z-index: 1;
-    width: 180px;
-    border-radius: 20px;
-
-}
-.dropdown-content div {
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.dropdown-content a {
-    padding: 10px;
-    color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 700;
-    font-family: var(--heading-fontfamily);
-    border-bottom: 1px solid var(--text-color);
-}
-.dropdown-content a:hover {
-    color: var(--second-color);
-}
-
 .login-image img {
     width: 50px;
 }
-.about-catering {
-    height: 120vh
-}
+
 .ingredient-image {
     background-image: url(https://www.veganfoodandliving.com/wp-content/uploads/2018/05/GettyImages-695984364.jpg);
     background-repeat: no-repeat;
@@ -131,96 +87,87 @@ header {
     font-family: var(--heading-fontfamily);
     text-align: center;
 }
-.about-catering_content {
+.custom-menu {
+    height: 100vh;
+
+}
+.variety {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.variety_types {
+    width: 25%;
+    height: 80vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.variety_types_img {
+    width: 300px;
+    height: 270px;
+    border: 1px solid var(--text-color);
+    padding: 10px;
+    border-radius: 20px;
+}
+.variety_types h2 {
+    color: var(--second-color);
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    padding:0 20px;
+    border-left: 2px solid var(--text-color);
+    border-right: 2px solid var(--text-color);;
+}
+.variety_types ul li {
+    color: var(--text-color);
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+
+}
+ul p {
+    padding-left: 20px;
+}
+
+.box {
+    
+    padding-right: 30px;
+}
+.add-to-cart {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 80px 0;
-}
-.about-catering_content img {
-    height: 400px;
-    width: 300px;
-}
-.about-catering_text {
-    width: 40%;
-}
-.about-catering_text h2 {
-    font-family: var(--heading-fontfamily);
-    font-size: var(--big-font);
+    justify-content: space-around;
+    width: 200px;
+    padding: 10px 20px;
+    background-color: var(--other-color);
+    border: 2px solid var(--text-color);
     color: var(--second-color);
-    padding: 20px 0;
-    border-bottom: 1px solid var(--text-color);
-}
-.about-catering_text p {
-    font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
-    color: var(--text-color);
-    line-height: 30px;
-    padding: 20px 0;
-
-}
-.about-catering_underpara {
-    padding: 10px;
-
-}
-.about-catering_underpara p {
+    font-weight: bold;
     font-family: var(--parah-fontfamily);
-    font-size: var(--p-font);
-    color: var(--text-color);
-    padding: 0 80px;
-    text-align: center;
-    line-height: 30px;
-    font-weight: 400;
+    border-radius: 10px;
 }
-.about-us {
-    height: 90vh;
-}
-.about-us_heading {
-    padding: 20px;
-    text-align: center;
 
+.plus-image {
+    width: 20px;
 }
-.about-us_heading h2 {
-    font-family:var(--heading-fontfamily);
-    font-size: var(--big-font);
-    color: var(--text-color);
-    
-}
-.about-us_qualities {
-    padding-top: 50px;
-    height: 70vh;
-    display: flex;  
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-    align-content: space-around;
-}
-.qualities_us {
 
-    width: 20%;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: space-around;
 
-}
-.qualities_us img {
-    width: 100px;
-}
-.qualities_us h3 {
-    color: var(--second-color);
-    font-size: var(--h2-font);
-    font-family: var(--heading-fontfamily);
-}
-.qualities_us p {
-    color: var(--text-color);
-    font-size: var(--p-font);
-    text-align: center;
-    font-family: var(--parah-fontfamily);
-}
+
+
+
+
+
+
+
 
 footer {
     height: 55vh;
@@ -230,7 +177,7 @@ footer {
     display: flex;
     flex-direction: row;
     padding: 20px 0;
-    margin: 0 50px;
+    margin:  0 50px;
     height: 40vh;
     justify-content: space-evenly;
     border-bottom: 2px solid var(--text-color);
@@ -273,21 +220,18 @@ footer {
     align-items: center;
     padding:20px 50px;
     font-size: var(--p-font);
-
 }
 .footer-links {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 200px;
-
 }
 .footer-details p {
     font-size: var(--p-font);
     font-family: var(--parah-fontfamily);
     
 }
-
 .footer-links a img {
     width: 50px;
 }
