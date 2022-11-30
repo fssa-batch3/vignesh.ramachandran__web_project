@@ -126,6 +126,7 @@ main {
     border: 1px solid var(--text-color);
     padding-left: 20px;
     font-family: var(--parah-fontfamily);
+    font-size: 15PX;
 }
 .btn {
     display: flex;

@@ -15,13 +15,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap" 
     rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/menu.css">
-    <title>Menu</title>
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+
+    <link rel="icon" href="../../assets/img/main-logo.png" >
+
+    <link rel="stylesheet" href="../../assets/css/Admin/menu-add.css">
+    <title>Adding Menu</title>
 </head>
+
 <body>
-    <header> 
+    <header>
         <div class="icon-left">
             <img src="../../assets/img/main-logo.png" alt="Company Logo" class="logo"/>
             <img src="../../assets/img/Fav.png" alt="catering Logo" class="catering" />
@@ -32,9 +38,9 @@
         
         <ul class="navigation">
             <li><a href="../../index.html" class="navigation-link">HOME</a></li>
-            <li><a href="../homepage/about us.html" class="navigation-link">ABOUT US</a></li>
+            <li><a href="./about us.html" class="navigation-link">ABOUT US</a></li>
             <li class="dropdown">
-                <span>MENU <img src="../../assets/img/arrow.png"/></span>
+                <span>MENU</span>
                 <div class="dropdown-content">
                     <div>
                         <a href="../products/Menus/menu-morning.html" >Morning Menu</a>
@@ -45,23 +51,29 @@
                     </div>
                 </div>
             </li>
-            <li><a href="#" class="navigation-link">SERVICES</a></li>
-            <li><a href="../homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-            <li><a href="../homepage/my cart.html" class="navigation-link">MY CART</a></li>
+            <li><a href="#" class="navigation-link">EVENTS</a></li>
+            <li><a href="./contact us.html" class="navigation-link">CONTACT US</a></li>
+            <li><a href="./my cart.html" class="navigation-link">MY CART</a></li>
         </ul>
 
-        <div class="dropdown_profile">
-                <img src="../../assets/img/profile.png" alt="profile image"  />
-            <div class="dropdown_profile-content">
-                <div>
-                    <a href="../profile/Register.html">Register</a>
-                    <a href="../profile/Login.html">Log in</a>
-                    <a href="../profile/My orders.html">My Order</a>
-                </div>
-
-            </div>
-        </div>        
-            
-
+        <a href="#" class="login-image">
+            <img src="../../assets/img/profile.png" alt="profile image" />
+        </a> 
     </header>
+
+    <main>
+        <section>
+            <form>
+                <label>Menu Name:</label> <input type="text" placeholder="Enter Menu Name" />
+                <label>Menu Image:</label> <input type="file"/>
+                <label>About Menu:</label> <textarea type="text" placeholder="Enter About Menu"></textarea>
+                <label>Types in the Menu:</label>
+                <label>Image for Types</label>
+                <button>Submit</button>
+                
+            </form>
+        </section>
+    </main>
+
+
 </body>

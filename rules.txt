@@ -78,3 +78,24 @@ font-family: 'Kurale', serif
 	(deserts) https://media.istockphoto.com/id/139885298/photo/baked-goods.jpg?s=612x612&w=0&k=20&c=jCRsN7QOZ8Lh2SWP_uVy-2ydi1mF2jZzA-i44EilGNM=
 	(starters)https://www.foodfusion.com/wp-content/uploads/2018/03/2-1.jpg
 	(dosa) https://www.archanaskitchen.com/images/archanaskitchen/32_Delicious_Dosa_Recipes_You_Must_Try-1.jpg
+
+
+/*...events...*/
+
+	(birthday ) https://c4.wallpaperflare.com/wallpaper/107/120/833/receipt-pink-birthday-cake-4k-wallpaper-preview.jpg
+	(puberty ) https://i.pinimg.com/originals/28/bd/99/28bd991eacee39f056b7f76c2721227c.jpg
+	(engagement ) https://img.freepik.com/premium-photo/golden-engagement-ring-couple-hand_54391-551.jpg
+	(marriage) https://www.dimahal.com/img/innerpage/marriagehall.jpg
+	(house warming) https://kalyancards.com/wp-content/uploads/2022/04/house-warming-invitation.jpg
+	(valaikappu) https://ds393qgzrxwzn.cloudfront.net/resize/c500x500/cat1/img/images/0/R9KowCd3SN.jpg
+	(private party ) https://www.hiddencitysecrets.com.au/wp-content/uploads/2016/01/album4739_36434_sketch-functions-melbourne-venues-docklands-function-venue-small-private-party-rooms-birthday-corporate-event-008.jpg
+
+/*...Each event...*/
+
+	(birthday) https://www.mokshbanquets.com/wp-content/uploads/2018/04/Kid-looking-at-the-cake-at-a-birthday-party.jpg
+	(puberty)  https://wevaphotography.com/wp-content/uploads/2022/04/Hindu-Puberty-Ceremony.jpg
+	(engagement) https://5.imimg.com/data5/OW/IO/MY-16162932/ring-ceremony-photo-graphy-1000x1000.jpg
+	(marriage) https://media.webdunia.com/_media/ta/img/article/2019-12/06/full/1575646258-6593.jpg
+	(house warming) https://sixnutri.com/pub/media/catalog/product/cache/3fe306bc201fc02c0eb20eb7c78503f9/b/r/breakfast-meal-box.jpg
+	(valaikappu) https://4.imimg.com/data4/AR/NJ/MY-4374131/20-500x500.jpg
+	(private party) http://www.hamaraevent.com/uploads/blog/0493459001473835582.JPG

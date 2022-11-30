@@ -126,6 +126,7 @@ main {
     border: 1px solid var(--text-color);
     padding-left: 20px;
     font-family: var(--parah-fontfamily);
+    font-size: 15px;
 }
 .btn {
     text-align: center;
@@ -136,7 +137,7 @@ main {
     color: var(--second-color);
     background-color: var(--text-color);
     font-family: var(--parah-fontfamily);
-    font-size: var(--parah-fontfamily);
+    
     border-radius: 20px;
     font-weight: bold;
 }

@@ -70,17 +70,15 @@ header {
     font-weight: 700;
     font-family: var(--heading-fontfamily);
 }
-.dropdown {
-    position: relative;
+.navigation-link:hover {
+    color: var(--second-color);
+    transition: .5s;
     
 }
-.dropdown span {
-    padding: 20px;
-    color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 700;
-    font-family: var(--heading-fontfamily);
+.dropdown {
+    position: relative;  
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -110,10 +108,48 @@ header {
 .dropdown-content a:hover {
     color: var(--second-color);
 }
-
-.login-image img {
+.dropdown_profile {
+    position: relative;
+    
+}
+.dropdown_profile img {
     width: 50px;
 }
+.dropdown_profile-content {
+    display: none;
+    position: absolute;
+    background-color: var(--other-color);
+    padding: 10px 10px;
+    z-index: 1;
+    right: 10%;
+    border-radius: 20px;
+    width: 110px;
+    
+}
+.dropdown_profile-content div {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    
+    transform: translate(-30px 0);
+    
+}
+.dropdown_profile:hover .dropdown_profile-content {
+    display: block;
+    
+}
+.dropdown_profile-content a {
+    padding: 10px;
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 700;
+    font-family: var(--heading-fontfamily);
+    border-bottom: 1px solid var(--text-color);
+}
+.dropdown_profile-content a:hover {
+    color: var(--second-color);
+}
+
 
 
 .food-image{
@@ -248,6 +284,7 @@ header {
 
 .why-we-option img {
     width: 70px;
+    
 }
 .why-we-option-text{
     display: flex;
@@ -305,6 +342,7 @@ header {
     height: 470px;
     padding: 10px;
     border: 1px solid var(--text-color);
+    border-radius: 250px;
 }
 
 footer {

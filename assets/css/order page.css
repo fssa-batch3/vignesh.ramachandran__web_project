@@ -22,7 +22,7 @@ span {
 }
 
 header {
-
+    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -74,142 +74,86 @@ header {
     width: 50px;
 }
 
-.ingredient-image {
+main {
     background-image: url(https://www.veganfoodandliving.com/wp-content/uploads/2018/05/GettyImages-695984364.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 300px;
-    padding: 10px 0;
 }
+
 .ingredient-image h2 {
     color: var(--bg-color);
     font-size: var(--big-font);
     font-family: var(--heading-fontfamily);
     text-align: center;
 }
-.contact-us {
-    height: 60vh;
-}
-.contact-us_content {
+.my-order {
+    height: 85vh;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-content: space-around;
+    flex-direction: column;
     align-items: center;
-    height: 60vh;
-}
-.contact-us_content img {
-    height: 350px;
-    padding: 20px;
-    border: 1px solid var(--text-color);
-}
-.contact-us_info {
-    height: 350px;
-    width: 300px;
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.contact-us_info h2 {
-    color: var(--second-color);
-    font-family: var(--heading-fontfamily);
-    font-size: var(--big-font);
-}
-
-.dummy h3 {
-    color: var(--text-color);
-    font-family: var(--heading-fontfamily);
-    font-size: var(--h2-font);
-    margin-bottom: 10px;
-    border-bottom: 1px solid var(--second-color);
-}
-.dummy p {
-    color: var(--text-color);
-    font-family: var(--parah-fontfamily);
-    font-size: var(--p-font);
-    line-height: 30px;
-    font-weight: 400;
-}
-.contact-us_message {
-    width: 400px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-.contact-us_message h2 {
-    font-family: var(--heading-fontfamily);
-    font-size: var(--big-font);
-    color: var(--second-color);
-}
-.contact-us_form {
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-.contact-us_form div input {
-    height: 30px;
-}
-.contact-us_message button {
-    padding: 10px 20px;
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    font-weight: bold;
-    border-radius: 10px;
-    font-family: var(--parah-fontfamily);
-    border: transparent;
-}
-
-
-
-
-
-footer {
-    height: 55vh;
-    background-color: var(--main-color);
-}
-.footer-box {
-    display: flex;
-    flex-direction: row;
-    padding: 20px 0;
-    margin:  0 50px;
-    height: 40vh;
-    justify-content: space-evenly;
-    border-bottom: 2px solid var(--text-color);
-}  
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-}
-.footer-content img {
-    width: 200px;
-}
-.footer-content p {
-    font-size: var(--p-font);
-    line-height: 30px;
-    color: var(--text-color);
-    margin-left: 20px;
-    font-family: var(--parah-fontfamily);
-}
-.footer-content h3 {
-    font-size: var(--h2-font);
-    color: var(--text-color);
-    padding: 20px 0 0 10px;
-    font-family: var(--heading-fontfamily);
     
 }
-.footer-content ul {
-    line-height: 50px;
+.my-order_form{
+    margin: 50px 0;
+    border: 3px solid var(--text-color);
+    border-radius: 50px;
+    width: 40%;
+    height: 80vh;
+    background-color: var(--other-color);
+    
+}
+.my-order_form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 50px;
+    width: 80%;
+    height: 75vh;
+
+}
+.my-order_form div h2 {
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--second-color);
+    text-align: center;
+    
+}
+.my-order_form div h3 {
+    font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    text-align: center;
+    padding: 10px 0;
+}
+.my-order_form div label {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    color: var(--text-color);
+    border-bottom: 2px solid var(--second-color);
+    margin-right: 63%;
+    
+}
+.my-order_form div input {
+    height: 30px;
+    font-family: var(--parah-fontfamily);
+    color: var(--other-color);
+    border: 1px solid var(--text-color);
+    border-radius: 20px;
     padding-left: 20px;
 }
-.footer-navigation{
+.btn-submit {
+    background-color: var(--second-color);
     color: var(--bg-color);
     font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+footer {
+    padding-top:20px ;
 }
 .footer-details {
     display: flex;
@@ -217,7 +161,9 @@ footer {
     justify-content: space-around;
     align-items: center;
     padding:20px 50px;
+    margin:0 30px;
     font-size: var(--p-font);
+    border-top: 2px solid var(--text-color);
 }
 .footer-links {
     display: flex;
@@ -233,5 +179,3 @@ footer {
 .footer-links a img {
     width: 50px;
 }
-
-

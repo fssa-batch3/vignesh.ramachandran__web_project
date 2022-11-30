@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    list-style: none;
 }
 :root {
     --bg-color: #ffffff;
@@ -61,6 +60,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 20px;
+    list-style: none;
    
 }
 .navigation-link {
@@ -69,6 +69,7 @@ header {
     font-size: var(--p-font);
     font-weight: 700;
     font-family: var(--heading-fontfamily);
+    
 }
 
 .dropdown {
@@ -124,6 +125,7 @@ header {
     background-size: cover;
     height: 300px;
     padding: 10px 0;
+    
 }
 .ingredient-image h2 {
     color: var(--bg-color);
@@ -131,100 +133,73 @@ header {
     font-family: var(--heading-fontfamily);
     text-align: center;
 }
-.about-catering_content {
+.events {
+    height: 150vh;
+    width: 100%;
+    background-color: var(--other-color);
+}
+.events h2 {
+    font-family: var(--heading-fontfamily);
+    font-size: var(--big-font);
+    color: var(--second-color);
+    text-align: center;
+    padding: 50px 0;
+}
+.events_lists {
+    height: 130vh;
+    margin: 0 100px;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 80px 0;
-}
-.about-catering_content img {
-    height: 400px;
-    width: 300px;
-}
-.about-catering_text {
-    width: 40%;
-}
-.about-catering_text h2 {
-    font-family: var(--heading-fontfamily);
-    font-size: var(--big-font);
-    color: var(--second-color);
-    padding: 20px 0;
-    border-bottom: 1px solid var(--text-color);
-}
-.about-catering_text p {
-    font-family: var(--parah-fontfamily);
-    font-size: var(--p-font);
-    color: var(--text-color);
-    line-height: 30px;
-    padding: 20px 0;
-
-}
-.about-catering_underpara {
-    padding: 10px;
-    
-
-}
-.about-catering_underpara p {
-    font-family: var(--parah-fontfamily);
-    font-size: var(--p-font);
-    color: var(--text-color);
-    padding: 0 80px;
-    text-align: center;
-    line-height: 30px;
-    font-weight: 400;
-}
-.about-us {
-    height: 90vh;
-
-}
-.about-us_heading {
-    padding: 20px;
-    text-align: center;
-
-}
-.about-us_heading h2 {
-    font-family:var(--heading-fontfamily);
-    font-size: var(--big-font);
-    color: var(--text-color);
-    
-}
-.about-us_qualities {
-    padding-top: 50px;
-    height: 70vh;
-    display: flex;  
-    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between; 
+    justify-content: space-around;
     align-content: space-around;
-}
-.qualities_us {
 
-    width: 20%;
-    height: 300px;
+}
+.event-1 {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    align-content: space-around;
-    border: 2px solid var(--second-color);
-    border-radius: 30px;
+    width: 250px;
+    height: 450px;
+    padding: 20px;
+    justify-content: space-around;
+}
+.event-1:hover {
+    background-color: var(--bg-color);
+    border: 1px solid var(--text-color);
+    transform: scale(1.1);
+    transition: .2s;
+    border-radius: 40px;
+    box-shadow: 5px 5px 15px 5px var(--text-color);
+}
 
+.event-1 img {
+    width: 250px;
+    height: 250px;
+    border-radius: 100px;
 }
-.qualities_us img {
-    width: 100px;
-}
-.qualities_us h3 {
-    color: var(--second-color);
-    font-size: var(--h2-font);
-    font-family: var(--heading-fontfamily);
-}
-.qualities_us p {
-    color: var(--text-color);
-    font-size: var(--p-font);
-    text-align: center;
+.event-1 h3 {
     font-family: var(--parah-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+    text-align: center;
 }
+.event-1 a button {
+    padding: 15px 20px ;
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    color: var(--bg-color);
+    background-color: var(--text-color);
+    border-radius: 15px;
+    font-weight: bold;
+    border: transparent;
+}
+.event-1 a button:hover {
+    background-color: var(--second-color);
+    color: var(--text-color);
+    
+}
+
 
 footer {
     height: 55vh;
