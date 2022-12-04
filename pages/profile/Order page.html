@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" href="../../assets/css/order page.css">
 
+    <link rel="icon" href="../../assets/img/main-logo.png" >
     <title>Order page</title>
 </head>
 <body>
@@ -36,16 +37,35 @@
         
         <ul class="navigation">
             <li><a href="../../index.html" class="navigation-link">HOME</a></li>
-            <li><a href="./about us.html" class="navigation-link">ABOUT US</a></li>
-            <li><a href="#" class="navigation-link">MENU</a></li>
-            <li><a href="#" class="navigation-link">EVENTS</a></li>
-            <li><a href="./contact us.html" class="navigation-link">CONTACT US</a></li>
-            <li><a href="#" class="navigation-link">MY CART</a></li>
+            <li><a href="../homepage/about us.html" class="navigation-link">ABOUT US</a></li>
+            <li class="dropdown">
+                <span class="navigation-link">MENU</span>
+                <div class="dropdown-content">
+                    <div>
+                        <a href="../products/Menus/menu-morning.html" >Morning Menu</a>
+                        <a href="../products/Menus/menu-lunch.html" >Lunch Menu</a>
+                        <a href="../products/Menus/menu-hightea.html" >Hightea Menu</a>
+                        <a href="../products/Menus/menu-dinner.html" >Dinner Menu</a>
+                        <a href="../products/Menus/menu-custom.html" >Custom Menu</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="../homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
+            <li><a href="../homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
+            <li><a href="../homepage/my cart.html" class="navigation-link">MY CART</a></li>
         </ul>
 
-        <a href="#" class="login-image">
-            <img src="../../assets/img/profile.png" alt="profile image" />
-        </a>
+        <div class="dropdown_profile">
+            <img src="../../assets/img/profile.png" alt="profile image"  />
+            <div class="dropdown_profile-content">
+                <div>
+                    <a href="../profile/Profile page.html">My Profile</a>
+                    <a href="../profile/Register.html">Register</a>
+                    <a href="../profile/Login.html">Log in</a>
+                    <a href="#">My Orders</a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>

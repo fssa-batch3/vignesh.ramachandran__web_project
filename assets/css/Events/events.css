@@ -69,7 +69,10 @@ header {
     font-size: var(--p-font);
     font-weight: 700;
     font-family: var(--heading-fontfamily);
-    
+}
+.navigation-link:hover {
+    color: var(--second-color);
+    transition: .2s;
 }
 
 .dropdown {
@@ -113,12 +116,48 @@ header {
     color: var(--second-color);
 }
 
-.login-image img {
+.dropdown_profile {
+    position: relative;
+    
+}
+.dropdown_profile img {
     width: 50px;
 }
-.about-catering {
-    height: 120vh
+.dropdown_profile-content {
+    display: none;
+    position: absolute;
+    background-color: var(--other-color);
+    padding: 10px 10px;
+    z-index: 1;
+    right: 10%;
+    border-radius: 20px;
+    width: 110px;
+    
 }
+.dropdown_profile-content div {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    
+    transform: translate(-30px 0);
+    
+}
+.dropdown_profile:hover .dropdown_profile-content {
+    display: block;
+    
+}
+.dropdown_profile-content a {
+    padding: 10px;
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 700;
+    font-family: var(--heading-fontfamily);
+    border-bottom: 1px solid var(--text-color);
+}
+.dropdown_profile-content a:hover {
+    color: var(--second-color);
+}
+
 .ingredient-image {
     background-image: url(https://www.veganfoodandliving.com/wp-content/uploads/2018/05/GettyImages-695984364.jpg);
     background-repeat: no-repeat;

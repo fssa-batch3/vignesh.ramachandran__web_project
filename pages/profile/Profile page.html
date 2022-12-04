@@ -15,14 +15,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap" 
     rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/register.css">
+    <link rel="stylesheet" href="../../assets/css/profile page.css">
 
     <link rel="stylesheet" href="../../assets/css/normalize.css">
 
     <link rel="icon" href="../../assets/img/main-logo.png" >
-    <title>Register</title>
+    <title>Profile</title>
 </head>
 <body>
     <header> 
@@ -67,18 +68,41 @@
         </div>
     </header>
     <main>
-        
-        <section class="register">
-            <form class="register_page">
-                <h2 class="name_register"><span>Register</span> Here</h2>
-                <label>Name:<input type="text" placeholder="Enter your name" class="input_box"/> </label>
-                <label>Email ID:<input type="email"  for="email" placeholder="Enter your email" class="input_box"/> </label>
-                <label>Phone Number:<input type="number" placeholder="Enter your Mobile number" class="input_box"/> </label>
-                <label>Create Password:<input type="password" placeholder="Enter your password" class="input_box"/> </label>
-                <div class="btn">
-                    <a href="./Login.html"><button class="btn_submit" type="button">Submit</button></a>
-                    <a href="./Login.html" class="exciting_user" type="button">Exciting User?</a>
-                </div>
+        <section class="profile">
+            
+            <form>
+                <h2><span>MY</span> PROFILE</h2>
+                <div class="profile_form">
+                    
+                    <div class="profile_details">
+                        
+                        <div class="details">
+                            <label class="details-1">Name:<input type="text" /></label>
+                            <label class="details-1">Email:<input type="email" /></label>
+                            <label class="details-1">Phone Number:<input type="tel" /></label>
+                            <label class="details-1">Password:<input type="password" /></label>
+                        </div>
+                        
+                        <div class="btn">
+                            <button class="edit_button"> 
+                                <img src="https://cdn.iconscout.com/icon/free/png-256/edit-1780339-1517827.png" alt="edit button"/>
+                                <p>Edit Details</p> 
+                            </button>
+                            <button class="btn-1">Save</button>
+                            <a href="#" ><button class="btn-2">Back</button></a>
+                        </div>         
+                    </div>
+                    <aside class="profile_img">
+                        <img class="sk" src="../../assets/img/sk.jpg" alt="profile image"/>
+                        <button class="edit_button"> 
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/edit-1780339-1517827.png" alt="edit button"/>
+                            <p>Edit Image</p> 
+                        </button>
+                    </aside>
+            </div>
+            <div class="logout">
+                <a href="" ><button class="btn-3">Log out</button></a>
+            </div>
             </form>
         </section>
     </main>
@@ -94,5 +118,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>

@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    list-style: none;
 }
 :root {
     --bg-color: #ffffff;
@@ -61,6 +60,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 20px;
+    list-style: none;
    
 }
 .navigation-link {
@@ -70,8 +70,92 @@ header {
     font-weight: 700;
     font-family: var(--heading-fontfamily);
 }
-.login-image img {
+.navigation-link:hover {
+    color: var(--second-color);
+    transition: .2s;
+}
+
+.dropdown {
+    position: relative;
+    
+}
+.dropdown span {
+    padding: 20px;
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 700;
+    font-family: var(--heading-fontfamily);
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--other-color);
+    padding: 10px 10px;
+    z-index: 1;
+    width: 180px;
+    border-radius: 20px;
+
+}
+.dropdown-content div {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    padding: 10px;
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 700;
+    font-family: var(--heading-fontfamily);
+    border-bottom: 1px solid var(--text-color);
+}
+.dropdown-content a:hover {
+    color: var(--second-color);
+}
+
+.dropdown_profile {
+    position: relative;
+    
+}
+.dropdown_profile img {
     width: 50px;
+}
+.dropdown_profile-content {
+    display: none;
+    position: absolute;
+    background-color: var(--other-color);
+    padding: 10px 10px;
+    z-index: 1;
+    right: 10%;
+    border-radius: 20px;
+    width: 110px;
+    
+}
+.dropdown_profile-content div {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    
+    transform: translate(-30px 0);
+    
+}
+.dropdown_profile:hover .dropdown_profile-content {
+    display: block;
+    
+}
+.dropdown_profile-content a {
+    padding: 10px;
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 700;
+    font-family: var(--heading-fontfamily);
+    border-bottom: 1px solid var(--text-color);
+}
+.dropdown_profile-content a:hover {
+    color: var(--second-color);
 }
 
 .ingredient-image {
