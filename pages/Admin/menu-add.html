@@ -23,8 +23,6 @@
     <link rel="icon" href="../../assets/img/main-logo.png" >
 
     <link rel="stylesheet" href="../../assets/css/Admin/menu-add.css">
-
-    <link rel="icon" href="../../assets/img/main-logo.png" >
     <title>Menu Add</title>
 </head>
 
@@ -40,7 +38,7 @@
         
         <ul class="navigation">
             <li><a href="../../index.html" class="navigation-link">HOME</a></li>
-            <li><a href="./about us.html" class="navigation-link">ABOUT US</a></li>
+            
             <li class="dropdown">
                 <span class="navigation-link">MENU</span>
                 <div class="dropdown-content">
@@ -54,6 +52,7 @@
                 </div>
             </li>
             <li><a href="./Events/events.html" class="navigation-link">EVENTS</a></li>
+            <li><a href="./about us.html" class="navigation-link">ABOUT US</a></li>
             <li><a href="./contact us.html" class="navigation-link">CONTACT US</a></li>
             <li><a href="./my cart.html" class="navigation-link">MY CART</a></li>
         </ul>
@@ -72,13 +71,33 @@
     </header>
     <main>
         <section class="menu-add">
-            <form class="menu-add_form">
-                <label class="details">Menu Name: <input type="text" placeholder="Enter Menu Name" /></label> 
-                <label class="details">Menu Image: <input type="file"/></label> 
-                <label class="details">About Menu:  <textarea type="text" placeholder="Enter About Menu"></textarea></label>
-                <label class="details">Types in the Menu:</label>
-                <label class="details">Image for Types</label>
-                <button>Submit</button>
+            <h2>ADD-MENU</h2>
+            <form>
+                <div class="menu-add_form">
+                    <div>
+                        <label class="details">Menu Name: </label> 
+                        <input class="details_type" type="text" placeholder="Enter Menu Name" />
+                    </div>
+                    <div>
+                        <label class="details">Menu Image: </label> 
+                        <input class="details_type" type="file"/>
+                    </div>
+                    <div>
+                        <label class="details">About Menu: </label>
+                        <textarea class="details_type" type="text" placeholder="Enter About Menu"></textarea>
+                    </div>
+                    <div>
+                        <label class="details">Types in the Menu:</label>
+                        
+                    </div>
+                    <div>
+                        <label class="details">Image for Types</label>
+                    </div>
+                    
+                        <button class="btn_submit" type="button">Submit</button>
+                    
+                    
+                </div>
                 
             </form>
         </section>
@@ -86,3 +105,4 @@
 
 
 </body>
+</html>

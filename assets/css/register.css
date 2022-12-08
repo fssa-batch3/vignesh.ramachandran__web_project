@@ -8,6 +8,7 @@
     --bg-color: #ffffff;
     --second-color: #f54300;
     --main-color:#7dd87d;
+    --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
     --p-font:1.2rem;
@@ -40,7 +41,7 @@ header {
     
 }
 .icon-left div p {
-    color: var(--main-color);
+    color: var(--thickgreen-color);
     font-size: var(--h2-font);
 }
 .catering {
@@ -208,6 +209,8 @@ main {
     margin-left: 200px;
     height: 30px;
     width: 45%;
+    color: var(--text-color);
+    
     border: 1px solid var(--text-color);
     padding-left: 20px;
     font-family: var(--parah-fontfamily);

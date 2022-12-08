@@ -7,7 +7,7 @@
     --bg-color: #ffffff;
     --second-color: #f54300;
     --main-color:#7dd87d;
-    --litegreen-color:#4b814b;
+    --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
     --p-font:1.2rem;
@@ -39,7 +39,7 @@ header {
     
 }
 .icon-left div p {
-    color: var(--litegreen-color);
+    color: var(--thickgreen-color);
     font-size: var(--h2-font);
 }
 .catering {
@@ -189,8 +189,10 @@ header {
     
 }
 .function_content img {
+    /*width: 600px;
+    height: 400px;*/
     width: 600px;
-    height: 400px;
+    height: 314px;
     
 }
 .function_text {
@@ -234,10 +236,11 @@ header {
     width:450px ;
     height: 350px;
     overflow: hidden;
+    
 }
 
 .dropdown_menu img {
-    height: 270px;
+    height: 266px;
     width: 400px;
     border-radius: 150px;
     border: 2px solid var(--text-color);
@@ -253,10 +256,10 @@ header {
     border-bottom: 1px solid var(--text-color);
 }
 .dropdown_menu-1 {
+    position: absolute;
     display: flex;
     flex-direction: column;
     left: -100%;
-    position: absolute;
     border: 2px solid var(--text-color);
     background-color: var(--other-color);
     border-radius: 20px;
@@ -334,8 +337,13 @@ footer {
     padding-left: 20px;
 }
 .footer-navigation{
-    color: var(--bg-color);
+    color: var(--text-color);
     font-family: var(--parah-fontfamily);
+}
+.footer-navigation:hover {
+    color: var(--second-color);
+    transition: .2s;
+    border-bottom: 1px dashed var(--text-color);
 }
 .footer-details {
     display: flex;
