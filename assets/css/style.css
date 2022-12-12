@@ -218,6 +218,8 @@ header {
     width: 40%;
 }
 .lists img {
+    object-fit: fill;
+    min-width: 150px;
     width: 150px;
     height: 200px;
     padding: 10px;

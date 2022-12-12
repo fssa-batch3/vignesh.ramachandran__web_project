@@ -162,7 +162,7 @@ header {
 }
 
 .ingredient-image {
-    background-image: url(https://www.veganfoodandliving.com/wp-content/uploads/2018/05/GettyImages-695984364.jpg);
+    background-image: url(../../img/ingredient.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 300px;

@@ -160,7 +160,7 @@ header {
 }
 
 .ingredient-image {
-    background-image: url(https://www.veganfoodandliving.com/wp-content/uploads/2018/05/GettyImages-695984364.jpg);
+    background-image: url(../../img/ingredient.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 300px;
@@ -210,6 +210,9 @@ header {
     font-family: var(--parah-fontfamily);
     border-radius: 20px;
 }
+.view-button:hover {
+    transform: scale(1.1);
+}
 .add-to-cart {
     display: flex;
     flex-direction: row;
@@ -225,7 +228,9 @@ header {
     font-family: var(--parah-fontfamily);
     border-radius: 10px;
 }
-
+.add-to-cart:hover {
+    transform: scale(1.1);
+}
 .plus-image {
     width: 20px;
 }

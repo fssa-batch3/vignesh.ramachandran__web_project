@@ -166,7 +166,7 @@ header {
     height: 120vh
 }
 .ingredient-image {
-    background-image: url(https://www.veganfoodandliving.com/wp-content/uploads/2018/05/GettyImages-695984364.jpg);
+    background-image: url(../img/ingredient.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 300px;
@@ -224,6 +224,7 @@ header {
 }
 .about-us {
     height: 90vh;
+    background-color: var(--other-color);
 
 }
 .about-us_heading {
@@ -257,6 +258,7 @@ header {
     align-content: space-around;
     border: 2px solid var(--second-color);
     border-radius: 30px;
+    background-color: var(--bg-color);
 
 }
 .qualities_us img {

@@ -81,13 +81,7 @@ header {
     position: relative;
     
 }
-.dropdown span {
-    padding: 20px;
-    color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 700;
-    font-family: var(--heading-fontfamily);
-}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -161,7 +155,7 @@ header {
 }
 
 .ingredient-image {
-    background-image: url(https://www.veganfoodandliving.com/wp-content/uploads/2018/05/GettyImages-695984364.jpg);
+    background-image: url(../img/ingredient.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 300px;
@@ -175,7 +169,7 @@ header {
 }
 
 .cart_ord-tif {
-    height: 90vh;
+    height: 85vh;
 }
 .cart_ord-tif-content {
     height: 80vh;
@@ -228,6 +222,13 @@ header {
 .number {
     width: 50px;
 }
+.change {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
 .cart_dishes h3 {
     font-family: var(--heading-fontfamily);
     font-size: var(--big-font);
@@ -237,7 +238,8 @@ header {
 }
 .dishes {
     margin: 0 30px;
-    height: 25vh;
+    padding: 20px;
+    width: 600px;
     border: 1px solid black;
     border-radius: 20px;
     display: flex;
@@ -245,6 +247,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
+    gap: 1rem;
 
 }
 .dishes li {
@@ -266,7 +269,7 @@ header {
 .cart_ord-tif-end {
     margin: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -290,6 +293,7 @@ header {
     justify-content: space-between;
 }
 .cart_orderall {
+    padding: 20px 30px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
