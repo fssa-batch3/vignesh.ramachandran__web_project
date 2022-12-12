@@ -15,7 +15,7 @@ font-family: 'Kurale', serif
 	(main food image)https://wallpaperaccess.com/full/5674820.jpg
 
 	(ingrediant) https://www.veganfoodandliving.com/wp-content/uploads/2018/05/GettyImages-695984364.jpg
-	(breakfast image) https://sixnutri.com/pub/media/catalog/product/cache/3fe306bc201fc02c0eb20eb7c78503f9/b/r/breakfast-meal-box.jpg
+	(breakfast image) https://im.whatshot.in/img/2021/Aug/vertical-image-1629974410.jpg
 	(lunch image) https://sulcdn.azureedge.net/biz-live/img/rannveer-catering-tiffin-services-10026786-206e7246.jpeg
 	(high tea image) https://wallpaperaccess.com/full/2069188.jpg
 	(dinner image) https://www.coimbatorecatering.com/img/home/menu4.webp
