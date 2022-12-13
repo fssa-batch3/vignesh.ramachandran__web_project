@@ -42,6 +42,7 @@ header {
 .icon-left div p {
     color: var(--thickgreen-color);
     font-size: var(--h2-font);
+    font-size: 40px;
 }
 .catering {
     width: 70px;
@@ -49,9 +50,7 @@ header {
 .logo {
     width: 120px;
 }
-.icon-left div p {
-    font-size: 40px;
-}
+
 .menu-bar {
     font-size: 30px;
     color: var(--text-color);
@@ -206,7 +205,7 @@ header {
     font-size: var(--h2-font);
     padding:0 20px;
     border-left: 2px solid var(--text-color);
-    border-right: 2px solid var(--text-color);;
+    border-right: 2px solid var(--text-color);
 }
 .variety_types ul li {
     color: var(--text-color);

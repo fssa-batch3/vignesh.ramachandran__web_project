@@ -42,6 +42,7 @@ header {
 .icon-left div p {
     color: var(--thickgreen-color);
     font-size: var(--h2-font);
+    font-size: 40px;
 }
 .catering {
     width: 70px;
@@ -49,9 +50,7 @@ header {
 .logo {
     width: 120px;
 }
-.icon-left div p {
-    font-size: 40px;
-}
+
 .menu-bar {
     font-size: 30px;
     color: var(--text-color);
@@ -158,4 +157,56 @@ header {
 }
 .dropdown_profile-content a:hover {
     color: var(--second-color);
+}
+
+section {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--text-color);
+}
+.menu-type {
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-type label {
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+    padding: 1rem;
+}
+.select-menu {
+    width: 15%;
+    height: 70%;
+    border: 2px solid var(--text-color);
+    border-radius: 1rem;
+}
+.select-menu option{
+    font-family: var(--heading-fontfamily);
+    font-size: var(--p-font);
+    color: var(--text-color);
+
+}
+
+.menu-type+p {
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+}
+.add-types {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.add-types i {
+    font-size: var(--p-font);
+}
+.add-types p {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    color: var(--text-color);
 }

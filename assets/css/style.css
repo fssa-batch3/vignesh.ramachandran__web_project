@@ -42,6 +42,7 @@ header {
 .icon-left div p {
     color: var(--thickgreen-color);
     font-size: var(--h2-font);
+    font-size: 2.5rem;
 }
 .catering {
     width: 4.375rem;
@@ -49,9 +50,7 @@ header {
 .logo {
     width: 7.5rem;
 }
-.icon-left div p {
-    font-size: 2.5rem;
-}
+
 .menu-bar {
     font-size: 1.875rem;
     color: var(--text-color);
