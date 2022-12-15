@@ -183,7 +183,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding-bottom: 40px;
+    padding: 20px;
 }
 .cart_ord-tif-text h2 {
     font-family:var(--heading-fontfamily);

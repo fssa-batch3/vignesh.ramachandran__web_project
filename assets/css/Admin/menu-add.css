@@ -162,19 +162,28 @@ header {
     height: 100vh;
 }
 .menu-add form {
-    height: 95%;
-    border: 1px solid black;
+    height: 100vh;
+}
+.menu-add h2 {
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--second-color);
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid var(--text-color);
+    
 }
 .menu-add_form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     border: 2px solid black;
-    height: 90%;
-    width: 60%;
-    margin: 5%;
+    height: 80vh;
+    width: 50vw;
+    padding: 1rem;
+    margin: 0 22%;
 }
-.menu-add_form div {
+.menu-add_form div:only-child {
     height: 13%;
     display: flex;
     flex-direction: column;
@@ -191,13 +200,31 @@ header {
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
     color: var(--text-color);
-
+}
+.details_types {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-around;
+}
+.details_types div {
+    width: 150px;
+    border: 1px solid var(--text-color);
+    display: flex;
+    flex-direction:row ;
+    justify-content: space-around;
+    align-items: center;
+}
+.details_types div p {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    color: var(--text-color);
+    padding: 10px;
 }
 .btn_submit {
-    
     width: 200px;
     padding: 10px 20px ;
-    margin: 0 3% 3% 3%;
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
     color: var(--bg-color);
