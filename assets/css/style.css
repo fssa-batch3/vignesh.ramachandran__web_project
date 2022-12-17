@@ -62,8 +62,9 @@ header {
     flex-wrap: wrap;
     padding: 20px;
     list-style: none;
-   
+
 }
+
 .navigation-link {
     padding: 1.25rem;
     color: var(--text-color);
@@ -355,6 +356,16 @@ header {
     border: 1px solid var(--text-color);
     border-radius: 50px;
 }
+/* .how-it-works {
+    height: 90vh;
+}
+.how-it-works_content {
+
+} */
+
+
+
+
 
 
 footer {
