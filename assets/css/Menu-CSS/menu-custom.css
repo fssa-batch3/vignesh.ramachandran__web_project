@@ -197,7 +197,7 @@ header {
     padding: 10px;
     border-radius: 20px;
     border: none;
-    box-shadow: 0px 8px 20px black;;
+    box-shadow: 0px 8px 20px black;
 }
 .variety_types h2 {
     color: var(--second-color);
@@ -215,14 +215,11 @@ header {
     flex-direction: row;
     justify-content: flex-start;
     padding-bottom: 10px;
-
 }
 ul p {
     padding-left: 20px;
 }
-
 .box {
-    
     padding-right: 30px;
 }
 .add-to-cart {
