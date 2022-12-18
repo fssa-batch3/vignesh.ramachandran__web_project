@@ -279,12 +279,27 @@ header {
 .btn{
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
-    color: var(--bg-color);
-    background-color: var(--text-color);
+    /* color: var(--bg-color);
+    background-color: var(--text-color); */
     padding: 10px 20px;
     border-radius: 20px;
+    color: var(--bg-color);
+    transition: .2s;
+    border: transparent;
 }
-
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 8px 8px 10px black;
+}
+.order {
+    font-weight: bold;
+    background-color: green;
+}
+.remove {
+    font-weight: bold;
+    background-color: var(--second-color);
+    
+}
 .btn_cart {
     width: 300px;
     display: flex;

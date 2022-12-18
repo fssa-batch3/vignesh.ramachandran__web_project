@@ -221,9 +221,12 @@ header {
     line-height: 30px;
     font-weight: 400;
 }
+
+
 .about-us {
-    height: 90vh;
-    background-color: var(--other-color);
+    height: 100vh;
+    background-image: url(../img/photo1.jpg);
+    background-size: cover;
 
 }
 .about-us_heading {
@@ -238,8 +241,8 @@ header {
     
 }
 .about-us_qualities {
-    padding-top: 50px;
-    height: 70vh;
+    padding: 50px 0;
+    height: 80vh;
     display: flex;  
     flex-direction: column;
     flex-wrap: wrap;

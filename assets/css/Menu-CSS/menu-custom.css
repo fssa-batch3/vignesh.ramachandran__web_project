@@ -185,8 +185,7 @@ header {
 }
 .variety_types {
     width: 25%;
-    height: 80vh;
-    
+    height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -195,9 +194,10 @@ header {
 .variety_types_img {
     width: 300px;
     height: 270px;
-    border: 1px solid var(--text-color);
     padding: 10px;
     border-radius: 20px;
+    border: none;
+    box-shadow: 0px 8px 20px black;;
 }
 .variety_types h2 {
     color: var(--second-color);

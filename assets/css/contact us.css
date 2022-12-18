@@ -216,7 +216,7 @@ header {
     line-height: 30px;
     font-weight: 400;
 }
-.dummy p:hover{
+.dummy a p:hover{
     color: var(--second-color);
 
 }
@@ -250,6 +250,10 @@ header {
     border-radius: 10px;
     font-family: var(--parah-fontfamily);
     border: transparent;
+}
+.contact-us_message button:hover {
+    color: var(--text-color);
+    background-color: var(--second-color);
 }
 
 
