@@ -7,7 +7,7 @@
 :root {
     --bg-color: #ffffff;
     --second-color: #f54300;
-    --main-color:#7dd87d;
+    --main-color:#ebeef7;
     --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
@@ -189,14 +189,15 @@ header {
     padding: 20px;
 }
 .dishes {
-    height: 25vh;
-    border: 1px solid black;
+    height: 30vh;
+    border: 2px solid var(--text-color);
     border-radius: 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
+    gap: 6px;
 
 }
 .dishes li {
@@ -207,12 +208,15 @@ header {
     align-items: center;
     text-align: center;
     justify-content: center;
-    padding-left: 10px;
-    border: 1px solid black;
+    padding: 5px 3px;
+    border: transparent;
     font-family: var(--parah-fontfamily);
     font-size: var(--small-font);
     color: var(--bg-color);
-    background-color: var(--second-color);
+    background-color: var(--text-color);
+    font-weight: bolder;
+    border-radius: 10px;
+    
 }
 
 .span-2 {
@@ -336,6 +340,7 @@ footer {
 .footer-navigation{
     color: var(--text-color);
     font-family: var(--parah-fontfamily);
+    font-weight: bold; 
 }
 .footer-navigation:hover {
     color: var(--second-color);

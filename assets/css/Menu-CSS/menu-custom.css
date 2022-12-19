@@ -7,7 +7,7 @@
 :root {
     --bg-color: #ffffff;
     --second-color: #f54300;
-    --main-color:#7dd87d;
+    --main-color:#ebeef7;
     --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
@@ -297,6 +297,7 @@ footer {
 .footer-navigation{
     color: var(--text-color);
     font-family: var(--parah-fontfamily);
+    font-weight: bold; 
 }
 .footer-navigation:hover {
     color: var(--second-color);
