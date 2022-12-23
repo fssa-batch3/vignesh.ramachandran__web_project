@@ -7,10 +7,10 @@
 :root {
     --bg-color: #ffffff;
     --second-color: #f54300;
-    --main-color:#ebeef7; 
     --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
+    --normal-font:1rem;
     --p-font:1.2rem;
     --h2-font:1.5rem;
     --big-font:2rem;  
@@ -439,7 +439,7 @@ header {
 
 footer {
     height: 55vh;
-    background-color: var(--main-color);
+    background-color: var(--other-color);
 }
 .footer-box {
     display: flex;
