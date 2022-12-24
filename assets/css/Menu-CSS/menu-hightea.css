@@ -6,10 +6,10 @@
 :root {
     --bg-color: #ffffff;
     --second-color: #f54300;
+    
     --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
-    --normal-font:1rem;
     --p-font:1.2rem;
     --h2-font:1.5rem;
     --big-font:2rem;  
@@ -27,7 +27,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    padding: 20px;
+    padding: 1.25rem;
     justify-content: space-between;
 }
 
@@ -41,17 +41,17 @@ header {
 .icon-left div p {
     color: var(--thickgreen-color);
     font-size: var(--h2-font);
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 .catering {
-    width: 70px;
+    width: 4.375rem;
 }
 .logo {
-    width: 120px;
+    width: 7.5rem;
 }
 
 .menu-bar {
-    font-size: 30px;
+    font-size: 1.875rem;
     color: var(--text-color);
     cursor: pointer;  
 }
@@ -59,12 +59,12 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 1.25rem;
     list-style: none;
    
 }
 .navigation-link {
-    padding: 20px;
+    padding: 1.25rem;
     color: var(--text-color);
     font-size: var(--p-font);
     font-weight: 700;
@@ -79,21 +79,15 @@ header {
     position: relative;
     
 }
-.dropdown span {
-    padding: 20px;
-    color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 700;
-    font-family: var(--heading-fontfamily);
-}
+
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--other-color);
-    padding: 10px 10px;
+    padding: .625rem;
     z-index: 1;
-    width: 180px;
-    border-radius: 20px;
+    width: 11.25rem;
+    border-radius: 1.25rem;
 
 }
 .dropdown-content div {
@@ -105,7 +99,7 @@ header {
     display: block;
 }
 .dropdown-content a {
-    padding: 10px;
+    padding: .625rem;
     color: var(--text-color);
     font-size: var(--p-font);
     font-weight: 700;
@@ -121,17 +115,17 @@ header {
     
 }
 .dropdown_profile img {
-    width: 50px;
+    width: 3.125rem;
 }
 .dropdown_profile-content {
     display: none;
     position: absolute;
     background-color: var(--other-color);
-    padding: 10px 10px;
+    padding: .625rem;
     z-index: 1;
     right: 10%;
-    border-radius: 20px;
-    width: 110px;
+    border-radius: 1.25rem;
+    width: 6.875rem;
     
 }
 .dropdown_profile-content div {
@@ -139,7 +133,7 @@ header {
     flex-direction: column;
     align-content: space-around;
     
-    transform: translate(-30px 0);
+    transform: translate(-1.875rem 0);
     
 }
 .dropdown_profile:hover .dropdown_profile-content {
@@ -147,7 +141,7 @@ header {
     
 }
 .dropdown_profile-content a {
-    padding: 10px;
+    padding: .625rem;
     color: var(--text-color);
     font-size: var(--p-font);
     font-weight: 700;
@@ -162,8 +156,8 @@ header {
     background-image: url(../../img/ingredient.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 300px;
-    padding: 10px 0;
+    height: 18.75rem;
+    padding: .625rem 0;
 }
 .ingredient-image h2 {
     color: var(--bg-color);
@@ -177,7 +171,7 @@ header {
 
 }
 .menu-list_types {
-    padding: 150px 0;
+    padding: 9.375rem 0;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -186,17 +180,17 @@ header {
     width: 22%;
     
     height: 60vh;
-    padding: 50px 0;
+    padding: 3.125rem 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 .dish {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    box-shadow: 0px 8px 20px black;
+    width: 18.75rem;
+    height: 18.75rem;
+    border-radius: .625rem;
+    box-shadow: 0 .5rem 1.25rem black;
 }
 .menu-list_1 h2 {
     font-size: var(--h2-font);
@@ -204,12 +198,12 @@ header {
     color: var(--second-color);
 }
 .view-button {
-    padding: 10px 20px;
+    padding: .625rem 1.25rem;
     background-color: var(--text-color);
     color: var(--bg-color);
     font-size: var(--p-font);
     font-family: var(--parah-fontfamily);
-    border-radius: 20px;
+    border-radius: 1.25rem;
 }
 .view-button:hover {
     transform: scale(1.1);
@@ -219,21 +213,21 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 200px;
-    padding: 10px 20px;
+    width: 12.5rem;
+    padding: .625rem 1.25rem;
     background-color: var(--other-color);
     border: 2px solid var(--text-color);
     color: var(--second-color);
     font-size: var(--p-font);
     font-weight: bold;
     font-family: var(--parah-fontfamily);
-    border-radius: 10px;
+    border-radius: .625rem;
 }
 .add-to-cart:hover {
     transform: scale(1.1);
 }
 .plus-image {
-    width: 20px;
+    width: 1.25rem;
 }
 
 footer {
@@ -243,8 +237,8 @@ footer {
 .footer-box {
     display: flex;
     flex-direction: row;
-    padding: 20px 0;
-    margin:  0 50px;
+    padding: 1.25rem 0;
+    margin:  0 3.125rem;
     height: 40vh;
     justify-content: space-evenly;
     border-bottom: 2px solid var(--text-color);
@@ -255,26 +249,26 @@ footer {
     width: 20%;
 }
 .footer-content img {
-    width: 200px;
+    width: 12.5rem;
 }
 .footer-content p {
     font-size: var(--p-font);
-    line-height: 30px;
+    line-height: 1.875rem;
     color: var(--text-color);
-    margin-left: 20px;
+    margin-left: 1.25rem;
     font-family: var(--parah-fontfamily);
 }
 .footer-content h3 {
     font-size: var(--h2-font);
     color: var(--text-color);
-    padding: 20px 0 0 10px;
+    padding: 1.25rem 0 0 .625rem;
     font-family: var(--heading-fontfamily);
     
 }
 .footer-content ul {
-    line-height: 50px;
+    line-height: 3.125rem;
     font-size: var(--p-font);
-    padding-left: 20px;
+    padding-left: 1.25rem;
 }
 .footer-navigation{
     color: var(--text-color);
@@ -291,14 +285,14 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding:20px 50px;
+    padding:1.25rem 3.125rem;
     font-size: var(--p-font);
 }
 .footer-links {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 200px;
+    width: 12.5rem;
 }
 .footer-details p {
     font-size: var(--p-font);
@@ -306,5 +300,5 @@ footer {
     
 }
 .footer-links a img {
-    width: 50px;
+    width: 3.125rem;
 }

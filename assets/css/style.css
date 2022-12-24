@@ -7,10 +7,10 @@
 :root {
     --bg-color: #ffffff;
     --second-color: #f54300;
+     
     --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
-    --normal-font:1rem;
     --p-font:1.2rem;
     --h2-font:1.5rem;
     --big-font:2rem;  
@@ -60,7 +60,7 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 1.25rem;
     list-style: none;
 }
 
@@ -132,7 +132,7 @@ header {
     flex-direction: column;
     align-content: space-around;
     
-   /* transform: translate(-30px 0); */
+   /* transform: translate(-1.875rem 0); */
     
 }
 .dropdown_profile:hover .dropdown_profile-content {
@@ -162,7 +162,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-content: center;
+    
     
 }
 .food-image p {
@@ -172,8 +172,8 @@ header {
     font-family: var(--parah-fontfamily);
 }
 .food-image a button {
-    padding: 15px 20px;
-    margin-top: 30px;
+    padding: .9375rem 1.25rem;
+    margin-top: 1.875rem;
     color: var(--text-color);
     font-size: var(--h2-font);
     font-weight: bold;
@@ -189,7 +189,7 @@ header {
 }
 
 .allmenu-list {
-    padding: 50px 0;
+    padding: 3.125rem 0;
     height: 110vh;
 }
 .name {
@@ -207,7 +207,7 @@ header {
     justify-content: space-evenly;
     align-content: space-around;
     height: 100vh;
-    padding: 20px;
+    padding: 1.25rem;
 }
 .lists {
     display: flex;
@@ -217,10 +217,10 @@ header {
 }
 .lists img {
     object-fit: fill;
-    min-width: 150px;
-    width: 150px;
-    height: 200px;
-    padding: 10px;
+    min-width: 9.375rem;
+    width: 9.375rem;
+    height: 12.5rem;
+    padding: .625rem;
     border: 2px solid var(--text-color);
 }
 .lists img:hover {
@@ -230,7 +230,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 20px;
+    padding: 0 1.25rem;
 }
 .lists-text h2{
     font-size: var(--h2-font);
@@ -238,7 +238,7 @@ header {
     font-family: var(--heading-fontfamily);
 }
 .lists-text p {
-    padding: 20px 0 0 0;
+    padding: 1.25rem 0 0 0;
     font-size: var(--p-font);
     font-family: var(--parah-fontfamily);
     text-align: justify;
@@ -250,7 +250,7 @@ header {
     font-family: var(--parah-fontfamily);
 }
 .lists-text a:hover {
-    width: 100px;
+    width: 6.25rem;
     transition: .2s;
     color: blue;
     border-bottom: 1px solid var(--text-color);
@@ -258,7 +258,7 @@ header {
 .why-choose-us {
     height: 100vh;
     background-color: var(--other-color);
-    padding: 70px;
+    padding: 4.375rem;
 
 }
 .why-choose-us-text {
@@ -266,7 +266,7 @@ header {
     display: flex;
     flex-direction:column;
     justify-content: space-between;
-    height: 120px;
+    height: 7.5rem;
     padding: 0 20%;
 }
 .why-choose-us-text h2 {
@@ -276,7 +276,7 @@ header {
 }
 .why-choose-us-text p {
     font-size:var(--p-font);
-    line-height: 30px;
+    line-height: 1.875rem;
     font-family: var(--parah-fontfamily);
 }
 .why-we {
@@ -285,7 +285,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
-    padding: 30px;
+    padding: 1.875rem;
     height: 80vh;
 }
 .why-we-option {
@@ -293,22 +293,22 @@ header {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
+    padding: .625rem;
     width: 25%;
-    height: 300px;
+    height: 18.75rem;
     background-color: var(--bg-color);
 }
 
 .why-we-option img {
-    width: 70px;
+    width: 4.375rem;
     
 }
 .why-we-option-text{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 250px;
-    height: 160px;
+    width: 15.625rem;
+    height: 10rem;
     align-items: center;
 }
 .why-we-option-text h3 {
@@ -335,7 +335,7 @@ header {
     align-items: center;
 }
 .our-service-text {
-    padding: 10px;
+    padding: .625rem;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -346,29 +346,29 @@ header {
     color: var(--text-color);
     font-size: var(--big-font);
     border-bottom: 1px solid var(--text-color);
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
     font-family: var(--heading-fontfamily);
 }
 .our-service-text p {
     color: var(--text-color);
     font-size: var(--p-font);
-    line-height: 40px;
+    line-height: 2.5rem;
     font-family: var(--parah-fontfamily);
     text-align: justify;
 }
 .our-service-img {
-    width: 550px;
-    height: 366px;
-    padding: 10px;
+    width: 34.375rem;
+    height: 22.875rem;
+    padding: .625rem;
     border: 1px solid var(--text-color);
-    border-radius: 50px;
+    border-radius: 3.125rem;
 }
 
         /* How it Works */
 
-.how-it-works {
+/* .how-it-works {
     height: 95vh;
-}
+} */
 .how-it-works h2 {
     font-family: var(--heading-fontfamily);
     font-size: var(--big-font);
@@ -378,7 +378,7 @@ header {
     border-bottom: 1px solid var(--text-color);
 }
 .how-it-works_content {
-    height: 75%;
+    /* height: 75%; */
     padding:4% 0;
     display: flex;
     flex-direction: row;
@@ -395,8 +395,9 @@ header {
     border: none;
     transition: .2s;
     border-radius: 3rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 .5rem 1.5rem;
     position: relative;
+    text-align: center;
 }
 
 .how-it-works_text:hover .disappear {
@@ -444,8 +445,8 @@ footer {
 .footer-box {
     display: flex;
     flex-direction: row;
-    padding: 20px 0;
-    margin:  50px 50px 0 50px;
+    padding: 1.25rem 0;
+    margin:  3.125rem 3.125rem 0 3.125rem;
     height: 40vh;
     justify-content: space-evenly;
     border-bottom: 2px solid var(--text-color);
@@ -456,27 +457,27 @@ footer {
     width: 20%;
 }
 .footer-content img {
-    width: 200px;
+    width: 12.5rem;
 }
 .footer-content p {
     font-size: var(--p-font);
-    line-height: 30px;
+    line-height: 1.875rem;
     color: var(--text-color);
-    margin-left: 20px;
+    margin-left: 1.25rem;
     font-family: var(--parah-fontfamily);
     
 }
 .footer-content h3 {
     font-size: var(--h2-font);
     color: var(--text-color);
-    padding: 20px 0 0 10px;
+    padding: 1.25rem 0 0 .625rem;
     font-family: var(--heading-fontfamily);
     
 }
 .footer-content ul {
-    line-height: 50px;
+    line-height: 3.125rem;
     font-size: var(--p-font);
-    padding-left: 20px;
+    padding-left: 1.25rem;
 }
 .footer-navigation{
     color: var(--text-color);
@@ -494,7 +495,7 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding:20px 50px;
+    padding:1.25rem 3.125rem;
     font-size: var(--p-font);
 
 }
@@ -502,7 +503,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 200px;
+    width: 12.5rem;
 
 }
 .footer-details p {
@@ -511,9 +512,55 @@ footer {
     
 }
 .footer-links a img {
-    width: 50px;
+    width: 3.125rem;
 }
 
+@media screen and (max-width:500px){
+    html{
+        font-size: 10px;
+    }
+    .food-image {
+        height: 30vh;
+    }
+    .food-image p {
+        
+        
+    }
+    .lists {
+        width: 100%;
+    }
+    .why-choose-us-text {
+        padding: 0;
+
+    }
+    .why-we-option {
+        width: 40%;
+    }
+    .why-we-option-text {
+        width: 100%;
+    }
+    
+    .our-service-content {
+        flex-direction: column;
+    }
+    .our-service-text {
+        width: 100%;
+        height: 30vh;
+    }
+    .how-it-works h2 {
+        margin: 0 35%;
+    }
+    .how-it-works_text {
+        height: 30vh;
+        border-radius: ;
+    }
+    .disappear {
+        top: -250px;
+        line-height: 1.5rem;
+        height: 70%;
+    }
+
+}
 
 
 

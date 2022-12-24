@@ -7,10 +7,10 @@
 :root {
     --bg-color: #ffffff;
     --second-color: #f54300;
+    
     --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
-    --normal-font:1rem;
     --p-font:1.2rem;
     --h2-font:1.5rem;
     --big-font:2rem;  
@@ -29,7 +29,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    padding: 20px;
+    padding: 1.25rem;
     justify-content: space-between;
 }
 
@@ -43,17 +43,17 @@ header {
 .icon-left div p {
     color: var(--thickgreen-color);
     font-size: var(--h2-font);
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 .catering {
-    width: 70px;
+    width: 4.375rem;
 }
 .logo {
-    width: 120px;
+    width: 7.5rem;
 }
 
 .menu-bar {
-    font-size: 30px;
+    font-size: 1.875rem;
     color: var(--text-color);
     cursor: pointer;  
 }
@@ -61,12 +61,12 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 1.25rem;
     list-style: none;
    
 }
 .navigation-link {
-    padding: 20px;
+    padding: 1.25rem;
     color: var(--text-color);
     font-size: var(--p-font);
     font-weight: 700;
@@ -82,7 +82,7 @@ header {
     
 }
 .dropdown span {
-    padding: 20px;
+    padding: 1.25rem;
     color: var(--text-color);
     font-size: var(--p-font);
     font-weight: 700;
@@ -92,10 +92,10 @@ header {
     display: none;
     position: absolute;
     background-color: var(--other-color);
-    padding: 10px 10px;
+    padding: .625rem .625rem;
     z-index: 1;
-    width: 180px;
-    border-radius: 20px;
+    width: 11.25rem;
+    border-radius: 1.25rem;
 
 }
 .dropdown-content div {
@@ -107,7 +107,7 @@ header {
     display: block;
 }
 .dropdown-content a {
-    padding: 10px;
+    padding: .625rem;
     color: var(--text-color);
     font-size: var(--p-font);
     font-weight: 700;
@@ -123,17 +123,17 @@ header {
     
 }
 .dropdown_profile img {
-    width: 50px;
+    width: 3.125rem;
 }
 .dropdown_profile-content {
     display: none;
     position: absolute;
     background-color: var(--other-color);
-    padding: 10px 10px;
+    padding: .625rem .625rem;
     z-index: 1;
     right: 10%;
-    border-radius: 20px;
-    width: 110px;
+    border-radius: 1.25rem;
+    width: 6.875rem;
     
 }
 .dropdown_profile-content div {
@@ -141,7 +141,7 @@ header {
     flex-direction: column;
     align-content: space-around;
     
-    transform: translate(-30px 0);
+    transform: translate(-1.875rem 0);
     
 }
 .dropdown_profile:hover .dropdown_profile-content {
@@ -149,7 +149,7 @@ header {
     
 }
 .dropdown_profile-content a {
-    padding: 10px;
+    padding: .625rem;
     color: var(--text-color);
     font-size: var(--p-font);
     font-weight: 700;
@@ -179,7 +179,7 @@ main {
     display: flex;
     width: 100%;
     height: 90vh;
-    padding: 20px 0;
+    padding: 1.25rem 0;
 }
 .login_page {
     margin: auto;
@@ -187,13 +187,13 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     height: 60vh;
-    width: 500px;
+    width: 31.25rem;
     border: 2px solid var(--second-color);
-    border-radius: 50px;
-    padding: 20px;
+    border-radius: 3.125rem;
+    padding: 1.25rem;
     position: relative;
     background-color: var(--other-color);
-    box-shadow:10px 10px 10px var(--bg-color);
+    box-shadow:.625rem .625rem .625rem var(--bg-color);
 }
 .login_page label {
     color: var(--text-color);
@@ -205,24 +205,24 @@ main {
 }
 .input_box {
     position: absolute;
-    margin-left: 200px;
-    height: 30px;
+    margin-left: 12.5rem;
+    height: 1.875rem;
     width: 45%;
     border: 1px solid var(--text-color);
-    padding-left: 20px;
+    padding-left: 1.25rem;
     font-family: var(--parah-fontfamily);
-    font-size: 15px;
+    font-size: .9375rem;
 }
 .btn {
     text-align: center;
 }
 .btn_login {
-    padding: 10px 20px;
-    width: 100px;
+    padding: .625rem 1.25rem;
+    width: 6.25rem;
     color: var(--second-color);
     background-color: var(--text-color);
     font-family: var(--parah-fontfamily);
-    border-radius: 20px;
+    border-radius: 1.25rem;
     font-weight: bold;
 }
 .btn_login:hover {
@@ -231,15 +231,15 @@ main {
     color: var(--text-color);
 }
 footer {
-    padding-top:20px ;
+    padding-top:1.25rem ;
 }
 .footer-details {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding:20px 50px;
-    margin:0 30px;
+    padding:1.25rem 3.125rem;
+    margin:0 1.875rem;
     font-size: var(--p-font);
     border-top: 2px solid var(--text-color);
 }
@@ -247,7 +247,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 200px;
+    width: 12.5rem;
 }
 .footer-details p {
     font-size: var(--p-font);
@@ -255,5 +255,5 @@ footer {
     
 }
 .footer-links a img {
-    width: 50px;
+    width: 3.125rem;
 }

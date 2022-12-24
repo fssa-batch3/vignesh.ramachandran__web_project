@@ -7,10 +7,10 @@
 :root {
     --bg-color: #ffffff;
     --second-color: #f54300;
+    
     --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
-    --normal-font:1rem;
     --p-font:1.2rem;
     --h2-font:1.5rem;
     --big-font:2rem;  
@@ -29,7 +29,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    padding: 20px;
+    padding: 1.25rem;
     justify-content: space-between;
 }
 
@@ -43,17 +43,17 @@ header {
 .icon-left div p {
     color: var(--thickgreen-color);
     font-size: var(--h2-font);
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 .catering {
-    width: 70px;
+    width: 4.375rem;
 }
 .logo {
-    width: 120px;
+    width: 7.5rem;
 }
 
 .menu-bar {
-    font-size: 30px;
+    font-size: 1.875rem;
     color: var(--text-color);
     cursor: pointer;  
 }
@@ -61,12 +61,12 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 1.25rem;
     list-style: none;
    
 }
 .navigation-link {
-    padding: 20px;
+    padding: 1.25rem;
     color: var(--text-color);
     font-size: var(--p-font);
     font-weight: 700;
@@ -87,10 +87,10 @@ header {
     display: none;
     position: absolute;
     background-color: var(--other-color);
-    padding: 10px 10px;
+    padding: .625rem;
     z-index: 1;
-    width: 180px;
-    border-radius: 20px;
+    width: 11.25rem;
+    border-radius: 1.25rem;
 
 }
 .dropdown-content div {
@@ -102,7 +102,7 @@ header {
     display: block;
 }
 .dropdown-content a {
-    padding: 10px;
+    padding: .625rem;
     color: var(--text-color);
     font-size: var(--p-font);
     font-weight: 700;
@@ -118,17 +118,17 @@ header {
     
 }
 .dropdown_profile img {
-    width: 50px;
+    width: 3.125rem;
 }
 .dropdown_profile-content {
     display: none;
     position: absolute;
     background-color: var(--other-color);
-    padding: 10px 10px;
+    padding: .625rem;
     z-index: 1;
     right: 10%;
-    border-radius: 20px;
-    width: 110px;
+    border-radius: 1.25rem;
+    width: 6.875rem;
     
 }
 .dropdown_profile-content div {
@@ -136,7 +136,7 @@ header {
     flex-direction: column;
     align-content: space-around;
     
-    transform: translate(-30px 0);
+    transform: translate(-1.875rem 0);
     
 }
 .dropdown_profile:hover .dropdown_profile-content {
@@ -144,7 +144,7 @@ header {
     
 }
 .dropdown_profile-content a {
-    padding: 10px;
+    padding: .625rem;
     color: var(--text-color);
     font-size: var(--p-font);
     font-weight: 700;
@@ -163,8 +163,8 @@ header {
     background-image: url(../../img/ingredient.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 300px;
-    padding: 10px 0;
+    height: 18.75rem;
+    padding: .625rem 0;
 }
 .ingredient-image h2 {
     color: var(--bg-color);
@@ -179,30 +179,30 @@ header {
 }
 .my-orders_list {
     border: 1px solid var(--text-color);
-    border-radius: 30px;
+    border-radius: 1.875rem;
     margin: 1.3rem;
     background-color: var(--other-color);
     
 }
 .cart_ord-tif-text {
     
-    height: 50px;
+    height: 3.125rem;
     padding: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding-bottom: 40px;
+    padding-bottom: 2.5rem;
 }
 .cart_ord-tif-text h2 {
     font-family:var(--heading-fontfamily);
     font-size:var(--big-font);
     color: var(--second-color);
-    width: 220px;
+    width: 13.75rem;
     border: 1px solid var(--text-color);
     text-align: center;
-    height: 30px;
-    padding-bottom: 10px;
+    height: 1.875rem;
+    padding-bottom: .625rem;
 }
 .cart_ord-tif-text:first-child label{
     display: flex;
@@ -215,13 +215,13 @@ header {
     font-size: var(--p-font);
     color: var(--text-color);
     font-weight: bold;
-    width: 220px;
+    width: 13.75rem;
     border: 1px solid var(--text-color);
     padding: 5px;
 }
 .cart_ord-tif-text label input {
     height: auto;
-    margin-left: 10px;
+    margin-left: .625rem;
     color: var(--text-color);
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
@@ -229,11 +229,11 @@ header {
     border-bottom: 2px solid var(--second-color);
 }
 .date {
-    width: 150px;
-    height: 40px;
+    width: 9.375rem;
+    height: 2.5rem;
 }
 .number {
-    width: 50px;
+    width: 3.125rem;
 } 
 .dropdown_menu-type {
     position: relative;
@@ -270,10 +270,10 @@ header {
     position: absolute;
     margin-top: .5rem;
     background: rgb(189, 226, 132);
-    padding: 10px 10px;
+    padding: .625rem;
     z-index: 1;
     
-    border-radius: 20px;
+    border-radius: 1.25rem;
 }
 .dropdown_menu-type:hover .dropdown_menu-type-content {
     display: block;
@@ -290,14 +290,14 @@ header {
     gap:1rem;
 }
 .dishes li {
-    padding: 10px;
+    padding: .625rem;
     border: transparent;
     font-family: var(--parah-fontfamily);
     font-size: var(--normal-font);
     color: var(--bg-color);
     background-color: var(--text-color);
     font-weight: bolder;
-    border-radius: 10px;
+    border-radius: .625rem;
 }
 
 
@@ -308,15 +308,15 @@ header {
 
 
 footer {
-    padding-top:20px ;
+    padding-top:1.25rem ;
 }
 .footer-details {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding:20px 50px;
-    margin:0 30px;
+    padding:1.25rem 3.125rem;
+    margin:0 1.875rem;
     font-size: var(--p-font);
     border-top: 2px solid var(--text-color);
 }
@@ -324,7 +324,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 200px;
+    width: 12.5rem;
 }
 .footer-details p {
     font-size: var(--p-font);
@@ -332,7 +332,7 @@ footer {
     
 }
 .footer-links a img {
-    width: 50px;
+    width: 3.125rem;
     
 }
 
