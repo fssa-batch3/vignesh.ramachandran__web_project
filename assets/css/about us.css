@@ -7,7 +7,6 @@
 :root {
     --bg-color: #ffffff;
     --second-color: #f54300;
-    
     --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
@@ -153,6 +152,13 @@ header {
     color: var(--second-color);
 }
 
+.bx-menu {
+    font-size: 3rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
 
 
 .about-catering {
@@ -251,7 +257,6 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    align-content: space-around;
     border: 2px solid var(--second-color);
     border-radius: 1.875rem;
     background-color: var(--bg-color);
@@ -346,4 +351,75 @@ footer {
 
 .footer-links a img {
     width: 3.125rem;
+}
+
+
+
+@media screen and (max-width:360px){
+    html{
+        font-size: 8px;
+    }
+
+
+    .bx-menu {
+        display: block;
+    }
+    .navigation {
+        display: none;
+    }
+    .responsive-navigation {
+        overflow: hidden;
+        position: absolute;
+        top: 9%;
+        right: -100px;
+        width: 80px;
+        z-index: 10001;
+        padding: 0;
+        background-color: var(--other-color);
+        transition: all .3s ;
+        border-radius: 1rem;
+    }
+    .responsive-navigation li {
+        padding: .5rem 0;
+        border-bottom: .5px solid var(--bg-color);
+
+    }
+    .bx-menu:hover .responsive-navigation {
+        display: block;
+        right: 0;
+    }
+    .about-catering {
+        height: 90vh;
+    }
+    .about-us {
+        height: 75vh;
+    }
+    .about-us_qualities {
+        height: 60vh;
+    }
+    .qualities_us {
+        width: 30%;
+        padding: .5rem;
+    }
+    .qualities_us img {
+        width: 3rem;
+    }
+
+
+
+    
+    .footer-box{
+       margin: 0;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+    .footer-content {
+        width: 25%;
+    }
+    .footer-details {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
 }

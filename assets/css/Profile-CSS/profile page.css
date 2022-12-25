@@ -7,7 +7,6 @@
 :root {
     --bg-color: #ffffff;
     --second-color: #f54300;
-    
     --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
@@ -151,6 +150,13 @@ header {
 }
 .dropdown_profile-content a:hover {
     color: var(--second-color);
+}
+
+.bx-menu {
+    font-size: 3rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
 }
 
 
@@ -305,7 +311,6 @@ footer {
     justify-content: space-around;
     align-items: center;
     padding:1.25rem 3.125rem;
-    margin:0 1.875rem;
     font-size: var(--p-font);
     border-top: 2px solid var(--text-color);
 }

@@ -6,7 +6,6 @@
 :root {
     --bg-color: #ffffff;
     --second-color: #f54300;
-    
     --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
@@ -152,6 +151,13 @@ header {
     color: var(--second-color);
 }
 
+.bx-menu {
+    font-size: 3rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
 .ingredient-image {
     background-image: url(../../img/ingredient.jpg);
     background-repeat: no-repeat;
@@ -179,7 +185,7 @@ header {
     padding: 3.125rem 0;
 }
 .events_lists {
-    height: 130vh;
+    height: 90%;
     margin: 0 6.25rem;
     display: flex;
     flex-direction: row;
@@ -307,4 +313,66 @@ footer {
 
 .footer-links a img {
     width: 3.125rem;
+}
+
+
+@media screen and (max-width:360px){
+    html{
+        font-size: 8px;
+    }
+
+
+    .bx-menu {
+        display: block;
+    }
+    .navigation {
+        display: none;
+    }
+    .responsive-navigation {
+        overflow: hidden;
+        position: absolute;
+        top: 9%;
+        right: -100px;
+        width: 80px;
+        z-index: 10001;
+        padding: 0;
+        background-color: var(--other-color);
+        transition: all .3s ;
+        border-radius: 1rem;
+    }
+    .responsive-navigation li {
+        padding: .5rem 0;
+        border-bottom: .5px solid var(--bg-color);
+
+    }
+    .bx-menu:hover .responsive-navigation {
+        display: block;
+        right: 0;
+    }
+    
+    .events {
+        height: 170vh;
+    }
+    .events_lists {
+        
+        margin: 0;
+        align-content: normal;
+    }
+
+
+    
+    .footer-box{
+       margin: 0;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+    .footer-content {
+        width: 25%;
+    }
+    .footer-details {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
 }

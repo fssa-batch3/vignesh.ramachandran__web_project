@@ -7,7 +7,6 @@
 :root {
     --bg-color: #ffffff;
     --second-color: #f54300;
-    
     --thickgreen-color:#4b814b;
     --text-color:#130849;
     --other-color:#ebeef7;
@@ -153,6 +152,13 @@ header {
     color: var(--second-color);
 }
 
+.bx-menu {
+    font-size: 3rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
 .ingredient-image {
     background-image: url(../../img/ingredient.jpg);
     background-repeat: no-repeat;
@@ -171,7 +177,7 @@ header {
 
 }
 .variety {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -185,15 +191,23 @@ header {
     justify-content: space-evenly;
     align-items: center;
 }
+
 .variety_types_img {
-    width: 18.75rem;
+    width:80%;
     height: 16.875rem;
     padding: .625rem;
     border-radius: 1.25rem;
     border: none;
     box-shadow: 0 .5rem 1.25rem black;
 }
-.variety_types h2 {
+.variety_types div {
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.variety_types div h2 {
     color: var(--second-color);
     font-family: var(--heading-fontfamily);
     font-size: var(--h2-font);
@@ -201,28 +215,27 @@ header {
     border-left: 2px solid var(--text-color);
     border-right: 2px solid var(--text-color);
 }
-.variety_types ul li {
+.variety_types div ul li {
     color: var(--text-color);
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding-bottom: .625rem;
+    align-items: center;
+    padding: .625rem 0;
 }
-ul p {
+ul li p {
     padding-left: 1.25rem;
 }
-.box {
-    padding-right: 1.875rem;
-}
+
 .add-to-cart {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 12.5rem;
-    padding: .625rem 1.25rem;
+    width: 10rem;
+    padding: .625rem ;
     background-color: var(--other-color);
     border: 2px solid var(--text-color);
     color: var(--second-color);
@@ -319,4 +332,68 @@ footer {
 }
 .footer-links a img {
     width: 3.125rem;
+}
+
+
+@media screen and (max-width:360px){
+    html{
+        font-size: 8px;
+    }
+
+
+    .bx-menu {
+        display: block;
+    }
+    .navigation {
+        display: none;
+    }
+    .responsive-navigation {
+        overflow: hidden;
+        position: absolute;
+        top: 9%;
+        right: -100px;
+        width: 80px;
+        z-index: 10001;
+        padding: 0;
+        background-color: var(--other-color);
+        transition: all .3s ;
+        border-radius: 1rem;
+    }
+    .responsive-navigation li {
+        padding: .5rem 0;
+        border-bottom: .5px solid var(--bg-color);
+
+    }
+    .bx-menu:hover .responsive-navigation {
+        display: block;
+        right: 0;
+    }
+    .custom-menu {
+        height: 120vh;
+    }
+    .variety {
+        flex-wrap: wrap;
+    }
+    .variety_types {
+        height:50%;
+        width: 40%;    
+    }
+
+
+
+    
+    .footer-box{
+       margin: 0;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+    .footer-content {
+        width: 25%;
+    }
+    .footer-details {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
 }
