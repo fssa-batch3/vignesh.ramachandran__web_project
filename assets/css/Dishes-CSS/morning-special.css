@@ -441,6 +441,7 @@ footer {
         display: none;
     }
     .responsive-navigation {
+        display:none;
         overflow: hidden;
         position: absolute;
         top: 9%;
