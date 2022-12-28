@@ -189,7 +189,10 @@ header {
     font-size: var(--h2-font);
     color: var(--text-color);
 }
-
+.larger {
+    width: 1rem;
+    height: 1rem;
+}
 
 
 

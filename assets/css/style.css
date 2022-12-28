@@ -269,6 +269,9 @@ header {
 }
 .why-choose-us {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: var(--other-color);
     padding: 4.375rem;
 
@@ -278,8 +281,8 @@ header {
     display: flex;
     flex-direction:column;
     justify-content: space-between;
-    height: 7.5rem;
-    padding: 0 20%;
+    height: 13%;
+    padding: 0 19%;
 }
 .why-choose-us-text h2 {
     font-size: var(--big-font);
@@ -336,7 +339,7 @@ header {
     text-align: justify;
 }
 .our-service {
-    height: 90vh;
+    height: 85vh;
 }
 .our-service-content {
     height: 70vh;
@@ -378,9 +381,9 @@ header {
 
         /* How it Works */
 
-/* .how-it-works {
-    height: 95vh;
-} */
+.how-it-works {
+    padding: 1rem;
+}
 .how-it-works h2 {
     font-family: var(--heading-fontfamily);
     font-size: var(--big-font);
@@ -390,7 +393,6 @@ header {
     border-bottom: 1px solid var(--text-color);
 }
 .how-it-works_content {
-    /* height: 75%; */
     padding:4% 0;
     display: flex;
     flex-direction: row;
@@ -451,15 +453,15 @@ header {
         /* Footer starts */
 
 footer {
-    height: 55vh;
+    height: 60vh;
     background-color: var(--other-color);
 }
 .footer-box {
     display: flex;
     flex-direction: row;
     padding: 1.25rem 0;
-    margin:  3.125rem 3.125rem 0 3.125rem;
-    height: 40vh;
+    margin: 0 3.125rem;
+    height: 69%;
     justify-content: space-evenly;
     border-bottom: 2px solid var(--text-color);
 }  
@@ -503,13 +505,13 @@ footer {
     border-bottom: 1px dashed var(--text-color);
 }
 .footer-details {
+    height: 16%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     padding:1.25rem 3.125rem;
     font-size: var(--p-font);
-
 }
 .footer-links {
     display: flex;
@@ -569,6 +571,9 @@ footer {
     .lists {
         width: 100%;
     }
+    .why-choose-us {
+        padding: 1rem;
+    }
     .why-choose-us-text {
         padding: 0;
 
@@ -603,7 +608,7 @@ footer {
 
 
     .footer-box{
-       margin: 0;
+        margin: 0;
         flex-direction: column;
         flex-wrap: wrap;
         align-content: space-around;
@@ -613,12 +618,19 @@ footer {
     }
     .footer-details {
         flex-wrap: wrap;
-        justify-content: center;
     }
 
 }
 
-
+@media screen and (max-width:300px){
+    html {
+        font-size: 7px;
+    }
+    .food-image p {
+        font-size: var(--big-font);
+    }
+    
+}
 
 
 

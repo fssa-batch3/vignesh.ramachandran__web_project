@@ -151,3 +151,53 @@ header {
 .dropdown_profile-content a:hover {
     color: var(--second-color);
 }
+
+
+section {
+    height: 80vh;
+}
+section h2 {
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--second-color);
+    text-align: center;
+    padding: 1.25rem;
+    border-top: 1px solid var(--text-color);
+}
+.content {
+    margin: 0 30%;
+    height: 80%;
+    width: 40%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--text-color);
+}
+.menu-type, .sub-menu{
+    height: 8%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu-type label, .sub-menu label {
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+    padding-right: 1.5rem;
+    
+}
+.select-menu{
+    width: 10rem;
+    height: 70%;
+    border: 2px solid var(--text-color);
+    border-radius: 1rem;
+}
+.select-menu option, .sub-menu option{
+    font-family: var(--heading-fontfamily);
+    font-size: var(--p-font);
+    color: var(--text-color);
+
+}

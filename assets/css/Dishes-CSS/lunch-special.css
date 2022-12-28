@@ -355,18 +355,18 @@ header {
 
 
 footer {
-    height: 55vh;
+    height: 60vh;
     background-color: var(--other-color);
 }
 .footer-box {
     display: flex;
     flex-direction: row;
     padding: 1.25rem 0;
-    margin:  0 3.125rem;
-    height: 40vh;
+    margin: 0 3.125rem;
+    height: 69%;
     justify-content: space-evenly;
     border-bottom: 2px solid var(--text-color);
-}  
+} 
 .footer-content {
     display: flex;
     flex-direction: column;
@@ -405,6 +405,7 @@ footer {
     border-bottom: 1px dashed var(--text-color);
 }
 .footer-details {
+    height: 16%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -491,7 +492,13 @@ footer {
     }
     .footer-details {
         flex-wrap: wrap;
-        justify-content: center;
     }
 
+}
+
+@media screen and (max-width:300px){
+    html {
+        font-size: 7px;
+    }
+    
 }

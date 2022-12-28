@@ -264,9 +264,10 @@ aside img {
 
 
 footer {
-    padding-top:1.25rem ;
+    height: 10vh;
 }
 .footer-details {
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -336,7 +337,6 @@ footer {
 
     .footer-details {
         flex-wrap: wrap;
-        justify-content: center;
     }
 
 }

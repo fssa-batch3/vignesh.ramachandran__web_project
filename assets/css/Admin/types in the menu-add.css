@@ -153,7 +153,7 @@ header {
 }
 
 section {
-    height: 60vh;
+    height: 80vh;
 }
 section h2 {
     font-family: var(--heading-fontfamily);
@@ -165,19 +165,20 @@ section h2 {
 }
 .content {
     margin: 0 30%;
-    height: 60vh;
+    height: 80%;
     width: 40%;
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     border: 1px solid var(--text-color);
 }
 .menu-type {
-    height: 12%;
+    height: 8%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
 }
 
 .menu-type label {
@@ -188,7 +189,7 @@ section h2 {
     
 }
 .select-menu {
-    
+    width: 10rem;
     height: 70%;
     border: 2px solid var(--text-color);
     border-radius: 1rem;
@@ -206,14 +207,30 @@ section h2 {
     color: var(--text-color);
 }
 .content_types {
+    height: 30%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-content: space-between;
-    justify-content: space-between;
-
+    justify-content: space-around;
 }
-.content_types div {
+.content_types label {
+    height: 20%;
+}
+.content_types input {
+    height: 90%;
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+}
+.content_types_img {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-around;
+}
+.content_types_img div {
     width: 9.375rem;
     border: 1px solid var(--text-color);
     display: flex;
@@ -221,20 +238,10 @@ section h2 {
     justify-content: space-around;
     align-items: center;
 }
-.content_types div p {
-    font-family: var(--parah-fontfamily);
-    font-size: var(--p-font);
-    color: var(--text-color);
-    padding: .625rem;
-}
-.content_types div input {
-    padding: .625rem;
-}
 
 .btn_submit {
     width: 6.25rem;
     padding: .625rem 1.25rem ;
-    margin: 0 3% 3% 3%;
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
     color: var(--bg-color);

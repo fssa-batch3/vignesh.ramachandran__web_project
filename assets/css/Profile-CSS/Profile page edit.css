@@ -17,7 +17,6 @@
     --heading-fontfamily:'Kurale', serif;
     --parah-fontfamily:'Josefin Sans', sans-serif;
 }
-
 span {
     color: var(--second-color);
 }
@@ -161,89 +160,117 @@ header {
 }
 
 
-main {
-    background-image: url("../../img/ingredient.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+.profile {
+    height: 95vh;
+}
+form{
+    margin: 0 10%;
+    height: 90%;
+    border-radius: 1.875rem;
+    box-shadow: .625rem .5rem .625rem var(--text-color);
+    background-color: var(--other-color);
 }
 
-.name_register {
+.profile_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70%;
+
+}
+form h2 {
     text-align: center;
     font-family: var(--heading-fontfamily);
     font-size: var(--big-font);
     color: var(--text-color);
-
-}
-.register {
-    display: flex;
-    width: 100%;
-    height: 90vh;
     padding: 1.25rem 0;
 }
-.register_page {
-    margin: auto;
+.details{
+    height: 75%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.details label {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: var(--parah-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.details input {
+    width: 50%;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    background-color: var(--bg-color);
+    padding: 5px 2.5rem;
+    font-size: var(--h2-font);
+    border-radius: 1.25rem;
+} 
+
+
+.btn_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.btn {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    padding: .625rem 1.25rem;
+    border-radius: 1.25rem;
+    border: transparent;
+    font-weight: bold;
+}
+.save {
+    color: var(--bg-color);
+    background-color: green;
+
+}
+.back  {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    transition: .2s;
+    box-shadow: .5rem 0 .625rem black;
+}
+.profile_img {
+    width: 30%;
+    height: 31.25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 60vh;
-    width: 31.25rem;
-    border: 2px solid var(--second-color);
-    border-radius: 3.125rem;
-    padding: 1.25rem;
+    align-items: center;
     position: relative;
-    background-color: var(--other-color);
-    box-shadow:.625rem .625rem var(--bg-color);
 }
-.register_page label {
-    color: var(--text-color);
-    font-family: var(--parah-fontfamily);
-    font-size: var(--h2-font);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.sr {
+    border-radius: 11.25rem;
+    width: 15.625rem;
+    height: 22.9375rem;
 }
-.input_box {
+.bxs-camera {
     position: absolute;
-    margin-left: 12.5rem;
-    height: 1.875rem;
-    width: 45%;
-    color: var(--text-color);
-    
-    border: 1px solid var(--text-color);
-    padding-left: 1.25rem;
-    font-family: var(--parah-fontfamily);
-    font-size: .9375rem;
+    bottom: 15%;
+    right: 20%;
+    font-size: 3rem;
 }
-.btn {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-.btn_submit {
-    padding: .625rem 1.25rem;
-    width: 6.25rem;
-    color: var(--second-color);
-    background-color: var(--text-color);
-    font-family: var(--parah-fontfamily);
-    font-size: var(--parah-fontfamily);
-    border-radius: 1.25rem;
-    font-weight: bold;
-    border: transparent;
-}
-.btn_submit:hover {
-    background-color: var(--second-color);
-    color: var(--text-color);
-}
-.exciting_user {
-    font-family: var(--parah-fontfamily);
-    font-size: var(--p-font);
-    color: var(--second-color);
-    border-bottom: 1px solid var(--text-color);
-}
-.exciting_user:hover{
-    color: var(--text-color);
+.change-img {
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+    width: 3rem;
+    opacity: 0;
 }
 
 
@@ -274,6 +301,7 @@ footer {
 .footer-links a img {
     width: 3.125rem;
 }
+
 
 @media screen and (max-width:360px){
     html{
@@ -309,24 +337,35 @@ footer {
         display: block;
         right: 0;
     }
-    .register_page label {
-        flex-direction: column;
+    .profile_form {
+        height: 80%;
+        padding: 0 1rem;
+        flex-direction: column-reverse;
+        align-items: center;
     }
-    .input_box {
-        position: static;
+    
+    .profile_details {
+        height: 50%;
+        width: 90%;
+    }
+    .logout_button {
         margin: 0;
     }
+    .profile_img {
+        height: 45%;
+        width: 90%;
+        flex-direction: row;
+    }
+
 
     .footer-details {
         flex-wrap: wrap;
     }
-
 }
 
-
-/* @media screen and (max-width:300px){
+@media screen and (max-width:300px) {
     html {
         font-size: 7px;
     }
-
-} */
+    
+}

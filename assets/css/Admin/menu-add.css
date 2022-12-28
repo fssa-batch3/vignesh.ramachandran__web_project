@@ -155,7 +155,7 @@ header {
     height: 100vh;
 }
 .menu-add form {
-    height: 100vh;
+    height: 90%;
 }
 .menu-add h2 {
     font-family: var(--heading-fontfamily);
@@ -171,7 +171,7 @@ header {
     flex-direction: column;
     justify-content: space-around;
     border: 2px solid black;
-    height: 80vh;
+    height: 90%;
     width: 50vw;
     padding: 1rem;
     margin: 0 22%;
@@ -195,31 +195,38 @@ header {
     color: var(--text-color);
 }
 .details_types {
+    height: 5%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: space-between;
     justify-content: space-around;
 }
-.details_types div {
-    width: 9.375rem;
-    border: 1px solid var(--text-color);
+.details_types label {
+    height: 100%;
+}
+.details_types input {
+    height: 90%;
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+}
+.details_types_img {
+    height: 15%;
     display: flex;
-    flex-direction:row ;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.details_types div p {
-    font-family: var(--parah-fontfamily);
-    font-size: var(--p-font);
-    color: var(--text-color);
-    padding: .625rem;
+.details_types_img div {
+    width: 13rem;
+    border: 1px solid var(--text-color);
 }
+
 .btn_submit {
-    width: 12.5rem;
+    width: 6.25rem;
     padding: .625rem 1.25rem ;
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
     color: var(--bg-color);
     background-color: var(--text-color);
+    border-radius: .625rem;
 }

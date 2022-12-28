@@ -164,17 +164,18 @@ header {
     height: 95vh;
 }
 form{
-    margin: 3.125rem;
-    height: 80%;
+    margin: 0 10%;
+    height: 90%;
     border-radius: 1.875rem;
-    box-shadow: .625rem 2.5rem .625rem var(--text-color);
+    box-shadow: .625rem .5rem .625rem var(--text-color);
     background-color: var(--other-color);
 }
 
 .profile_form {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
     height: 70%;
 
 }
@@ -185,12 +186,7 @@ form h2 {
     color: var(--text-color);
     padding: 1.25rem 0;
 }
-.profile_details {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
+
 .edit_button {
     display: flex;
     flex-direction: row;
@@ -217,30 +213,32 @@ form h2 {
     
 }
 .details{
-    height: 18.75rem;
+    height: 75%;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
-.details-1 {
-    position: relative;
+.details label {
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
     font-family: var(--parah-fontfamily);
-    font-size: var(--big-font);
+    font-size: var(--h2-font);
     color: var(--text-color);
     font-weight: bold;
 }
-.details-1 div {
-    position: absolute;
-    margin-left: 18.75rem;
+
+.details input {
+    width: 50%;
+    color: var(--text-color);
     border: 1px solid var(--text-color);
     background-color: var(--bg-color);
     padding: 5px 2.5rem;
     font-size: var(--h2-font);
     border-radius: 1.25rem;
-}
+} 
 
 
 .btn_content {
@@ -252,16 +250,10 @@ form h2 {
 .btn {
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
-    
     padding: .625rem 1.25rem;
     border-radius: 1.25rem;
     border: transparent;
     font-weight: bold;
-}
-.save {
-    color: var(--bg-color);
-    background-color: green;
-
 }
 .back  {
     color: var(--text-color);
@@ -287,25 +279,20 @@ form h2 {
     box-shadow: .5rem 0 .625rem black;
 }
 .profile_img {
-    width: 20%;
-    height: 31.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    width: 30%;
+    height: 90%;
 }
 .sr {
     border-radius: 11.25rem;
-    width: 15.625rem;
-    height: 22.9375rem;
-    
+    width:85%;  
 }
 
 
 footer {
-    padding-top:1.25rem ;
+    height: 10vh;
 }
 .footer-details {
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -327,4 +314,77 @@ footer {
 }
 .footer-links a img {
     width: 3.125rem;
+}
+
+
+@media screen and (max-width:360px){
+    html{
+        font-size: 8px;
+    }
+
+
+    .bx-menu {
+        display: block;
+    }
+    .navigation {
+        display: none;
+    }
+    .responsive-navigation {
+        display:none;
+        overflow: hidden;
+        position: absolute;
+        top: 9%;
+        right: -100px;
+        width: 80px;
+        z-index: 10001;
+        padding: 0;
+        background-color: var(--other-color);
+        transition: all .3s ;
+        border-radius: 1rem;
+    }
+    .responsive-navigation li {
+        padding: .5rem 0;
+        border-bottom: .5px solid var(--bg-color);
+
+    }
+    .bx-menu:hover .responsive-navigation {
+        display: block;
+        right: 0;
+    }
+    .profile_form {
+        height: 80%;
+        padding: 0 1rem;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .details {
+        height: 50%;
+        width: 90%;
+    }
+    .details input {
+        width: 54%;
+    }
+    .profile_details {
+        height: 50%;
+        width: 90%;
+    }
+    .profile_img {
+        height: 45%;
+        width: 90%;
+    }
+    .sr {
+        width: 50%;
+    }
+
+
+    .footer-details {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:300px) {
+    html {
+        font-size: 7px;
+    }
+    
 }
