@@ -154,10 +154,10 @@ header {
 }
 
 .bx-menu {
+    display: none;
     font-size: 3rem;
     color: var(--text-color);
     cursor: pointer;
-    display: none;
 }
 
 
@@ -549,7 +549,7 @@ footer {
         z-index: 10001;
         padding: 0;
         background-color: var(--other-color);
-        transition: all .3s ;
+        transition: all .3s ease ;
         border-radius: 1rem;
     }
     .responsive-navigation li {

@@ -153,10 +153,10 @@ header {
 }
 
 .bx-menu {
+    display: none;
     font-size: 3rem;
     color: var(--text-color);
     cursor: pointer;
-    display: none;
 }
 
 /* Main Page */

@@ -152,10 +152,10 @@ header {
 }
 
 .bx-menu {
+    display: none;
     font-size: 3rem;
     color: var(--text-color);
     cursor: pointer;
-    display: none;
 }
 .ingredient-image {
     background-image: url(../../img/ingredient.jpg);
