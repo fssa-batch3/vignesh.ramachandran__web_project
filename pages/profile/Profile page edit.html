@@ -102,16 +102,16 @@
                 <h2><span>MY</span> PROFILE</h2>
                 <div class="profile_form">
                         
-                        <div class="details">
-                            <label for="name">Name:</label>
-                            <input type="text" name="name" value="S.R.Vignesh" placeholder="your name"  />
-                            <label for="email">Email:</label>
-                            <input type="text" name="email" value="sivavicky571@gmail.com" placeholder="your email"  />
-                            <label for="number">Phone Number:</label>
-                            <input type="text" name="phone no." value="6379370482" placeholder="your number"  />
-                            <label for="password">Password:</label>
-                            <input type="text" name="password" value="********" placeholder="your password"  />
-                        </div>
+                    <div class="details">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" placeholder="enter your name"  />
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" placeholder="enter your email"  />
+                        <label for="number">Phone Number:</label>
+                        <input type="number" name="phone_number" id="phone_number" placeholder="enter your number"  />
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" placeholder="enter your password"  />
+                    </div>
 
                         <aside class="profile_img">
                             <img class="sr" src="../../assets/img/sr.jpg" alt="profile image"/>
@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="btn_content">
-                    <a href="./Profile page.html"><button class="btn save" type="button">Save</button></a>
+                    <button class="btn save" type="button" onclick="save()">Save</button>
                     <a href="./Profile page.html" ><button class="btn back" type="button">Back</button></a>
                 </div>  
             </form>
@@ -145,6 +145,30 @@
         </div>
     </footer>
     <!-- footer ends -->
+
+    <!-- script starts -->
+    <script>
+        function save() {
+            const name = document.getElementById("name").value
+            const email = document.getElementById("email").value
+            const phone_number = document.getElementById("phone_number").value
+            const password = document.getElementById("password").value
+
+            console.log(name)
+            console.log(email)
+            console.log(phone_number)
+            console.log(password)
+
+            localStorage.setItem("user_name", name)
+            localStorage.setItem("user_email", email)
+            localStorage.setItem("user_number", phone_number)
+            localStorage.setItem("user_password", password)
+
+            window.location.href = "./Profile page.html"
+        }
+        
+    </script>
+    <!-- script ends -->
 
 </body>
 </html>

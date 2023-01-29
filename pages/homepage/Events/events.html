@@ -108,7 +108,7 @@
         <section class="events">
             <h2>Experienced cateres for Events & Functions in Kumbakonam</h2>
             <div class="events_lists" >
-                <div class="event-1">
+                <!-- <div class="event-1">
                     <img src="../../../assets/img/Events/birthday-1.jpg" alt="birthday party"/>
                     <h3>Birthday Party</h3>
                     <a href="./birthday party.html"><button>View</button></a>
@@ -142,7 +142,7 @@
                     <img src="../../../assets/img/Events/private party-1.jpg" alt="private party"/>
                     <h3>Private Party</h3>
                     <a href="./private party.html"><button>View</button></a>
-                </div>
+                </div> -->
             </div>
         </section>
         <!-- event lists ends -->
@@ -195,6 +195,109 @@
         </div>
     </footer>
     <!-- footer ends -->
+
+    <!-- script starts -->
+    <script>
+        
+        for (i=0; i<7; i++)
+        {
+
+            const events = 
+            [
+                {
+                    name: "Birthday Party",
+                    image:{
+                        source : "../../../assets/img/Events/birthday-1.jpg",
+                        text : "birthday party"
+                    },
+                    link: "./birthday party.html",
+                }, 
+
+                {
+                    name: "Puberty Function",
+                    image: {
+                        source : "../../../assets/img/Events/puberty-1.jpg",
+                        text : "puberty function"
+                    },
+                    link: "./puberty function.html",
+                },
+
+                {
+                    name: "Engagement",
+                    image: {
+                        source : "../../../assets/img/Events/engagement-1.jpg",
+                        text : "engagement"
+                    } ,
+                    link: "./engagement.html",
+                },
+
+                {
+                    name: "Marriage",
+                    image: {
+                        source : "../../../assets/img/Events/marriage-1.jpg",
+                        text : "marriage"
+                    },
+                    link: "./marriage.html", 
+                },
+
+                {
+                    name:"House Warming Function",
+                    image: {
+                        source : "../../../assets/img/Events/house warming-1.jpg",
+                        text : "house warming function"
+                    },
+                    link: "./house warming function.html", 
+                },
+
+                {
+                    name: "Valaikappu Function",
+                    image: {
+                        source : "../../../assets/img/Events/valaikappu-1.jpg",
+                        text : "valaikappu function"
+                    },
+                    link : "./valaikappu function.html",
+                },
+
+                {
+                    name: "Private Party",
+                    image: {
+                        source :  "../../../assets/img/Events/private party-1.jpg",
+                        text : "private party"
+                    },
+                    link: "./private party.html",
+                }
+            ]
+
+            
+            div_event = document.createElement("div");
+            div_event.setAttribute("class", "event-1");
+            console.log(div_event);
+
+            img = document.createElement("img");
+            img.setAttribute("src", events[i]["image"]["source"]);
+            img.setAttribute("alt", events[i]["image"]["text"]);
+            div_event.append(img);
+
+            h3 = document.createElement("h3");
+            h3.innerText = events[i]["name"];
+            div_event.append(h3);
+
+            a = document.createElement("a");
+            a.setAttribute("href", events[i]["link"])
+            div_event.append(a);
+
+            button = document.createElement('button');
+            button.innerText = "View";
+            a.append(button);
+
+
+            document.querySelector("div.events_lists").append(div_event)
+        }
+
+
+
+    </script>
+    <!-- script ends -->
 
 </body>
 </html>

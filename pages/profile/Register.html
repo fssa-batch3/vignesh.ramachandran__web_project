@@ -98,12 +98,12 @@
         <section class="register">
             <form class="register_page">
                 <h2 class="name_register"><span>Register</span> Here</h2>
-                <label>Name:<input type="text" placeholder="Enter your name" class="input_box"/> </label>
-                <label>Email ID:<input type="email"  for="email" placeholder="Enter your email" class="input_box"/> </label>
-                <label>Phone Number:<input type="number" placeholder="Enter your Mobile number" class="input_box"/> </label>
-                <label>Create Password:<input type="password" placeholder="Enter your password" class="input_box"/> </label>
+                <label>Name:<input type="text" placeholder="Enter your name" class="input_box" id="name" /> </label>
+                <label>Email ID:<input type="email"  for="email" placeholder="Enter your email" class="input_box" id="email" /> </label>
+                <label>Phone Number:<input type="number" placeholder="Enter your Mobile number" class="input_box" id="phone_number" /> </label>
+                <label>Create Password:<input type="password" placeholder="Enter your password" class="input_box" id="password" /> </label>
                 <div class="btn">
-                    <a href="./Login.html"><button class="btn_submit" type="button">Submit</button></a>
+                    <button class="btn_submit" type="button" onclick="signup()">Submit</button>
                     <a href="./Login.html" class="exciting_user" type="button">Existing User?</a>
                 </div>
             </form>
@@ -126,5 +126,29 @@
         </div>
     </footer>
     <!-- footer ends -->
+
+    <!-- script starts -->
+    <script>
+        function signup(){
+            const name = document.getElementById("name").value 
+            const email = document.getElementById("email").value 
+            const phone_number = document.getElementById("phone_number").value 
+            const password = document.getElementById("password").value 
+
+            console.log(name)
+            console.log(email)
+            console.log(phone_number)
+            console.log(password)
+
+            localStorage.setItem("user_name", name)
+            localStorage.setItem("user_email", email)
+            localStorage.setItem("user_number", phone_number)
+            localStorage.setItem("user_password", password)
+
+            window.location.href = "./Login.html"
+        }
+        
+    </script>
+    <!-- script ends -->
 </body>
 </html>

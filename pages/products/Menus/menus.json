@@ -1,0 +1,51 @@
+for morning, lunch, hightea, dinner
+{
+    "name" : "string",
+    "image":{
+        "source" : "string",
+        "alt" : "string"
+    },
+    "price" : {
+        "currency" : "string",
+        "value" : "number"
+    },
+    "link" : "string"
+}
+
+// for custom menu
+
+{
+    "name" : "string",
+    "image" : {
+        "source" : "string",
+        "text" : "string"
+    },
+    "sub_names" : 
+    [
+        {
+            "dish" : "string",
+            "price" : "number",
+        },
+        {
+            "dish" : "string",
+            "price" : "number"
+        },
+        {
+            "dish" : "string",
+            "price" : "number"
+        },
+        {
+            "dish" : "string",
+            "price" : "number"
+        },
+        {
+            "dish" : "string",
+            "price" : "number"
+        },
+        {
+            "dish" : "string",
+            "price" : "number"
+        }
+    ],
+    "link" : "../../homepage/my cart.html"
+}

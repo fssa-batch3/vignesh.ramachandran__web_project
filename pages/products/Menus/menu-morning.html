@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="../../../assets/css/Menu-CSS/menu-morning.css">
 
     <link rel="icon" href="../../../assets/img/main-logo.png" >
+
+    <script src="./function_menu_types.js"></script>
     <title>Morning menu</title>
 </head>
 <body>
@@ -103,21 +105,21 @@
 
         <section class="menu-list">
             <div class="menu-list_types">
-                <div class="menu-list_1">
+                <!-- <div class="menu-list_1">
                     <img class="dish" src="../../../assets/img/Dishes/ordinary tiffin.jpg" alt="Ordinary tiffin" />
                     <div>
                         <h2>Ordinary Tiffin</h2>
                         <p>₹150/plate</p>
-                        <a href="../Dishes/morning-ordinary.html"><button class="view-button">View</button></a>
+                        <a href="..//Dishes/morning-ordinary.html"><button class="view-button">View</button></a>
                     </div>
-                    
                 </div>
+                    
                 <div class="menu-list_1">
                     <img class="dish" src="../../../assets/img/Dishes/special tiffin.jpg" alt="special tiffin" />
                     <div>
                         <h2>Special Tiffin</h2>
                         <p>₹200/plate</p>
-                        <a href="../../products/Dishes/morning-special.html"><button class="view-button">View</button></a>
+                        <a href="../Dishes/morning-special.html"><button class="view-button">View</button></a>
                     </div>
                     
                 </div>
@@ -126,10 +128,10 @@
                     <div>
                         <h2>VIP Tiffin</h2>
                         <p>₹250/plate</p>
-                        <a href="../../products/Dishes/morning-vip.html"><button class="view-button">View</button></a>
+                        <a href="../Dishes/morning-vip.html"><button class="view-button">View</button></a>
                     </div>
                     
-                </div>
+                </div> -->
             </div>
         </section>
         <!-- sub-menus ends -->
@@ -184,5 +186,54 @@
         
     </footer>
     <!-- footer ends -->
+
+    <!-- script stats -->
+    <script>
+         const menu_types =
+            [
+                {
+                    name : "Ordinary Tiffin",
+                    image:{
+                        source : "../../../assets/img/Dishes/ordinary tiffin.jpg",
+                        alt : "Ordinary tiffin",
+                    },
+                    price : {
+                        currency : "₹",
+                        value : "150",
+                    },
+                    link : "../Dishes/morning-ordinary.html",
+                },
+
+                {
+                    name : "Special Tiffin",
+                    image:{
+                        source : "../../../assets/img/Dishes/special tiffin.jpg",
+                        alt : "special tiffin",
+                    },
+                    price : {
+                        currency : "₹",
+                        value : "200",
+                    },
+                    link : "../Dishes/morning-special.html",
+                },
+
+                {
+                    name : "VIP Tiffin",
+                    image:{
+                        source : "../../../assets/img/Dishes/vip tiffin.jpg", 
+                        alt : "VIP tiffin",
+                    },
+                    price :{
+                        currency: "₹",
+                        value: "250",
+                    },
+                    link : "../Dishes/morning-vip.html",
+                }
+            ]
+
+            menus()
+
+    </script>
+    <!-- script ends -->
 </body>
 </html>

@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="../../../assets/css/normalize.css">
 
     <link rel="icon" href="../../../assets/img/main-logo.png" >
+
+    <script src="./function_menu_types.js"></script>
     <title>Dinner menu</title>
 </head>
 <body>
@@ -102,7 +104,7 @@
 
         <section class="menu-list">
             <div class="menu-list_types">
-                <div class="menu-list_1">
+                <!-- <div class="menu-list_1">
                     <img class="dish" src="../../../assets/img/Dishes/ordinary dinner.jpg" alt="Ordinary Dinner" />
                     <div>
                         <h2>Ordinary Dinner</h2>
@@ -128,7 +130,7 @@
                         <a href="../Dishes/dinner-vip.html"><button class="view-button">View</button></a>
                     </div>
                     
-                </div>
+                </div> -->
             </div>
         </section>
         <!-- sub-menus ends -->
@@ -183,5 +185,54 @@
         
     </footer>
     <!-- footer ends -->
+
+    <!-- script stats -->
+    <script>
+        const menu_types =
+        [
+            {
+                name : "Ordinary Dinner",
+                image:{
+                     source : "../../../assets/img/Dishes/ordinary dinner.jpg",
+                     alt : "Ordinary Dinner",
+                     },
+                price : {
+                    currency : "₹",
+                    value : "200",
+                     },
+                link : "../Dishes/dinner-ordinary.html",
+            },
+ 
+            {
+                name : "Special Dinner",
+                image:{
+                        source : "../../../assets/img/Dishes/special dinner.jpg",
+                        alt : "special Dinner"
+                    },
+                price : {
+                    currency : "₹",
+                    value : "250",
+                    },
+                link : "../Dishes/dinner-special.html",   
+            },
+ 
+            {
+                name : "VIP Dinner",
+                image:{
+                    source : "../../../assets/img/Dishes/vip dinner.jpg", 
+                    alt : "VIP Dinner",
+                    },
+                price :{
+                    currency: "₹",
+                    value: "300",
+                    },
+                link : "../Dishes/dinner-vip.html",
+            }
+        ]  
+ 
+         menus()
+ 
+    </script>
+    <!-- script ends -->
 </body>
 </html>

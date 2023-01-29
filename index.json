@@ -1,0 +1,8 @@
+{
+    "name": "string",
+    "description": "string",
+    "image": {
+        "source": "string",
+        "text": "string"
+    }
+}

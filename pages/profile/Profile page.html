@@ -104,13 +104,13 @@
                         
                         <div class="details">
                             <label for="name">Name:</label>
-                            <input type="text" name="name" value="S.R.Vignesh" placeholder="your name" disabled />
+                            <input type="text" name="name" placeholder="name" id="name" disabled />
                             <label for="email">Email:</label>
-                            <input type="text" name="email" value="sivavicky571@gmail.com" placeholder="your email" disabled />
+                            <input type="email" name="email" placeholder="email" id="email" disabled/>
                             <label for="number">Phone Number:</label>
-                            <input type="text" name="phone no." value="6379370482" placeholder="your number" disabled />
+                            <input type="number" name="phone no." placeholder="number" id="phone_number" disabled/>
                             <label for="password">Password:</label>
-                            <input type="text" name="password" value="********" placeholder="your password" disabled />
+                            <input type="password" name="password" placeholder="password" id="password" disabled/>
                         </div>
 
                         <aside class="profile_img">
@@ -152,6 +152,24 @@
         </div>
     </footer>
     <!-- footer ends -->
+
+    <!-- script starts -->
+    <script>
+        const user_name = localStorage.getItem("user_name");
+        const user_email = localStorage.getItem("user_email");
+        const user_number = localStorage.getItem("user_number");
+        const user_password = localStorage.getItem("user_password");
+
+        console.log(name)
+        console.log(email)
+        console.log(phone_number)
+        console.log(password)
+
+        document.getElementById("name").value = user_name
+        document.getElementById("email").value = user_email
+        document.getElementById("phone_number").value = user_number
+        document.getElementById("password").value = user_password
+    </script>
 
 </body>
 </html>

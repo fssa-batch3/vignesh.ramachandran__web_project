@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="../../../assets/css/normalize.css">
 
     <link rel="icon" href="../../../assets/img/main-logo.png" >
+
+    <script src="./function_menu_types.js"></script>
     <title>Hightea menu</title>
 </head>
 <body>
@@ -102,7 +104,7 @@
 
         <section class="menu-list">
             <div class="menu-list_types">
-                <div class="menu-list_1">
+                <!-- <div class="menu-list_1">
                     <img class="dish" src="../../../assets/img/Dishes/ordinary hightea.jpg" alt="Ordinary Hightea " />
                     <div>
                         <h2>Ordinary Hightea</h2>
@@ -128,7 +130,7 @@
                         <a href="../Dishes/hightea-vip.html"><button class="view-button">View</button></a>
                     </div>
                     
-                </div>
+                </div> -->
             </div>
         </section>
         <!-- sub-menus ends -->
@@ -183,5 +185,54 @@
         
     </footer>
     <!-- footer ends -->
+
+    <!-- script stats -->
+       <script>
+           const menu_types =
+            [
+                {
+                    name : "Ordinary Hightea",
+                    image:{
+                        source : "../../../assets/img/Dishes/ordinary hightea.jpg",
+                        alt : "Ordinary Hightea",
+                        },
+                        price : {
+                           currency : "₹",
+                           value : "60",
+                        },
+                       link : "../Dishes/hightea-ordinary.html",
+                },
+    
+                {
+                    name : "Special Hightea",
+                       image:{
+                           source : "../../../assets/img/Dishes/special hightea.jpg",
+                           alt : "special Hightea",
+                       },
+                       price : {
+                           currency : "₹",
+                           value : "60",
+                       },
+                       link : "../Dishes/hightea-special.html",
+                   },
+    
+                   {
+                    name : "VIP Hightea",
+                       image:{
+                           source : "../../../assets/img/Dishes/vip hightea.jpg", 
+                           alt : "VIP Hightea",
+                       },
+                       price :{
+                           currency: "₹",
+                           value: "300",
+                       },
+                       link : "../Dishes/hightea-vip.html",
+                   }
+            ]  
+    
+            menus()
+    
+       </script>
+    <!-- script ends -->
 </body>
 </html>

@@ -173,45 +173,51 @@ header {
     text-align: center;
 }
 
-.cart_ord-tif {
+/* .cart_ord-tif {
     height: 85vh;
-}
+} */
 .cart_ord-tif-content {
-    height: 80vh;
+    /* height: 80vh; */
     margin: 1.875rem 1.875rem 0 1.875rem;
+    padding: 2rem;
     border: 2px solid var(--text-color);
     border-radius: 3.125rem;
 }
 .cart_ord-tif-text {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+    /* display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    padding: 1.25rem;
-    gap: 1rem;
+    justify-content: space-around; */
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    justify-items: center;
 }
 .cart_ord-tif-text h2 {
     font-family:var(--heading-fontfamily);
     font-size:var(--big-font);
     color: var(--second-color);
-    width: 13.75rem;
+    /* width: 13.75rem; */
     border: 1px solid var(--text-color);
-    text-align: center;
-    height: 1.875rem;
-    padding-bottom: .625rem;
+    /* text-align: center; */
+    /* height: 1.875rem;*/
+    padding: .5rem 1rem;
 }
 .cart_ord-tif-text label {
-    text-align: center;
+    /* text-align: center; */
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
     color: var(--text-color);
     font-weight: bold;
-    width: 13.75rem;
+    /* width: 13.75rem; */
     border: 1px solid var(--text-color);
     padding: 5px;
+    display: flex;
+    align-items: center;
 }
 .cart_ord-tif-text label input {
-    height: auto;
+    /* height: auto; */
     margin-left: .625rem;
     color: var(--text-color);
     font-family: var(--parah-fontfamily);
@@ -220,17 +226,20 @@ header {
     border-bottom: 2px solid var(--second-color);
 }
 .date {
-    width: 9.375rem;
+    /* width: 9.375rem; */
     height: 2.5rem;
 }
 .number {
     width: 3.125rem;
 }
 .change {
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    justify-items: center;
+    /* width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
 
 }
 .cart_dishes h3 {
@@ -243,7 +252,7 @@ header {
 .dishes {
     margin: 0 1.875rem;
     padding: 1.25rem;
-    width: 37.5rem;
+    /* width: 37.5rem; */
     border: 1px solid black;
     border-radius: 1.25rem;
     display: flex;
@@ -274,14 +283,24 @@ header {
 
 .cart_ord-tif-end {
     margin: 1.25rem;
-    display: flex;
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    justify-items: center;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
 }
 .cart_ord-tif-end img {
     width: 18.75rem;
     height: 15.375rem;
+}
+.price {
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+    font-weight: bold;
 }
 .btn{
     font-family: var(--parah-fontfamily);
@@ -319,22 +338,28 @@ header {
 }
 
 footer {
-    height: 60vh;
+    /* height: 60vh; */
     background-color: var(--other-color);
 }
 .footer-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-items: center;
+    gap: 2rem;
+    /* height: 69%
+    margin: 0 3.125rem;;
     display: flex;
     flex-direction: row;
-    padding: 1.25rem 0;
-    margin: 0 3.125rem;
-    height: 69%;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
+    padding:2rem 0;
+    margin: 0 2rem;
     border-bottom: 2px solid var(--text-color);
-} 
+}   
 .footer-content {
-    display: flex;
+    padding: 1rem;
+    /* display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 20%; */
 }
 .footer-content img {
     width: 12.5rem;
@@ -378,16 +403,19 @@ footer {
     font-size: var(--p-font);
 }
 .footer-links {
+    padding: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 12.5rem;
-
+}
+.footer-links a {
+    padding: .5rem;
 }
 .footer-details p {
+    padding: 1rem;
     font-size: var(--p-font);
     font-family: var(--parah-fontfamily);
-    
 }
 
 .footer-links a img {
@@ -395,8 +423,24 @@ footer {
 }
 
 
+@media screen and (max-width:800px) {
+    html {
+        font-size: 12px;
+    }
+    .footer-details {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:460px){
+    html {
+        font-size: 10px;
+    }
+    
+}
 
-@media screen and (max-width:400px){
+
+
+/* @media screen and (max-width:400px){
     html{
         font-size: 8px;
     }
@@ -480,4 +524,4 @@ footer {
         margin: 0;
     }
     
-}
+} */

@@ -99,10 +99,10 @@
             <form class="login_page">
                 <h2 class="name_login"><span>Log</span> In</h2>
                 
-                <label>Phone Number:<input type="number" placeholder="Enter your Mobile number" class="input_box" required> </label>
-                <label>Password:<input type="password" placeholder="Enter your password" class="input_box"/> </label>
+                <label>Phone Number:<input type="number" placeholder="Enter your Mobile number" class="input_box" id="phone_number"> </label>
+                <label>Password:<input type="password" placeholder="Enter your password" class="input_box" id="password"/> </label>
                 <div class="btn">
-                    <a href="../../index.html" ><button class="btn_login" type="button" >Log in</button></a>
+                    <button class="btn_login" type="button" onclick="login()">Log in</button>
                 </div>
             </form>
         </section>
@@ -124,5 +124,22 @@
         </div>
     </footer>
     <!-- footer ends -->
+
+    <!-- script start -->
+    <script>
+        function login(){
+            const phone_number = document.getElementById("phone_number").value
+            const password = document.getElementById("password").value
+
+            console.log(phone_number)
+            console.log(password)
+
+            localStorage.setItem("user_number", phone_number)
+            localStorage.setItem("user_password", password)
+
+            window.location.href="../../index.html"
+        }  
+    </script>
+    <!-- script ends -->
 </body>
 </html>
