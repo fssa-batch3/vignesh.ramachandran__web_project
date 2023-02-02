@@ -369,16 +369,8 @@
     <!-- script starts -->
     <script>
         // All menus lists
-        for (i = 0; i < 5; i++) {
-            let div_lists;
-            let div_lists_text;
-            let img;
-            let h2;
-            let span;
-            let p;
-            let a;
 
-            const menus =
+        const menus =
                 [
                     {
                         name : "Morning",
@@ -428,8 +420,18 @@
                             alt : "custom menu image"
                         },
                         link: "./pages/products/Menus/menu-custom.html"
-                    }
+                    },
+                    
                 ]
+
+        for (i = 0; i < menus.length; i++) {
+            let div_lists;
+            let div_lists_text;
+            let img;
+            let h2;
+            let span;
+            let p;
+            let a;
 
             div_lists = document.createElement("div");
             div_lists.setAttribute("class", "lists");
@@ -457,7 +459,7 @@
             div_lists_text.append(p);
 
             a = document.createElement("a");
-            a.setAttribute("href", menus[i]["link"]);
+            a.setAttribute("href", menus[i]["link"]+ "?name="+menus[i]["name"]);
             a.innerText = "read more...";
             div_lists_text.append(a);
 

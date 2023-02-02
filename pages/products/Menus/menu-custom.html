@@ -638,10 +638,11 @@
                     }
                 ],
                 link : "../../homepage/my cart.html"
-            }
+            },
+            
         ]
 
-        for(i=0; i<9; i++)
+        for(i=0; i<custom_menu.length; i++)
         {
             let div_variety_types;
             let img_variety_types_img;
@@ -673,7 +674,7 @@
             ul = document.createElement("ul");
             div.append(ul);
 
-            for(j=0; j<6; j++)
+            for(j=0; j<custom_menu[i]["sub_names"].length; j++)
             {
                 list = document.createElement("li");
                 ul.append(list);

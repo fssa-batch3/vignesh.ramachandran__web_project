@@ -350,9 +350,9 @@ header {
     font-family: var(--parah-fontfamily);
     text-align: justify;
 }
-.our-service {
-    /* height: 85vh; */
-}
+/* .our-service {
+    height: 85vh;
+} */
 .our-service-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));

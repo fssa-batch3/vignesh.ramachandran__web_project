@@ -198,11 +198,8 @@
 
     <!-- script starts -->
     <script>
-        
-        for (i=0; i<7; i++)
-        {
 
-            const events = 
+const events = 
             [
                 {
                     name: "Birthday Party",
@@ -267,7 +264,9 @@
                     link: "./private party.html",
                 }
             ]
-
+        
+        for (i=0; i<events.length; i++)
+        {
             
             div_event = document.createElement("div");
             div_event.setAttribute("class", "event-1");
