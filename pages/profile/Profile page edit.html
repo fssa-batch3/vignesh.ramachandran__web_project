@@ -62,7 +62,7 @@
             <div class="dropdown_profile-content">
                 <div>
                     <a href="../profile/Profile page.html">My Profile</a>
-                    <a href="../profile/Register.html">Register</a>
+                    <a href="../profile/register.html">Register</a>
                     <a href="../profile/Login.html">Log in</a>
                     <a href="../profile/my orders.html">My Orders</a>
                 </div>
@@ -101,6 +101,12 @@
             <form>
                 <h2><span>MY</span> PROFILE</h2>
                 <div class="profile_form">
+
+                    <div class="profile_photo">
+                        <img class="sr" src="../../assets/img/sr.jpg" alt="profile image"/>
+                        <i class='bx bxs-camera'></i>
+                        <input type="file" name="change image" class="change-img"/>
+                    </div>
                         
                     <div class="details">
                         <label for="name">Name:</label>
@@ -111,13 +117,7 @@
                         <input type="number" name="phone_number" id="phone_number" placeholder="enter your number"  />
                         <label for="password">Password:</label>
                         <input type="password" name="password" id="password" placeholder="enter your password"  />
-                    </div>
-
-                        <aside class="profile_img">
-                            <img class="sr" src="../../assets/img/sr.jpg" alt="profile image"/>
-                            <i class='bx bxs-camera'></i>
-                            <input type="file" name="change image" class="change-img"/>
-                        </aside>
+                    </div>   
 
                 </div>
 
@@ -149,22 +149,36 @@
     <!-- script starts -->
     <script>
         function save() {
-            const name = document.getElementById("name").value
-            const email = document.getElementById("email").value
-            const phone_number = document.getElementById("phone_number").value
-            const password = document.getElementById("password").value
+            // const name = document.getElementById("name").value
+            // const email = document.getElementById("email").value
+            // const phone_number = document.getElementById("phone_number").value
+            // const password = document.getElementById("password").value
 
-            console.log(name)
-            console.log(email)
-            console.log(phone_number)
-            console.log(password)
+            // console.log(name)
+            // console.log(email)
+            // console.log(phone_number)
+            // console.log(password)
 
-            localStorage.setItem("user_name", name)
-            localStorage.setItem("user_email", email)
-            localStorage.setItem("user_number", phone_number)
-            localStorage.setItem("user_password", password)
+            // localStorage.setItem("user_name", name)
+            // localStorage.setItem("user_email", email)
+            // localStorage.setItem("user_number", phone_number)
+            // localStorage.setItem("user_password", password)
+
+            // window.location.href = "./Profile page.html"
+
+            let name = document.getElementById("name").value
+            let email = document.getElementById("email").value
+            let phone_number = document.getElementById("phone_number").value
+            let password = document.getElementById("password").value
+
+            localStorage.setItem("name", name);
+            localStorage.setItem("email", email);
+            localStorage.setItem("phone_number", phone_number);
+            localStorage.setItem("password", password);
 
             window.location.href = "./Profile page.html"
+
+
         }
         
     </script>

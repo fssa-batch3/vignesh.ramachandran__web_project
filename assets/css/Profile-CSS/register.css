@@ -165,7 +165,7 @@ main {
     background-image: url("../../img/ingredient.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .name_register {
@@ -173,53 +173,64 @@ main {
     font-family: var(--heading-fontfamily);
     font-size: var(--big-font);
     color: var(--text-color);
-
+    padding: 2rem 0;
 }
 .register {
-    display: flex;
+    /* display: flex;
     width: 100%;
-    height: 90vh;
-    padding: 1.25rem 0;
+    height: 90vh; */
+    padding: 2rem 0;
 }
 .register_page {
     margin: auto;
-    display: flex;
+    display: grid;
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 60vh;
-    width: 31.25rem;
+    justify-content: space-evenly; */
+    /* height: 60vh; */
+    max-width: 25rem;
     border: 2px solid var(--second-color);
     border-radius: 3.125rem;
-    padding: 1.25rem;
-    position: relative;
+    padding: 2rem;
+    /* position: relative; */
     background-color: var(--other-color);
-    box-shadow:.625rem .625rem var(--bg-color);
+    box-shadow:.625rem .625rem .625rem var(--bg-color);
+}
+.register_page img {
+    width: 40%;
+    margin: auto;
 }
 .register_page label {
     color: var(--text-color);
     font-family: var(--parah-fontfamily);
     font-size: var(--h2-font);
-    display: flex;
+    padding: 1rem;
+    /* display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center; */
 }
 .input_box {
-    position: absolute;
+    /* position: absolute;
     margin-left: 12.5rem;
     height: 1.875rem;
-    width: 45%;
+    width: 45%; */
     color: var(--text-color);
-    
     border: 1px solid var(--text-color);
-    padding-left: 1.25rem;
+    /* padding-left: 1.25rem; */
     font-family: var(--parah-fontfamily);
-    font-size: .9375rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    padding: 1rem ;
+    position: relative;
+}
+.input_box:not(:focus):valid + .register_page label{
+    position: absolute;
+    top: -9px;
+    z-index: 5;
 }
 .btn {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    padding: 2rem 0;
+    /* text-align: center; */
 }
 .btn_submit {
     padding: .625rem 1.25rem;
@@ -248,34 +259,53 @@ main {
 
 
 footer {
-    height: 10vh;
+    /* height: 10vh; */
+    background-color: var(--other-color);
 }
 .footer-details {
-    height: 100%;
+    height: 16%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     padding:1.25rem 3.125rem;
     font-size: var(--p-font);
-    border-top: 2px solid var(--text-color);
 }
 .footer-links {
+    padding: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 12.5rem;
 }
+.footer-links a {
+    padding: .5rem;
+}
 .footer-details p {
+    padding: 1rem;
     font-size: var(--p-font);
     font-family: var(--parah-fontfamily);
-    
 }
 .footer-links a img {
     width: 3.125rem;
 }
 
-@media screen and (max-width:400px){
+@media screen and (max-width:800px) {
+    html {
+        font-size: 12px;
+    }
+    .footer-details {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:460px){
+    html {
+        font-size: 10px;
+    }
+    
+}
+
+/* @media screen and (max-width:400px){
     html{
         font-size: 8px;
     }
@@ -324,7 +354,7 @@ footer {
 }
 
 
-/* @media screen and (max-width:300px){
+@media screen and (max-width:300px){
     html {
         font-size: 7px;
     }

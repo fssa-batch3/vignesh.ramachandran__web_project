@@ -61,7 +61,7 @@
             <div class="dropdown_profile-content">
                 <div>
                     <a href="../profile/Profile page.html">My Profile</a>
-                    <a href="../profile/Register.html">Register</a>
+                    <a href="../profile/register.html">Register</a>
                     <a href="../profile/Login.html">Log in</a>
                     <a href="../profile/my orders.html">My Orders</a>
                 </div>
@@ -97,11 +97,16 @@
         <!-- register form starts -->
         <section class="register">
             <form class="register_page">
+                <img src="../../assets/img/main-logo.png" alt="company logo">
                 <h2 class="name_register"><span>Register</span> Here</h2>
-                <label>Name:<input type="text" placeholder="Enter your name" class="input_box" id="name" /> </label>
-                <label>Email ID:<input type="email"  for="email" placeholder="Enter your email" class="input_box" id="email" /> </label>
-                <label>Phone Number:<input type="number" placeholder="Enter your Mobile number" class="input_box" id="phone_number" /> </label>
-                <label>Create Password:<input type="password" placeholder="Enter your password" class="input_box" id="password" /> </label>
+                <label>Name: </label>
+                <input type="text" placeholder="Enter your name" class="input_box" id="name" required="true"/>
+                <label>Email ID: </label>
+                <input type="email"  for="email" placeholder="Enter your email" class="input_box" id="email" required="true"/>
+                <label>Phone Number: </label>
+                <input type="number" placeholder="Enter your Mobile number" class="input_box" id="phone_number" required="true"/>
+                <label>Create Password: </label>
+                <input type="password" placeholder="Enter your password" class="input_box" id="password" required="true"/>
                 <div class="btn">
                     <button class="btn_submit" type="button" onclick="signup()">Submit</button>
                     <a href="./Login.html" class="exciting_user" type="button">Existing User?</a>
@@ -129,23 +134,48 @@
 
     <!-- script starts -->
     <script>
+
+        const user_data = localStorage.getItem("users");
+
+        let users = user_data ? JSON.parse(user_data) : [];
+        
         function signup(){
-            const name = document.getElementById("name").value 
-            const email = document.getElementById("email").value 
-            const phone_number = document.getElementById("phone_number").value 
-            const password = document.getElementById("password").value 
+            // const name = document.getElementById("name").value 
+            // const email = document.getElementById("email").value 
+            // const phone_number = document.getElementById("phone_number").value 
+            // const password = document.getElementById("password").value 
 
-            console.log(name)
-            console.log(email)
-            console.log(phone_number)
-            console.log(password)
+            // localStorage.setItem("user_name", name)
+            // localStorage.setItem("user_email", email)
+            // localStorage.setItem("user_number", phone_number)
+            // localStorage.setItem("user_password", password)
 
-            localStorage.setItem("user_name", name)
-            localStorage.setItem("user_email", email)
-            localStorage.setItem("user_number", phone_number)
-            localStorage.setItem("user_password", password)
+            // window.location.href = "./Login.html"
+
+            
+
+            //getting value from register page
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone_number = document.getElementById("phone_number").value;
+            const password = document.getElementById("password").value;
+
+            // storing the value in local storage
+
+            // let user = localStorage.setItem("name", name);
+            // let em = localStorage.setItem("email", email);
+            // let num = localStorage.setItem("phone_number", phone_number);
+            // let pass = localStorage.setItem("password", password);
+
+            users.push({name, email, phone_number, password});
+
+            localStorage.setItem("users", JSON.stringify(users));
+
+            alert("Register Sucessfull ✅")
 
             window.location.href = "./Login.html"
+            
         }
         
     </script>

@@ -160,31 +160,53 @@ header {
 }
 
 
-.profile {
-    height: 95vh;
-}
+/* .profile {
+    height: 95vh; 
+} */
 form{
-    margin: 0 10%;
-    height: 90%;
+    margin:2% 5%;
+    /* height: 90%; */
     border-radius: 1.875rem;
     box-shadow: .625rem .5rem .625rem var(--text-color);
     background-color: var(--other-color);
 }
 
 .profile_form {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    justify-items: center;
+    padding: 1rem;
+    /* display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    height: 70%;
-
+    height: 70%; */
 }
+
+
 form h2 {
     text-align: center;
     font-family: var(--heading-fontfamily);
     font-size: var(--big-font);
     color: var(--text-color);
     padding: 1.25rem 0;
+}
+
+.profile_photo {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+    /* width: 30%;
+    height: 90%; */
+}
+
+.sr {
+    border-radius: 50%;
+    width:21rem;  
+    height: 21rem;
+    padding: 1rem;
 }
 
 .edit_button {
@@ -196,9 +218,9 @@ form h2 {
     font-size: var(--p-font);
     color: var(--text-color);
     background-color: var(--bg-color);
-    width: 10rem;
-    height: 2.25rem;
-    padding: 5px 0;
+    /* width: 10rem; */
+    /* height: 2.25rem; */
+    padding: .5rem 1rem;
     border-radius: .625rem;
 }
 .edit_button:hover {
@@ -213,17 +235,20 @@ form h2 {
     
 }
 .details{
-    height: 75%;
+    display: grid;
+    gap: 1rem;
+    padding: 2rem 5rem;
+    /* height: 75%;
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
 .details label {
-    width: 50%;
+    /* width: 50%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center; */
     font-family: var(--parah-fontfamily);
     font-size: var(--h2-font);
     color: var(--text-color);
@@ -231,21 +256,25 @@ form h2 {
 }
 
 .details input {
-    width: 50%;
+    /* width: 50%; */
     color: var(--text-color);
     border: 1px solid var(--text-color);
     background-color: var(--bg-color);
-    padding: 5px 2.5rem;
+    padding: .5rem;
     font-size: var(--h2-font);
-    border-radius: 1.25rem;
+    border-radius: 1rem;
 } 
 
 
 .btn_content {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
     align-items: center;
+    justify-items: center;
 }
 .btn {
     font-family: var(--parah-fontfamily);
@@ -261,16 +290,20 @@ form h2 {
     
 }
 .logout_button{
-    margin-top: 2.5rem;
+    display: grid;
+    justify-items: center;
+    padding: 2rem;
+    /* margin-top: 2.5rem;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center; */
 }
 .logout {
     color: var(--bg-color);
     background-color: var(--second-color);
-    width: 7.5rem;
+    padding: .5rem 1rem;
+    /* width: 7.5rem; */
 }
 
 .btn:hover {
@@ -278,46 +311,58 @@ form h2 {
     transition: .2s;
     box-shadow: .5rem 0 .625rem black;
 }
-.profile_img {
-    width: 30%;
-    height: 90%;
-}
-.sr {
-    border-radius: 11.25rem;
-    width:85%;  
-}
+
+
 
 
 footer {
-    height: 10vh;
+    /* height: 10vh; */
+    background-color: var(--other-color);
 }
 .footer-details {
-    height: 100%;
+    /* height: 16%; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     padding:1.25rem 3.125rem;
     font-size: var(--p-font);
-    border-top: 2px solid var(--text-color);
 }
 .footer-links {
+    padding: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 12.5rem;
 }
+.footer-links a {
+    padding: .5rem;
+}
 .footer-details p {
+    padding: 1rem;
     font-size: var(--p-font);
     font-family: var(--parah-fontfamily);
-    
 }
 .footer-links a img {
     width: 3.125rem;
 }
 
+@media screen and (max-width:800px) {
+    html {
+        font-size: 12px;
+    }
+    .footer-details {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:460px){
+    html {
+        font-size: 10px;
+    }
+    
+}
 
-@media screen and (max-width:400px){
+/* @media screen and (max-width:400px){
     html{
         font-size: 8px;
     }
@@ -387,4 +432,4 @@ footer {
         font-size: 7px;
     }
     
-}
+} */

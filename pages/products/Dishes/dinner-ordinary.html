@@ -18,7 +18,7 @@
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-    <link rel="stylesheet" href="../../../assets/css/Dishes-CSS/dinner-ordinary.css">
+    <link rel="stylesheet" href="../../../assets/css/Dishes-CSS/dishes.css">
 
     <link rel="stylesheet" href="../../../assets/css/normalize.css">
 
@@ -62,7 +62,7 @@
             <div class="dropdown_profile-content">
                 <div>
                     <a href="../../profile/Profile page.html">My Profile</a>
-                    <a href="../../profile/Register.html">Register</a>
+                    <a href="../../profile/register.html">Register</a>
                     <a href="../../profile/Login.html">Log in</a>
                     <a href="../../profile/my orders.html">My Orders</a>
                 </div>
@@ -101,8 +101,8 @@
             <h2>Ordinary Dinner</h2>
         </div>
 
-        <section class="ordinary_dinner">
-            <!-- <div class="ordinary_dinner-content"> 
+        <section class="category">
+            <!-- <div class="content"> 
                 <h3><span>SR</span>'s Ordinary Dinner</h3>
                 <ul class="dishes">
                     <li>  MINI IDLY</li>
@@ -124,7 +124,7 @@
                     <a href="../../homepage/my cart.html"><button class="add-to-cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image"/></button></a>
                     <a href="../../profile/Order page.html"><button class="buy_now">Buy Now</button></a>
                 </div>
-                <div class="ordinary_dinner_about">
+                <div class="about">
                     <img src="../../../assets/img/Dishes/ordinary dinner.jpg" alt="ordinary dinner" />
                     <div>
                         <h2>Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious</h2>
@@ -212,17 +212,17 @@
             {
                 name : "'s Ordinary Dinner",
                 dishes : ["MINI IDLY", "PAROTA WITH CHOPS", "VEG MUSHROOM BRIYANI", "GULAB JAMUN", "COFFEE", "MYSORE BONDA", "MINI ONION UTTAPPAM",
-                            "COCONUT CHUTNY", "SAMBAR", "ONION RAITA", "ICE CREAM", "MINERAL WATER", "BANANA LEAF"],
-                
+                            "COCONUT CHUTNY", "SAMBAR", "ONION RAITA", "ICE CREAM", "MINERAL WATER", "BANANA LEAF",],
+                price : "200",     
             }
 
-            div_ordinary_dinner_content = document.createElement("div");
-            div_ordinary_dinner_content.setAttribute("class", "ordinary_dinner-content");
-            console.log(div_ordinary_dinner_content);
+            div_content = document.createElement("div");
+            div_content.setAttribute("class", "content");
+            console.log(div_content);
 
             heading = document.createElement("h3");
-            heading.innerText = "";
-            div_ordinary_dinner_content.append(heading);
+            heading.innerText = dinner_ord["name"];
+            div_content.append(heading);
 
             highlight = document.createElement("span");
             highlight.innerText = "SR";
@@ -230,21 +230,21 @@
 
             un_ordered_list = document.createElement("ul");
             un_ordered_list.setAttribute("class", "dishes");
-            div_ordinary_dinner_content.append(un_ordered_list);
+            div_content.append(un_ordered_list);
               
-            for(i=0; i<5; i++){
+            for(i=0; i<dinner_ord["dishes"].length; i++){
                 list = document.createElement("li");
-                list.innerText = "MINI IDLY";
+                list.innerText = dinner_ord["dishes"][i];
                 un_ordered_list.append(list);
             }
             
 
             div_btn = document.createElement("div")
             div_btn.setAttribute("class", "btn");
-            div_ordinary_dinner_content.append(div_btn);
+            div_content.append(div_btn);
             
             price = document.createElement("p");
-            price.innerText = "₹200";
+            price.innerText = "₹" + " " + dinner_ord["price"];
             div_btn.append(price);
 
             add_to_cart = document.createElement("a");
@@ -271,16 +271,16 @@
             button_buynow.innerText = "Buy Now";
             buy_now.append(button_buynow);
 
-            div_ordinary_dinner_about = document.createElement("div");
-            div_ordinary_dinner_about.setAttribute("class", "ordinary_dinner_about");
-            div_ordinary_dinner_content.append(div_ordinary_dinner_about);
+            div_about = document.createElement("div");
+            div_about.setAttribute("class", "about");
+            div_content.append(div_about);
 
             image_main = document.createElement("img");
             image_main.setAttribute("src", "../../../assets/img/Dishes/ordinary dinner.jpg");
-            div_ordinary_dinner_about.append(image_main);
+            div_about.append(image_main);
 
             div_details = document.createElement("div");
-            div_ordinary_dinner_about.append(div_details);
+            div_about.append(div_details);
 
             parah = document.createElement("h2");
             parah.innerText = "Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious";
@@ -290,7 +290,7 @@
             details.innerText = "We seek to impress your guests with our flavours and best culinary skills, our professionals can cater to your orders – be it vegetarian buffet, non-vegetarian. Our menu includes Mini Idly, Parotta with Chops, Biryani, Sweet, Idiyapam, Bonda, Coffee, Special Chutney, Sambar, Coconut Chutney,Onion Raitha and etc. Our SR Catering make it as a best budgetary and tastiest dinner menu & a leading budget dinner service provider.";
             div_details.append(details);
 
-            document.querySelector("section.ordinary_dinner").append(div_ordinary_dinner_content)
+            document.querySelector("section.category").append(div_content)
 
     // </script>
     <!-- script ends -->

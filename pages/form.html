@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
+    family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap" 
+    rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+
+    <link rel="stylesheet" href="../assets/css/form.css">
+
+    <link rel="icon" href="../../assets/img/main-logo.png" >
+    <title>sample form</title>
+</head>
+<body>
+    <main>
+        <!-- order form starts -->
+            <section class="my-order">
+                <form class="my-order_form">
+                    <div>
+                        <h2>CATERING ORDER</h2>
+                        <h3>Personal Details</h3>
+                        <label>NAME: </label>
+                        <input type="text"  placeholder="Enter your name" id="name"/>
+                        <label>EMAIL ID: </label>
+                        <input type="email" placeholder="Enter your email" id="email"/>
+                        <label>PHONE NUMBER: </label>
+                        <input type="number" placeholder="Phone number" id="phone_number"/>
+                        <label>ADDRESS: </label>
+                        <textarea type="text" placeholder="Enter your place" id="comments"></textarea>
+                        <button type="submit" class="btn-submit" onclick="order()">Submit</button> 
+                        <!-- <a href="../profile/Thanks.html">
+                            <button type="button" class="btn-submit" onclick="submit()">Submit</button> 
+                        </a> -->
+                    </div>
+                </form>
+        </section>
+        <!-- order form ends -->
+
+    </main>
+    <!-- main ends -->
+    <script>
+        function order(){
+            const name = document.getElementById("name").value
+            const email = document.getElementById("email").value
+            const phone_number = document.getElementById("phone_number").value
+            const comments= document.getElementById("comments").value
+
+            console.log(name)
+            console.log(email)
+            console.log(phone_number)
+            console.log(comments)
+
+            localStorage.setItem("user_name", name)
+            localStorage.setItem("user_email", email)
+            localStorage.setItem("user_number", phone_number)
+            localStorage.setItem("user_comments", comments)
+
+            window.location.href="#"
+        }  
+    </script>
+</body>
+</html>

@@ -33,6 +33,8 @@
 
     <!-- Header starts -->
     <header>
+        <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
+
         <div class="icon-left">
             <img src="./assets/img/main-logo.png" alt="Company Logo" class="logo" />
             <img src="./assets/img/Fav.png" alt="catering Logo" class="catering" />
@@ -41,7 +43,9 @@
             </div>
         </div>
 
-        <ul class="navigation">
+        <ul class="navigation" id="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
             <li><a href="./index.html" class="navigation-link">HOME</a></li>
             <li class="dropdown">
                 <span class="navigation-link">MENU</span>
@@ -66,14 +70,14 @@
             <div class="dropdown_profile-content">
                 <div>
                     <a href="./pages/profile/Profile page.html">My Profile</a>
-                    <a href="./pages/profile/Register.html">Register</a>
+                    <a href="./pages/profile/register.html">Register</a>
                     <a href="./pages/profile/Login.html">Log in</a>
                     <a href="./pages/profile/my orders.html">My Orders</a>
                 </div>
             </div>
         </div>
 
-        <div class="bx bx-menu">
+        <!-- <div class="bx bx-menu">
             <ul class="responsive-navigation">
                 <li><a href="./index.html" class="navigation-link">HOME</a></li>
                 <li class="dropdown">
@@ -93,7 +97,7 @@
                 <li><a href="./pages/homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
                 <li><a href="./pages/homepage/my cart.html" class="navigation-link">MY CART</a></li>
             </ul>
-        </div>
+        </div> -->
 
     </header>
 
@@ -101,7 +105,7 @@
 
     <!-- main starts -->
 
-    <main>
+    <main class="123">
 
         <!-- Food image starts -->
         <div class="food-image">
@@ -368,6 +372,16 @@
 
     <!-- script starts -->
     <script>
+        function openNav(){
+            document.getElementById("sidenav").style.width = "190px";
+            // document.body.style.backgroundColor = "var(--other-color)";
+        }
+
+        function closeNav(){
+            document.getElementById("sidenav").style.width = "0";
+            // document.body.style.backgroundColor = "white";
+        }
+        
         // All menus lists
 
         const menus =

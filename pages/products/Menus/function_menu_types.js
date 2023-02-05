@@ -28,7 +28,7 @@ function menus() {
         div.append(h2);
 
         p = document.createElement("p");
-        p.innerText = menu_types[i]["price"]["value"];
+        p.innerText = menu_types[i]["price"]["currency"] + " " + menu_types[i]["price"]["value"];
         div.append(p);
 
         a = document.createElement("a");

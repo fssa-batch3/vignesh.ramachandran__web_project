@@ -62,7 +62,7 @@
             <div class="dropdown_profile-content">
                 <div>
                     <a href="../../profile/Profile page.html">My Profile</a>
-                    <a href="../../profile/Register.html">Register</a>
+                    <a href="../../profile/register.html">Register</a>
                     <a href="../../profile/Login.html">Log in</a>
                     <a href="../../profile/my orders.html">My Orders</a>
                 </div>
@@ -318,31 +318,31 @@
                 [
                     {
                         dish : "Veg Soup",
-                        price : "₹40",
+                        price : 40
                     },
                     {
                         dish : "Tomato Soup",
-                        price : "₹35"
+                        price : 35
                     },
                     {
                         dish: "Mushroom Soup",
-                        price : "₹70"
+                        price : 70
                     },
                     {
                         dish : "Chicken Soup",
-                        price : "₹80"
+                        price : 80
                     },
                     {
                         dish : "Mutton Soup",
-                        price : "₹90"
+                        price : 90
                     },
                     {
                         dish : "Veg Noodle Soup",
-                        price : "₹50"
+                        price : 50
                     },
                     {
                         dish : "Sweetcorn Soup", 
-                        price : "₹60"
+                        price : 60
                     }
                 ],
                 link : "../../homepage/my cart.html",
@@ -358,31 +358,31 @@
                 [
                     {
                         dish : "Roti", 
-                        price : "₹30",
+                        price : 30
                     },
                     {
                         dish : "Naan",
-                        price : "₹40"
+                        price : 40
                     }, 
                     {
                         dish : "Butter Naan",
-                        price : "₹50"
+                        price : 50
                     }, 
                     {
                         dish : "Chapati",
-                        price : "₹40"
+                        price : 40
                     }, 
                     {
                         dish : "Kulcha",
-                        price : "₹50"
+                        price : 50
                     }, 
                     {
                         dish : "Pulka",
-                        price : "₹50" 
+                        price : 50 
                     },
                     {
                         dish : "Bhatura",
-                        price  : "₹35"
+                        price  : 35
                     }
                 ],
                 link : "../../homepage/my cart.html",
@@ -398,11 +398,11 @@
                 [
                     {
                         dish : "Veg Parotta", 
-                        price : "₹10"
+                        price : 10
                     },
                     {
                         dish : "Egg Parotta",
-                        price : "₹15"
+                        price : 15
                     }, 
                     {
                         dish : "Chicken parotta",
@@ -410,15 +410,15 @@
                     }, 
                     {
                         dish : "Aloo parotta",
-                        price : "₹30"
+                        price : 30
                     }, 
                     {
                         dish : "Kothu parotta",
-                        price : "₹40"
+                        price : 40
                     }, 
                     {
                         dish : "Chilli parotta",
-                        price  : "₹60"
+                        price  : 60
                     },
                 ],
                 link : "../../homepage/my cart.html",
@@ -470,27 +470,27 @@
                 [
                     {
                         dish : "Veg biriyani",
-                        price : "₹60"
+                        price : 60
                     }, 
                     {
                         dish : "Chicken biriyani",
-                        price  : "₹80"
+                        price  : 80
                     }, 
                     {
                         dish : "Mutton biriyani", 
-                        price : "₹100"
+                        price : 100
                     }, 
                     {
                         dish : "Quail biriyani",
-                        price : "₹110"
+                        price : 110
                     }, 
                     {
                         dish : "Veg pulav",
-                        price : "₹50"
+                        price : 50
                     },
                     {
                         dish : "Mushroom pulav",
-                        price  : "₹70"
+                        price  : 70
                     }
                 ],
                 link : "../../homepage/my cart.html",
@@ -506,27 +506,27 @@
                 [
                     {
                         dish : "Tea",
-                        price : "₹7"
+                        price : 7
                     },
                     {
                         dish : "Coffee",
-                        price : "₹7"
+                        price : 7
                     }, 
                     {
                         dish : "Pista Milk", 
-                        price : "₹15"
+                        price : 15
                     }, 
                     {
                         dish :"Masala Tea",
-                        price : "10"
+                        price : 10
                     }, 
                     {
                         dish : "Lemon Juice", 
-                        price : "₹10"
+                        price : 10
                     }, 
                     {
                         dish : "Grape Juice",
-                        price : "₹20"
+                        price : 20
                     }
                 ],
                 link : "../../homepage/my cart.html",
@@ -688,7 +688,7 @@
                 list.append(types);
 
                 price = document.createElement("p");
-                price.innerText = custom_menu[i]["sub_names"][j]["price"];
+                price.innerText = "₹" + " " + custom_menu[i]["sub_names"][j]["price"];
                 list.append(price);
 
             }

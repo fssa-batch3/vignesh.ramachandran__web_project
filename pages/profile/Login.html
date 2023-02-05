@@ -61,7 +61,7 @@
             <div class="dropdown_profile-content">
                 <div>
                     <a href="../profile/Profile page.html">My Profile</a>
-                    <a href="../profile/Register.html">Register</a>
+                    <a href="../profile/register.html">Register</a>
                     <a href="../profile/Login.html">Log in</a>
                     <a href="../profile/my orders.html">My Orders</a>
                 </div>
@@ -97,13 +97,18 @@
         <!-- login form starts -->
         <section class="login">
             <form class="login_page">
+                <img src="../../assets/img/main-logo.png" alt="company logo">
                 <h2 class="name_login"><span>Log</span> In</h2>
                 
-                <label>Phone Number:<input type="number" placeholder="Enter your Mobile number" class="input_box" id="phone_number"> </label>
-                <label>Password:<input type="password" placeholder="Enter your password" class="input_box" id="password"/> </label>
+                <label>Phone Number: </label>
+                <input type="number" placeholder="Enter your Mobile number" class="input_box" id="phone_number">
+                <label>Password: </label>
+                <input type="password" placeholder="Enter your password" class="input_box" id="password"/>
                 <div class="btn">
                     <button class="btn_login" type="button" onclick="login()">Log in</button>
                 </div>
+                <p>New to Website? <a href="./register.html">Create an account</a> </p>
+                
             </form>
         </section>
         <!-- login form ends -->
@@ -128,16 +133,42 @@
     <!-- script start -->
     <script>
         function login(){
-            const phone_number = document.getElementById("phone_number").value
-            const password = document.getElementById("password").value
+            // const phone_number = document.getElementById("phone_number").value
+            // const password = document.getElementById("password").value
 
-            console.log(phone_number)
-            console.log(password)
+            // console.log(phone_number)
+            // console.log(password)
 
-            localStorage.setItem("user_number", phone_number)
-            localStorage.setItem("user_password", password)
+            // localStorage.setItem("user_number", phone_number)
+            // localStorage.setItem("user_password", password)
 
-            window.location.href="../../index.html"
+            // window.location.href="../../index.html"
+
+            let enterNumber = document.getElementById("phone_number").value;
+            let enterPassword = document.getElementById("password").value;
+
+            // get data from local storage
+            let getNumber = localStorage.getItem("phone_number");
+            let getPassword = localStorage.getItem("password");
+
+            if (enterNumber == getNumber)
+            {
+                if (enterPassword == getPassword)
+                {
+                    alert("Login Sucessful ✅")
+                    window.location.href="../../index.html"
+                }
+                else 
+                {
+                    alert("Wrong Password ❌")
+                }
+            }
+            else
+            {
+                alert("Invalid Details 😈")
+            }
+
+            
         }  
     </script>
     <!-- script ends -->

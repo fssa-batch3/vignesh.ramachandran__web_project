@@ -91,5 +91,5 @@
 // 1 
 
 
-str = "My name is \n SR"
-console.log(str)
+// str = "My name is \n SR"
+// console.log(str)

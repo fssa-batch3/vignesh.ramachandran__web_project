@@ -62,7 +62,7 @@
             <div class="dropdown_profile-content">
                 <div>
                     <a href="../profile/Profile page.html">My Profile</a>
-                    <a href="../profile/Register.html">Register</a>
+                    <a href="../profile/register.html">Register</a>
                     <a href="../profile/Login.html">Log in</a>
                     <a href="../profile/my orders.html">My Orders</a>
                 </div>
@@ -101,21 +101,21 @@
             <form>
                 <h2><span>MY</span> PROFILE</h2>
                 <div class="profile_form">
-                        
-                        <div class="details">
-                            <label for="name">Name:</label>
-                            <input type="text" name="name" placeholder="name" id="name" disabled />
-                            <label for="email">Email:</label>
-                            <input type="email" name="email" placeholder="email" id="email" disabled/>
-                            <label for="number">Phone Number:</label>
-                            <input type="number" name="phone no." placeholder="number" id="phone_number" disabled/>
-                            <label for="password">Password:</label>
-                            <input type="password" name="password" placeholder="password" id="password" disabled/>
-                        </div>
 
-                        <aside class="profile_img">
-                            <img class="sr" src="../../assets/img/sr.jpg" alt="profile image"/>
-                        </aside>
+                    <div class="profile_photo">
+                        <img class="sr" src="../../assets/img/sr.jpg" alt="profile image"/>
+                    </div>
+
+                    <div class="details">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" disabled />
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" disabled/>
+                        <label for="number">Phone Number:</label>
+                        <input type="number" name="phone no." id="phone_number" disabled/>
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" disabled/>
+                    </div>    
 
                 </div>
 
@@ -155,20 +155,49 @@
 
     <!-- script starts -->
     <script>
-        const user_name = localStorage.getItem("user_name");
-        const user_email = localStorage.getItem("user_email");
-        const user_number = localStorage.getItem("user_number");
-        const user_password = localStorage.getItem("user_password");
+        // const user_name = localStorage.getItem("user_name");
+        // const user_email = localStorage.getItem("user_email");
+        // const user_number = localStorage.getItem("user_number");
+        // const user_password = localStorage.getItem("user_password");
 
-        console.log(name)
-        console.log(email)
-        console.log(phone_number)
-        console.log(password)
+        // console.log(name)
+        // console.log(email)
+        // console.log(phone_number)
+        // console.log(password)
 
-        document.getElementById("name").value = user_name
-        document.getElementById("email").value = user_email
-        document.getElementById("phone_number").value = user_number
-        document.getElementById("password").value = user_password
+        // document.getElementById("name").value = user_name
+        // document.getElementById("email").value = user_email
+        // document.getElementById("phone_number").value = user_number
+        // document.getElementById("password").value = user_password
+
+
+
+        // let user_name = localStorage.getItem("name")
+        // let user_email = localStorage.getItem("email")
+        // let user_number = localStorage.getItem("phone_number")
+        // let user_password = localStorage.getItem("password")
+
+        // document.getElementById("name").value = user_name;
+        // document.getElementById("email").value = user_email;
+        // document.getElementById("phone_number").value = user_number;
+        // document.getElementById("password").value = user_password;
+
+
+        //get value from local storage
+        const data = JSON.parse(localStorage.getItem("users"));
+
+        console.log(data)
+
+        document.getElementById("name").value = data.name
+        document.getElementById("email").value = data.email
+        document.getElementById("phone_number").value = data.number
+        document.getElementById("password").value = data.password
+
+        
+
+
+
+        
     </script>
 
 </body>
