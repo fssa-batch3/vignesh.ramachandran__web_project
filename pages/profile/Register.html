@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="../../assets/css/normalize.css">
 
     <link rel="icon" href="../../assets/img/main-logo.png" >
+
+    <script src="./register & login.js"></script>
     <title>Register</title>
 </head>
 <body>
@@ -96,7 +98,7 @@
     <main>
         <!-- register form starts -->
         <section class="register">
-            <form class="register_page">
+            <form class="register_page" role="form" onsubmit="signUp(event);">
                 <img src="../../assets/img/main-logo.png" alt="company logo">
                 <h2 class="name_register"><span>Register</span> Here</h2>
                 <label>Name: </label>
@@ -108,7 +110,7 @@
                 <label>Create Password: </label>
                 <input type="password" placeholder="Enter your password" class="input_box" id="password" required="true"/>
                 <div class="btn">
-                    <button class="btn_submit" type="button" onclick="signup()">Submit</button>
+                    <button class="btn_submit" type="submit">Submit</button>
                     <a href="./Login.html" class="exciting_user" type="button">Existing User?</a>
                 </div>
             </form>
@@ -133,7 +135,7 @@
     <!-- footer ends -->
 
     <!-- script starts -->
-    <script>
+    <!-- <script>
 
         const user_data = localStorage.getItem("users");
 
@@ -178,7 +180,7 @@
             
         }
         
-    </script>
+    </script> -->
     <!-- script ends -->
 </body>
 </html>

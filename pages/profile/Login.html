@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="../../assets/css/normalize.css">
 
     <link rel="icon" href="../../assets/img/main-logo.png" >
+
+    <script src="./register & login.js"></script>
     <title>Log In</title>
 </head>
 <body>
@@ -96,7 +98,7 @@
     <main>
         <!-- login form starts -->
         <section class="login">
-            <form class="login_page">
+            <form class="login_page" role="form" onsubmit="signIn(event)">
                 <img src="../../assets/img/main-logo.png" alt="company logo">
                 <h2 class="name_login"><span>Log</span> In</h2>
                 
@@ -105,7 +107,7 @@
                 <label>Password: </label>
                 <input type="password" placeholder="Enter your password" class="input_box" id="password"/>
                 <div class="btn">
-                    <button class="btn_login" type="button" onclick="login()">Log in</button>
+                    <button class="btn_login" type="submit">Log in</button>
                 </div>
                 <p>New to Website? <a href="./register.html">Create an account</a> </p>
                 
@@ -131,7 +133,7 @@
     <!-- footer ends -->
 
     <!-- script start -->
-    <script>
+    <!-- <script>
         function login(){
             // const phone_number = document.getElementById("phone_number").value
             // const password = document.getElementById("password").value
@@ -170,7 +172,7 @@
 
             
         }  
-    </script>
+    </script> -->
     <!-- script ends -->
 </body>
 </html>

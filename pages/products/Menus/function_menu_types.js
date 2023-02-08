@@ -1,5 +1,5 @@
 function menus() {
-    for(i=0; i<3; i++)
+    for(let i=0; i<3; i++)
     {   
         let div_menu_list;
         let img_class;

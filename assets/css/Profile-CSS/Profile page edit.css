@@ -189,7 +189,6 @@ form{
     flex-direction: column;
     justify-content: space-evenly; */
     display: grid;
-    align-items: center;
     justify-items: center;
     gap: 1rem;
     align-items: center;

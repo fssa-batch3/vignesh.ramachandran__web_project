@@ -184,14 +184,24 @@
 
 
         //get value from local storage
-        const data = JSON.parse(localStorage.getItem("users"));
+        const data = JSON.parse(localStorage.getItem("userData"));
 
-        console.log(data)
+        console.log(data);
 
-        document.getElementById("name").value = data.name
+        // data.push("name", "email", "phone_number", "password")
+
+        const user_name = localStorage.getItem("name");
+        const user_email = localStorage.getItem("email");
+        const user_number = localStorage.getItem("phone_number");
+        const user_password = localStorage.getItem("password");
+
+        document.getElementById("name").value = data.user_name
         document.getElementById("email").value = data.email
-        document.getElementById("phone_number").value = data.number
+        document.getElementById("phone_number").value = data.phone_number
         document.getElementById("password").value = data.password
+
+
+
 
         
 
