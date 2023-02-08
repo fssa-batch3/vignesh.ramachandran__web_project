@@ -37,16 +37,16 @@ const signIn = e =>{
 
     let userData = JSON.parse(localStorage.getItem("userData")) || [];
     let exist = userData.length &&
-    JSON.parse(localStorage.getItem("userData")).some(function(data){
-        data.phone_number.toLowerCase() == phone_number &&
-        data.password.toLowerCase() == password}
+    JSON.parse(localStorage.getItem("userData")).some(data =>
+        data.phone_number.toLowerCase() == phone_number.toLowerCase() &&
+        data.password.toLowerCase() == password.toLowerCase()
         );
-    if(!exist){
-        alert("Invalid Details 😈");
-    }
-    else{
-        alert("Login Sucessful ✅");
-        location.href = "../../index.html";
-    }
-    e.preventDefault();
+        if(!exist){
+            alert("Invalid Details 😈");
+        }
+        else{
+            alert("Login Sucessful ✅");
+            location.href = "../../index.html";
+        }
+        e.preventDefault();
 }
