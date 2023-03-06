@@ -16,13 +16,25 @@
     --update profile
     --delete profile
     
-
 ## dish CRUD
     --create dish
     --edit dish
     --update dish
     --delete dish
 
+## menu CRUD
+-- create menu
+-- read menu
+-- read menu details
+-- update menu details
+-- delete menu
+
+## category CRUD
+-- create category
+-- read category
+-- read category details
+-- update category details
+-- delete category 
 
             
             
