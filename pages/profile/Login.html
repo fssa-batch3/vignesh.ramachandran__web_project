@@ -17,29 +17,33 @@
 
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
+    <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/Profile-CSS/login.css">
 
     <link rel="stylesheet" href="../../assets/css/normalize.css">
 
     <link rel="icon" href="../../assets/img/main-logo.png" >
 
-    <script src="./register & login.js"></script>
+    <script src="../../assets/JS/register & login.js"></script>
     <title>Log In</title>
 </head>
 <body>
     <!-- header starts -->
     <header> 
+        <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
+
         <div class="icon-left">
             <img src="../../assets/img/main-logo.png" alt="Company Logo" class="logo"/>
-            <img src="../../assets/img/Fav.png" alt="catering Logo" class="catering" />
+            <h1>SR</h1>
             <div>
                 <p>Catering</p>
             </div>
         </div>
         
-        <ul class="navigation">
+        <ul class="navigation" id="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
             <li><a href="../../index.html" class="navigation-link">HOME</a></li>
-            
             <li class="dropdown">
                 <span class="navigation-link">MENU</span>
                 <div class="dropdown-content">
@@ -69,28 +73,6 @@
                 </div>
             </div>
         </div>
-        <div class="bx bx-menu" >
-            <ul class="responsive-navigation">
-                <li><a href="../../index.html" class="navigation-link">HOME</a></li>
-                
-                <li class="dropdown">
-                    <span class="navigation-link">MENU</span>
-                    <div class="dropdown-content">
-                        <div>
-                            <a href="../products/Menus/menu-morning.html" >Morning Menu</a>
-                            <a href="../products/Menus/menu-lunch.html" >Lunch Menu</a>
-                            <a href="../products/Menus/menu-hightea.html" >Hightea Menu</a>
-                            <a href="../products/Menus/menu-dinner.html" >Dinner Menu</a>
-                            <a href="../products/Menus/menu-custom.html" >Custom Menu</a>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="../homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
-                <li><a href="../homepage/about us.html" class="navigation-link">ABOUT US</a></li>
-                <li><a href="../homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-                <li><a href="../homepage/my cart.html" class="navigation-link">MY CART</a></li>
-            </ul>
-        </div>
     </header>
     <!-- header ends -->
 
@@ -103,12 +85,18 @@
                 <h2 class="name_login"><span>Log</span> In</h2>
                 
                 <label>Phone Number: </label>
-                <input type="number" placeholder="Enter your Mobile number" class="input_box" id="phone_number">
+                <input type="tel" placeholder="Enter your Mobile number" class="input_box" id="phone_number" pattern="[0-9].{9}" title="Enter 10 number only" required="true">
                 <label>Password: </label>
-                <input type="password" placeholder="Enter your password" class="input_box" id="password"/>
+                <input type="password" placeholder="Enter your password" class="input_box" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="true"/>
+                <div class="visible_pass">
+                    <input type="checkbox" id="show">
+                    <label>Show password</label>
+                </div>
+                
                 <div class="btn">
                     <button class="btn_login" type="submit">Log in</button>
                 </div>
+                <a href="./forget_password.html" class="forget_pass">Forget Password?</a>
                 <p>New to Website? <a href="./register.html">Create an account</a> </p>
                 
             </form>
@@ -121,7 +109,7 @@
 
     <footer>
         <div class="footer-details">
-            <p>Copyright © 2021 - 2022 SR Catering - Website Designed By <span>vicky</span></p>
+            <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
             <p>(+91)6379370482</p>
             <div class="footer-links">
                 <a href="https://www.instagram.com/vicky_sk_forever?r=nametag" > <img src="../../assets/img/instagram.jpg" alt="instagram"/> </a>
@@ -132,47 +120,19 @@
     </footer>
     <!-- footer ends -->
 
-    <!-- script start -->
-    <!-- <script>
-        function login(){
-            // const phone_number = document.getElementById("phone_number").value
-            // const password = document.getElementById("password").value
+    <!-- script starts -->
+    <script>
+        // show password
+        const Password = document.querySelector("#password");
+        const Checkbox = document.querySelector("#show");
 
-            // console.log(phone_number)
-            // console.log(password)
 
-            // localStorage.setItem("user_number", phone_number)
-            // localStorage.setItem("user_password", password)
-
-            // window.location.href="../../index.html"
-
-            let enterNumber = document.getElementById("phone_number").value;
-            let enterPassword = document.getElementById("password").value;
-
-            // get data from local storage
-            let getNumber = localStorage.getItem("phone_number");
-            let getPassword = localStorage.getItem("password");
-
-            if (enterNumber == getNumber)
-            {
-                if (enterPassword == getPassword)
-                {
-                    alert("Login Sucessful ✅")
-                    window.location.href="../../index.html"
-                }
-                else 
-                {
-                    alert("Wrong Password ❌")
-                }
-            }
-            else
-            {
-                alert("Invalid Details 😈")
-            }
-
-            
-        }  
-    </script> -->
+        Checkbox.addEventListener('click',function(){
+        const type =Password.getAttribute("type")=== "password" ? "text" : "password";
+        Password.setAttribute("type",type);
+        })
+    </script>
     <!-- script ends -->
+
 </body>
 </html>

@@ -22,149 +22,6 @@ span {
     color: var(--second-color);
 }
 
-header {
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 1.25rem;
-    justify-content: space-between;
-}
-
-.icon-left {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    
-}
-.icon-left div p {
-    color: var(--thickgreen-color);
-    font-size: var(--h2-font);
-    font-size: 2.5rem;
-}
-.catering {
-    width: 4.375rem;
-}
-.logo {
-    width: 7.5rem;
-}
-
-.menu-bar {
-    font-size: 1.875rem;
-    color: var(--text-color);
-    cursor: pointer;  
-}
-.navigation {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 1.25rem;
-    list-style: none;
-   
-}
-.navigation-link {
-    padding: 1.25rem;
-    color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 700;
-    font-family: var(--heading-fontfamily);
-}
-.navigation-link:hover {
-    color: var(--second-color);
-    transition: .2s;
-}
-
-.dropdown {
-    position: relative;
-    
-}
-.dropdown span {
-    padding: 1.25rem;
-    color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 700;
-    font-family: var(--heading-fontfamily);
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--other-color);
-    padding: .625rem .625rem;
-    z-index: 1;
-    width: 11.25rem;
-    border-radius: 1.25rem;
-
-}
-.dropdown-content div {
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.dropdown-content a {
-    padding: .625rem;
-    color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 700;
-    font-family: var(--heading-fontfamily);
-    border-bottom: 1px solid var(--text-color);
-}
-.dropdown-content a:hover {
-    color: var(--second-color);
-}
-
-.dropdown_profile {
-    position: relative;
-    
-}
-.dropdown_profile img {
-    width: 3.125rem;
-}
-.dropdown_profile-content {
-    display: none;
-    position: absolute;
-    background-color: var(--other-color);
-    padding: .625rem .625rem;
-    z-index: 1;
-    right: 10%;
-    border-radius: 1.25rem;
-    width: 6.875rem;
-    
-}
-.dropdown_profile-content div {
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-    
-    transform: translate(-1.875rem 0);
-    
-}
-.dropdown_profile:hover .dropdown_profile-content {
-    display: block;
-    
-}
-.dropdown_profile-content a {
-    padding: .625rem;
-    color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 700;
-    font-family: var(--heading-fontfamily);
-    border-bottom: 1px solid var(--text-color);
-}
-.dropdown_profile-content a:hover {
-    color: var(--second-color);
-}
-
-.bx-menu {
-    display: none;
-    font-size: 3rem;
-    color: var(--text-color);
-    cursor: pointer;
-}
 
 
 main {
@@ -223,30 +80,60 @@ main {
     /* width: 45%; */
     border: 1px solid var(--text-color);
     /* padding-left: 1.25rem; */
-    font-family: var(--parah-fontfamily);
-    font-size: 1rem;
     border-radius: 1rem;
     padding: 1rem ;
+    font-family: var(--parah-fontfamily);
+    font-size: 1rem;
+}
+/* .input_box::placeholder {
+    font-family: var(--parah-fontfamily);
+    font-size: 1rem;
+    color: var(--bg-color);
+}
+input:focus{
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    font-family: var(--p-font);
+    font-size: 1rem;
+} */
+.visible_pass{
+    padding-top: 2rem;
+}
+.visible_pass label{
+    font-size: var(--p-font);
+}
+.forget_pass {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    color: blue;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.forget_pass:hover{
+    transition: .2s;
+    color: var(--second-color);
 }
 .btn {
     padding: 2rem 0;
     text-align: center;
 }
 .btn_login {
-    padding: .625rem 1.25rem;
-    width: 6.25rem;
-    color: var(--second-color);
-    background-color: var(--text-color);
+    padding: .7rem 1.5rem;
+    /* width: 6.25rem; */
+    color: var(--text-color);
+    background-color: var(--second-color);
     font-family: var(--parah-fontfamily);
     font-size: var(--parah-fontfamily);
     border-radius: 1.25rem;
-    font-weight: bold;
+    font-weight: bolder;
     border: transparent;
 }
 .btn_login:hover {
-    background-color: var(--second-color);
+    /* background-color: var(--second-color);
     border: 2px solid var(--second-color);
-    color: var(--text-color);
+    color: var(--text-color); */
+    transform: scale(1.1);
+    box-shadow: .5rem .5rem .625rem black;
 }
 .login_page p {
     font-family: var(--parah-fontfamily);

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,46 +9,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
-    family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap" 
-    rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
+    <link rel="stylesheet" href="../../../assets/css/header.css">
     <link rel="stylesheet" href="../../../assets/css/Dishes-CSS/dishes.css">
 
     <link rel="stylesheet" href="../../../assets/css/normalize.css">
 
-    <link rel="icon" href="../../../assets/img/main-logo.png" >
+    <link rel="icon" href="../../../assets/img/main-logo.png">
+
+    <script src="../../../assets/JS/product.js"></script>
     <title>Ordinary Dinner</title>
 </head>
+
 <body>
     <!-- header starts -->
-    <header>  
+    <header>
+        <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
+
         <div class="icon-left">
-            <img src="../../../assets/img/main-logo.png" alt="Company Logo" class="logo"/>
-            <img src="../../../assets/img/Fav.png" alt="catering Logo" class="catering" />
+            <img src="../../../assets/img/main-logo.png" alt="Company Logo" class="logo" />
+            <h1>SR</h1>
             <div>
                 <p>Catering</p>
             </div>
         </div>
-        
-        <ul class="navigation">
+
+        <ul class="navigation" id="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
             <li><a href="../../../index.html" class="navigation-link">HOME</a></li>
-            
             <li class="dropdown">
                 <span class="navigation-link">MENU</span>
                 <div class="dropdown-content">
                     <div>
-                        <a href="../../products/Menus/menu-morning.html" >Morning Menu</a>
-                        <a href="../../products/Menus/menu-lunch.html" >Lunch Menu</a>
-                        <a href="../../products/Menus/menu-hightea.html" >Hightea Menu</a>
-                        <a href="../../products/Menus/menu-dinner.html" >Dinner Menu</a>
-                        <a href="../../products/Menus/menu-custom.html" >Custom Menu</a>
+                        <a href="../Menus/menu-morning.html">Morning Menu</a>
+                        <a href="../Menus/menu-lunch.html">Lunch Menu</a>
+                        <a href="../Menus/menu-hightea.html">Hightea Menu</a>
+                        <a href="../Menus/menu-dinner.html">Dinner Menu</a>
+                        <a href="../Menus/menu-custom.html">Custom Menu</a>
                     </div>
                 </div>
             </li>
@@ -58,7 +67,7 @@
         </ul>
 
         <div class="dropdown_profile">
-            <img src="../../../assets/img/profile.png" alt="profile image"  />
+            <img src="../../../assets/img/profile.png" alt="profile image" />
             <div class="dropdown_profile-content">
                 <div>
                     <a href="../../profile/Profile page.html">My Profile</a>
@@ -68,30 +77,8 @@
                 </div>
             </div>
         </div>
-        <div class="bx bx-menu" >
-            <ul class="responsive-navigation">
-                <li><a href="../../../index.html" class="navigation-link">HOME</a></li>
-                
-                <li class="dropdown">
-                    <span class="navigation-link">MENU</span>
-                    <div class="dropdown-content">
-                        <div>
-                            <a href="../../products/Menus/menu-morning.html" >Morning Menu</a>
-                            <a href="../../products/Menus/menu-lunch.html" >Lunch Menu</a>
-                            <a href="../../products/Menus/menu-hightea.html" >Hightea Menu</a>
-                            <a href="../../products/Menus/menu-dinner.html" >Dinner Menu</a>
-                            <a href="../../products/Menus/menu-custom.html" >Custom Menu</a>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="../../homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
-                <li><a href="../../homepage/about us.html" class="navigation-link">ABOUT US</a></li>
-                <li><a href="../../homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-                <li><a href="../../homepage/my cart.html" class="navigation-link">MY CART</a></li>
-            </ul>
-        </div>
     </header>
-    <!-- header ends --> 
+    <!-- header ends -->
 
     <!-- main starts -->
 
@@ -144,14 +131,19 @@
             <div class="related-menu_content">
                 <div class="related-menu1">
                     <img src="../../../assets/img/Dishes/special dinner.jpg" alt="special dinner" />
-                    <a href="./dinner-special.html" ><h2><span>Special</span> Dinner</h2></a>
+                    <a href="./dinner-special.html">
+                        <h2><span>Special</span> Dinner</h2>
+                    </a>
                 </div>
                 <div class="related-menu1">
                     <img src="../../../assets/img/Dishes/vip dinner.jpg" alt="vip dinner" />
-                    <a href="./dinner-vip.html"><h2><span>VIP</span> Dinner</h2></a>
-                </div> 
+                    <a href="./dinner-vip.html">
+                        <h2><span>VIP</span> Dinner</h2>
+                    </a>
+                </div>
             </div>
-            
+
+
         </section>
         <!-- related menu ends -->
     </main>
@@ -164,7 +156,8 @@
             <div class="footer-content">
                 <img src="../../../assets/img/main-logo.png" alt="Company Logo" />
                 <p>
-                    SR Catering service is a professional catering service provider located in Kumbakonam, catering both personal and corporate orders.
+                    SR Catering service is a professional catering service provider located in Kumbakonam, catering both
+                    personal and corporate orders.
                 </p>
             </div>
             <div class="footer-content">
@@ -184,6 +177,14 @@
                 </ul>
             </div>
             <div class="footer-content">
+                <h3><span>Hightea</span> Menus</h3>
+                <ul>
+                    <li><a href="../Dishes/hightea-ordinary.html" class="footer-navigation">Ordinary Hightea</a></li>
+                    <li><a href="../Dishes/hightea-special.html" class="footer-navigation">Special Hightea</a></li>
+                    <li><a href="../Dishes/hightea-vip.html" class="footer-navigation">VIP Hightea</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
                 <h3><span>Dinner</span> Menus</h3>
                 <ul>
                     <li><a href="../Dishes/dinner-ordinary.html" class="footer-navigation">Ordinary Dinner</a></li>
@@ -193,32 +194,71 @@
             </div>
         </div>
         <div class="footer-details">
-            <p>Copyright © 2021 - 2022 SR Catering - Website Designed By <span>vicky</span></p>
+            <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
             <p>(+91)6379370482</p>
             <div class="footer-links">
-                <a href="https://www.instagram.com/vicky_sk_forever?r=nametag" > <img src="../../../assets/img/instagram.jpg" alt="instagram"/> </a>
-                <a href="https://www.facebook.com/profile.php?id=100011341742455"> <img src="../../../assets/img/facebook.jpg" alt="facebook link"/> </a>
-                <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"> <img src="../../../assets/img/twitter.png" alt="twitter link"/> </a>
+                <a href="https://www.instagram.com/vicky_sk_forever?r=nametag"> <img
+                        src="../../../assets/img/instagram.jpg" alt="instagram" /> </a>
+                <a href="https://www.facebook.com/profile.php?id=100011341742455"> <img
+                        src="../../../assets/img/facebook.jpg" alt="facebook link" /> </a>
+                <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"> <img
+                        src="../../../assets/img/twitter.png" alt="twitter link" /> </a>
             </div>
         </div>
-        
+
     </footer>
     <!-- footer ends -->
 
     <!-- script starts -->
     <script>
 
+        // let menuData = JSON.parse(localStorage.getItem("menuData"));
+
+        // // filtering Dinner Menu
+        // let findMenu = "4";
+
+        // function getMenu(e){
+        //     return e.menuName === findMenu;
+        // }
+        // let findData = dishData.filter(getMenu)
+
+
+        // //  filtering Category = ordinary
+        // let findCategory = "1";
+
+        // function getCategory(e){
+        //     return e.categoryName === findCategory;
+        // }
+        // let findData2 = findData.filter(getCategory)
+        // // console.log(findData2)
+
+        // let dishCount = findData2[0]["dishName"].length;
+        // // console.log(dishCount)
+
+        // let dishes = findData2[0]["dishName"];
+        
+        // // for(i=0; i<dishCount; i++){
+        // //     dishes[i]
+        // // }
+        // // console.log(dishes);
+        
+        
+
+        
+
+        // window.location =`../Dishes/dinner-ordinary.html?name=${getCategory}`
+
             const dinner_ord = 
             {
                 name : "'s Ordinary Dinner",
                 dishes : ["MINI IDLY", "PAROTA WITH CHOPS", "VEG MUSHROOM BRIYANI", "GULAB JAMUN", "COFFEE", "MYSORE BONDA", "MINI ONION UTTAPPAM",
-                            "COCONUT CHUTNY", "SAMBAR", "ONION RAITA", "ICE CREAM", "MINERAL WATER", "BANANA LEAF",],
+                            "COCONUT CHUTNY", "SAMBAR", "ONION RAITA", "ICE CREAM", "MINERAL WATER", "BANANA LEAF"],
+                 
                 price : "200",     
             }
 
             div_content = document.createElement("div");
             div_content.setAttribute("class", "content");
-            console.log(div_content);
 
             heading = document.createElement("h3");
             heading.innerText = dinner_ord["name"];
@@ -231,18 +271,25 @@
             un_ordered_list = document.createElement("ul");
             un_ordered_list.setAttribute("class", "dishes");
             div_content.append(un_ordered_list);
-              
-            for(i=0; i<dinner_ord["dishes"].length; i++){
+
+            // for(i=0; i<dishes.length; i++){
+            //     list = document.createElement("li");
+            //     list.innerText = dishes[i]["name"];
+            //     un_ordered_list.append(list); 
+            // }
+
+            for (i = 0; i < dinner_ord["dishes"].length; i++) {
+
+                // findData2[0]["dishName"][i]
                 list = document.createElement("li");
                 list.innerText = dinner_ord["dishes"][i];
-                un_ordered_list.append(list);
+                un_ordered_list.append(list); 
             }
-            
 
             div_btn = document.createElement("div")
             div_btn.setAttribute("class", "btn");
             div_content.append(div_btn);
-            
+
             price = document.createElement("p");
             price.innerText = "₹" + " " + dinner_ord["price"];
             div_btn.append(price);
@@ -252,7 +299,7 @@
             div_btn.append(add_to_cart);
 
             button = document.createElement("button");
-            button.setAttribute ("class", "add-to-cart");
+            button.setAttribute("class", "add-to-cart");
             button.innerText = "Add to Cart";
             add_to_cart.append(button);
 
@@ -292,11 +339,9 @@
 
             document.querySelector("section.category").append(div_content)
 
-    // </script>
+    </script>
     <!-- script ends -->
 
-
-
-
 </body>
+
 </html>

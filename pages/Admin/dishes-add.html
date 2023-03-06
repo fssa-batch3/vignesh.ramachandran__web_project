@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,45 +9,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
-    family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap" 
-    rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/normalize.css">
 
-    <link rel="icon" href="../../assets/img/main-logo.png" >
+    <link rel="icon" href="../../assets/img/main-logo.png">
 
     <link rel="stylesheet" href="../../assets/css/Admin/dishes-add.css">
+    <!-- unique id creation -->
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
     <title>Dishes Add</title>
 </head>
+
 <body>
-    <header> 
+    <header>
         <div class="icon-left">
-            <img src="../../assets/img/main-logo.png" alt="Company Logo" class="logo"/>
+            <img src="../../assets/img/main-logo.png" alt="Company Logo" class="logo" />
             <img src="../../assets/img/Fav.png" alt="catering Logo" class="catering" />
             <div>
                 <p>Catering</p>
             </div>
         </div>
-        
+
         <ul class="navigation">
             <li><a href="../../index.html" class="navigation-link">HOME</a></li>
-            
+
             <li class="dropdown">
                 <span class="navigation-link">MENU</span>
                 <div class="dropdown-content">
                     <div>
-                        <a href="../products/Menus/menu-morning.html" >Morning Menu</a>
-                        <a href="../products/Menus/menu-lunch.html" >Lunch Menu</a>
-                        <a href="../products/Menus/menu-hightea.html" >Hightea Menu</a>
-                        <a href="../products/Menus/menu-dinner.html" >Dinner Menu</a>
-                        <a href="../products/Menus/menu-custom.html" >Custom Menu</a>
+                        <a href="../products/Menus/menu-morning.html">Morning Menu</a>
+                        <a href="../products/Menus/menu-lunch.html">Lunch Menu</a>
+                        <a href="../products/Menus/menu-hightea.html">Hightea Menu</a>
+                        <a href="../products/Menus/menu-dinner.html">Dinner Menu</a>
+                        <a href="../products/Menus/menu-custom.html">Custom Menu</a>
                     </div>
                 </div>
             </li>
@@ -57,7 +62,7 @@
         </ul>
 
         <div class="dropdown_profile">
-            <img src="../../assets/img/profile.png" alt="profile image"  />
+            <img src="../../assets/img/profile.png" alt="profile image" />
             <div class="dropdown_profile-content">
                 <div>
                     <a href="../profile/Profile page.html">My Profile</a>
@@ -69,9 +74,45 @@
         </div>
     </header>
 
+    <main>
+        <form>
+            <h2>DISHES - ADD</h2>
+
+            <div class="menu-type">
+                <label>Select Menu</label>
+                <select class="menulist" id="menuName" required>
+                    <option value="">Select</option>
+
+                </select>
+                <button class="btn show1" type="button">Show Category</button>
+            </div>
+            <div class="category-type">
+                <label>Select Category</label>
+                <select class="categorylist" id="categoryName" required>
+                    <option value="">Select</option>
+
+                </select>
+            </div>
+            <div class="container">
+                <div class="heading">
+                    <p>Add Dishes in the Category</p>
+                    <i class='bx bx-plus'></i>
+                </div>
+
+                <div id="input_group">
+                    <!-- <input type="text" id="dish1">
+                    <i class="bx bx-x"></i> -->
+                </div>
+            </div>
+            <button type="button" class="btn_submit" id="submit">Submit</button>
+        </form>
+
+    </main>
 
 
-    
+
+    <script src="../../assets/JS/Admin scripts/dishes_add.js"></script>
 
 </body>
+
 </html>

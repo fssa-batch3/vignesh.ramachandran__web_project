@@ -18,6 +18,7 @@
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
+    <link rel="stylesheet" href="../../../assets/css/header.css">
     <link rel="stylesheet" href="../../../assets/css/Dishes-CSS/dishes.css">
 
     <link rel="stylesheet" href="../../../assets/css/normalize.css" >
@@ -28,26 +29,29 @@
 <body>
     <!-- header starts -->
     <header>  
+        <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
+
         <div class="icon-left">
-            <img src="../../../assets/img/main-logo.png" alt="Company Logo" class="logo"/>
-            <img src="../../../assets/img/Fav.png" alt="catering Logo" class="catering" />
+            <img src="../../../assets/img/main-logo.png" alt="Company Logo" class="logo" />
+            <h1>SR</h1>
             <div>
                 <p>Catering</p>
             </div>
         </div>
         
-        <ul class="navigation">
+        <ul class="navigation" id="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
             <li><a href="../../../index.html" class="navigation-link">HOME</a></li>
-            
             <li class="dropdown">
                 <span class="navigation-link">MENU</span>
                 <div class="dropdown-content">
                     <div>
-                        <a href="../../products/Menus/menu-morning.html" >Morning Menu</a>
-                        <a href="../../products/Menus/menu-lunch.html" >Lunch Menu</a>
-                        <a href="../../products/Menus/menu-hightea.html" >Hightea Menu</a>
-                        <a href="../../products/Menus/menu-dinner.html" >Dinner Menu</a>
-                        <a href="../../products/Menus/menu-custom.html" >Custom Menu</a>
+                        <a href="../Menus/menu-morning.html">Morning Menu</a>
+                        <a href="../Menus/menu-lunch.html">Lunch Menu</a>
+                        <a href="../Menus/menu-hightea.html">Hightea Menu</a>
+                        <a href="../Menus/menu-dinner.html">Dinner Menu</a>
+                        <a href="../Menus/menu-custom.html">Custom Menu</a>
                     </div>
                 </div>
             </li>
@@ -68,28 +72,6 @@
                 </div>
             </div>
         </div>
-        <div class="bx bx-menu" >
-            <ul class="responsive-navigation">
-                <li><a href="../../../index.html" class="navigation-link">HOME</a></li>
-                
-                <li class="dropdown">
-                    <span class="navigation-link">MENU</span>
-                    <div class="dropdown-content">
-                        <div>
-                            <a href="../../products/Menus/menu-morning.html" >Morning Menu</a>
-                            <a href="../../products/Menus/menu-lunch.html" >Lunch Menu</a>
-                            <a href="../../products/Menus/menu-hightea.html" >Hightea Menu</a>
-                            <a href="../../products/Menus/menu-dinner.html" >Dinner Menu</a>
-                            <a href="../../products/Menus/menu-custom.html" >Custom Menu</a>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="../../homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
-                <li><a href="../../homepage/about us.html" class="navigation-link">ABOUT US</a></li>
-                <li><a href="../../homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-                <li><a href="../../homepage/my cart.html" class="navigation-link">MY CART</a></li>
-            </ul>
-        </div>
     </header>
     <!-- header ends --> 
 
@@ -105,7 +87,7 @@
             <div class="content"> 
                 <h3><span>SR</span>'s Ordinary Tiffin</h3>
                 <ul class="dishes">
-                    <li>  KUSHBOO IDLY</li>
+                    <li>  IDLY</li>
                     <li>  KITCHADI</li>
                     <li>  VADA</li>
                     <li>  POORI - VEG GRAVY</li>
@@ -183,6 +165,14 @@
                 </ul>
             </div>
             <div class="footer-content">
+                <h3><span>Hightea</span> Menus</h3>
+                <ul>
+                    <li><a href="../Dishes/hightea-ordinary.html" class="footer-navigation">Ordinary Hightea</a></li>
+                    <li><a href="../Dishes/hightea-special.html" class="footer-navigation">Special Hightea</a></li>
+                    <li><a href="../Dishes/hightea-vip.html" class="footer-navigation">VIP Hightea</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
                 <h3><span>Dinner</span> Menus</h3>
                 <ul>
                     <li><a href="../Dishes/dinner-ordinary.html" class="footer-navigation">Ordinary Dinner</a></li>
@@ -192,7 +182,7 @@
             </div>
         </div>
         <div class="footer-details">
-            <p>Copyright © 2021 - 2022 SR Catering - Website Designed By <span>vicky</span></p>
+            <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
             <p>(+91)6379370482</p>
             <div class="footer-links">
                 <a href="https://www.instagram.com/vicky_sk_forever?r=nametag" > <img src="../../../assets/img/instagram.jpg" alt="instagram"/> </a>

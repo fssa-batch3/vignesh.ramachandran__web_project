@@ -26,8 +26,15 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    padding: 1rem;
+    margin: 1rem 0;
+    padding: 0 1rem;
     justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    background-color: var(--bg-color);
+    box-shadow: 10px 8px 15px 5px grey;
+    border-radius: 4rem;
 }
 
 .icon-left {
@@ -39,14 +46,20 @@ header {
 }
 .icon-left div p {
     color: var(--thickgreen-color);
+    font-family: var(--heading-fontfamily);
     font-size: var(--h2-font);
     font-size: 2.5rem;
+    font-weight: bold;
 }
-.catering {
-    width: 4.375rem;
+.icon-left h1 {
+    font-family: var(--heading-fontfamily);
+    color: var(--second-color);
+    font-size: var(--name-font);
+    font-weight: bold;
 }
+
 .logo {
-    width: 7.5rem;
+    width: 6.5rem;
 }
 
 .menu-bar {
@@ -268,12 +281,12 @@ header {
 .lists-text a {
     width: 6.25rem;
     font-size: var(--p-font);
-    color: var(--second-color);
+    color: blue;
     font-family: var(--parah-fontfamily);
 }
 .lists-text a:hover {
     transition: .2s;
-    color: blue;
+    color: var(--second-color);
     border-bottom: 1px solid var(--text-color);
 }
 .why-choose-us {

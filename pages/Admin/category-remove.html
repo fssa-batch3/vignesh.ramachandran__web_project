@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,45 +9,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
-    family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap" 
-    rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/normalize.css">
 
-    <link rel="icon" href="../../assets/img/main-logo.png" >
+    <link rel="icon" href="../../assets/img/main-logo.png">
 
-    <link rel="stylesheet" href="../../assets/css/Admin/types in the menu-remove.css">
-    <title>Types in the Menu Remove</title>
+    <link rel="stylesheet" href="../../assets/css/Admin/category remove.css">
+    <title>category Remove</title>
 </head>
+
 <body>
-    <header> 
+    <header>
         <div class="icon-left">
-            <img src="../../assets/img/main-logo.png" alt="Company Logo" class="logo"/>
+            <img src="../../assets/img/main-logo.png" alt="Company Logo" class="logo" />
             <img src="../../assets/img/Fav.png" alt="catering Logo" class="catering" />
             <div>
                 <p>Catering</p>
             </div>
         </div>
-        
+
         <ul class="navigation">
             <li><a href="../../index.html" class="navigation-link">HOME</a></li>
-            
+
             <li class="dropdown">
                 <span class="navigation-link">MENU</span>
                 <div class="dropdown-content">
                     <div>
-                        <a href="../products/Menus/menu-morning.html" >Morning Menu</a>
-                        <a href="../products/Menus/menu-lunch.html" >Lunch Menu</a>
-                        <a href="../products/Menus/menu-hightea.html" >Hightea Menu</a>
-                        <a href="../products/Menus/menu-dinner.html" >Dinner Menu</a>
-                        <a href="../products/Menus/menu-custom.html" >Custom Menu</a>
+                        <a href="../products/Menus/menu-morning.html">Morning Menu</a>
+                        <a href="../products/Menus/menu-lunch.html">Lunch Menu</a>
+                        <a href="../products/Menus/menu-hightea.html">Hightea Menu</a>
+                        <a href="../products/Menus/menu-dinner.html">Dinner Menu</a>
+                        <a href="../products/Menus/menu-custom.html">Custom Menu</a>
                     </div>
                 </div>
             </li>
@@ -57,7 +60,7 @@
         </ul>
 
         <div class="dropdown_profile">
-            <img src="../../assets/img/profile.png" alt="profile image"  />
+            <img src="../../assets/img/profile.png" alt="profile image" />
             <div class="dropdown_profile-content">
                 <div>
                     <a href="../profile/Profile page.html">My Profile</a>
@@ -71,8 +74,42 @@
 
     <main>
         <section>
-            <h2>Types in the Menu-Remove</h2>
-            <div class="content">
+            <form>
+                <h2>Category Remove</h2>
+
+                <div class="select_menu">
+                    <h3>Select Menu</h3>
+                    <select name="menu" id="menuName" class="menulist">
+                        <option value="">Select</option>
+
+                    </select>
+                    <button class="btn show1" type="button">Show Category</button>
+                </div>
+
+
+                <div class="select_category">
+                    <h3>Select Category</h3>
+                    <select name="category" id="categoryName" class="categorylist">
+                        <option value="">Select</option>
+
+                    </select>
+                    <button class="btn show2" type="button">Show Details</button>
+                </div>
+                <div class="category_details">
+                    <input type="text" class="category_name" id="categoryNameGet" readonly />
+                    <input type="text" class="category_image" id="categoryImageGet" />
+                    <input type="number" class="category_price" id="categoryPriceGet"  />
+                </div>
+
+                <button class="btn delete" type="button">Delete</button>
+                <button type="button" class="btn save">Save</button>
+
+            </form>
+        </section>
+
+
+
+        <!-- <div class="content">
                 <div class="menu-type">
                     <label>Menu Types</label>
                     <select class="select-menu">
@@ -90,70 +127,69 @@
                     <div class="two">
                         <div class="remove-types">
                             <div>
-                                <input type="checkbox"/>
+                                <input type="checkbox" />
                                 <label for="">Ordinary</label>
                             </div>
                             <div>
-                                <input type="checkbox"/>
+                                <input type="checkbox" />
                                 <label for="">Special</label>
                             </div>
                             <div>
-                                <input type="checkbox"/>
+                                <input type="checkbox" />
                                 <label for="">VIP</label>
                             </div>
                             <div>
-                                <input type="checkbox"/>
+                                <input type="checkbox" />
                                 <label for="">Soup Menus</label>
                             </div>
                             <div>
-                                <input type="checkbox"/>
+                                <input type="checkbox" />
                                 <label for="">Roti Menus</label>
                             </div>
                             <div>
-                                <input type="checkbox"/>
+                                <input type="checkbox" />
                                 <label for="">Parotta Menus</label>
                             </div>
                             <div>
-                                <input type="checkbox"/>
+                                <input type="checkbox" />
                                 <label for="">Non-Veg Menus</label>
                             </div>
                             <div>
-                                <input type="checkbox"/>
+                                <input type="checkbox" />
                                 <label for="">Biriyani Menus</label>
                             </div>
                             <div>
-                                <input type="checkbox"/>
+                                <input type="checkbox" />
                                 <label for="">Welcome Drinks</label>
                             </div>
                             <div>
-                                <input type="checkbox"/>
+                                <input type="checkbox" />
                                 <label for="">Desserts</label>
                             </div>
                             <div>
-                                <input type="checkbox"/>
+                                <input type="checkbox" />
                                 <label for="">Starters</label>
                             </div>
                             <div>
-                                <input type="checkbox"/>
+                                <input type="checkbox" />
                                 <label for="">Dosa varities</label>
                             </div>
-                        </div>    
+                        </div>
 
-                        <button class="btn_remove" type="button">Remove</button>
                     </div>
                 </div>
-                <a href="" ><button type="button" class="btn_submit">Submit</button></a>
-                
-            </div>
-        </section>
+
+
+            </div> -->
 
 
     </main>
 
+    <script src="../../assets/JS/Admin scripts/category_remove.js"></script>
 
 
 
 
-    
 </body>
+
 </html>

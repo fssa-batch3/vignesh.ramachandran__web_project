@@ -20,143 +20,6 @@ span {
     color: var(--second-color);
 }
 
-header {
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 1.25rem;
-    justify-content: space-between;
-}
-
-.icon-left {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    
-}
-.icon-left div p {
-    color: var(--thickgreen-color);
-    font-size: var(--h2-font);
-    font-size: 2.5rem;
-}
-.catering {
-    width: 4.375rem;
-}
-.logo {
-    width: 7.5rem;
-}
-
-.menu-bar {
-    font-size: 1.875rem;
-    color: var(--text-color);
-    cursor: pointer;  
-}
-.navigation {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 1.25rem;
-    list-style: none;
-   
-}
-.navigation-link {
-    padding: 1.25rem;
-    color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 700;
-    font-family: var(--heading-fontfamily);
-}
-.navigation-link:hover {
-    color: var(--second-color);
-    transition: .2s;
-}
-
-.dropdown {
-    position: relative;
-    
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--other-color);
-    padding: .625rem;
-    z-index: 1;
-    width: 11.25rem;
-    border-radius: 1.25rem;
-
-}
-.dropdown-content div {
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.dropdown-content a {
-    padding: .625rem;
-    color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 700;
-    font-family: var(--heading-fontfamily);
-    border-bottom: 1px solid var(--text-color);
-}
-.dropdown-content a:hover {
-    color: var(--second-color);
-}
-
-.dropdown_profile {
-    position: relative;
-    
-}
-.dropdown_profile img {
-    width: 3.125rem;
-}
-.dropdown_profile-content {
-    display: none;
-    position: absolute;
-    background-color: var(--other-color);
-    padding: .625rem;
-    z-index: 1;
-    right: 10%;
-    border-radius: 1.25rem;
-    width: 6.875rem;
-    
-}
-.dropdown_profile-content div {
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-    
-    transform: translate(-1.875rem 0);
-    
-}
-.dropdown_profile:hover .dropdown_profile-content {
-    display: block;
-    
-}
-.dropdown_profile-content a {
-    padding: .625rem;
-    color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 700;
-    font-family: var(--heading-fontfamily);
-    border-bottom: 1px solid var(--text-color);
-}
-.dropdown_profile-content a:hover {
-    color: var(--second-color);
-}
-
-.bx-menu {
-    display: none;
-    font-size: 3rem;
-    color: var(--text-color);
-    cursor: pointer;
-}
 .ingredient-image {
     background-image: url(../../img/ingredient.jpg);
     background-repeat: no-repeat;
@@ -177,33 +40,36 @@ header {
 } */
 .function_content {
     padding:3.125rem;
-    margin: 0 3.75rem;
-    /* height: 50vh;
+    /*margin: 0 3.75rem;
+    height: 50vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center; */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr)); */
     align-items: center;
+    justify-items: center;
+    gap: 2rem;
     border-bottom: 2px solid var(--text-color);
    
     
 }
 .function_content img {
-    width: 37.5rem;
-    height: 19.625rem;
+    width: 70%;
+    /* height: 19.625rem; */
     
 }
 .function_text {
-    width: 37.5rem;
-    height: 25rem;
+    /* width: 37.5rem;
+    height: 25rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     
 }
 .function_text h3 {
+    padding-bottom: 1rem;
     font-family: var(--heading-fontfamily);
     font-size: var(--h2-font);
     color: var(--second-color);
@@ -214,9 +80,9 @@ header {
     color: var(--text-color);
     line-height: 2.1875rem;
 }
-.bdy_menu {
+/* .bdy_menu {
     height: 100vh;
-}
+} */
 .bdy_menu-content {
     padding: 1.25rem 0;
     display: flex;
