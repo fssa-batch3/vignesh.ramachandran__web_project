@@ -212,6 +212,7 @@ function getData() {
             // pushing the all dishes into the dishName []
             m.push({ name: dishes, id: i });
         }
+        // console.log(m[0])
 
 
         // let my_uuid = uuidv4();
@@ -242,7 +243,7 @@ function getData() {
             for (i = localDishcount + 1; i < n + inputCount; i++) {
 
                 let localDishcount = m.length;
-                console.log(localDishcount);
+                // console.log(localDishcount);
 
                 let b = "";
                 let a = true;
@@ -264,10 +265,11 @@ function getData() {
 
                 if (a !== false) {
 
-                    alert("Dish Added Sucessfully ✅");
                     m.push({ name: dishes, id: localDishcount + 1 });
 
                     localStorage.setItem("menuData", JSON.stringify(menuData));
+                    alert("Dish Added Sucessfully ✅");
+
                     location.reload()
 
                 }

@@ -162,7 +162,6 @@ section{
 .remove_form h2 {
     font-family: var(--heading-fontfamily);
     font-size: var(--h2-font);
-    color: var(--text-color);
     text-align: center;
     border-bottom: 1px solid var(--text-color);
     color: var(--second-color);

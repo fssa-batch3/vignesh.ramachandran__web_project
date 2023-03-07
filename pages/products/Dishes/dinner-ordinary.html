@@ -236,108 +236,109 @@
         // // console.log(dishCount)
 
         // let dishes = findData2[0]["dishName"];
-        
+
         // // for(i=0; i<dishCount; i++){
         // //     dishes[i]
         // // }
         // // console.log(dishes);
-        
-        
 
-        
+
+
+
 
         // window.location =`../Dishes/dinner-ordinary.html?name=${getCategory}`
 
-            const dinner_ord = 
-            {
-                name : "'s Ordinary Dinner",
-                dishes : ["MINI IDLY", "PAROTA WITH CHOPS", "VEG MUSHROOM BRIYANI", "GULAB JAMUN", "COFFEE", "MYSORE BONDA", "MINI ONION UTTAPPAM",
-                            "COCONUT CHUTNY", "SAMBAR", "ONION RAITA", "ICE CREAM", "MINERAL WATER", "BANANA LEAF"],
-                 
-                price : "200",     
-            }
+        // const dinner_ord =
+        // {
+        //     name: "'s Ordinary Dinner",
+        //     dishes: ["MINI IDLY", "PAROTA WITH CHOPS", "VEG MUSHROOM BRIYANI", "GULAB JAMUN", "COFFEE", "MYSORE BONDA", "MINI ONION UTTAPPAM",
+        //         "COCONUT CHUTNY", "SAMBAR", "ONION RAITA", "ICE CREAM", "MINERAL WATER", "BANANA LEAF"],
 
-            div_content = document.createElement("div");
-            div_content.setAttribute("class", "content");
+        //     price: "200",
+        // }
 
-            heading = document.createElement("h3");
-            heading.innerText = dinner_ord["name"];
-            div_content.append(heading);
+        // div_content = document.createElement("div");
+        // div_content.setAttribute("class", "content");
 
-            highlight = document.createElement("span");
-            highlight.innerText = "SR";
-            heading.prepend(highlight);
+        // heading = document.createElement("h3");
+        // heading.innerText = dinner_ord["name"];
+        // div_content.append(heading);
 
-            un_ordered_list = document.createElement("ul");
-            un_ordered_list.setAttribute("class", "dishes");
-            div_content.append(un_ordered_list);
+        // highlight = document.createElement("span");
+        // highlight.innerText = "SR";
+        // heading.prepend(highlight);
 
-            // for(i=0; i<dishes.length; i++){
-            //     list = document.createElement("li");
-            //     list.innerText = dishes[i]["name"];
-            //     un_ordered_list.append(list); 
-            // }
+        // un_ordered_list = document.createElement("ul");
+        // un_ordered_list.setAttribute("class", "dishes");
+        // div_content.append(un_ordered_list);
 
-            for (i = 0; i < dinner_ord["dishes"].length; i++) {
+        // // for(i=0; i<dishes.length; i++){
+        // //     list = document.createElement("li");
+        // //     list.innerText = dishes[i]["name"];
+        // //     un_ordered_list.append(list); 
+        // // }
 
-                // findData2[0]["dishName"][i]
-                list = document.createElement("li");
-                list.innerText = dinner_ord["dishes"][i];
-                un_ordered_list.append(list); 
-            }
+        // for (i = 0; i < dinner_ord["dishes"].length; i++) {
 
-            div_btn = document.createElement("div")
-            div_btn.setAttribute("class", "btn");
-            div_content.append(div_btn);
+        //     // findData2[0]["dishName"][i]
+        //     list = document.createElement("li");
+        //     list.innerText = dinner_ord["dishes"][i];
+        //     un_ordered_list.append(list);
+        // }
 
-            price = document.createElement("p");
-            price.innerText = "₹" + " " + dinner_ord["price"];
-            div_btn.append(price);
+        // div_btn = document.createElement("div")
+        // div_btn.setAttribute("class", "btn");
+        // div_content.append(div_btn);
 
-            add_to_cart = document.createElement("a");
-            add_to_cart.setAttribute("href", "../../homepage/my cart.html");
-            div_btn.append(add_to_cart);
+        // price = document.createElement("p");
+        // price.innerText = "₹" + " " + dinner_ord["price"];
+        // div_btn.append(price);
 
-            button = document.createElement("button");
-            button.setAttribute("class", "add-to-cart");
-            button.innerText = "Add to Cart";
-            add_to_cart.append(button);
+        // add_to_cart = document.createElement("a");
+        // add_to_cart.setAttribute("href", "../../homepage/my cart.html");
+        // div_btn.append(add_to_cart);
 
-            plus_image = document.createElement("img");
-            plus_image.setAttribute("class", "plus-image");
-            plus_image.setAttribute("src", "../../../assets/img/plus.png");
-            plus_image.setAttribute("alt", "plus image");
-            button.append(plus_image);
+        // button = document.createElement("button");
+        // button.setAttribute("class", "add-to-cart");
+        // button.innerText = "Add to Cart";
+        // add_to_cart.append(button);
 
-            buy_now = document.createElement("a");
-            buy_now.setAttribute("href", "../../profile/Order page.html");
-            div_btn.append(buy_now);
+        // plus_image = document.createElement("img");
+        // plus_image.setAttribute("class", "plus-image");
+        // plus_image.setAttribute("src", "../../../assets/img/plus.png");
+        // plus_image.setAttribute("alt", "plus image");
+        // button.append(plus_image);
 
-            button_buynow = document.createElement("button");
-            button_buynow.setAttribute("class", "buy_now");
-            button_buynow.innerText = "Buy Now";
-            buy_now.append(button_buynow);
+        // buy_now = document.createElement("a");
+        // buy_now.setAttribute("href", "../../profile/Order page.html");
+        // div_btn.append(buy_now);
 
-            div_about = document.createElement("div");
-            div_about.setAttribute("class", "about");
-            div_content.append(div_about);
+        // button_buynow = document.createElement("button");
+        // button_buynow.setAttribute("class", "buy_now");
+        // button_buynow.innerText = "Buy Now";
+        // buy_now.append(button_buynow);
 
-            image_main = document.createElement("img");
-            image_main.setAttribute("src", "../../../assets/img/Dishes/ordinary dinner.jpg");
-            div_about.append(image_main);
+        // div_about = document.createElement("div");
+        // div_about.setAttribute("class", "about");
+        // div_content.append(div_about);
 
-            div_details = document.createElement("div");
-            div_about.append(div_details);
+        // image_main = document.createElement("img");
+        // image_main.setAttribute("src", "../../../assets/img/Dishes/ordinary dinner.jpg");
+        // div_about.append(image_main);
 
-            parah = document.createElement("h2");
-            parah.innerText = "Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious";
-            div_details.append(parah);
+        // div_details = document.createElement("div");
+        // div_about.append(div_details);
 
-            details = document.createElement("p");
-            details.innerText = "We seek to impress your guests with our flavours and best culinary skills, our professionals can cater to your orders – be it vegetarian buffet, non-vegetarian. Our menu includes Mini Idly, Parotta with Chops, Biryani, Sweet, Idiyapam, Bonda, Coffee, Special Chutney, Sambar, Coconut Chutney,Onion Raitha and etc. Our SR Catering make it as a best budgetary and tastiest dinner menu & a leading budget dinner service provider.";
-            div_details.append(details);
+        // parah = document.createElement("h2");
+        // parah.innerText = "Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious";
+        // div_details.append(parah);
 
-            document.querySelector("section.category").append(div_content)
+        // details = document.createElement("p");
+        // details.innerText = "We seek to impress your guests with our flavours and best culinary skills, our professionals can cater to your orders – be it vegetarian buffet, non-vegetarian. Our menu includes Mini Idly, Parotta with Chops, Biryani, Sweet, Idiyapam, Bonda, Coffee, Special Chutney, Sambar, Coconut Chutney,Onion Raitha and etc. Our SR Catering make it as a best budgetary and tastiest dinner menu & a leading budget dinner service provider.";
+        // div_details.append(details);
+
+        // document.querySelector("section.category").append(div_content)
+
 
     </script>
     <!-- script ends -->

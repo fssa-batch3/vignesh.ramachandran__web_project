@@ -1,10 +1,9 @@
-const dishId = new URLSearchParams(window.location.search).get("menu")
-
+const menuId = new URLSearchParams(window.location.search).get("menu")
 
 let menuData = JSON.parse(localStorage.getItem("menuData"));
 
 const category = menuData.find(data=>
-    data.menuName == dishId)
+    data.menuName == menuId)
 
 function menus() {
     for(let i=0; i<3; i++)
@@ -40,7 +39,7 @@ function menus() {
         div.append(p);
 
         a = document.createElement("a");
-        a.setAttribute("href",  "?category="+ category["categoryData"][i]["categoryName"]);
+        a.setAttribute("href", "../../products/Dishes/dish.html?menu=" + encodeURIComponent(category["menuName"])  + "&category="+ category["categoryData"][i]["categoryName"]);
         div.append(a);
 
         button_view_button = document.createElement("button");

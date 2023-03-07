@@ -110,7 +110,7 @@ let dishData = [];
 // creating select option depends upon the menuData
 let menuData = JSON.parse(localStorage.getItem("menuData"));
 
-for (i = 0; i < menuData.length; i++) {
+for (let i = 0; i < menuData.length; i++) {
     let option = document.createElement("option");
     option.value = menuData[i]["id"];
     option.innerText = menuData[i]["menuName"];
@@ -137,10 +137,10 @@ function getData() {
         return e.id === menuType;
     }
     findData = menuData.filter(getMenu)
-    console.log(findData[0])
+    // console.log(findData[0])
 
     let k = findData[0]["categoryData"]
-    console.log(k[0])
+    // console.log(k[0])
 
     // filtering category
     function getCategory(e) {
@@ -148,7 +148,8 @@ function getData() {
     }
 
     findData2 = k.filter(getCategory);
-    console.log(findData2);
+    // console.log(findData2[0]);
+
 
 
     if (findData[0]["id"] == 5) {
@@ -166,21 +167,39 @@ function getData() {
 
         }
 
+        // exercise code
         else if (findData2.length == 0) {
 
-            for (i = k.length + 1; i <= k.length + 1; i++) {
+            let m = k.length
+
+            for (i = m + 1; i <= m + 1; i++) {
 
                 k.push({ "categoryName": categoryType, "id": i + "", "categoryImage": categoryImage, "dishData": dishData })
-                console.log(k);
 
-                localStorage.setItem("menuData", JSON.stringify(menuData));
                 alert("Category added sucessfully ✅")
+                localStorage.setItem("menuData", JSON.stringify(menuData));
 
                 location.reload();
-                break;  
-
             }
         }
+
+        // exercise code
+
+        // else if (findData2.length == 0) {
+
+        //     for (i = k.length + 1; i <= k.length + 1; i++) {
+
+        //         k.push({ "categoryName": categoryType, "id": i + "", "categoryImage": categoryImage, "dishData": dishData })
+        //         console.log(k);
+
+        //         localStorage.setItem("menuData", JSON.stringify(menuData));
+        //         alert("Category added sucessfully ✅")
+
+        //         location.reload();
+        //         break;  
+
+        //     }
+        // }
 
         else if (findData2[0]["categoryName"] == categoryType) {
 
@@ -207,25 +226,45 @@ function getData() {
             }
         }
 
+        // exercise code
         else if (findData2.length == 0) {
 
-            let k = findData[0]["categoryData"]
-            console.log(k.length)
+            let m = k.length
 
-            for (i = k.length + 1; i <= k.length + 1; i++) {
+            for (i = m + 1; i <= m + 1; i++) {
 
-                k.push({ "categoryName": categoryType, "id": i + "", "categoryImage": categoryImage, "categoryPrice": categoryPrice, "dishData": dishData })
+                k.push({ "categoryName": categoryType, "id": i + "", "categoryImage": categoryImage, "dishData": dishData })
+                // console.log(k[2])
 
-                localStorage.setItem("menuData", JSON.stringify(menuData));
                 alert("Category added sucessfully ✅")
+                localStorage.setItem("menuData", JSON.stringify(menuData));
 
                 location.reload();
-                break;
-
             }
         }
 
+        // exercise code
+
+        // else if (findData2.length == 0) {
+
+        //     let k = findData[0]["categoryData"]
+        //     console.log(k.length)
+
+        //     for (i = k.length + 1; i <= k.length + 1; i++) {
+
+        //         k.push({ "categoryName": categoryType, "id": i + "", "categoryImage": categoryImage, "categoryPrice": categoryPrice, "dishData": dishData })
+
+        //         localStorage.setItem("menuData", JSON.stringify(menuData));
+        //         alert("Category added sucessfully ✅")
+
+        //         location.reload();
+        //         break;
+
+        //     }
+        // }
+
         else if (findData2[0]["categoryName"] == categoryType) {
+
             alert(findData2[0]["categoryName"] + " " + "is already in Database")
         }
 

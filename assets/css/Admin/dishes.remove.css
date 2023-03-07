@@ -248,6 +248,7 @@ header {
     border: transparent;
     outline: none;
     border-radius: 10px;
+    /* text-transform: uppercase; */
 }
 .field input[type="checkbox"]{
     height: 1rem;
