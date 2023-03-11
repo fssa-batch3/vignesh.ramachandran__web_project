@@ -4,7 +4,7 @@ const product_details =
     [
         // morning menus
         {
-            name: "Morning",
+            name: "Breakfast",
             description: "SR Catering Service offers best breakfast menu that is available for all parties and weddings; we also assist customers to create a personalized menu just according to client’s taste and perfect for the occasion",
             images: {
                 source: "./assets/img/breakfast.jpg",
@@ -14,7 +14,7 @@ const product_details =
 
             // category-1
             category: {
-                name: "Ordinary Tiffin",
+                name: "Ordinary Breakfast",
                 image: {
                     source: "../../../assets/img/Dishes/ordinary tiffin.jpg",
                     alt: "Ordinary tiffin",
@@ -77,7 +77,7 @@ const product_details =
 
             // category - 2
             category: {
-                name: "Special Tiffin",
+                name: "Special Breakfast",
                 image: {
                     source: "../../../assets/img/Dishes/special tiffin.jpg",
                     alt: "special tiffin",
@@ -149,7 +149,7 @@ const product_details =
 
             // category - 3
             category: {
-                name: "VIP Tiffin",
+                name: "VIP Breakfast",
                 image: {
                     source: "../../../assets/img/Dishes/vip tiffin.jpg",
                     alt: "VIP tiffin",

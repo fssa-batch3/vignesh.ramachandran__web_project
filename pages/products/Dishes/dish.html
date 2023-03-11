@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="../../../assets/css/normalize.css">
 
     <link rel="icon" href="../../../assets/img/main-logo.png">
-    <title>Ordinary Tiffin</title>
+    <title>Ordinary Breakfast</title>
 </head>
 
 <body>
@@ -50,7 +50,7 @@
                 <span class="navigation-link">MENU</span>
                 <div class="dropdown-content">
                     <div>
-                        <a href="../Menus/menu-morning.html">Morning Menu</a>
+                        <a href="../Menus/menu-morning.html">Breakfast Menu</a>
                         <a href="../Menus/menu-lunch.html">Lunch Menu</a>
                         <a href="../Menus/menu-hightea.html">Hightea Menu</a>
                         <a href="../Menus/menu-dinner.html">Dinner Menu</a>
@@ -83,12 +83,12 @@
     <main>
         <!-- sub-menu starts -->
         <div class="ingredient-image">
-            <h2>Ordinary Tiffin</h2>
+            <!-- <h2>Ordinary Breakfast</h2> -->
         </div>
 
         <section class="category">
             <div class="content">
-                <!-- <h3><span>SR</span>'s Ordinary Tiffin</h3> -->
+                <!-- <h3><span>SR</span>'s Ordinary Breakfast</h3> -->
                 <!-- <ul class="dishes">
                     <li>  IDLY</li>
                     <li>  KITCHADI</li>
@@ -104,15 +104,16 @@
                 </ul> -->
                 <div class="btn">
                     <!-- <p>₹150/plate</p> -->
-                    <a href="../../homepage/my cart.html"><button class="add-to-cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image"/></button></a>
+                    <a href="../../homepage/my cart.html"><button class="add-to-cart">Add to Cart <img
+                                class="plus-image" src="../../../assets/img/plus.png" alt="plus image" /></button></a>
                     <a href="../../profile/Order page.html"><button class="buy_now">Buy Now</button></a>
                 </div>
                 <div class="about">
                     <!-- <img src="../../../assets/img/Dishes/ordinary tiffin.jpg" alt="ordinary tiffin" /> -->
                     <div>
                         <h2>Food brings us all together, nothing bonds us like it</h2>
-                        <p>Morning Tiffin is the most energetic food in any event or function. It is our pleasure to
-                            serve the tasty food and our Ordinary Tiffin
+                        <p>Morning Breakfast is the most energetic food in any event or function. It is our pleasure to
+                            serve the tasty food and our Ordinary Breakfast
                             Service cost is moderate. Our menu includes traditional breakfast items like Idly, Ghee
                             Pongal, Vada, Poori Masala, Idiyappam, Sambar,
                             Dry Fruit Kesari, Coffee, Coconut Chutney and etc. We also aim to be
@@ -132,13 +133,13 @@
                 <div class="related-menu1">
                     <img src="../../../assets/img/Dishes/special tiffin.jpg" alt="special tiffin" />
                     <a href="./morning-special.html">
-                        <h2><span>Special</span> Tiffin</h2>
+                        <h2><span>Special</span> Breakfast</h2>
                     </a>
                 </div>
                 <div class="related-menu1">
                     <img src="../../../assets/img/Dishes/vip tiffin.jpg" alt="vip tiffin" />
                     <a href="./morning-vip.html">
-                        <h2><span>VIP</span> Tiffin</h2>
+                        <h2><span>VIP</span> Breakfast</h2>
                     </a>
                 </div>
             </div>
@@ -160,11 +161,11 @@
                 </p>
             </div>
             <div class="footer-content">
-                <h3><span>Morning</span> Menus</h3>
+                <h3><span>Breakfast</span> Menus</h3>
                 <ul>
-                    <li><a href="../Dishes/morning-ordinary.html" class="footer-navigation">Ordinary Tiffin</a></li>
-                    <li><a href="../Dishes/morning-special.html" class="footer-navigation">Special Tiffin</a></li>
-                    <li><a href="../Dishes/morning-vip.html" class="footer-navigation">VIP Tiffin</a></li>
+                    <li><a href="../Dishes/morning-ordinary.html" class="footer-navigation">Ordinary Breakfast</a></li>
+                    <li><a href="../Dishes/morning-special.html" class="footer-navigation">Special Breakfast</a></li>
+                    <li><a href="../Dishes/morning-vip.html" class="footer-navigation">VIP Breakfast</a></li>
                 </ul>
             </div>
             <div class="footer-content">
@@ -211,42 +212,94 @@
 
     <script>
 
+        // for getting menu id
         const menuId = new URLSearchParams(window.location.search).get("menu")
 
         let menuData = JSON.parse(localStorage.getItem("menuData"));
 
-        const category = menuData.find(data =>
-            data.menuName == menuId)
+        let menuDetails = menuData.find(data =>
+            data.id === menuId)
 
 
-
+        // for getting category id
         const categoryId = new URLSearchParams(window.location.search).get("category");
 
-        const dish = category["categoryData"].find(data =>
-            data.categoryName == categoryId);
+        let categoryData = JSON.parse(localStorage.getItem("categoryData"));
+
+        let categoryDetails = categoryData.find(data =>
+            data.id === categoryId)
 
 
-        // div_content = document.createElement("div");
-        // div_content.setAttribute("class", "content");
+        // for getting page name, eg:ordinary dinner
+        let ingredientImage = document.querySelector(".ingredient-image")
+
+        category_name = document.createElement("h2");
+        category_name.innerText = categoryDetails["categoryName"] + " " + menuDetails["menuName"];
+
+        ingredientImage.append(category_name);
+
+
+
+
+
+
+        let transactionTable = JSON.parse(localStorage.getItem("transactionTable"));
+
+        let dishData = JSON.parse(localStorage.getItem("dishData"));
+
+        // filtering Menu
+        function getMenu(e) {
+            return e.menuType === menuId;
+        }
+        findData = transactionTable.filter(getMenu)
+        console.log(findData);
+
+
+        //  filtering Category
+        function getCategory(e) {
+            return e.categoryType === categoryId;
+        }
+        findData2 = findData.filter(getCategory)
+        console.log(findData2)
+
+        // comparing the dish id from the findData2 to id from the dishData
+        let findData3 = dishData.filter(product =>
+            findData2.some(find => find.dish === product.id))
+
+
         let div_content = document.querySelector(".content")
-
-        heading = document.createElement("h3");
-        heading.innerText = dish["categoryName"];
-        div_content.append(heading);
-
-        highlight = document.createElement("span");
-        highlight.innerText = "SR";
-        heading.prepend(highlight);
 
         un_ordered_list = document.createElement("ul");
         un_ordered_list.setAttribute("class", "dishes");
-        div_content.append(un_ordered_list);
+        div_content.prepend(un_ordered_list);
 
-        for(i=0; i< dish["dishData"].length; i++){
+        for (i = 0; i < findData2.length; i++) {
             list = document.createElement("li");
-            list.innerText = dish["dishData"][i]["name"];
-            un_ordered_list.append(list); 
+            list.innerText = findData3[i]["name"] +" " + "--" + " " + findData3[i]["price"];
+            un_ordered_list.append(list);
+
         }
+
+        let div_btn = document.querySelector(".btn")
+
+        let pricee = 0
+        for(j=0; j< findData2.length; j++){
+            pricee+= parseInt(findData3[j]["price"]);
+        }
+
+        price = document.createElement("p");
+        price.innerText = "₹ " + pricee;    
+        div_btn.prepend(price);
+
+        heading = document.createElement("h3");
+        heading.innerText = " " + categoryDetails["categoryName"] + " " + menuDetails["menuName"];
+        div_content.prepend(heading);
+
+        highlight = document.createElement("span");
+        highlight.innerText = "SR's";
+        heading.prepend(highlight);
+
+
 
         // for (i = 0; i < dinner_ord["dishes"].length; i++) {
 
@@ -260,11 +313,8 @@
         // div_btn.setAttribute("class", "btn");
         // div_content.append(div_btn);
 
-        let div_btn = document.querySelector(".btn")
 
-        price = document.createElement("p");
-        price.innerText = "₹" + " " + dish["categoryPrice"]
-        div_btn.append(price);
+
 
         // add_to_cart = document.createElement("a");
         // add_to_cart.setAttribute("href", "../../homepage/my cart.html");
@@ -294,11 +344,11 @@
         // div_about.setAttribute("class", "about");
         // div_content.append(div_about);
 
-        let div_about = document.querySelector(".about")
+        // let div_about = document.querySelector(".about")
 
-        image_main = document.createElement("img");
-        image_main.setAttribute("src", dish["categoryImage"]);
-        div_about.append(image_main);
+        // image_main = document.createElement("img");
+        // image_main.setAttribute("src", dish["categoryImage"]);
+        // div_about.append(image_main);
 
         // div_details = document.createElement("div");
         // div_about.append(div_details);

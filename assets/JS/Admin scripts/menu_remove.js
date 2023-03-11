@@ -51,9 +51,11 @@ let saveBtn = document.querySelector(".save");
 saveBtn.addEventListener("click", saveData)
 
 function saveData() {
+    // let upName = document.getElementById("menuNameGet").value;
     let upImage = document.getElementById("menuImageGet").value;
     let upAbout = document.getElementById("menuAboutGet").value;
 
+    // findData[0]["menuName"] = upName
     findData[0]["image"] = upImage;
     findData[0]["description"] = upAbout;
 

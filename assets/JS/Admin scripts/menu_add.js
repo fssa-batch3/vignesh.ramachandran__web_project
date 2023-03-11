@@ -87,6 +87,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 let submitBtn = document.querySelector(".btn_submit");
 submitBtn.addEventListener("click", getData);
 
@@ -98,7 +110,7 @@ function getData() {
 
     let menuData = JSON.parse(localStorage.getItem("menuData")) || [];
 
-    let categoryData = [];
+    // let categoryData = [];
 
     function getMenu(e) {
         return e.menuName === menuType;
@@ -111,7 +123,7 @@ function getData() {
     if (menuData.length == 0) {
 
         for (i = 1; i <= n + 1; i++) {
-            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, "description": menuAbout, "categoryData": categoryData});
+            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, "description": menuAbout});
         }
 
         // console.log(menuData);
@@ -129,7 +141,7 @@ function getData() {
         // console.log(localMenucount);
 
         for (i = localMenucount + 1; i <= localMenucount + 1; i++) {
-            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, "description": menuAbout, "categoryData":categoryData });
+            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, "description": menuAbout, });
         }
 
         // console.log(menuData);
@@ -148,17 +160,6 @@ function getData() {
  
 
 
-
-
-
-
-    // menuData.push({ "menuName": menuType, "image": menuImage, "description": menuAbout });
-    // localStorage.setItem("menuData", JSON.stringify(menuData));
-
-
-    // console.log(menuType);
-    // console.log(menuImage);
-    // console.log(menuAbout);
 
 
 
