@@ -114,7 +114,7 @@ span {
     color: var(--text-color);
     border-bottom: 2px solid var(--second-color);
 }
-.add-to-cart {
+.add_to_cart {
     display: flex;
     flex-direction: row;
     /* align-items: center;
@@ -130,7 +130,7 @@ span {
     font-family: var(--parah-fontfamily);
     border-radius: 2rem;
 }
-.add-to-cart:hover {
+.add_to_cart:hover {
     transform: scale(1.1);
 }
 .plus-image {

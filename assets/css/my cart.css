@@ -39,65 +39,72 @@ span {
 /* .cart_ord-tif {
     height: 85vh;
 } */
-.cart_ord-tif-content {
+.section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+}
+.cart_content {
     /* height: 80vh; */
     margin: 1.875rem 1.875rem 0 1.875rem;
     padding: 2rem;
     border: 2px solid var(--text-color);
     border-radius: 3.125rem;
 }
-.cart_ord-tif-text {
+/* .cart_text {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 2rem;
-    /* display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around; */
+    justify-content: space-around;
     padding: 1.5rem 1.5rem 3rem 1.5rem;
     justify-items: center;
-}
-.cart_ord-tif-text h2 {
+} */
+.cart_text h2 {
     font-family:var(--heading-fontfamily);
     font-size:var(--big-font);
     color: var(--second-color);
     /* width: 13.75rem; */
-    border: 1px solid var(--text-color);
+    /* border: 1px solid var(--text-color); */
     /* text-align: center; */
     /* height: 1.875rem;*/
     padding: .5rem 1rem;
 }
-.cart_ord-tif-text label {
+.cart_end label {
     /* text-align: center; */
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
     color: var(--text-color);
     font-weight: bold;
     /* width: 13.75rem; */
-    border: 1px solid var(--text-color);
-    padding: 5px;
+    /* border: 1px solid var(--text-color); */
+    background-color: var(--other-color);
+    border-radius: .5rem;
+    padding: .7rem;
     display: flex;
     align-items: center;
 }
-.cart_ord-tif-text label input {
-    /* height: auto; */
+.cart_end label input {
+    height: auto;
     margin-left: .625rem;
     color: var(--text-color);
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
-    border: transparent;
-    border-bottom: 2px solid var(--second-color);
+    /* border: transparent; */
+    /* border-bottom: 2px solid var(--second-color); */
 }
 .date {
     /* width: 9.375rem; */
     height: 2.5rem;
 }
 .number {
-    width: 3.125rem;
+    width: 4rem;
+    text-align: center;
 }
 .change {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); */
     justify-items: center;
     /* width: 100%;
     display: flex;
@@ -105,11 +112,11 @@ span {
     justify-content: space-evenly; */
 
 }
-.cart_dishes h3 {
+.cart_text h3 {
     font-family: var(--heading-fontfamily);
     font-size: var(--big-font);
     color: var(--text-color);
-    padding-bottom: 1.875rem;
+    padding-bottom: 1.5rem ;
     text-align: center;
 }
 .dishes {
@@ -144,9 +151,10 @@ span {
     border-radius: .625rem;
 }
 
-.cart_ord-tif-end {
+.cart_end {
     margin: 1.25rem;
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 2rem;
     align-items: center;
     justify-items: center;
@@ -155,7 +163,7 @@ span {
     align-items: center;
     justify-content: space-evenly; */
 }
-.cart_ord-tif-end img {
+.cart_end img {
     width: 18.75rem;
     height: 15.375rem;
 }
@@ -178,7 +186,7 @@ span {
     transform: scale(1.1);
     box-shadow: .5rem .5rem .625rem black;
 }
-.order {
+.order, .orderall {
     font-weight: bold;
     background-color: green;
 }
@@ -193,6 +201,46 @@ span {
     flex-direction: row;
     justify-content: space-between;
 }
+/* .summary {
+    position: sticky;
+    top: 100px;
+    left: 10px;
+} */
+.sum_content{
+    margin: 1.875rem 1.875rem 0 1.875rem;
+    padding: 1.5rem;
+    border: 1px solid var(--text-color);
+    border-radius: 1rem;
+    background-color: var(--other-color);
+}
+.sum_content h2 {
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+    padding-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--bg-color);
+}
+.sum_name, .sum_details, .sum_end {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    align-items: center;
+    justify-items: center;
+    padding: 1rem;
+    border-top: 2px solid var(--bg-color);
+}
+.sum_name h3 {
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+}
+.sum_details p, .sum_end p {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    color: var(--text-color);
+    font-weight: 600;
+}
+
 .cart_orderall {
     padding: 1.25rem 1.875rem;
     display: flex;

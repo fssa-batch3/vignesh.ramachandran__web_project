@@ -153,3 +153,47 @@ header {
     color: var(--text-color);
     cursor: pointer;
 }
+
+@media screen and (max-width:1150px){
+    .bx-menu {
+        display: block;
+    }
+    .closebtn{
+        display: block;
+    }
+    .navigation{
+        display: block;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: -30px;
+        background-color: var(--other-color);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+      .navigation-link {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: var(--p-font);
+        color:var(--text-color);
+        display: block;
+        transition: 0.3s;
+      }
+      
+      .navigation li a:hover {
+        color: var(--text-color);
+      }
+      
+      .navigation .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+    
+}

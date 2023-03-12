@@ -176,14 +176,10 @@ function getData() {
 
             let inputCount = document.getElementsByName("dish").length;
 
-            console.log(inputCount)
-            console.log(localDishcount)
-            console.log(n)
-
             for (i = localDishcount + 1; i < n + 1; i++) {
 
                 let localDishcount = dishData.length;
-                console.log(localDishcount);
+                // console.log(localDishcount);
 
                 let b = "";
                 let a = true;
@@ -225,8 +221,6 @@ function getData() {
                         findData = transactionTable.filter(getMenu)
                         console.log(findData);
 
-                        // let k = findData[0]["categoryData"]
-
 
                         //  filtering Category
                         function getCategory(e) {
@@ -250,8 +244,6 @@ function getData() {
                             // }
 
                         }
-                        console.log(a);
-
                         location.reload()
 
                     }
@@ -265,9 +257,6 @@ function getData() {
                     if (dishes !== "") {
                         dishData.push({ name: dishes, id: localDishcount + 1, price: price });
                         transactionTable.push({ menuType: menuType, categoryType: categoryType, dish: i })
-
-                        console.log(dishData);
-                        console.log(transactionTable)
 
                         localStorage.setItem("dishData", JSON.stringify(dishData));
                         localStorage.setItem("transactionTable", JSON.stringify(transactionTable));

@@ -26,7 +26,10 @@
     <link rel="stylesheet" href="../../../assets/css/normalize.css">
 
     <link rel="icon" href="../../../assets/img/main-logo.png">
-    <title>Ordinary Breakfast</title>
+
+    <!-- unique id creation -->
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    <title>Dishes</title>
 </head>
 
 <body>
@@ -104,8 +107,11 @@
                 </ul> -->
                 <div class="btn">
                     <!-- <p>₹150/plate</p> -->
-                    <a href="../../homepage/my cart.html"><button class="add-to-cart">Add to Cart <img
-                                class="plus-image" src="../../../assets/img/plus.png" alt="plus image" /></button></a>
+                    <!-- <a href="../../homepage/my cart.html"> -->
+                        <button class="add_to_cart">Add to Cart <img
+                                class="plus-image" src="../../../assets/img/plus.png" alt="plus image" />
+                        </button>
+                    <!-- </a> -->
                     <a href="../../profile/Order page.html"><button class="buy_now">Buy Now</button></a>
                 </div>
                 <div class="about">
@@ -252,7 +258,7 @@
             return e.menuType === menuId;
         }
         findData = transactionTable.filter(getMenu)
-        console.log(findData);
+        // console.log(findData);
 
 
         //  filtering Category
@@ -260,7 +266,7 @@
             return e.categoryType === categoryId;
         }
         findData2 = findData.filter(getCategory)
-        console.log(findData2)
+        // console.log(findData2)
 
         // comparing the dish id from the findData2 to id from the dishData
         let findData3 = dishData.filter(product =>
@@ -282,13 +288,14 @@
 
         let div_btn = document.querySelector(".btn")
 
-        let pricee = 0
+        let cost = 0
         for(j=0; j< findData2.length; j++){
-            pricee+= parseInt(findData3[j]["price"]);
+
+            cost+= parseInt(findData3[j]["price"]);
         }
 
         price = document.createElement("p");
-        price.innerText = "₹ " + pricee;    
+        price.innerText = "₹ " + cost;    
         div_btn.prepend(price);
 
         heading = document.createElement("h3");
@@ -321,7 +328,7 @@
         // div_btn.append(add_to_cart);
 
         // button = document.createElement("button");
-        // button.setAttribute("class", "add-to-cart");
+        // button.setAttribute("class", "add_to_cart");
         // button.innerText = "Add to Cart";
         // add_to_cart.append(button);
 
@@ -363,7 +370,9 @@
 
         // document.querySelector("section.category").append(div_content)
 
+
     </script>
+    <script src="../../../assets/JS/add_to_cart.js"></script>
 
 
 

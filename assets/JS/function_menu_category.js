@@ -2,8 +2,6 @@ const menuId = new URLSearchParams(window.location.search).get("menu")
 
 let menuData = JSON.parse(localStorage.getItem("menuData"));
 
-// const category = menuData.find(data=>
-//     data.menuName == menuId)
 let menuDetails = menuData.find(data =>
     data.id === menuId)
 
@@ -18,11 +16,6 @@ function menus() {
     menu_name.innerText = menuDetails["menuName"] + " " + "Menu";
 
     ingredientImage.append(menu_name)
-
-
-
-
-
 
     for (let i = 0; i < 3; i++) {
         let div_menu_list;

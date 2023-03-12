@@ -80,8 +80,6 @@ function showDishes(e) {
 
     let m = findData2[0]["dishData"]
 
-    // let n = findData2[0]["dishName"].length;
-    // console.log(n);
 
     for (i = 0; i < m.length; i++) {
 
