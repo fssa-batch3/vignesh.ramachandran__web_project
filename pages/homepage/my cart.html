@@ -453,28 +453,50 @@
         orderAll.append(btn_orderall);
 
 
-        // getting extra information like no.of.guest and data
-        let update = document.querySelectorAll(".number")
-        update.forEach(function (getGuest) {
-            getGuest.addEventListener("click", function () {
+        // // getting extra information like no.of.guest 
+        // let update = document.querySelectorAll(".number")
+        // update.forEach(function (getGuest) {
+        //     getGuest.addEventListener("click", function () {
 
-                cartData = JSON.parse(localStorage.getItem("cartData"))
+        //         cartData = JSON.parse(localStorage.getItem("cartData"))
 
-                let parent = this.parentNode
-                console.log(parent)
-                let num = parent.querySelector(".number").value
+        //         let parent = this.parentNode
+        //         console.log(parent)
+        //         let num = parent.querySelector(".number").value 
+                
 
-                console.log(num)
 
-                function getmenu(e) {
-                    return e.uniqueId == parent
-                }
+        //         // console.log(num)
 
-                let cost = document.querySelector(".price");
-                console.log(cost);
+        //         // function getmenu(e) {
+        //         //     return e.uniqueId == parent
+        //         // }
+
+        //         // let cost = document.querySelector(".price");
+        //         // console.log(cost);
+
+        //     })
+        // })
+
+        
+
+
+        // getting the date of delivery
+        let dateInput = document.querySelectorAll(".date");
+        dateInput.forEach(function (getDate){
+            getDate.addEventListener("click", function(){
+
+                
 
             })
         })
+
+
+
+
+
+
+
 
 
 

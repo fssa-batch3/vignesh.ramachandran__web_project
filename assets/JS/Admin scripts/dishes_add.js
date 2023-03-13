@@ -181,7 +181,7 @@ function getData() {
                 let localDishcount = dishData.length;
                 // console.log(localDishcount);
 
-                let b = "";
+                // let b = "";
                 let a = true;
                 // console.log(i)
                 dishes = document.getElementById(i).value;
@@ -250,8 +250,6 @@ function getData() {
                 }
 
                 // new code
-
-
                 if (a !== false) {
 
                     if (dishes !== "") {
@@ -264,15 +262,12 @@ function getData() {
 
                         location.reload()
                     }
-
-
-
                 }
             }
         }
 
         if (check() == true) {
-            console.log("rajini")
+            console.log("hello")
         }
     }
 }

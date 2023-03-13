@@ -45,15 +45,15 @@ function getData() {
     else {
         let m = categoryData.length
 
-        for (i = m + 1; i <= m + 1; i++) {
+        // for (i = m + 1; i <= m + 1; i++) {
 
-            categoryData.push({ "categoryName": categoryType, "id": i + "",})
+            categoryData.push({ "categoryName": categoryType, "id": m+1 + "",})
 
             alert("Category added sucessfully ✅")
             localStorage.setItem("categoryData", JSON.stringify(categoryData));
 
             location.reload();
-        }
+        // }
     }
 }
 
