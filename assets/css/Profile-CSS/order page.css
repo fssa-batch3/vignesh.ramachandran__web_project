@@ -42,6 +42,9 @@ span {
     align-items: center; */
 }
 .my-order_form{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
     margin:auto;
     border: 3px solid var(--text-color);
     border-radius: 3.125rem;
@@ -57,11 +60,12 @@ span {
     width: 80%;
     height: 75vh; */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
-    gap: 3rem;
+    align-items: center;
+    /* grid-template-columns: repeat(auto-fit, minmax(20rem,1fr)); */
+    gap: 2rem;
     padding: 4%;
 }
-.my-order_form h2 {
+.details h2 {
     font-family: var(--heading-fontfamily);
     font-size: var(--big-font);
     color: var(--second-color);
@@ -69,7 +73,7 @@ span {
     padding: 1rem;
     
 }
-.my-order_form h3 {
+.details h3 {
     font-family: var(--parah-fontfamily);
     font-size: var(--h2-font);
     color: var(--text-color);
@@ -109,9 +113,48 @@ span {
     /* height: 6.25rem; */
     line-height: 1.875rem;
 }
-.btn-submit {
-    background-color: var(--second-color);
+.order_details {
+    display: grid;
+    gap: 1rem;
+    border: 1px solid var(--text-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+.order_details h2{
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+    text-align: center;
+}
+.seperation {
+    border-top:2px solid var(--bg-color) ;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 1rem;
+    display: grid;
+    gap: 1rem;
+}
+.seperation h2 {
+    padding-top: 1rem;
+}
+.seperation div, .sum_total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.order_details div label, .order_details div input{
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    color: var(--text-color);
+    outline: none;
+    border: transparent;
+    padding: .5rem;
+}
+#price {
+    background-color: var(--thickgreen-color);
     color: var(--bg-color);
+}
+
+.btn {
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
     font-weight: bold;
@@ -119,10 +162,14 @@ span {
     border-radius: 1.875rem;
     border: transparent;
 }
-.btn-submit:hover {
+.submit {
+    background-color: var(--second-color);
+    color: var(--bg-color);
+    width: 100px;
+}
+.submit:hover {
     transform: scale(1.1);
     color: var(--text-color);
-    border: transparent;
 }
 
 

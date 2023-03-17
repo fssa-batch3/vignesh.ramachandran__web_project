@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,37 +9,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
-    family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap" 
-    rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="../library/moment.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/normalize.css">
 
     <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/Profile-CSS/order page.css">
 
-    <link rel="icon" href="../../assets/img/main-logo.png" >
+    <link rel="icon" href="../../assets/img/main-logo.png">
     <title>Order page</title>
 </head>
+
 <body>
     <!-- header starts -->
-    <header> 
+    <header>
         <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
         <div class="icon-left">
-            <img src="../../assets/img/main-logo.png" alt="Company Logo" class="logo"/>
+            <img src="../../assets/img/main-logo.png" alt="Company Logo" class="logo" />
             <h1>SR</h1>
             <div>
                 <p>Catering</p>
             </div>
         </div>
-        
+
         <ul class="navigation" id="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
@@ -47,11 +52,11 @@
                 <span class="navigation-link">MENU</span>
                 <div class="dropdown-content">
                     <div>
-                        <a href="../products/Menus/menu-morning.html" >Breakfast Menu</a>
-                        <a href="../products/Menus/menu-lunch.html" >Lunch Menu</a>
-                        <a href="../products/Menus/menu-hightea.html" >Hightea Menu</a>
-                        <a href="../products/Menus/menu-dinner.html" >Dinner Menu</a>
-                        <a href="../products/Menus/menu-custom.html" >Custom Menu</a>
+                        <a href="../products/Menus/menu-morning.html">Breakfast Menu</a>
+                        <a href="../products/Menus/menu-lunch.html">Lunch Menu</a>
+                        <a href="../products/Menus/menu-hightea.html">Hightea Menu</a>
+                        <a href="../products/Menus/menu-dinner.html">Dinner Menu</a>
+                        <a href="../products/Menus/menu-custom.html">Custom Menu</a>
                     </div>
                 </div>
             </li>
@@ -62,7 +67,7 @@
         </ul>
 
         <div class="dropdown_profile">
-            <img src="../../assets/img/profile.png" alt="profile image"  />
+            <img src="../../assets/img/profile.png" alt="profile image" />
             <div class="dropdown_profile-content">
                 <div>
                     <a href="../profile/Profile page.html">My Profile</a>
@@ -74,47 +79,77 @@
         </div>
     </header>
     <!-- header ends -->
-    
+
     <!-- main starts -->
 
     <main>
         <!-- order form starts -->
-            <section class="my-order">
-                <form class="my-order_form">
-                    
-                        <h2>CATERING ORDER</h2>
-                        <h3>Personal Details</h3>
-                    <div class="details">
-                        <div class="name">
-                            <label>NAME: </label>
-                            <input type="text"  placeholder="Enter your name"/>
-                        </div>
-                        <div class="email">
-                            <label>EMAIL ID: </label>
-                        <input type="email" placeholder="Enter your email"/>
-                        </div>
-                        
-                        <div class="number">
-                            <label>PHONE NUMBER: </label>
-                            <input type="number" placeholder="Phone number" />
-                        </div>
-                        <div class="guest">
+        <section class="my-order">
+            <form class="my-order_form">
+
+
+                <div class="details">
+                    <h2>CATERING ORDER</h2>
+                    <h3>Personal Details</h3>
+                    <div class="name">
+                        <label>NAME: </label>
+                        <input type="text" id="name" placeholder="Enter your name" readonly />
+                    </div>
+                    <div class="email">
+                        <label>EMAIL ID: </label>
+                        <input type="email" id="email" placeholder="Enter your email" readonly />
+                    </div>
+
+                    <div class="number">
+                        <label>PHONE NUMBER: </label>
+                        <input type="number" id="phone_number" placeholder="Phone number" readonly />
+                    </div>
+                    <!-- <div class="guest">
                             <label>No.Of.Guest:</label>
                             <input type="number"/>
-                        </div>
-                        <div class="address">
-                            <label>ADDRESS: </label>
-                            <textarea type="text" placeholder="Enter your place"></textarea>
-                        </div>
-                        <div class="date">
+                        </div> -->
+                    <div class="address">
+                        <label>DELIVERY ADDRESS: </label>
+                        <textarea type="text" id="address" placeholder="Enter your delivery address"></textarea>
+                    </div>
+                    <!-- <div class="date">
                             <label>Delivery Date</label>
                             <input type="date" placeholder="Enter Delivery date"/>
-                        </div>    
+                        </div>     -->
+                    <!-- <a href="../profile/Thanks.html"> -->
+                    <button type="button" class="btn submit">Submit</button>
+                    <!-- </a> -->
+                </div>
+
+                <aside>
+                    <div class="order_details">
+                        <h2><span>ORDER</span> DETAILS</h2>
+                        <div class="seperation">
+                            <!-- <h2><span>SR's </span>Ordinary Breakfast</h2>
+                            <div>
+                                <label for="">No.of.guest:</label>
+                                <input type="number" name="" id="no_of_guest" value="2">
+                            </div>
+                            <div>
+                                <label for="">Price:</label>
+                                <input type="number" id="price" value="300">
+                            </div>
+                            <div>
+                                <label for="">Delivery Date:</label>
+                                <input type="text" name="" id="delivery_date" value="25-03-2023">
+                            </div> -->
+                        </div>
+                        <div class="sum_total">
+                            <!-- <label for="">Total Price</label>
+                            <input type="text" name="" id="total_price" value="300"> -->
+                        </div>
+
                     </div>
-                    <a href="../profile/Thanks.html"><button type="button" class="btn-submit">Submit</button> </a>
-                    
-                </form>
-                <!-- <aside>
+                </aside>
+
+
+            </form>
+            <!-- <aside>
                     <img src="../../assets/img/order page gif.gif" alt="biryani vapour gif" />
                 </aside> -->
         </section>
@@ -129,13 +164,21 @@
             <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
             <p>(+91)6379370482</p>
             <div class="footer-links">
-                <a href="https://www.instagram.com/vicky_sk_forever?r=nametag" > <img src="../../assets/img/instagram.jpg" alt="instagram"/> </a>
-                <a href="https://www.facebook.com/profile.php?id=100011341742455"> <img src="../../assets/img/facebook.jpg" alt="facebook link"/> </a>
-                <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"> <img src="../../assets/img/twitter.png" alt="twitter link"/> </a>
+                <a href="https://www.instagram.com/vicky_sk_forever?r=nametag"> <img
+                        src="../../assets/img/instagram.jpg" alt="instagram" /> </a>
+                <a href="https://www.facebook.com/profile.php?id=100011341742455"> <img
+                        src="../../assets/img/facebook.jpg" alt="facebook link" /> </a>
+                <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"> <img
+                        src="../../assets/img/twitter.png" alt="twitter link" /> </a>
             </div>
         </div>
     </footer>
     <!-- footer ends -->
 
+    <!-- script starts -->
+    <script src="../../assets/JS/order.js"></script>
+    <!-- scripts ends -->
+
 </body>
+
 </html>

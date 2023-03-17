@@ -275,13 +275,38 @@
             // document.body.style.backgroundColor = "white";
         }
 
+
         cartData = JSON.parse(localStorage.getItem("cartData"));
-
-
-
+        menuData = JSON.parse(localStorage.getItem("menuData"));
+        categoryData = JSON.parse(localStorage.getItem("categoryData"));
+        dishData = JSON.parse(localStorage.getItem("dishData"));
 
 
         for (let i = 0; i < cartData.length; i++) {
+
+            let menuId = cartData[i]["menu_id"];
+
+            // for getting menu name from url
+            let menu_name = menuData.find(data =>
+                data.id === menuId);
+            // console.log(menu_name)
+
+
+            let categoryId = cartData[i]["category_id"];
+
+            // for getting category name from url
+            let category_name = categoryData.find(data =>
+                data.id === categoryId);
+            // console.log(category_name);
+
+            let n = cartData[i]["dishData"]
+
+
+            let finddish = dishData.filter(product =>
+                n.some(find => find.id === product.id));
+            // console.log(finddish)
+
+
 
             div_cart_content = document.createElement("div");
             div_cart_content.setAttribute("class", "cart_content");
@@ -292,15 +317,12 @@
             div_cart_content.append(div_cart_text)
 
             h3 = document.createElement("h3");
-            h3.innerText = cartData[i]["categoryName"] + " " + cartData[i]["menuName"];
+            h3.innerText = category_name["categoryName"] + " " + menu_name["menuName"];
             div_cart_text.append(h3);
 
             // h2_cart = document.createElement("h2");
             // h2_cart.innerText = cartData[i]["menuName"];
             // div_cart_text.append(h2_cart);
-
-
-
 
 
             div_change = document.createElement("div");
@@ -323,13 +345,13 @@
             ul_dishes.setAttribute("class", "dishes");
             div_cart_dishes.append(ul_dishes);
 
-            let a = cartData[i]["dishData"]
+            // let a = cartData[i]["dishData"]
             // console.log(a)
 
-            for (let j = 0; j < a.length; j++) {
+            for (let j = 0; j < finddish.length; j++) {
 
                 li = document.createElement("li");
-                li.innerText = cartData[i]["dishData"][j]["name"]
+                li.innerText = finddish[j]["name"]
 
                 ul_dishes.append(li);
 
@@ -339,26 +361,39 @@
             div_cart_end.setAttribute("class", "cart_end");
             div_change.append(div_cart_end);
 
+            div_cart_end_1 = document.createElement("div");
+            div_cart_end_1.setAttribute("class", "inside");
+            div_cart_end.append(div_cart_end_1);
+
             label_1 = document.createElement("label");
             label_1.innerText = "Date:";
-            div_cart_end.append(label_1);
+            div_cart_end_1.append(label_1);
 
             input_1 = document.createElement("input");
             input_1.setAttribute("type", "date");
             input_1.setAttribute("class", "date");
             input_1.setAttribute("required", "true");
+            input_1.setAttribute("value", cartData[i]["dateOfDelivery"])
             label_1.append(input_1);
 
             label_2 = document.createElement("label");
             label_2.innerText = "No.Of.Guest:";
-            div_cart_end.append(label_2);
+            div_cart_end_1.append(label_2);
 
             input_2 = document.createElement("input");
             input_2.setAttribute("type", "number");
             input_2.setAttribute("class", "number");
             input_2.setAttribute("required", "true");
-            input_2.setAttribute("value", 01)
+            input_2.setAttribute("min", "1")
+            input_2.setAttribute("value", cartData[i]["noOfGuest"])
             label_2.append(input_2);
+
+            update = document.createElement("button");
+            update.setAttribute("type", "button");
+            update.setAttribute("class", "btn update");
+            update.setAttribute("style", "display:none");
+            update.innerText = "Update"
+            div_cart_end_1.append(update);
 
             // img = document.createElement("img");
             // img.setAttribute("src", "../../assets/img/Dishes/ordinary tiffin.jpg");
@@ -372,7 +407,7 @@
             // for (let k = 0; k < a.length; k++) {
             //     cost += parseInt(a[k]["price"])
             // }
-            price.innerText = "₹ " + cartData[i]["totalCost"];
+            price.innerText = "₹ " + cartData[i]["totalCost"] * cartData[i]["noOfGuest"];
             div_cart_end.append(price);
 
             div_btn_cart = document.createElement("div");
@@ -380,7 +415,7 @@
             div_cart_end.append(div_btn_cart);
 
             a_1 = document.createElement("a");
-            a_1.setAttribute("href", "../profile/Order page.html");
+            a_1.setAttribute("href", "../profile/Order page.html?cartId=" + cartData[i]["uniqueId"]);
             div_btn_cart.append(a_1);
 
             button_1 = document.createElement("button");
@@ -402,23 +437,23 @@
 
             document.querySelector("div.cart").append(div_cart_content);
 
-
+            // summary table
             div_sum_content = document.querySelector(".sum_content")
 
             div_sum_details = document.createElement("div")
             div_sum_details.setAttribute("class", "sum_details")
             div_sum_content.append(div_sum_details);
 
-            p_name = document.createElement("p")
-            p_name.innerText = cartData[i]["categoryName"] + " " + cartData[i]["menuName"];
+            p_name = document.createElement("p");
+            p_name.innerText = category_name["categoryName"] + " " + menu_name["menuName"];
             div_sum_details.append(p_name);
 
-            date = document.createElement("p")
-            date.innerText = "14-04-2023";
+            date = document.createElement("p");
+            date.innerText = cartData[i]["dateOfDelivery"];
             div_sum_details.append(date);
 
-            p_price = document.createElement("p")
-            p_price.innerText = "₹ " + cartData[i]["totalCost"];
+            p_price = document.createElement("p");
+            p_price.innerText = "₹ " + cartData[i]["totalCost"]* cartData[i]["noOfGuest"];
             div_sum_details.append(p_price);
 
         }
@@ -433,8 +468,9 @@
         div_sum_end.append(p_total);
 
         let totalcost = 0
-        for(let s=0; s<cartData.length; s++){
-            totalcost += cartData[s]["totalCost"]
+        for (let s = 0; s < cartData.length; s++) {
+
+            totalcost += cartData[s]["totalCost"] * cartData[s]["noOfGuest"] 
         }
 
         p_totalprice = document.createElement("p")
@@ -453,58 +489,66 @@
         orderAll.append(btn_orderall);
 
 
-        // // getting extra information like no.of.guest 
-        // let update = document.querySelectorAll(".number")
-        // update.forEach(function (getGuest) {
-        //     getGuest.addEventListener("click", function () {
 
-        //         cartData = JSON.parse(localStorage.getItem("cartData"))
+        // getting extra informatio like no.of.guest and date of delivery
+        let updateBtn = document.querySelectorAll(".update")
+        updateBtn.forEach(function (upDate) {
+            upDate.addEventListener("click", function () {
 
-        //         let parent = this.parentNode
-        //         console.log(parent)
-        //         let num = parent.querySelector(".number").value 
-                
+                let parent = this.closest(".cart_end")
+                let getDate = parent.querySelector(".date").value;
+                let getNumber = parent.querySelector(".number").value;
 
+                let id = parent.querySelector(".remove").getAttribute("data-id");
 
-        //         // console.log(num)
+                function getId(e) {
+                    return e.uniqueId == id
+                }
+                findcartId = cartData.filter(getId);
+                console.log(findcartId)
 
-        //         // function getmenu(e) {
-        //         //     return e.uniqueId == parent
-        //         // }
+                // let y = parent.querySelector(".price").innerText.replace("₹", "");
+                let y = findcartId[0]["totalCost"]
+                // console.log(y);
+                let up_totalcost = y * getNumber;
+                // console.log(up_totalcost)
 
-        //         // let cost = document.querySelector(".price");
-        //         // console.log(cost);
+                findcartId[0]["dateOfDelivery"] = getDate;
+                findcartId[0]["noOfGuest"] = getNumber;
+                // findcartId[0]["totalCost"] = up_totalcost;
 
-        //     })
-        // })
-
-        
-
-
-        // getting the date of delivery
-        let dateInput = document.querySelectorAll(".date");
-        dateInput.forEach(function (getDate){
-            getDate.addEventListener("click", function(){
-
-                
+                localStorage.setItem("cartData", JSON.stringify(cartData));
+                location.reload();
 
             })
         })
 
 
 
+        // getting extra information like no.of.guest 
+        let number_of_guest = document.querySelectorAll(".number")
+        number_of_guest.forEach(function (getGuest) {
+            getGuest.addEventListener("click", function () {
+
+                let parent = this.closest(".cart_end")
+                update_btn = parent.querySelector(".update")
+                update_btn.setAttribute("style", "display:block");
+
+            })
+        })
 
 
+        // getting the date of delivery
+        let dateInput = document.querySelectorAll(".date");
+        dateInput.forEach(function (getDate) {
+            getDate.addEventListener("click", function () {
 
+                let parent = this.closest(".cart_end")
+                update_btn = parent.querySelector(".update")
+                update_btn.setAttribute("style", "display:block");
 
-
-
-
-
-
-
-
-
+            })
+        })
 
         // remove from cart
         let removeBtn = document.querySelectorAll(".remove");
@@ -535,6 +579,10 @@
                 }
             })
         })
+
+
+        // let m = moment();
+        // console.log(m.toString());
 
 
 

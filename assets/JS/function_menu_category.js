@@ -1,4 +1,4 @@
-const menuId = new URLSearchParams(window.location.search).get("menu")
+const menuId = new URLSearchParams(window.location.search).get("menu");
 
 let menuData = JSON.parse(localStorage.getItem("menuData"));
 

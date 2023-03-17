@@ -10,18 +10,19 @@ function addtoCart() {
 
     // for getting menu id from url
     const menuId = new URLSearchParams(window.location.search).get("menu")
+    console.log(menuId)
 
     let menuDetails = transactionTable.filter(data =>
         data.menuType === menuId)
 
-    console.log(menuDetails)
+    // console.log(menuDetails)
 
     // for getting menu name from url
 
     let menu_name = menuData.find(data =>
         data.id === menuId);
 
-    console.log(menu_name["menuName"]);
+    // console.log(menu_name["menuName"]);
 
     // for getting category id from url
     const categoryId = new URLSearchParams(window.location.search).get("category");
@@ -35,17 +36,27 @@ function addtoCart() {
     let category_name = categoryData.find(data =>
         data.id === categoryId);
 
-    console.log(category_name["categoryName"]);
+    // console.log(category_name["categoryName"]);
 
     // filtering the dish from the dishData using menu id and category id from the transactionTable
     let findData = dishData.filter(product =>
-        categoryDetails.some(find => find.dish === product.id))
+        categoryDetails.some(find => find.dish === product.id));
 
+    let dishes_id = []
 
+    for(let i=0; i<findData.length; i++){
+        let value = findData[i]["id"]
+        dishes_id.push({id: value})
+    }
+
+    console.log(dishes_id)
+    
     cartData = JSON.parse(localStorage.getItem("cartData")) || [];
 
-    let m_name = menu_name["menuName"];
-    let c_name = category_name["categoryName"];
+    // let m_name = menu_name["menuName"];
+    // let c_name = category_name["categoryName"];
+    let no_of_guest = 01;
+    let date_of_delivery = ""
     let uuid = uuidv4();
 
 
@@ -54,8 +65,9 @@ function addtoCart() {
         for (let i = 0; i < findData.length; i++) {
             cost += parseInt(findData[i]["price"])
         }
-        console.log(cost)
-        cartData.push({ menuName: m_name, categoryName: c_name, uniqueId: uuid, totalCost: cost, dishData: findData })
+        // console.log(cost)
+        cartData.push({ menu_id: menuId, category_id: categoryId, uniqueId: uuid, totalCost: cost,noOfGuest: no_of_guest,
+             dateOfDelivery : date_of_delivery, dishData: dishes_id })
         // console.log(cartData[0])
         alert("Menu added into the Cart ✅")
         localStorage.setItem("cartData", JSON.stringify(cartData));
@@ -66,7 +78,7 @@ function addtoCart() {
         let a = true;
         for (i = 0; i < cartData.length; i++) {
 
-            if (m_name == cartData[i]["menuName"] && c_name == cartData[i]["categoryName"]) {
+            if (menuId == cartData[i]["menu_id"] && categoryId == cartData[i]["category_id"]) {
                 alert("This menu already in the cart ‼")
                 a = false;
             }
@@ -76,14 +88,14 @@ function addtoCart() {
             for (let i = 0; i < findData.length; i++) {
                 cost += parseInt(findData[i]["price"])
             }
-            console.log(cost)
+            // console.log(cost)
 
             alert("Menu added into the Cart ✅")
-            cartData.push({ menuName: m_name, categoryName: c_name, uniqueId: uuid,totalCost: cost, dishData: findData })
+            cartData.push({ menu_id: menuId, category_id: categoryId, uniqueId: uuid, totalCost: cost,noOfGuest: no_of_guest,
+                dateOfDelivery : date_of_delivery, dishData: dishes_id })
             localStorage.setItem("cartData", JSON.stringify(cartData));
 
         }
-
     }
 
 
@@ -120,12 +132,6 @@ function addtoCart() {
     //     findData2.some(find => find.dish === product.id))
 
     // console.log(findData3);
-
-
-
-
-
-
 
 
 
