@@ -77,14 +77,14 @@
             <form>
                 <h2>Category Remove</h2>
 
-                <!-- <div class="select_menu">
+                <div class="select_menu">
                     <h3>Select Menu</h3>
                     <select name="menu" id="menuName" class="menulist">
                         <option value="">Select</option>
 
                     </select>
                     <button class="btn show1" type="button">Show Category</button>
-                </div> -->
+                </div>
 
 
                 <div class="select_category">
@@ -97,12 +97,17 @@
                 </div>
                 <div class="category_details">
                     <input type="text" class="category_name" id="categoryNameGet" readonly />
-                    <!-- <input type="text" class="category_image" id="categoryImageGet" /> -->
+                    <select name="" id="categoryStatusGet">
+                        <option value="">Select</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                    <input type="text" class="category_image" id="categoryImageGet" />
                     <!-- <input type="number" class="category_price" id="categoryPriceGet"  /> -->
                 </div>
 
                 <button class="btn delete" type="button">Delete</button>
-                <!-- <button type="button" class="btn save">Save</button> -->
+                <button type="button" class="btn save">Save</button>
 
             </form>
         </section>

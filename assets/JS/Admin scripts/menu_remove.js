@@ -35,11 +35,13 @@ function showMenuDetails() {
     let menuName = document.getElementById("menuNameGet");
     let menuImage = document.getElementById("menuImageGet");
     let menuAbout = document.getElementById("menuAboutGet");
+    let menuStatus = document.getElementById("menustatusGet");
     // console.log(menuName)
 
     menuName.value = findData[0]["menuName"];
     menuImage.value = findData[0]["image"];
     menuAbout.value = findData[0]["description"];
+    menuStatus.value = findData[0]["status"];
 
     show.setAttribute("style", "display:none");
 
@@ -54,10 +56,12 @@ function saveData() {
     // let upName = document.getElementById("menuNameGet").value;
     let upImage = document.getElementById("menuImageGet").value;
     let upAbout = document.getElementById("menuAboutGet").value;
+    let upStatus = document.getElementById("menustatusGet").value;
 
     // findData[0]["menuName"] = upName
     findData[0]["image"] = upImage;
     findData[0]["description"] = upAbout;
+    findData[0]["status"] = upStatus;
 
     localStorage.setItem("menuData", JSON.stringify(menuData));
     alert("Menu Details Edited Sucessfully ✅")

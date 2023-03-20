@@ -85,7 +85,7 @@
     <main>
         <!-- order form starts -->
         <section class="my-order">
-            <form class="my-order_form">
+            <form class="my-order_form" role="form" onsubmit="placeOrder(event)">
 
 
                 <div class="details">
@@ -110,14 +110,14 @@
                         </div> -->
                     <div class="address">
                         <label>DELIVERY ADDRESS: </label>
-                        <textarea type="text" id="address" placeholder="Enter your delivery address"></textarea>
+                        <textarea type="text" id="address" placeholder="Enter your delivery address" required></textarea>
                     </div>
                     <!-- <div class="date">
                             <label>Delivery Date</label>
                             <input type="date" placeholder="Enter Delivery date"/>
                         </div>     -->
                     <!-- <a href="../profile/Thanks.html"> -->
-                    <button type="button" class="btn submit">Submit</button>
+                    <button type="submit" class="btn submit">Submit</button>
                     <!-- </a> -->
                 </div>
 

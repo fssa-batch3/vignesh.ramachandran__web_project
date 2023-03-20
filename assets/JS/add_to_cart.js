@@ -42,10 +42,16 @@ function addtoCart() {
     let findData = dishData.filter(product =>
         categoryDetails.some(find => find.dish === product.id));
 
+    // console.log(findData);
+    function getStatus(e) {
+        return e.status === "true";
+    }
+    dishDataTrue = findData.filter(getStatus);
+
     let dishes_id = []
 
-    for(let i=0; i<findData.length; i++){
-        let value = findData[i]["id"]
+    for(let i=0; i<dishDataTrue.length; i++){
+        let value = dishDataTrue[i]["id"]
         dishes_id.push({id: value})
     }
 
@@ -62,8 +68,8 @@ function addtoCart() {
 
     if (cartData.length == 0) {
         let cost = 0
-        for (let i = 0; i < findData.length; i++) {
-            cost += parseInt(findData[i]["price"])
+        for (let i = 0; i < dishDataTrue.length; i++) {
+            cost += parseInt(dishDataTrue[i]["price"])
         }
         // console.log(cost)
         cartData.push({ menu_id: menuId, category_id: categoryId, uniqueId: uuid, totalCost: cost,noOfGuest: no_of_guest,
@@ -73,7 +79,7 @@ function addtoCart() {
         localStorage.setItem("cartData", JSON.stringify(cartData));
     }
 
-    else if (cartData !== 0) {
+    else if (cartData.length !== 0) {
 
         let a = true;
         for (i = 0; i < cartData.length; i++) {
@@ -85,16 +91,14 @@ function addtoCart() {
         }
         if (a !== false) {
             let cost = 0
-            for (let i = 0; i < findData.length; i++) {
-                cost += parseInt(findData[i]["price"])
+            for (let i = 0; i < dishDataTrue.length; i++) {
+                cost += parseInt(dishDataTrue[i]["price"])
             }
-            // console.log(cost)
 
             alert("Menu added into the Cart ✅")
             cartData.push({ menu_id: menuId, category_id: categoryId, uniqueId: uuid, totalCost: cost,noOfGuest: no_of_guest,
                 dateOfDelivery : date_of_delivery, dishData: dishes_id })
             localStorage.setItem("cartData", JSON.stringify(cartData));
-
         }
     }
 

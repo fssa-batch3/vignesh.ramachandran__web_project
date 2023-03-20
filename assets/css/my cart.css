@@ -154,7 +154,7 @@ span {
 .cart_end {
     margin: 1.25rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); */
     gap: 2rem;
     align-items: center;
     justify-items: center;
@@ -200,6 +200,11 @@ span {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.ensure {
+    font-family: var(--parah-fontfamily);
+    font-size: 15px;
+    opacity: .8;
 }
 /* .summary {
     position: sticky;

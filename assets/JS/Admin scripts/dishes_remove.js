@@ -16,25 +16,51 @@ for (i = 0; i < menuData.length; i++) {
 
 }
 
-
 // get the local storage value to the select and option for category name
 let showCatergoy = document.querySelector(".show1")
 showCatergoy.addEventListener("click", getCatDetails)
 
 function getCatDetails() {
+    let menuType = document.getElementById("menuName").value;
 
-    let categorylist = document.querySelector(".categorylist")
-
-    for (i = 0; i < categoryData.length; i++) {
-        let option = document.createElement("option");
-        option.value = categoryData[i]["id"]
-        option.innerText = categoryData[i]["categoryName"]
-
-        categorylist.append(option)
+    function getMenu(e) {
+        return e.menuType === menuType;
     }
-    showCatergoy.setAttribute("style", "display:none");
+    findData = categoryData.filter(getMenu)
 
+    // creating select option depends upon the categoryData
+    let categorylist = document.querySelector(".categorylist");
+
+    for (i = 0; i < findData.length; i++) {
+        let option = document.createElement("option");
+        option.value = findData[i]["id"];
+        option.innerText = findData[i]["categoryName"];
+
+        categorylist.append(option);
+    }
+
+    showCatergoy.setAttribute("style", "display:none");
 }
+
+
+// // get the local storage value to the select and option for category name
+// let showCatergoy = document.querySelector(".show1")
+// showCatergoy.addEventListener("click", getCatDetails)
+
+// function getCatDetails() {
+
+//     let categorylist = document.querySelector(".categorylist")
+
+//     for (i = 0; i < categoryData.length; i++) {
+//         let option = document.createElement("option");
+//         option.value = categoryData[i]["id"]
+//         option.innerText = categoryData[i]["categoryName"]
+
+//         categorylist.append(option)
+//     }
+//     showCatergoy.setAttribute("style", "display:none");
+
+// }
 
 // show dishes
 const show = document.querySelector(".show2");
@@ -47,8 +73,8 @@ function showDishes(e) {
     let menuType = document.getElementById("menuName").value;
     let categoryType = document.getElementById("categoryName").value;
 
-    console.log(menuType);
-    console.log(categoryType);
+    // console.log(menuType);
+    // console.log(categoryType);
 
     // filtering Menu
     function getMenu(e) {
@@ -63,14 +89,14 @@ function showDishes(e) {
         return e.categoryType === categoryType;
     }
     findData2 = findData.filter(getCategory)
-    console.log(findData2);
+    // console.log(findData2);
 
 
     // filtering the dish from the dishData using menu id and category id from the transactionTable
     let findData3 = dishData.filter(product =>
         findData2.some(find => find.dish === product.id));
 
-    console.log(findData3);
+    // console.log(findData3);
 
     for (i = 0; i < findData3.length; i++) {
 
@@ -92,6 +118,38 @@ function showDishes(e) {
         priceInput.id = "price" + (i);
         priceInput.value = findData3[i]["price"]
 
+        let select_status = document.createElement("select");
+        select_status.setAttribute("id", "status" + (i));
+        div_field.append(select_status);
+
+        if (findData3[i]["status"] == "true") {
+            let option_1_status = document.createElement("option");
+            option_1_status.setAttribute("value", "true")
+            option_1_status.innerText = "True";
+            // option_1_status.innerText = findData3[i]["status"]x
+            select_status.append(option_1_status);
+
+            let option_2_status = document.createElement("option");
+            option_2_status.setAttribute("value", "false");
+            option_2_status.innerText = "False";
+            select_status.append(option_2_status);
+        }
+        else {
+            let option_2_status = document.createElement("option");
+            option_2_status.setAttribute("value", "false");
+            option_2_status.innerText = "False";
+            select_status.append(option_2_status);
+
+            let option_1_status = document.createElement("option");
+            option_1_status.setAttribute("value", "true")
+            option_1_status.innerText = "True";
+            select_status.append(option_1_status);
+        }
+
+
+
+
+
         container.append(div_field)
         div_field.append(checkbox);
         div_field.append(newInput);
@@ -100,6 +158,7 @@ function showDishes(e) {
 
     show.setAttribute("style", "display:none");
 }
+
 
 let saveBtn = document.querySelectorAll(".save")
 // saveBtn.addEventListener("click", saveDish)
@@ -124,6 +183,10 @@ saveBtn.forEach(function (saveDish) {
         findData2 = findData.filter(getCategory)
         console.log(findData2);
 
+        let findData3 = dishData.filter(product =>
+            findData2.some(find => find.dish === product.id));
+
+        console.log(findData3);
 
         checkbox = document.querySelector('input[type=checkbox]:checked').value;
         // // console.log(checkbox);
@@ -139,21 +202,28 @@ saveBtn.forEach(function (saveDish) {
         }
         console.log(Dish_index)
 
+        let x = "status" + Dish_index
         let y = "dish" + Dish_index
-        console.log(y)
         let z = "price" + Dish_index
-        console.log(z)
 
-        let up_dish = document.getElementById(y).value;
+        let up_name = document.getElementById(y).value;
         let up_price = document.getElementById(z).value;
-        console.log(up_dish);
-        console.log(up_price);
+        let up_status = document.getElementById(x).value;
+
+        // findData2[Dish_index]["name"] = up_name;
+        // findData2[Dish_index]["price"] = up_price;
+        findData2[Dish_index]["status"] = up_status;
+
+        findData3[Dish_index]["status"] = up_status;
+        findData3[Dish_index]["name"] = up_name;
+        findData3[Dish_index]["price"] = up_price;
 
         // m[Dish_index]["name"] = up_dish
 
-        // localStorage.setItem("menuData", JSON.stringify(menuData));
-        // alert("Dish Renamed Sucessfully ✅")
-        // location.reload()
+        localStorage.setItem("dishData", JSON.stringify(dishData));
+        localStorage.setItem("transactionTable", JSON.stringify(transactionTable));
+        alert("Dish Renamed Sucessfully ✅")
+        location.reload()
 
     })
 })

@@ -123,7 +123,7 @@ function getData() {
     if (menuData.length == 0) {
 
         for (i = 1; i <= n + 1; i++) {
-            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, "description": menuAbout});
+            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, status:"true", "description": menuAbout});
         }
 
         // console.log(menuData);
@@ -141,7 +141,7 @@ function getData() {
         // console.log(localMenucount);
 
         for (i = localMenucount + 1; i <= localMenucount + 1; i++) {
-            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, "description": menuAbout, });
+            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, status:"true", "description": menuAbout, });
         }
 
         // console.log(menuData);

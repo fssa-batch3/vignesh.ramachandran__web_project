@@ -108,9 +108,9 @@
                 <div class="btn">
                     <!-- <p>₹150/plate</p> -->
                     <!-- <a href="../../homepage/my cart.html"> -->
-                        <button class="add_to_cart">Add to Cart <img
-                                class="plus-image" src="../../../assets/img/plus.png" alt="plus image" />
-                        </button>
+                    <button class="add_to_cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png"
+                            alt="plus image" />
+                    </button>
                     <!-- </a> -->
                     <a href="../../profile/Order page.html"><button class="buy_now">Buy Now</button></a>
                 </div>
@@ -268,6 +268,14 @@
         let findData3 = dishData.filter(product =>
             findData2.some(find => find.dish === product.id))
 
+        // filtering get status=true from menuData
+        function getStatus(e) {
+            return e.status === "true";
+        }
+        dishDataTrue = findData3.filter(getStatus);
+        console.log(dishDataTrue);
+
+
 
         let div_content = document.querySelector(".content")
 
@@ -275,9 +283,9 @@
         un_ordered_list.setAttribute("class", "dishes");
         div_content.prepend(un_ordered_list);
 
-        for (i = 0; i < findData2.length; i++) {
+        for (i = 0; i < dishDataTrue.length; i++) {
             list = document.createElement("li");
-            list.innerText = findData3[i]["name"] +" " + "--" + " " + findData3[i]["price"];
+            list.innerText = dishDataTrue[i]["name"] + " " + "--" + " " + dishDataTrue[i]["price"];
             un_ordered_list.append(list);
 
         }
@@ -285,13 +293,13 @@
         let div_btn = document.querySelector(".btn")
 
         let cost = 0
-        for(j=0; j< findData2.length; j++){
+        for (j = 0; j < dishDataTrue.length; j++) {
 
-            cost+= parseInt(findData3[j]["price"]);
+            cost += parseInt(dishDataTrue[j]["price"]);
         }
 
         price = document.createElement("p");
-        price.innerText = "₹ " + cost;    
+        price.innerText = "₹ " + cost;
         div_btn.prepend(price);
 
         heading = document.createElement("h3");

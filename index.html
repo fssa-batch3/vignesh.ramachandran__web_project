@@ -414,24 +414,29 @@
 
         let menuData = JSON.parse(localStorage.getItem("menuData"));
 
-        // creating nav bar
+        // filtering get status=true from menuData
+        function getStatus(e) {
+            return e.status === "true";
+        }
+        menuDataTrue = menuData.filter(getStatus);
 
+        // creating nav bar
         let div_dropdown_content = document.querySelector(".dropdown-content")
 
         let div_menulist = document.createElement("div");
 
-        for (i = 0; i < menuData.length; i++) {
+        for (i = 0; i < menuDataTrue.length; i++) {
 
             let a_1 = document.createElement("a");
-            a_1.innerText = menuData[i]["menuName"] + " Menu";
-            a_1.setAttribute("href", "./pages/products/Menus/category.html?menu=" + menuData[i]["id"] );
+            a_1.innerText = menuDataTrue[i]["menuName"] + " Menu";
+            a_1.setAttribute("href", "./pages/products/Menus/category.html?menu=" + menuDataTrue[i]["id"]);
 
             div_menulist.append(a_1);
         }
 
         div_dropdown_content.append(div_menulist);
 
-        for (i = 0; i < menuData.length; i++) {
+        for (i = 0; i < menuDataTrue.length; i++) {
 
             let div_lists;
             let div_lists_text;
@@ -446,7 +451,7 @@
             console.log(div_lists);
 
             img = document.createElement("img");
-            img.setAttribute("src", menuData[i]["image"]);
+            img.setAttribute("src", menuDataTrue[i]["image"]);
             // img.setAttribute("alt", menus[i]["images"]["alt"]);
             div_lists.append(img);
 
@@ -459,15 +464,15 @@
             div_lists_text.append(h2);
 
             span = document.createElement("span");
-            span.innerText = menuData[i]["menuName"];
+            span.innerText = menuDataTrue[i]["menuName"];
             h2.prepend(span);
 
             p = document.createElement("p");
-            p.innerText = menuData[i]["description"];
+            p.innerText = menuDataTrue[i]["description"];
             div_lists_text.append(p);
 
             a = document.createElement("a");
-            a.setAttribute("href", "./pages/products/Menus/category.html?menu=" + menuData[i]["id"]);
+            a.setAttribute("href", "./pages/products/Menus/category.html?menu=" + menuDataTrue[i]["id"]);
             a.innerText = "read more...";
             div_lists_text.append(a);
 

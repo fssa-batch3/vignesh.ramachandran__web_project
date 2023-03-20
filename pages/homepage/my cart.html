@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
+    <script src="../library/moment.js"></script>
+
     <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/my cart.css">
 
@@ -281,6 +283,9 @@
         categoryData = JSON.parse(localStorage.getItem("categoryData"));
         dishData = JSON.parse(localStorage.getItem("dishData"));
 
+        let m = moment().format("YYYY-MM-DD");
+        console.log(m)
+
 
         for (let i = 0; i < cartData.length; i++) {
 
@@ -309,8 +314,8 @@
 
 
             div_cart_content = document.createElement("div");
+            div_cart_content.setAttribute("role", "form");
             div_cart_content.setAttribute("class", "cart_content");
-
 
             div_cart_text = document.createElement("div");
             div_cart_text.setAttribute("class", "cart_text");
@@ -410,12 +415,13 @@
             price.innerText = "₹ " + cartData[i]["totalCost"] * cartData[i]["noOfGuest"];
             div_cart_end.append(price);
 
+
             div_btn_cart = document.createElement("div");
             div_btn_cart.setAttribute("class", "btn_cart");
             div_cart_end.append(div_btn_cart);
 
             a_1 = document.createElement("a");
-            a_1.setAttribute("href", "../profile/Order page.html?cartId=" + cartData[i]["uniqueId"]);
+            // a_1.setAttribute("href", "../profile/Order page.html?cartId=" + cartData[i]["uniqueId"]);
             div_btn_cart.append(a_1);
 
             button_1 = document.createElement("button");
@@ -435,6 +441,11 @@
             button_2.innerText = "REMOVE";
             a_2.append(button_2);
 
+            ensure = document.createElement("p")
+            ensure.setAttribute("class", "ensure");
+            ensure.innerText = "Please check the Delivery date and No.of.guest before order"
+            div_cart_end.append(ensure)
+
             document.querySelector("div.cart").append(div_cart_content);
 
             // summary table
@@ -453,7 +464,7 @@
             div_sum_details.append(date);
 
             p_price = document.createElement("p");
-            p_price.innerText = "₹ " + cartData[i]["totalCost"]* cartData[i]["noOfGuest"];
+            p_price.innerText = "₹ " + cartData[i]["totalCost"] * cartData[i]["noOfGuest"];
             div_sum_details.append(p_price);
 
         }
@@ -470,12 +481,46 @@
         let totalcost = 0
         for (let s = 0; s < cartData.length; s++) {
 
-            totalcost += cartData[s]["totalCost"] * cartData[s]["noOfGuest"] 
+            totalcost += cartData[s]["totalCost"] * cartData[s]["noOfGuest"]
         }
 
         p_totalprice = document.createElement("p")
         p_totalprice.innerText = "₹ " + totalcost;
         div_sum_end.append(p_totalprice);
+
+
+        const checkOrder = e => {
+            e.preventDefault();
+
+            let date = document.getElementById("")
+        }
+
+
+
+
+        // order button
+        let orderBtn = document.querySelectorAll(".order");
+        orderBtn.forEach(function (orderFood) {
+            orderFood.addEventListener("click", function () {
+
+                let before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
+
+                let parent = this.closest(".cart_end");
+                let delivery_date = parent.querySelector(".date").value;
+                let unique_id = parent.querySelector(".remove").getAttribute("data-id")
+
+                if(delivery_date <= before_date){
+                    console.log("rajini")
+                    alert("check Date");
+                }
+                else{
+                    location.href = "../profile/Order page.html?cartId="+ unique_id;
+                }
+            })
+        })
+
+
+
 
 
         // orderall button
@@ -579,12 +624,6 @@
                 }
             })
         })
-
-
-        // let m = moment();
-        // console.log(m.toString());
-
-
 
 
     </script>

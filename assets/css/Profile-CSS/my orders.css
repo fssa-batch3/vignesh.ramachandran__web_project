@@ -39,19 +39,16 @@ span {
     text-align: center;
 }
 
-.my-orders {
-    height: 40vh;
-    
-}
+/* .my-orders {
+    height: 40vh; 
+} */
 .my-orders_list {
     border: 1px solid var(--text-color);
     border-radius: 1.875rem;
     margin: 1.3rem;
     background-color: var(--other-color);
-    
 }
-.cart_ord-tif-text {
-    
+/* .my_order_text {
     height: 3.125rem;
     padding: 1rem;
     display: flex;
@@ -59,23 +56,78 @@ span {
     align-items: center;
     justify-content: space-around;
     padding-bottom: 2.5rem;
+} */
+.my_order_text{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    align-items: center;
 }
-.cart_ord-tif-text h2 {
+.my_order_text div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.my_order_text div h2 {
     font-family:var(--heading-fontfamily);
     font-size:var(--big-font);
     color: var(--second-color);
-    width: 13.75rem;
-    border: 1px solid var(--text-color);
+    /* width: 13.75rem; */
+    /* border: 1px solid var(--text-color); */
     text-align: center;
-    height: 1.875rem;
-    padding-bottom: .625rem;
+    /* height: 1.875rem; */
+    padding: 1rem 0 3rem 0;
 }
-.cart_ord-tif-text:first-child label{
+.view {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    color: var(--text-color);
+    font-weight: bold;
+    background-color: var(--bg-color);
+    border-radius: 1rem;
+    border: transparent;
+    padding: .5rem;
+}
+.view:hover {
+    transform: scale(1.1);
+    box-shadow: .5rem .5rem .625rem black;
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 4rem;
+}
+.field div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.field div label{
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+    font-weight: bold;
+    padding: .5rem 0;
+}
+.field div input {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    color: var(--text-color);
+    padding: .5rem 0;
+}
+
+
+
+
+
+
+/* .my_order_text:first-child label{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.cart_ord-tif-text label {
+.my_order_text label {
     text-align: center;
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
@@ -85,7 +137,7 @@ span {
     border: 1px solid var(--text-color);
     padding: 5px;
 }
-.cart_ord-tif-text label input {
+.my_order_text label input {
     height: auto;
     margin-left: .625rem;
     color: var(--text-color);
@@ -100,7 +152,12 @@ span {
 }
 .number {
     width: 3.125rem;
-} 
+}  */
+
+
+
+
+
 .dropdown_menu-type {
     position: relative;
 }

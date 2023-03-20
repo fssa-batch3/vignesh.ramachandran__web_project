@@ -171,6 +171,12 @@ span {
     transform: scale(1.1);
     color: var(--text-color);
 }
+.ensure {
+    font-family: var(--parah-fontfamily);
+    font-size: 15px;
+    opacity: .8;
+    text-align: center;
+}
 
 
 /* aside img {
