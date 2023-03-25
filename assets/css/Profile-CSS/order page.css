@@ -136,7 +136,7 @@ span {
 .seperation h2 {
     padding-top: 1rem;
 }
-.seperation div, .sum_total{
+.seperation div, .sum_total, .last{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -149,10 +149,15 @@ span {
     border: transparent;
     padding: .5rem;
 }
-#price {
+#totalcost {
     background-color: var(--thickgreen-color);
     color: var(--bg-color);
+    font-weight: bold;
 }
+/* input[type="number"] {
+    background-color: var(--thickgreen-color);
+    color: var(--bg-color);
+} */
 
 .btn {
     font-family: var(--parah-fontfamily);

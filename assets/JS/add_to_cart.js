@@ -1,12 +1,18 @@
 
 
 trasactionTable = JSON.parse(localStorage.getItem("transactionTable"));
+userData = JSON.parse(localStorage.getItem("userData"));
+user_id = JSON.parse(localStorage.getItem("user_id"));
+user_unique = user_id["email"]
+    console.log(user_unique);
 
 
 let addtoCartBtn = document.querySelector(".add_to_cart");
 addtoCartBtn.addEventListener("click", addtoCart);
 
 function addtoCart() {
+
+    
 
     // for getting menu id from url
     const menuId = new URLSearchParams(window.location.search).get("menu")
@@ -72,8 +78,8 @@ function addtoCart() {
             cost += parseInt(dishDataTrue[i]["price"])
         }
         // console.log(cost)
-        cartData.push({ menu_id: menuId, category_id: categoryId, uniqueId: uuid, totalCost: cost,noOfGuest: no_of_guest,
-             dateOfDelivery : date_of_delivery, dishData: dishes_id })
+        cartData.push({ user_id:user_unique, menu_id: menuId, category_id: categoryId, uniqueId: uuid, totalCost: cost,noOfGuest: no_of_guest,
+             dateOfDelivery : date_of_delivery, dishData: dishes_id, cartStatus:"false" })
         // console.log(cartData[0])
         alert("Menu added into the Cart ✅")
         localStorage.setItem("cartData", JSON.stringify(cartData));
@@ -96,8 +102,8 @@ function addtoCart() {
             }
 
             alert("Menu added into the Cart ✅")
-            cartData.push({ menu_id: menuId, category_id: categoryId, uniqueId: uuid, totalCost: cost,noOfGuest: no_of_guest,
-                dateOfDelivery : date_of_delivery, dishData: dishes_id })
+            cartData.push({user_id:user_unique, menu_id: menuId, category_id: categoryId, uniqueId: uuid, totalCost: cost,noOfGuest: no_of_guest,
+                dateOfDelivery : date_of_delivery, dishData: dishes_id, cartStatus:"false" })
             localStorage.setItem("cartData", JSON.stringify(cartData));
         }
     }

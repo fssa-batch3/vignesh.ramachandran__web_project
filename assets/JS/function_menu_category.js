@@ -24,7 +24,7 @@ function getStatus(e) {
 categoryDataTrue = getCategory.filter(getStatus);
 
 
-function menus() {
+function category() {
 
     ingredientImage = document.querySelector(".ingredient-image")
 
@@ -35,16 +35,13 @@ function menus() {
 
     for (let i = 0; i < getCategory.length; i++) {
         let div_menu_list;
-        // let img_class;
         let div;
         let h2;
-        // let p;
         let a;
         let button_view_button;
 
         div_menu_list = document.createElement("div");
         div_menu_list.setAttribute("class", "menu-list_1");
-        console.log(div_menu_list);
 
         img_class = document.createElement("img");
         img_class.setAttribute("class", "dish");

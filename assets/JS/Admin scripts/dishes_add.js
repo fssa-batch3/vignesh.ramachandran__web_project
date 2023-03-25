@@ -156,8 +156,8 @@ function getData() {
 
             if (dishes !== "") {
                 // pushing the all dishes into the dishName []
-                dishData.push({ name: dishes, id: i, price: price, status:"true" });
-                transactionTable.push({ menuType: menuType, categoryType: categoryType, dish: i, status:"true", })
+                dishData.push({ name: dishes, id: i, price: price, status: "true" });
+                transactionTable.push({ menuType: menuType, categoryType: categoryType, dish: i, status: "true", })
             }
 
         }
@@ -174,7 +174,7 @@ function getData() {
 
         function check() {
 
-            let inputCount = document.getElementsByName("dish").length;
+            // let inputCount = document.getElementsByName("dish").length;
 
             for (i = localDishcount + 1; i < n + 1; i++) {
 
@@ -253,8 +253,8 @@ function getData() {
                 if (a !== false) {
 
                     if (dishes !== "") {
-                        dishData.push({ name: dishes, id: localDishcount + 1, price: price, status:"true", });
-                        transactionTable.push({ menuType: menuType, categoryType: categoryType, dish: i, status:"true", })
+                        dishData.push({ name: dishes, id: localDishcount + 1, price: price, status: "true", });
+                        transactionTable.push({ menuType: menuType, categoryType: categoryType, dish: i, status: "true", })
 
                         localStorage.setItem("dishData", JSON.stringify(dishData));
                         localStorage.setItem("transactionTable", JSON.stringify(transactionTable));

@@ -47,21 +47,21 @@ const signUp = e => {
 
 
 const signIn = e => {
-    let phone_number = document.getElementById("phone_number").value
+    let email = document.getElementById("email").value
     let password = document.getElementById("password").value
 
     let userData = JSON.parse(localStorage.getItem("userData")) || [];
     let exist = userData.length &&
         JSON.parse(localStorage.getItem("userData")).some(data =>
-            data.phone_number.toLowerCase() == phone_number.toLowerCase() &&
+            data.email.toLowerCase() == email.toLowerCase() &&
             data.password.toLowerCase() == password.toLowerCase()
         );
     if (!exist) {
         alert("Invalid Details 😈");
     }
     else {
-        let number_object = { "phone_number": phone_number };
-        localStorage.setItem("user_key", JSON.stringify(number_object));
+        // let email_object = { "email": email };
+        localStorage.setItem("user_id", JSON.stringify(email));
         alert("Login Sucessful ✅");
         location.href = "../../index.html";
     }

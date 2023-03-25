@@ -29,7 +29,7 @@
 </head>
 <body>
     <!-- header starts -->
-    <header> 
+    <!-- <header> 
         <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
         <div class="icon-left">
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
     <!-- header ends -->
 
     <!-- main starts -->
@@ -84,8 +84,8 @@
                 <img src="../../assets/img/main-logo.png" alt="company logo">
                 <h2 class="name_login"><span>Log</span> In</h2>
                 
-                <label>Phone Number: </label>
-                <input type="tel" placeholder="Enter your Mobile number" class="input_box" id="phone_number" pattern="[0-9].{9}" title="Enter 10 number only" required="true">
+                <label>Email ID: </label>
+                <input type="email"  for="email" placeholder="Enter your email" class="input_box" id="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="true"/>
                 <label>Password: </label>
                 <input type="password" placeholder="Enter your password" class="input_box" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="true"/>
                 <div class="visible_pass">
@@ -121,6 +121,8 @@
     <!-- footer ends -->
 
     <!-- script starts -->
+    <script src="../../assets/JS/header.js"></script>
+
     <script>
         // show password
         const Password = document.querySelector("#password");

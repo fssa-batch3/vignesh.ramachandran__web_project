@@ -34,7 +34,7 @@
 
 <body>
     <!-- header starts -->
-    <header>
+    <!-- <header>
         <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
         <div class="icon-left">
@@ -78,7 +78,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
     <!-- header ends -->
 
     <!-- main starts -->
@@ -215,13 +215,15 @@
     </footer>
     <!-- footer ends -->
 
+    <!-- script starts -->
+    <script src="../../../assets/JS/header.js"></script>
 
     <script>
 
         // for getting menu id
         const menuId = new URLSearchParams(window.location.search).get("menu")
 
-        let menuData = JSON.parse(localStorage.getItem("menuData"));
+        // let menuData = JSON.parse(localStorage.getItem("menuData"));
 
         let menuDetails = menuData.find(data =>
             data.id === menuId)
@@ -310,77 +312,11 @@
         highlight.innerText = "SR's";
         heading.prepend(highlight);
 
-
-
-        // for (i = 0; i < dinner_ord["dishes"].length; i++) {
-
-        //     // findData2[0]["dishName"][i]
-        //     list = document.createElement("li");
-        //     list.innerText = dinner_ord["dishes"][i];
-        //     un_ordered_list.append(list);
-        // }
-
-        // div_btn = document.createElement("div")
-        // div_btn.setAttribute("class", "btn");
-        // div_content.append(div_btn);
-
-
-
-
-        // add_to_cart = document.createElement("a");
-        // add_to_cart.setAttribute("href", "../../homepage/my cart.html");
-        // div_btn.append(add_to_cart);
-
-        // button = document.createElement("button");
-        // button.setAttribute("class", "add_to_cart");
-        // button.innerText = "Add to Cart";
-        // add_to_cart.append(button);
-
-        // plus_image = document.createElement("img");
-        // plus_image.setAttribute("class", "plus-image");
-        // plus_image.setAttribute("src", "../../../assets/img/plus.png");
-        // plus_image.setAttribute("alt", "plus image");
-        // button.append(plus_image);
-
-        // buy_now = document.createElement("a");
-        // buy_now.setAttribute("href", "../../profile/Order page.html");
-        // div_btn.append(buy_now);
-
-        // button_buynow = document.createElement("button");
-        // button_buynow.setAttribute("class", "buy_now");
-        // button_buynow.innerText = "Buy Now";
-        // buy_now.append(button_buynow);
-
-        // div_about = document.createElement("div");
-        // div_about.setAttribute("class", "about");
-        // div_content.append(div_about);
-
-        // let div_about = document.querySelector(".about")
-
-        // image_main = document.createElement("img");
-        // image_main.setAttribute("src", dish["categoryImage"]);
-        // div_about.append(image_main);
-
-        // div_details = document.createElement("div");
-        // div_about.append(div_details);
-
-        // parah = document.createElement("h2");
-        // parah.innerText = "Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious";
-        // div_details.append(parah);
-
-        // details = document.createElement("p");
-        // details.innerText = "We seek to impress your guests with our flavours and best culinary skills, our professionals can cater to your orders – be it vegetarian buffet, non-vegetarian. Our menu includes Mini Idly, Parotta with Chops, Biryani, Sweet, Idiyapam, Bonda, Coffee, Special Chutney, Sambar, Coconut Chutney,Onion Raitha and etc. Our SR Catering make it as a best budgetary and tastiest dinner menu & a leading budget dinner service provider.";
-        // div_details.append(details);
-
-        // document.querySelector("section.category").append(div_content)
-
-
     </script>
+
     <script src="../../../assets/JS/add_to_cart.js"></script>
 
-
-
-
+    <!-- script ends -->
 
 </body>
 

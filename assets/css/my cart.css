@@ -45,7 +45,7 @@ span {
 }
 .cart_content {
     /* height: 80vh; */
-    margin: 1.875rem 1.875rem 0 1.875rem;
+    margin: 1.875rem;
     padding: 2rem;
     border: 2px solid var(--text-color);
     border-radius: 3.125rem;

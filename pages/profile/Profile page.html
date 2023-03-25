@@ -31,7 +31,7 @@
 
 <body>
     <!-- header starts -->
-    <header> 
+    <!-- <header> 
         <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
         <div class="icon-left">
@@ -75,7 +75,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
     <!-- header ends -->
 
     <!-- main starts -->
@@ -118,7 +118,10 @@
                     <!-- </a> -->
                 </div>
                 <div class="logout_button">
-                    <button class="logout btn" type="button" onclick="logOut()">Log out</button>
+                    <a href="../../index.html">
+                        <button class="logout btn" type="button" id="logout" >Log out</button>
+                    </a>
+                    
                 </div>
             </form>
         </section>
@@ -145,18 +148,17 @@
     <!-- footer ends -->
 
     <!-- script starts -->
- 
+    <script src="../../assets/JS/header.js"></script>
+
     <script>
-
-
-
+        
         //get value from local storage
-        let unique_id_1 = JSON.parse(localStorage.getItem("user_key"));
-        let unique_id = unique_id_1["phone_number"]
+        let unique_id = JSON.parse(localStorage.getItem("user_id"));
+        // let unique_id = unique_id_1["email"]
         let userData = JSON.parse(localStorage.getItem("userData"));
 
         function profile_data(e) {
-            return e.phone_number == unique_id;
+            return e.email == unique_id;
         }
 
         // finding the userData which unique_id correctly matches
@@ -176,12 +178,12 @@
             if (confirm("Are you sure to delete this account ?")) {
 
                 //get value from local storage
-                let unique_id_1 = JSON.parse(localStorage.getItem("user_key"));
-                let unique_id = unique_id_1["phone_number"]
+                let unique_id = JSON.parse(localStorage.getItem("user_id"));
+                // let unique_id = unique_id_1["email"]
                 let userData = JSON.parse(localStorage.getItem("userData"));
 
                 function profile_data(e) {
-                    return e.phone_number == unique_id;
+                    return e.email == unique_id;
                 }
 
                 // finding the userData which unique_id correctly matches
@@ -202,14 +204,14 @@
 
 
         // logout function
-        function logOut() {
-            if (confirm("Are you going to Logout ?")) {
+        // function logOut() {
+        //     if (confirm("Are you going to Logout ?")) {
 
-                // deleting the unique_id of person data
-                localStorage.setItem("user_key", "");
-                window.location.href = "../../index.html";
-            }
-        }
+        //         // deleting the unique_id of person data
+        //         localStorage.setItem("user_id", "");
+        //         window.location.href = "../../index.html";
+        //     }
+        // }
 
 
 

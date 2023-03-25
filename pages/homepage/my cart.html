@@ -33,7 +33,7 @@
 
 <body>
     <!-- header starts -->
-    <header>
+    <!-- <header>
         <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
         <div class="icon-left">
@@ -77,7 +77,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
     <!-- header ends -->
 
     <!-- main starts -->
@@ -265,18 +265,9 @@
     <!-- footer ends -->
 
     <!-- script starts -->
+    <script src="../../assets/JS/header.js"></script>
+    
     <script>
-
-        function openNav() {
-            document.getElementById("sidenav").style.width = "190px";
-            // document.body.style.backgroundColor = "var(--other-color)";
-        }
-
-        function closeNav() {
-            document.getElementById("sidenav").style.width = "0";
-            // document.body.style.backgroundColor = "white";
-        }
-
 
         cartData = JSON.parse(localStorage.getItem("cartData"));
         menuData = JSON.parse(localStorage.getItem("menuData"));
@@ -284,7 +275,7 @@
         dishData = JSON.parse(localStorage.getItem("dishData"));
 
         let m = moment().format("YYYY-MM-DD");
-        console.log(m)
+        // console.log(m)
 
 
         for (let i = 0; i < cartData.length; i++) {
@@ -488,51 +479,21 @@
         p_totalprice.innerText = "₹ " + totalcost;
         div_sum_end.append(p_totalprice);
 
-
-        const checkOrder = e => {
-            e.preventDefault();
-
-            let date = document.getElementById("")
-        }
-
-
-
-
-        // order button
-        let orderBtn = document.querySelectorAll(".order");
-        orderBtn.forEach(function (orderFood) {
-            orderFood.addEventListener("click", function () {
-
-                let before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
-
-                let parent = this.closest(".cart_end");
-                let delivery_date = parent.querySelector(".date").value;
-                let unique_id = parent.querySelector(".remove").getAttribute("data-id")
-
-                if(delivery_date <= before_date){
-                    console.log("rajini")
-                    alert("check Date");
-                }
-                else{
-                    location.href = "../profile/Order page.html?cartId="+ unique_id;
-                }
-            })
-        })
-
-
-
-
-
         // orderall button
-        let orderAll = document.querySelector(".cart_orderall");
+        let div_orderAll = document.querySelector(".cart_orderall");
 
         let btn_orderall = document.createElement("button");
         btn_orderall.setAttribute("type", "button");
         btn_orderall.setAttribute("class", "btn orderall");
         btn_orderall.innerText = "ORDER ALL" + " " + "(" + cartData.length + ")";
 
-        orderAll.append(btn_orderall);
+        div_orderAll.append(btn_orderall);
 
+        // const checkOrder = e => {
+        //     e.preventDefault();
+
+        //     let date = document.getElementById("")
+        // }
 
 
         // getting extra informatio like no.of.guest and date of delivery
@@ -594,6 +555,73 @@
 
             })
         })
+
+
+        // order button creation
+        let orderBtn = document.querySelectorAll(".order");
+        orderBtn.forEach(function (orderFood) {
+            orderFood.addEventListener("click", function () {
+
+                let before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
+
+                let parent = this.closest(".cart_end");
+                let delivery_date = parent.querySelector(".date").value;
+                let unique_id = parent.querySelector(".remove").getAttribute("data-id")
+
+                if (delivery_date <= before_date) {
+                    alert("check Date");
+                }
+                else {
+                    location.href = "../profile/Order page.html?cartId=" + unique_id;
+                }
+            })
+        })
+
+
+        // orderall button get
+        let orderallBtn = document.querySelector(".orderall");
+        orderallBtn.addEventListener("click", orderAll);
+
+        function orderAll() {
+            let a = true;
+            let b = true;
+
+            let before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
+
+            // let parent = this.closest(".cart_end");
+            // let delivery_date = parent.querySelector(".date").value;
+            // let unique_id = parent.querySelector(".remove").getAttribute("data-id")
+
+            for (i = 1; i < cartData.length; i++) {
+
+                let delivery_date = cartData[0]["dateOfDelivery"]
+
+                console.log(delivery_date);
+                console.log(cartData[i]["dateOfDelivery"]);
+
+                if (delivery_date !== cartData[i]["dateOfDelivery"]) {
+                    alert("If you orderall all delivery date should be same")
+                    b = false
+                }
+                console.log(b);
+
+                if (b !== false) {
+
+                    if (delivery_date <= before_date) {
+                        alert("check the date of" + " " + " cart.no" + (i + 1));
+                        a = false
+                    }
+                    // console.log(a);
+
+                    if (a !== false) {
+                        location.href = "../profile/Order page.html?cartStatus=" + false;
+                    }
+                }
+            }
+
+        }
+
+
 
         // remove from cart
         let removeBtn = document.querySelectorAll(".remove");
