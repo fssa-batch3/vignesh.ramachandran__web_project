@@ -1,6 +1,6 @@
 
 
-categoryData = JSON.parse(localStorage.getItem("categoryData"))
+// const categoryData = JSON.parse(localStorage.getItem("categoryData"))
 
 let div_footer = document.querySelector(".footer-box");
 
