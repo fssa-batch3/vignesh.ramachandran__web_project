@@ -50,11 +50,30 @@ span {
     margin: 2% 10%;
     background-color: var(--other-color);
 }
+.header{
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.order_id{
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+}
+#order_status{
+    background-color: transparent;
+    color: var(--text-color);
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    border: transparent;
+    font-weight: bolder;
+}
 .my_order_text {
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     align-items: center;
+    padding: 1rem 0;
 }
 .subject {
     display: flex;
@@ -119,17 +138,6 @@ span {
     color: var(--text-color);
     padding: .5rem 0;
     text-align: center;
-}
-.field div:first-child{
-    display: flex;
-    justify-content: flex-end;
-    text-align-last: right;
-}
-#order_status{
-    border: transparent;
-    background-color: transparent;
-    color: var(--text-color);
-    font-weight: bolder;
 }
 
 

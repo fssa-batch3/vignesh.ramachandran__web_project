@@ -3,45 +3,54 @@
 # SR CATERING
 	My project is a catering website. User can order their menu which is required for their function and it will be delivered.
 
-##project documentation : (https://docs.google.com/document/d/1mntxGw1zAZ9jzZn4YWECB79RVIILoJUW/edit?usp=sharing&ouid=104125375979350678552&rtpof=true&sd=true).
-##flow chart : (https://drive.google.com/file/d/1TwCjMev4_wbL5sSiI0en-2uc9PUMUeQo/view?usp=sharing).
-##wire frame : (https://drive.google.com/file/d/1LcEWOrWk6VPa2ZhLev0mI4DAlmA5gQ-k/view?usp=sharing).
-##sonar cloud : (https://sonarcloud.io/summary/new_code?id=fssa-batch3_vignesh.ramachandran__web_project).
+##project documentation - https://docs.google.com/document/d/1mntxGw1zAZ9jzZn4YWECB79RVIILoJUW/edit?usp=sharing&ouid=104125375979350678552&rtpof=true&sd=true
 
-## user CRUD
-    --register
-    --login
-    --create profile
-    --read profile
-    --update profile
-    --delete profile
+##flow chart - https://drive.google.com/file/d/1TwCjMev4_wbL5sSiI0en-2uc9PUMUeQo/view?usp=sharing
 
-## menu CRUD
--- create menu
--- read menu
--- read menu details
--- update menu details
--- delete menu
+##wire frame - https://drive.google.com/file/d/1LcEWOrWk6VPa2ZhLev0mI4DAlmA5gQ-k/view?usp=sharing
 
-## category CRUD
--- create category
--- read category
--- read category details
--- update category details
--- delete category 
+##sonar cloud - https://sonarcloud.io/summary/new_code?id=fssa-batch3_vignesh.ramachandran__web_project
 
-## dish CRUD
-    --create dish
-    --edit dish
-    --update dish
-    --delete dish
+## User CRUD
+    -Register (completed)
+
+    -Login (completed)
+    -Create profile (completed)
+    -Read profile (completed)
+    -Update profile (completed)
+    -Delete profile (completed)
+
+## Menu CRUD
+    - Create menu (completed)
+    - Read menu (completed)
+    - Read menu details (completed)
+    - Update menu details (completed)
+    - Delete menu (completed)
+
+## Category CRUD
+    - Create category (completed)
+    - Read category (completed)
+    - Read category details (completed)
+    - Update category details (completed)
+    - Delete category (completed)
+
+## Dish CRUD
+    -Create dish (completed)
+    -Edit dish (completed)
+    -Update dish (completed)
+    -Delete dish (completed)
     
-## add_to_cart
--- create cart
--- read cart
--- read cart details
--- delete cart
+## Add_to_cart CRUD
+    - Create cart (completed)
+    - Read cart (completed)
+    - Read cart details (completed)
+    - Delete cart (completed)
 
+## Order CRUD
+    - Create order
+    - Read order
+    - Update order
+    - Cancel order
             
             
             

@@ -95,12 +95,11 @@ main {
 .forget label{
     font-size: var(--p-font);
 }
-.btn {
+.for_button {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 2rem 0;
-    /* text-align: center; */
 }
 .btn_submit {
     padding: .625rem 1.25rem;

@@ -21,7 +21,7 @@ span {
     color: var(--second-color);
 }
 
-header {
+/* header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -196,7 +196,7 @@ header {
     cursor: pointer;
 }
 
-
+ */
 
 .food-image{
     background-image: url("../img/MadeDifferent_v2.gif");

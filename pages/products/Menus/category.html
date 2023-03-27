@@ -28,7 +28,6 @@
     <link rel="icon" href="../../../assets/img/main-logo.png">
 
     <script src="./function_menu_types.js"></script>
-    <script src="../../../assets/JS/function_menu_category.js"></script>
     <title>Category</title>
 </head>
 
@@ -136,38 +135,7 @@
                     personal and corporate orders.
                 </p>
             </div>
-            <div class="footer-content">
-                <h3><span>Breakfast</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/morning-ordinary.html" class="footer-navigation">Ordinary Breakfast</a></li>
-                    <li><a href="../Dishes/morning-special.html" class="footer-navigation">Special Breakfast</a></li>
-                    <li><a href="../Dishes/morning-vip.html" class="footer-navigation">VIP Breakfast</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Lunch</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/lunch-ordinary.html" class="footer-navigation">Ordinary Lunch</a></li>
-                    <li><a href="../Dishes/lunch-special.html" class="footer-navigation">Special Lunch</a></li>
-                    <li><a href="../Dishes/lunch-vip.html" class="footer-navigation">VIP Lunch</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Hightea</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/hightea-ordinary.html" class="footer-navigation">Ordinary Hightea</a></li>
-                    <li><a href="../Dishes/hightea-special.html" class="footer-navigation">Special Hightea</a></li>
-                    <li><a href="../Dishes/hightea-vip.html" class="footer-navigation">VIP Hightea</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Dinner</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/dinner-ordinary.html" class="footer-navigation">Ordinary Dinner</a></li>
-                    <li><a href="../Dishes/dinner-special.html" class="footer-navigation">Special Dinner</a></li>
-                    <li><a href="../Dishes/dinner-vip.html" class="footer-navigation">VIP Dinner</a></li>
-                </ul>
-            </div>
+
         </div>
         <div class="footer-details">
             <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
@@ -186,13 +154,85 @@
     <!-- footer ends -->
 
     <!-- script stats -->
-    <script src="../../assets/JS/header.js"></script>
+    <script src="../../../assets/JS/header.js"></script>
 
     <script>
 
-        category()
+        const menuId = new URLSearchParams(window.location.search).get("menu");
+
+        // let menuData = JSON.parse(localStorage.getItem("menuData"));
+        let categoryData = JSON.parse(localStorage.getItem("categoryData"));
+
+        let menuDetails = menuData.find(data =>
+            data.id === menuId);
+
+        // console.log(menuDetails)
+
+        let getCategory = categoryData.filter(data =>
+            data.menuType === menuId)
+
+        // filtering get status=true from menuData
+        function getStatus(e) {
+            return e.status === "true";
+        }
+        categoryDataTrue = getCategory.filter(getStatus);
+
+        ingredientImage = document.querySelector(".ingredient-image")
+
+        let menu_name = document.createElement("h2");
+        menu_name.innerText = menuDetails["menuName"] + " " + "Menu";
+
+        ingredientImage.append(menu_name)
+
+        for (let i = 0; i < categoryDataTrue.length; i++) {
+            let div_menu_list;
+            let div;
+            let h2;
+            let a;
+            let button_view_button;
+
+            div_menu_list = document.createElement("div");
+            div_menu_list.setAttribute("class", "menu-list_1");
+
+            img_class = document.createElement("img");
+            img_class.setAttribute("class", "dish");
+            img_class.setAttribute("src", categoryDataTrue[i]["categoryImage"]);
+            // img_class.setAttribute("alt", menu_types[i]["image"]["alt"]);
+            div_menu_list.append(img_class);
+
+            div = document.createElement("div");
+            div_menu_list.append(div);
+
+            h2 = document.createElement("h2");
+            h2.innerText = categoryDataTrue[i]["categoryName"];
+            div.append(h2);
+
+            // p = document.createElement("p");
+            // p.innerText = "₹" + " " +category["categoryData"][i]["categoryPrice"]
+            // div.append(p);
+
+            a = document.createElement("a");
+            a.setAttribute("href", "../../products/Dishes/dish.html?menu=" + encodeURIComponent(menuId) + "&category=" + categoryDataTrue[i]["id"]);
+            div.append(a);
+
+            button_view_button = document.createElement("button");
+            button_view_button.setAttribute("class", "view-button");
+            button_view_button.innerText = "View";
+            a.append(button_view_button);
+
+
+            document.querySelector("div.menu-list_types").append(div_menu_list);
+
+        }
+
 
     </script>
+
+    <script src="../../../assets/JS/footer.js"></script>
+
+
+
+
     <!-- script ends -->
 </body>
 

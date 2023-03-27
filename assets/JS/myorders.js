@@ -82,6 +82,33 @@ for (let i = 0; i < orderData.length; i++) {
         div_my_orders_list = document.createElement("div");
         div_my_orders_list.setAttribute("class", "my-orders_list");
 
+        div_header = document.createElement("div");
+        div_header.setAttribute("class", "header")
+        div_my_orders_list.append(div_header);
+
+        p_orderId = document.createElement("p");
+        p_orderId.setAttribute("class", "order_id");
+        p_orderId.innerText = "Order Id:" + " " + orderData[i]["order_id"]
+        div_header.append(p_orderId);
+
+        p_order_status = document.createElement("p");
+        p_order_status.setAttribute("id", "order_status");
+
+        if (orderData[i]["orderStatus"] == "Not Delivered") {
+            p_order_status.innerText = orderData[i]["orderStatus"];
+            p_order_status.setAttribute("style", "color:var(--text-color)");
+        }
+        if(orderData[i]["orderStatus"]== "Cancelled"){
+            p_order_status.innerText = orderData[i]["orderStatus"];
+            p_order_status.setAttribute("style", "color:var(--second-color)");
+        }
+        if(orderData[i]["orderStatus"]== "Delivered"){
+            p_order_status.innerText = orderData[i]["orderStatus"];
+            p_order_status.setAttribute("style", "color:var(--thickgreen-color)");
+        }
+        
+        div_header.append(p_order_status);
+
         // <div class="my_order_text"> 
         div_my_order_text = document.createElement("div");
         div_my_order_text.setAttribute("class", "my_order_text");
@@ -104,7 +131,7 @@ for (let i = 0; i < orderData.length; i++) {
         div_subject.append(button);
 
 
-        if (orderData[i]["orderStatus"] == "Cancelled") {
+        if (orderData[i]["orderStatus"] == "Cancelled" || orderData[i]["orderStatus"] == "Delivered") {
             button_cancel = document.createElement("button");
             button_cancel.setAttribute("class", "btn cancel");
             button_cancel.innerText = "Cancel Order";
@@ -124,36 +151,6 @@ for (let i = 0; i < orderData.length; i++) {
         div_field = document.createElement("div");
         div_field.setAttribute("class", "field");
         div_my_order_text.append(div_field);
-
-        div_4 = document.createElement("div");
-        div_field.append(div_4);
-
-        // // <label>Status: <p>Delivered</p> </label>
-        // label_4 = document.createElement("label");
-        // label_4.innerText = "Order Status:";
-        // div_4.append(label_4);
-
-        input_4 = document.createElement("input");
-        input_4.setAttribute("type", "text");
-        input_4.setAttribute("id", "order_status");
-        input_4.setAttribute("readOnly", "true");
-
-
-        if (orderData[i]["orderStatus"] == "Not delivered") {
-            input_4.setAttribute("value", orderData[i]["orderStatus"]);
-            input_4.setAttribute("style", "color:var(--text-color)");
-        }
-        if(orderData[i]["orderStatus"]== "Cancelled"){
-            input_4.setAttribute("value", orderData[i]["orderStatus"]);
-            input_4.setAttribute("style", "color:var(--second-color)");
-        }
-        if(orderData[i]["orderStatus"]== "Delivered"){
-            input_4.setAttribute("value", orderData[i]["orderStatus"]);
-            input_4.setAttribute("style", "color:var(--thickgreen-color)");
-        }
-        
-        div_4.append(input_4);
-
 
         div_1 = document.createElement("div");
         div_field.append(div_1);
@@ -299,8 +296,17 @@ cancelBtn.forEach(function (cancelOrder) {
 })
 
 
-let m = moment();
-let current_time = m.format("YYYY-MM-DD").toString();
+let m = moment().format("YYYY-MM-DD");
+console.log(m)
+
+let find_notDelivered_data = orderData.filter(data=>
+    data.orderStatus == "Not Delivered")
+console.log(find_notDelivered_data);
 
 
-console.log(m);
+for(i=0; i<find_notDelivered_data.length; i++){
+    if(orderData[i]["dateOfDelivery"] <= m){
+        orderData[i]["orderStatus"] = "Delivered"
+        localStorage.setItem("orderData", JSON.stringify(orderData));
+    }
+}

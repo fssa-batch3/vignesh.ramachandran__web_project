@@ -40,7 +40,7 @@ function addInput() {
 
 
     let inputCount = document.getElementsByName("dish").length;
-    // console.log(inputCount)
+    console.log(inputCount)
 
     n = ""
 
@@ -119,6 +119,8 @@ function getCatDetails() {
 
         categorylist.append(option);
     }
+
+    showCatergoy.setAttribute("style", "display:none");
 }
 
 // new code

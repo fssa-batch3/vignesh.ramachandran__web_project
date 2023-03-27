@@ -105,14 +105,12 @@
                     <li> MINERAL WATER</li>
                     <li> BANANA LEAF</li>
                 </ul> -->
-                <div class="btn">
+                <div class="nxt_page">
                     <!-- <p>₹150/plate</p> -->
-                    <!-- <a href="../../homepage/my cart.html"> -->
-                    <button class="add_to_cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png"
-                            alt="plus image" />
+                    <button class="add_to_cart">Add to Cart
+                        <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image" />
                     </button>
-                    <!-- </a> -->
-                    <a href="../../profile/Order page.html"><button class="buy_now">Buy Now</button></a>
+                    <!-- <a href="../../profile/Order page.html"><button class="buy_now">Buy Now</button></a> -->
                 </div>
                 <div class="about">
                     <!-- <img src="../../../assets/img/Dishes/ordinary tiffin.jpg" alt="ordinary tiffin" /> -->
@@ -134,7 +132,8 @@
 
         <!-- related menu starts -->
         <section class="related-menu">
-            <h2 class="related-menu_heading">Related <span>Breakfast</span> Menus</h2>
+
+            <!-- <h2 class="related-menu_heading">Related <span>Breakfast</span> Menus</h2>
             <div class="related-menu_content">
                 <div class="related-menu1">
                     <img src="../../../assets/img/Dishes/special tiffin.jpg" alt="special tiffin" />
@@ -148,7 +147,7 @@
                         <h2><span>VIP</span> Breakfast</h2>
                     </a>
                 </div>
-            </div>
+            </div> -->
 
         </section>
         <!-- related menu ends -->
@@ -166,38 +165,7 @@
                     personal and corporate orders.
                 </p>
             </div>
-            <div class="footer-content">
-                <h3><span>Breakfast</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/morning-ordinary.html" class="footer-navigation">Ordinary Breakfast</a></li>
-                    <li><a href="../Dishes/morning-special.html" class="footer-navigation">Special Breakfast</a></li>
-                    <li><a href="../Dishes/morning-vip.html" class="footer-navigation">VIP Breakfast</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Lunch</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/lunch-ordinary.html" class="footer-navigation">Ordinary Lunch</a></li>
-                    <li><a href="../Dishes/lunch-special.html" class="footer-navigation">Special Lunch</a></li>
-                    <li><a href="../Dishes/lunch-vip.html" class="footer-navigation">VIP Lunch</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Hightea</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/hightea-ordinary.html" class="footer-navigation">Ordinary Hightea</a></li>
-                    <li><a href="../Dishes/hightea-special.html" class="footer-navigation">Special Hightea</a></li>
-                    <li><a href="../Dishes/hightea-vip.html" class="footer-navigation">VIP Hightea</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Dinner</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/dinner-ordinary.html" class="footer-navigation">Ordinary Dinner</a></li>
-                    <li><a href="../Dishes/dinner-special.html" class="footer-navigation">Special Dinner</a></li>
-                    <li><a href="../Dishes/dinner-vip.html" class="footer-navigation">VIP Dinner</a></li>
-                </ul>
-            </div>
+
         </div>
         <div class="footer-details">
             <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
@@ -275,7 +243,7 @@
             return e.status === "true";
         }
         dishDataTrue = findData3.filter(getStatus);
-        console.log(dishDataTrue);
+        // console.log(dishDataTrue);
 
 
 
@@ -292,7 +260,7 @@
 
         }
 
-        let div_btn = document.querySelector(".btn")
+        let div_nxt_page = document.querySelector(".nxt_page")
 
         let cost = 0
         for (j = 0; j < dishDataTrue.length; j++) {
@@ -302,7 +270,7 @@
 
         price = document.createElement("p");
         price.innerText = "₹ " + cost;
-        div_btn.prepend(price);
+        div_nxt_page.prepend(price);
 
         heading = document.createElement("h3");
         heading.innerText = " " + categoryDetails["categoryName"] + " " + menuDetails["menuName"];
@@ -312,9 +280,70 @@
         highlight.innerText = "SR's";
         heading.prepend(highlight);
 
+        // related menu
+
+        // <h2 class="related-menu_heading">Related <span>Breakfast</span> Menus</h2>
+        h2_name = document.createElement("h2");
+        h2_name.setAttribute("class", "related-menu_heading");
+        h2_name.innerText = "Related ";
+
+        span_menu = document.createElement("span");
+        span_menu.innerText = menuDetails["menuName"] + " Menu"
+        h2_name.append(span_menu);
+
+        document.querySelector(".related-menu").append(h2_name);
+
+        // <div class="related-menu_content">
+        div_content = document.createElement("div");
+        div_content.setAttribute("class", "related-menu_content");
+
+        let find_cat = categoryData.filter(data=>
+            data.menuType == menuId); 
+
+        let related_cat = find_cat.filter(data =>
+            data.id !== categoryId);
+
+        console.log(related_cat)
+
+        let categoryDataTrue = related_cat.filter(data=>
+            data.status == "true")
+
+        for (i = 0; i < categoryDataTrue.length; i++) {
+            // <div class="related-menu1">
+            div_menu = document.createElement("div");
+            div_menu.setAttribute("class", "related-menu1");
+            div_content.append(div_menu);
+
+            // <img src="../../../assets/img/Dishes/special tiffin.jpg" alt="special tiffin" />
+            image = document.createElement("img");
+            image.setAttribute("src", categoryDataTrue[i]["categoryImage"]);
+            div_menu.append(image);
+
+            // <a href="./morning-special.html">
+            a_link = document.createElement("a");
+            a_link.setAttribute("href", "../../products/Dishes/dish.html?menu=" + menuId + "&category=" + categoryDataTrue[i]["id"]);
+            div_menu.append(a_link);
+
+            // <h2><span>Special</span> Breakfast</h2>
+            h2_category = document.createElement("h2");
+            h2_category.innerText =" " + menuDetails["menuName"];
+            a_link.append(h2_category);
+
+            span_category = document.createElement("span");
+            span_category.innerText = categoryDataTrue[i]["categoryName"];
+            h2_category.prepend(span_category);
+
+            document.querySelector(".related-menu").append(div_content)
+        }
+
+
+
     </script>
 
     <script src="../../../assets/JS/add_to_cart.js"></script>
+
+    <script src="../../../assets/JS/footer.js"></script>
+
 
     <!-- script ends -->
 

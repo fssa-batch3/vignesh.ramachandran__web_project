@@ -332,18 +332,15 @@ const placeOrder = e => {
     }
 
     let delivery_date = document.getElementById("delivery_date").value;
-    let m = moment().format("DD/MM/YYYY hh:mm:ssA");
-    let order_date = m.toString();
+    let order_date = moment().format("DD/MM/YYYY hh:mm:ssA");
 
     let before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
 
     if (delivery_date >= before_date) {
 
-        // ordered_product.push({ menu_id: menu_id, category_id: category_id, dishData: dish, no_of_guest: no_of_guest, price: price, dateOfDelivery: dateOfDelivery })
-
         orderData.push({
             order_id: order_id, name: name, user_id: email, phone_number: phone_number, address: address, dateOfDelivery: dateOfDelivery,
-            order_date: order_date, ordered_product: ordered_product, totalCost: totalCost, orderStatus: "Not delivered"
+            order_date: order_date, ordered_product: ordered_product, totalCost: totalCost, orderStatus: "Not Delivered"
         })
 
         alert("Order Placed Sucessfully");

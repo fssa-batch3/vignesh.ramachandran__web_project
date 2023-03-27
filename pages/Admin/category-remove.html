@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="../../assets/css/normalize.css">
 
     <link rel="icon" href="../../assets/img/main-logo.png">
+    
+    <link rel="stylesheet" href="../../assets/css/header.css">
 
     <link rel="stylesheet" href="../../assets/css/Admin/category remove.css">
     <title>category Remove</title>
@@ -30,17 +32,20 @@
 
 <body>
     <header>
+        <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
+
         <div class="icon-left">
             <img src="../../assets/img/main-logo.png" alt="Company Logo" class="logo" />
-            <img src="../../assets/img/Fav.png" alt="catering Logo" class="catering" />
+            <h1>SR</h1>
             <div>
                 <p>Catering</p>
             </div>
         </div>
 
-        <ul class="navigation">
-            <li><a href="../../index.html" class="navigation-link">HOME</a></li>
+        <ul class="navigation" id="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
+            <li><a href="../../index.html" class="navigation-link">HOME</a></li>
             <li class="dropdown">
                 <span class="navigation-link">MENU</span>
                 <div class="dropdown-content">
@@ -66,7 +71,7 @@
                     <a href="../profile/Profile page.html">My Profile</a>
                     <a href="../profile/register.html">Register</a>
                     <a href="../profile/Login.html">Log in</a>
-                    <a href="#">My Orders</a>
+                    <a href="../profile/my orders.html">My Orders</a>
                 </div>
             </div>
         </div>
