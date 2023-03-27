@@ -1,9 +1,7 @@
 const menuData = JSON.parse(localStorage.getItem("menuData"));
 
-if (menuData) {
-    return menuData;
-}
-else {
+if(!menuData){
+
     localStorage.setItem("menuData", JSON.stringify(
         [
             {
@@ -34,10 +32,8 @@ else {
 
 const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 
-if(categoryData){
-    return categoryData;
-}
-else{
+if(!categoryData){
+
     localStorage.setItem("categoryData", JSON.stringify(
 
         [
@@ -53,10 +49,8 @@ else{
 
 const dishData = JSON.parse(localStorage.getItem("dishData"));
 
-if(dishData){
-    return dishData;
-}
-else{
+if(!dishData){
+
     localStorage.setItem("dishData", JSON.stringify(
         [
             {"name":"MINI LADDU (1)","id":1,"price":"10","status":"true"},
@@ -91,11 +85,8 @@ else{
 
 const transactionTablel = JSON.parse(localStorage.getItem("transactionTable"));
 
-if(transactionTablel){
-    return transactionTablel;
-}
+if(!transactionTablel){
 
-else{
     localStorage.setItem("transactionTablel", JSON.stringify(
 
         [{"menuType":"1","categoryType":"1","dish":1,"status":"true"},{"menuType":"1","categoryType":"1","dish":2,"status":"true"},{"menuType":"1","categoryType":"1","dish":3,"status":"true"},{"menuType":"1","categoryType":"1","dish":4,"status":"true"},{"menuType":"1","categoryType":"2","dish":5,"status":"true"},{"menuType":"1","categoryType":"2","dish":6,"status":"true"},{"menuType":"1","categoryType":"2","dish":7,"status":"true"},{"menuType":"1","categoryType":"1","dish":8,"status":"true"},{"menuType":"1","categoryType":"1","dish":9,"status":"true"},{"menuType":"1","categoryType":"1","dish":10,"status":"true"},{"menuType":"1","categoryType":"1","dish":11,"status":"true"},{"menuType":"1","categoryType":"1","dish":12,"status":"true"},{"menuType":"1","categoryType":"1","dish":13,"status":"true"},{"menuType":"1","categoryType":"1","dish":14,"status":"true"},{"menuType":"1","categoryType":"2","dish":15,"status":"true"},{"menuType":"1","categoryType":"2","dish":16,"status":"true"},{"menuType":"1","categoryType":"2","dish":17,"status":"true"},{"menuType":"1","categoryType":"2","dish":18,"status":"true"},{"menuType":"1","categoryType":"2","dish":19,"status":"true"},{"menuType":"1","categoryType":"2","dish":20,"status":"true"},{"menuType":"1","categoryType":"2","dish":21,"status":"true"},{"menuType":"1","categoryType":"2","dish":22,"status":"true"},{"menuType":"1","categoryType":"2","dish":23,"status":"true"},{"menuType":"1","categoryType":"2","dish":24,"status":"true"}]
