@@ -1,7 +1,7 @@
 const menuData = JSON.parse(localStorage.getItem("menuData"));
 
 if (menuData) {
-    return
+    return menuData;
 }
 else {
     localStorage.setItem("menuData", JSON.stringify(
@@ -35,7 +35,7 @@ else {
 const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 
 if(categoryData){
-    return
+    return categoryData;
 }
 else{
     localStorage.setItem("categoryData", JSON.stringify(
@@ -54,7 +54,7 @@ else{
 const dishData = JSON.parse(localStorage.getItem("dishData"));
 
 if(dishData){
-    return
+    return dishData;
 }
 else{
     localStorage.setItem("dishData", JSON.stringify(
@@ -92,7 +92,7 @@ else{
 const transactionTablel = JSON.parse(localStorage.getItem("transactionTable"));
 
 if(transactionTablel){
-    return
+    return transactionTablel;
 }
 
 else{
