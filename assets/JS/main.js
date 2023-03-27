@@ -1,31 +1,16 @@
-const menuData = JSON.parse(localStorage.getItem("menuData"));
+// const menuData = JSON.parse(localStorage.getItem("menuData"));
 
 if(!menuData){
 
     localStorage.setItem("menuData", JSON.stringify(
+        
         [
-            {
-                categoryImage: "https://iili.io/HWh0ZrB.jpg",
-                categoryName: "Ordinary",
-                id: "1",
-                menuType: "1",
-                status: "true",
-            },
-            {
-                categoryImage: "https://iili.io/HWh0b71.png",
-                categoryName : "Special",
-                id: "2",
-                menuType: "1",
-                status: "true",
-            },
-            {
-                categoryImage: "https://iili.io/HWh0DdP.jpg",
-                categoryName : "VIP",
-                id: "3",
-                menuType: "1",
-                status: "true",
-            }
+            {"menuName":"Breakfast","id":"1","image":"https://iili.io/HWhcQZx.jpg","status":"true","description":"SR Catering Service offers best breakfast menu that is available for all parties and weddings; we also assist customers to create a personalized menu just according to client’s taste and perfect for the occasion"},
+            {"menuName":"Lunch","id":"2","image":"https://iili.io/HWhlhPV.jpg","status":"true","description":"SR Catering Service provides delicious lunch menu that suits all functions and parties; we also allow clients to create a personalized menu just according to their taste, budget"},
+            {"menuName":"Hightea","id":"3","image":"https://iili.io/HWhlXMQ.jpg","status":"true","description":"SR Catering Service gives evening tea and snacks menu which is available for all functions; we also help customers to create a personalized menu just according to client’s taste and perfect for the occasion"},
+            {"menuName":"Dinner","id":"4","image":"https://iili.io/HWhlwKB.jpg","status":"true","description":"SR Catering Service present a detailed dinner menu which is available for all parties, wedding and reception; we also aid customers to create a personalized and special menu just according to the taste and budget"},
         ]
+
     ))
 }
 
@@ -48,6 +33,7 @@ if(!categoryData){
 
 
 const dishData = JSON.parse(localStorage.getItem("dishData"));
+
 
 if(!dishData){
 
