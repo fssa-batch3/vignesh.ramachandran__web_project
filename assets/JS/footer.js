@@ -4,7 +4,7 @@
 
 let div_footer = document.querySelector(".footer-box");
 
-for (i = 0; i < menuDataTrue.length - 1; i++) {
+for (i = 0; i < 4; i++) {
 
     // <div class="footer-content">
     let div_content = document.createElement("div");

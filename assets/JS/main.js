@@ -69,11 +69,11 @@ if(!dishData){
 }
 
 
-const transactionTablel = JSON.parse(localStorage.getItem("transactionTable"));
+const transactionTable = JSON.parse(localStorage.getItem("transactionTable"));
 
-if(!transactionTablel){
+if(!transactionTable){
 
-    localStorage.setItem("transactionTablel", JSON.stringify(
+    localStorage.setItem("transactionTable", JSON.stringify(
 
         [{"menuType":"1","categoryType":"1","dish":1,"status":"true"},{"menuType":"1","categoryType":"1","dish":2,"status":"true"},{"menuType":"1","categoryType":"1","dish":3,"status":"true"},{"menuType":"1","categoryType":"1","dish":4,"status":"true"},{"menuType":"1","categoryType":"2","dish":5,"status":"true"},{"menuType":"1","categoryType":"2","dish":6,"status":"true"},{"menuType":"1","categoryType":"2","dish":7,"status":"true"},{"menuType":"1","categoryType":"1","dish":8,"status":"true"},{"menuType":"1","categoryType":"1","dish":9,"status":"true"},{"menuType":"1","categoryType":"1","dish":10,"status":"true"},{"menuType":"1","categoryType":"1","dish":11,"status":"true"},{"menuType":"1","categoryType":"1","dish":12,"status":"true"},{"menuType":"1","categoryType":"1","dish":13,"status":"true"},{"menuType":"1","categoryType":"1","dish":14,"status":"true"},{"menuType":"1","categoryType":"2","dish":15,"status":"true"},{"menuType":"1","categoryType":"2","dish":16,"status":"true"},{"menuType":"1","categoryType":"2","dish":17,"status":"true"},{"menuType":"1","categoryType":"2","dish":18,"status":"true"},{"menuType":"1","categoryType":"2","dish":19,"status":"true"},{"menuType":"1","categoryType":"2","dish":20,"status":"true"},{"menuType":"1","categoryType":"2","dish":21,"status":"true"},{"menuType":"1","categoryType":"2","dish":22,"status":"true"},{"menuType":"1","categoryType":"2","dish":23,"status":"true"},{"menuType":"1","categoryType":"2","dish":24,"status":"true"}]
     
