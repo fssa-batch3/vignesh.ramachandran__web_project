@@ -23,7 +23,8 @@ const signUp = e => {
             userData.push({ "name": name, "email": email, "phone_number": phone_number, "password": password});
 
             // store data into local storage
-            localStorage.setItem("userData", JSON.stringify(userData));
+            // localStorage.setItem("userData", JSON.stringify(userData));
+            console.log(userData);
 
 
             // after store data, reset form
@@ -61,7 +62,7 @@ const signIn = e => {
     }
     else {
         // let email_object = { "email": email };
-        localStorage.setItem("user_id", JSON.stringify(email));
+        localStorage.setItem("user_unique", JSON.stringify(email));
         alert("Login Sucessful ✅");
         location.href = "../../index.html";
     }

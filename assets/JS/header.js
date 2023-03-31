@@ -37,6 +37,7 @@ const after_login =
             <div>
                 <a href="${root}/pages/profile/Profile page.html">My Profile</a>
                 <a href="${root}/pages/profile/my orders.html">My Orders</a>
+                <a href="${root}/pages/Admin/admin form.html">Admin Forms</a>
             </div>
         </div>
     </div>
@@ -85,7 +86,7 @@ const before_login =
 `
 
 
-let user_id = JSON.parse(localStorage.getItem("user_id"));
+let user_id = JSON.parse(localStorage.getItem("user_unique"));
 // console.log(user_id)
 
 
@@ -95,7 +96,7 @@ if (user_id) {
     //  logout
     const logoutBtn = document.querySelector("#logout");
     logoutBtn?.addEventListener("click", () => {
-        localStorage.removeItem("user_id");
+        localStorage.removeItem("user_unique");
         document.body.innerHTML = before_login;
     })
 }

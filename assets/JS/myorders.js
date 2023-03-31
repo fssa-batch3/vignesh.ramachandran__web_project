@@ -3,6 +3,7 @@ orderData = JSON.parse(localStorage.getItem("orderData"));
 menuData = JSON.parse(localStorage.getItem("menuData"));
 categoryData = JSON.parse(localStorage.getItem("categoryData"));
 dishData = JSON.parse(localStorage.getItem("dishData"));
+user_unique = JSON.parse(localStorage.getItem("user_unique"))
 
 
 {/* <div class="my-orders_list">
@@ -53,16 +54,21 @@ dishData = JSON.parse(localStorage.getItem("dishData"));
 
 
 
+let orderData_user = orderData.filter(data=>
+        data.user_id == user_unique);
+
+console.log(orderData_user);
 
 
 
-for (let i = 0; i < orderData.length; i++) {
-    let count = orderData[i]["ordered_product"].length
+
+for (let i = 0; i < orderData_user.length; i++) {
+    let count = orderData_user[i]["ordered_product"].length
     // console.log(count)
 
     for (let j = 0; j < count; j++) {
 
-        let menu_id = orderData[i]["ordered_product"][j]["menu_id"]
+        let menu_id = orderData_user[i]["ordered_product"][j]["menu_id"]
         // console.log(menu_id)
 
         // for getting menu name from url
@@ -70,7 +76,7 @@ for (let i = 0; i < orderData.length; i++) {
             data.id === menu_id);
         // console.log(menu_name)
 
-        let category_id = orderData[i]["ordered_product"][j]["category_id"]
+        let category_id = orderData_user[i]["ordered_product"][j]["category_id"]
 
         // for getting category name from url
         let category_name = categoryData.find(data =>
@@ -88,22 +94,22 @@ for (let i = 0; i < orderData.length; i++) {
 
         p_orderId = document.createElement("p");
         p_orderId.setAttribute("class", "order_id");
-        p_orderId.innerText = "Order Id:" + " " + orderData[i]["order_id"]
+        p_orderId.innerText = "Order Id:" + " " + orderData_user[i]["order_id"]
         div_header.append(p_orderId);
 
         p_order_status = document.createElement("p");
         p_order_status.setAttribute("id", "order_status");
 
-        if (orderData[i]["orderStatus"] == "Not Delivered") {
-            p_order_status.innerText = orderData[i]["orderStatus"];
+        if (orderData_user[i]["orderStatus"] == "Not Delivered") {
+            p_order_status.innerText = orderData_user[i]["orderStatus"];
             p_order_status.setAttribute("style", "color:var(--text-color)");
         }
-        if(orderData[i]["orderStatus"]== "Cancelled"){
-            p_order_status.innerText = orderData[i]["orderStatus"];
+        if(orderData_user[i]["orderStatus"]== "Cancelled"){
+            p_order_status.innerText = orderData_user[i]["orderStatus"];
             p_order_status.setAttribute("style", "color:var(--second-color)");
         }
-        if(orderData[i]["orderStatus"]== "Delivered"){
-            p_order_status.innerText = orderData[i]["orderStatus"];
+        if(orderData_user[i]["orderStatus"]== "Delivered"){
+            p_order_status.innerText = orderData_user[i]["orderStatus"];
             p_order_status.setAttribute("style", "color:var(--thickgreen-color)");
         }
         
@@ -126,16 +132,16 @@ for (let i = 0; i < orderData.length; i++) {
         button = document.createElement("button");
         button.setAttribute("class", "btn view");
         button.setAttribute("type", "button");
-        button.setAttribute("value", orderData[i]["ordered_product"][j]["dishData"])
+        button.setAttribute("value", orderData_user[i]["ordered_product"][j]["dishData"])
         button.innerText = "View Dishes";
         div_subject.append(button);
 
 
-        if (orderData[i]["orderStatus"] == "Cancelled" || orderData[i]["orderStatus"] == "Delivered") {
+        if (orderData_user[i]["orderStatus"] == "Cancelled" || orderData_user[i]["orderStatus"] == "Delivered") {
             button_cancel = document.createElement("button");
             button_cancel.setAttribute("class", "btn cancel");
             button_cancel.innerText = "Cancel Order";
-            button_cancel.setAttribute("value", orderData[i]["order_id"])
+            button_cancel.setAttribute("value", orderData_user[i]["order_id"])
             button_cancel.setAttribute("style", "display:none")
             div_subject.append(button_cancel);
         }
@@ -143,7 +149,7 @@ for (let i = 0; i < orderData.length; i++) {
             button_cancel = document.createElement("button");
             button_cancel.setAttribute("class", "btn cancel");
             button_cancel.innerText = "Cancel Order";
-            button_cancel.setAttribute("value", orderData[i]["order_id"])
+            button_cancel.setAttribute("value", orderData_user[i]["order_id"])
             div_subject.append(button_cancel);
         }
 
@@ -162,7 +168,7 @@ for (let i = 0; i < orderData.length; i++) {
 
         input_1 = document.createElement("input");
         input_1.setAttribute("type", "date")
-        input_1.setAttribute("value", orderData[i]["dateOfDelivery"])
+        input_1.setAttribute("value", orderData_user[i]["dateOfDelivery"])
         input_1.setAttribute("readOnly", "true");
         div_1.append(input_1);
 
@@ -176,7 +182,7 @@ for (let i = 0; i < orderData.length; i++) {
 
         input_2 = document.createElement("input");
         input_2.setAttribute("type", "number");
-        input_2.setAttribute("value", orderData[i]["ordered_product"][j]["no_of_guest"]);
+        input_2.setAttribute("value", orderData_user[i]["ordered_product"][j]["no_of_guest"]);
         input_2.setAttribute("readOnly", "true");
         div_2.append(input_2);
 
@@ -190,7 +196,7 @@ for (let i = 0; i < orderData.length; i++) {
 
         input_3 = document.createElement("input");
         input_3.setAttribute("type", "number");
-        input_3.setAttribute("value", orderData[i]["ordered_product"][j]["price"]);
+        input_3.setAttribute("value", orderData_user[i]["ordered_product"][j]["price"]);
         input_3.setAttribute("readOnly", "true");
         div_3.append(input_3);
 
@@ -210,7 +216,7 @@ for (let i = 0; i < orderData.length; i++) {
         ul_dishes.setAttribute("class", "dishes");
         div_dropdown.append(ul_dishes);
 
-        let find_dish_data = orderData[i]["ordered_product"][j]["dishData"]
+        let find_dish_data = orderData_user[i]["ordered_product"][j]["dishData"]
         // console.log(find_dish_data);
 
         let finddish = dishData.filter(product =>

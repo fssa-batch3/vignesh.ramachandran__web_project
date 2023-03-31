@@ -8,11 +8,13 @@ let userData = JSON.parse(localStorage.getItem("userData"));
 let categoryData = JSON.parse(localStorage.getItem("categoryData"));
 let dishData = JSON.parse(localStorage.getItem("dishData"));
 
+let find_user = userData.filter(data=>
+        data.email == user_id)
 
 // get data from userData
-document.getElementById("name").value = userData[0]["name"]
-document.getElementById("email").value = userData[0]["email"]
-document.getElementById("phone_number").value = userData[0]["phone_number"]
+document.getElementById("name").value = find_user[0]["name"]
+document.getElementById("email").value = find_user[0]["email"]
+document.getElementById("phone_number").value = find_user[0]["phone_number"]
 
 
 
@@ -296,7 +298,8 @@ const placeOrder = e => {
     }
 
     else {
-        findData = cartData
+        findData = cartData.filter(data=>
+            data.user_id = user_id)
     }
 
     let ordered_product = [];

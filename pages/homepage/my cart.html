@@ -208,7 +208,7 @@
                     personal and corporate orders.
                 </p>
             </div>
-            
+
         </div>
         <div class="footer-details">
             <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
@@ -228,25 +228,31 @@
 
     <!-- script starts -->
     <script src="../../assets/JS/header.js"></script>
-    <script src="../../assets/JS/footer.js"></script>
 
-    
     <script>
 
+
+
         cartData = JSON.parse(localStorage.getItem("cartData"));
-        menuData = JSON.parse(localStorage.getItem("menuData"));
+        // menuData = JSON.parse(localStorage.getItem("menuData"));
         categoryData = JSON.parse(localStorage.getItem("categoryData"));
         dishData = JSON.parse(localStorage.getItem("dishData"));
-        user_id = JSON.parse(localStorage.getItem("user_id"));
+        user_unique = JSON.parse(localStorage.getItem("user_unique"));
+
+        console.log(user_unique)
+
+        console.log(cartData)
+
+        let cartData_user = cartData.filter(data =>
+            data.user_id == user_unique)
+
+        // console.log(cartData_user)
 
         let m = moment().format("YYYY-MM-DD");
 
+        for (let i = 0; i < cartData_user.length; i++) {
 
-        
-
-        for (let i = 0; i < cartData.length; i++) {
-
-            let menuId = cartData[i]["menu_id"];
+            let menuId = cartData_user[i]["menu_id"];
 
             // for getting menu name from url
             let menu_name = menuData.find(data =>
@@ -254,14 +260,14 @@
             // console.log(menu_name)
 
 
-            let categoryId = cartData[i]["category_id"];
+            let categoryId = cartData_user[i]["category_id"];
 
             // for getting category name from url
             let category_name = categoryData.find(data =>
                 data.id === categoryId);
             // console.log(category_name);
 
-            let n = cartData[i]["dishData"]
+            let n = cartData_user[i]["dishData"]
 
 
             let finddish = dishData.filter(product =>
@@ -283,7 +289,7 @@
             div_cart_text.append(h3);
 
             // h2_cart = document.createElement("h2");
-            // h2_cart.innerText = cartData[i]["menuName"];
+            // h2_cart.innerText = cartData_user[i]["menuName"];
             // div_cart_text.append(h2_cart);
 
 
@@ -296,7 +302,7 @@
             div_change.append(div_cart_dishes);
 
             // h3 = document.createElement("h3");
-            // h3.innerText = cartData[i]["categoryName"] + " " + cartData[i]["menuName"];
+            // h3.innerText = cartData_user[i]["categoryName"] + " " + cartData_user[i]["menuName"];
             // div_cart_dishes.append(h3);
 
             span = document.createElement("span");
@@ -307,7 +313,7 @@
             ul_dishes.setAttribute("class", "dishes");
             div_cart_dishes.append(ul_dishes);
 
-            // let a = cartData[i]["dishData"]
+            // let a = cartData_user[i]["dishData"]
             // console.log(a)
 
             for (let j = 0; j < finddish.length; j++) {
@@ -335,7 +341,7 @@
             input_1.setAttribute("type", "date");
             input_1.setAttribute("class", "date");
             input_1.setAttribute("required", "true");
-            input_1.setAttribute("value", cartData[i]["dateOfDelivery"])
+            input_1.setAttribute("value", cartData_user[i]["dateOfDelivery"])
             label_1.append(input_1);
 
             label_2 = document.createElement("label");
@@ -347,7 +353,7 @@
             input_2.setAttribute("class", "number");
             input_2.setAttribute("required", "true");
             input_2.setAttribute("min", "1")
-            input_2.setAttribute("value", cartData[i]["noOfGuest"])
+            input_2.setAttribute("value", cartData_user[i]["noOfGuest"])
             label_2.append(input_2);
 
             update = document.createElement("button");
@@ -369,7 +375,7 @@
             // for (let k = 0; k < a.length; k++) {
             //     cost += parseInt(a[k]["price"])
             // }
-            price.innerText = "₹ " + cartData[i]["totalCost"] * cartData[i]["noOfGuest"];
+            price.innerText = "₹ " + cartData_user[i]["totalCost"] * cartData_user[i]["noOfGuest"];
             div_cart_end.append(price);
 
 
@@ -378,7 +384,7 @@
             div_cart_end.append(div_btn_cart);
 
             a_1 = document.createElement("a");
-            // a_1.setAttribute("href", "../profile/Order page.html?cartId=" + cartData[i]["uniqueId"]);
+            // a_1.setAttribute("href", "../profile/Order page.html?cartId=" + cartData_user[i]["uniqueId"]);
             div_btn_cart.append(a_1);
 
             button_1 = document.createElement("button");
@@ -393,7 +399,7 @@
 
             button_2 = document.createElement("button");
             button_2.setAttribute("class", "btn remove");
-            button_2.setAttribute("data-id", cartData[i]["uniqueId"])
+            button_2.setAttribute("data-id", cartData_user[i]["uniqueId"])
             button_2.setAttribute("type", "button");
             button_2.innerText = "REMOVE";
             a_2.append(button_2);
@@ -417,11 +423,11 @@
             div_sum_details.append(p_name);
 
             date = document.createElement("p");
-            date.innerText = cartData[i]["dateOfDelivery"];
+            date.innerText = cartData_user[i]["dateOfDelivery"];
             div_sum_details.append(date);
 
             p_price = document.createElement("p");
-            p_price.innerText = "₹ " + cartData[i]["totalCost"] * cartData[i]["noOfGuest"];
+            p_price.innerText = "₹ " + cartData_user[i]["totalCost"] * cartData_user[i]["noOfGuest"];
             div_sum_details.append(p_price);
 
         }
@@ -436,9 +442,9 @@
         div_sum_end.append(p_total);
 
         let totalcost = 0
-        for (let s = 0; s < cartData.length; s++) {
+        for (let s = 0; s < cartData_user.length; s++) {
 
-            totalcost += cartData[s]["totalCost"] * cartData[s]["noOfGuest"]
+            totalcost += cartData_user[s]["totalCost"] * cartData_user[s]["noOfGuest"]
         }
 
         p_totalprice = document.createElement("p")
@@ -451,7 +457,7 @@
         let btn_orderall = document.createElement("button");
         btn_orderall.setAttribute("type", "button");
         btn_orderall.setAttribute("class", "btn orderall");
-        btn_orderall.innerText = "ORDER ALL" + " " + "(" + cartData.length + ")";
+        btn_orderall.innerText = "ORDER ALL" + " " + "(" + cartData_user.length + ")";
 
         div_orderAll.append(btn_orderall);
 
@@ -538,7 +544,7 @@
                     alert("check Date");
                 }
                 else {
-                    location.href = "../profile/Order page.html?cartId=" + unique_id;
+                    location.href = "../profile/Order page.html?cartId=" + unique_id;   
                 }
             })
         })
@@ -621,6 +627,9 @@
 
 
     </script>
+
+    <script src="../../assets/JS/footer.js"></script>
+
     <!-- script ends -->
 
 

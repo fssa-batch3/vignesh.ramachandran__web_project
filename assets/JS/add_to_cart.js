@@ -2,8 +2,9 @@
 
 trasactionTable = JSON.parse(localStorage.getItem("transactionTable"));
 userData = JSON.parse(localStorage.getItem("userData"));
-user_id = JSON.parse(localStorage.getItem("user_id"));
-// user_unique = user_id["email"]
+user_unique = JSON.parse(localStorage.getItem("user_unique"));
+console.log(user_unique)
+// user_unique = user_unique["email"]
 //     console.log(user_unique);
 
 
@@ -12,7 +13,7 @@ addtoCartBtn.addEventListener("click", addtoCart);
 
 function addtoCart() {
 
-    if (user_id == null) {
+    if (user_unique == null) {
 
         alert("Please Login")
 
@@ -70,6 +71,11 @@ function addtoCart() {
 
         cartData = JSON.parse(localStorage.getItem("cartData")) || [];
 
+        let find_user = cartData.filter(data=>
+            data.user_id == user_unique);
+
+        // console.log(find_user[0]["menu_id"])
+
         // let m_name = menu_name["menuName"];
         // let c_name = category_name["categoryName"];
         let no_of_guest = 01;
@@ -77,14 +83,14 @@ function addtoCart() {
         let uuid = uuidv4();
 
 
-        if (cartData.length == 0) {
+        if (find_user.length == 0) {
             let cost = 0
             for (let i = 0; i < dishDataTrue.length; i++) {
                 cost += parseInt(dishDataTrue[i]["price"])
             }
             // console.log(cost)
             cartData.push({
-                user_id: user_id, menu_id: menuId, category_id: categoryId, uniqueId: uuid, totalCost: cost, noOfGuest: no_of_guest,
+                user_id: user_unique, menu_id: menuId, category_id: categoryId, uniqueId: uuid, totalCost: cost, noOfGuest: no_of_guest,
                 dateOfDelivery: date_of_delivery, dishData: dishes_id, cartStatus: "false"
             })
             // console.log(cartData[0])
@@ -92,12 +98,12 @@ function addtoCart() {
             localStorage.setItem("cartData", JSON.stringify(cartData));
         }
 
-        else if (cartData.length !== 0) {
+        else if (find_user.length !== 0) {
 
             let a = true;
-            for (i = 0; i < cartData.length; i++) {
+            for (i = 0; i < find_user.length; i++) {
 
-                if (menuId == cartData[i]["menu_id"] && categoryId == cartData[i]["category_id"]) {
+                if (menuId == find_user[i]["menu_id"] && categoryId == find_user[i]["category_id"]) {
                     alert("This menu already in the cart ‼")
                     a = false;
                 }
@@ -110,7 +116,7 @@ function addtoCart() {
 
                 alert("Menu added into the Cart ✅")
                 cartData.push({
-                    user_id: user_id, menu_id: menuId, category_id: categoryId, uniqueId: uuid, totalCost: cost, noOfGuest: no_of_guest,
+                    user_id: user_unique, menu_id: menuId, category_id: categoryId, uniqueId: uuid, totalCost: cost, noOfGuest: no_of_guest,
                     dateOfDelivery: date_of_delivery, dishData: dishes_id, cartStatus: "false"
                 })
                 localStorage.setItem("cartData", JSON.stringify(cartData));

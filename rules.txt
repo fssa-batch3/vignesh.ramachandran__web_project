@@ -106,34 +106,3 @@ font-family: 'Kurale', serif
 
 
 	
-### Menu CRUD
-    - Create menu (completed)
-    - Read menu (completed)
-    - Read menu details (completed)
-    - Update menu details (completed)
-    - Delete menu (completed)
-
-### Category CRUD
-    - Create category (completed)
-    - Read category (completed)
-    - Read category details (completed)
-    - Update category details (completed)
-    - Delete category (completed)
-
-### Dish CRUD
-    -Create dish (completed)
-    -Edit dish (completed)
-    -Update dish (completed)
-    -Delete dish (completed)
-    
-### Add_to_cart CRUD
-    - Create cart (completed)
-    - Read cart (completed)
-    - Read cart details (completed)
-    - Delete cart (completed)
-
-### Order CRUD
-    - Create order
-    - Read order
-    - Update order
-    - Cancel order

@@ -153,12 +153,12 @@
     <script>
         
         //get value from local storage
-        let unique_id = JSON.parse(localStorage.getItem("user_id"));
+        let user_unique = JSON.parse(localStorage.getItem("user_unique"));
         // let unique_id = unique_id_1["email"]
         let userData = JSON.parse(localStorage.getItem("userData"));
 
         function profile_data(e) {
-            return e.email == unique_id;
+            return e.email == user_unique;
         }
 
         // finding the userData which unique_id correctly matches
@@ -178,15 +178,15 @@
             if (confirm("Are you sure to delete this account ?")) {
 
                 //get value from local storage
-                let unique_id = JSON.parse(localStorage.getItem("user_id"));
+                let user_unique = JSON.parse(localStorage.getItem("user_unique"));
                 // let unique_id = unique_id_1["email"]
                 let userData = JSON.parse(localStorage.getItem("userData"));
 
                 function profile_data(e) {
-                    return e.email == unique_id;
+                    return e.email == user_unique;
                 }
 
-                // finding the userData which unique_id correctly matches
+                // finding the userData which user_unique correctly matches
                 let person_data = userData.find(profile_data);
 
                 // find the index of person_data from userData

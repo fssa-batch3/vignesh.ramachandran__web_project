@@ -94,6 +94,13 @@ input:focus{
     font-family: var(--p-font);
     font-size: 1rem;
 } */
+#pattern {
+    padding: .4rem 0;
+    font-size: .9rem;
+    font-family: var(--parah-fontfamily);
+    color: var(--second-color);
+    text-align: center;
+}
 .visible_pass{
     padding-top: 2rem;
 }

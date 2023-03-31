@@ -11,14 +11,57 @@
 
 ### Sonar cloud - https://sonarcloud.io/summary/new_code?id=fssa-batch3_vignesh.ramachandran__web_project
 
+
+## Features
+
+### User CRUD
+- Create Profile (completed)
+- Read Profile (completed)
+- Update Profile (completed)
+- Delete Profile (completed)
+
+### Menu CRUD
+- Create menu (completed)
+- Read menu (completed)
+- Read menu details (completed)
+- Update menu details (completed)
+- Delete menu (completed)
+
+### Category CRUD
+- Create category (completed)
+- Read category (completed)
+- Read category details (completed)
+- Update category details (completed)
+- Delete category (completed)
+
+### Dish CRUD
+- Create dish (completed)
+- Edit dish (completed)
+- Update dish (completed)
+- Delete dish (completed)
+    
+### Add_to_cart CRUD
+- Create cart (completed)
+- Read cart (completed)
+- Read cart details (completed)
+- Delete cart (completed)
+
+### Order CRUD
+- Create order (completed)
+- Read order (completed)
+- Cancel order (completed)
+
+
+
 ## Buyer
 
 ### Register page
 - Scenario 1: Successfully create an account
     - Steps:
-        1. Navigate to the registration page.
-        2. Enter the required information such as name, email,phone_number and password.
-        3. Click the "Register" button.
+        1. Navigate to the Login page.
+        2. Click "Create an account" link.
+        3. Enter the required information such as name, email,phone_number and password.
+        4. Click the "Register" button.
     - Expected Result:
         - The user is redirected to the Login page.
 
@@ -53,6 +96,15 @@
         5. Click the "Save" button.
     - Expected Result:
         - The user's profile details are updated.
+
+
+### Logout profile 
+- Scenario 1: Successfully logout profile 
+    - Steps:
+        1. Navigate to the Profile page.
+        2. click "Logout" button.
+    - Expected Result:
+        - The user logged out from the profile page and redirected to the home page.
 
 
 ### View Menu/Category

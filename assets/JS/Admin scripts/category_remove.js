@@ -107,44 +107,44 @@ function saveData() {
 }
 
 
-// delete the category from the menuData
-let deleteBtn = document.querySelector(".delete");
-deleteBtn.addEventListener("click", removeCategory);
+// // delete the category from the menuData
+// let deleteBtn = document.querySelector(".delete");
+// deleteBtn.addEventListener("click", removeCategory);
 
-function removeCategory() {
-    // let menuType = document.getElementById("menuName").value;
-    let categoryType = document.getElementById("categoryName").value;
+// function removeCategory() {
+//     // let menuType = document.getElementById("menuName").value;
+//     let categoryType = document.getElementById("categoryName").value;
 
-    // // filtering menu
-    // function getMenu(e) {
-    //     return e.id === menuType;
-    // }
-    // findData = menuData.filter(getMenu)
-
-
-    // let k = findData[0]["categoryData"]
-    // // console.log(k)
-
-    // filtering category
-    function getCategory(e) {
-        return e.id == categoryType;
-    }
-    findData = categoryData.filter(getCategory);
-    // console.log(findData2[0]["categoryName"]);
+//     // // filtering menu
+//     // function getMenu(e) {
+//     //     return e.id === menuType;
+//     // }
+//     // findData = menuData.filter(getMenu)
 
 
-    // here finding the index of findData from menuData and delete
-    for (i = 0; i < categoryData.length; i++) {
+//     // let k = findData[0]["categoryData"]
+//     // // console.log(k)
 
-        if (findData[0]["categoryName"] == categoryData[i]["categoryName"]) {
+//     // filtering category
+//     function getCategory(e) {
+//         return e.id == categoryType;
+//     }
+//     findData = categoryData.filter(getCategory);
+//     // console.log(findData2[0]["categoryName"]);
 
-            categoryData.splice(i, 1)
-            localStorage.setItem("categoryData", JSON.stringify(categoryData));
-            alert("Category Deleted Sucessfully ✅")
-            location.reload()
-        }
-    }
-}
+
+//     // here finding the index of findData from menuData and delete
+//     for (i = 0; i < categoryData.length; i++) {
+
+//         if (findData[0]["categoryName"] == categoryData[i]["categoryName"]) {
+
+//             categoryData.splice(i, 1)
+//             localStorage.setItem("categoryData", JSON.stringify(categoryData));
+//             alert("Category Deleted Sucessfully ✅")
+//             location.reload()
+//         }
+//     }
+// }
 
 
 

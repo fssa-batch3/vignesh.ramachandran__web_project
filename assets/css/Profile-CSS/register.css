@@ -89,6 +89,13 @@ main {
     top: -9px;
     z-index: 5;
 }
+#pattern {
+    padding: .4rem 0;
+    font-size: .9rem;
+    font-family: var(--parah-fontfamily);
+    color: var(--second-color);
+    text-align: center;
+}
 .forget{
     padding-top: 2rem;
 }

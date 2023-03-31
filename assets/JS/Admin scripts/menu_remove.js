@@ -71,30 +71,30 @@ function saveData() {
 
 
 
-// remove the selected menu from the localstorage
-let removeBtn = document.querySelector(".delete");
-removeBtn.addEventListener("click", removeMenu);
+// // remove the selected menu from the localstorage
+// let removeBtn = document.querySelector(".delete");
+// removeBtn.addEventListener("click", removeMenu);
 
-function removeMenu() {
+// function removeMenu() {
 
-    let menuData = JSON.parse(localStorage.getItem("menuData"));
-    menuType = document.getElementById("menuName").value;
+//     let menuData = JSON.parse(localStorage.getItem("menuData"));
+//     menuType = document.getElementById("menuName").value;
 
-    // filtering get data from menuData
-    function getMenu(e) {
-        return e.id === menuType;
-    }
-    findData = menuData.filter(getMenu)
-    // console.log(findData)
+//     // filtering get data from menuData
+//     function getMenu(e) {
+//         return e.id === menuType;
+//     }
+//     findData = menuData.filter(getMenu)
+//     // console.log(findData)
 
-    // here finding the index of findData from menuData and delete
-    for (i = 0; i < menuData.length; i++) {
+//     // here finding the index of findData from menuData and delete
+//     for (i = 0; i < menuData.length; i++) {
 
-        if (findData[0]["menuName"] == menuData[i]["menuName"]) {
-            menuData.splice(i, 1)
-            localStorage.setItem("menuData", JSON.stringify(menuData));
-            alert("Menu Removed Sucessfully ✅")
-            location.reload()
-        }
-    }
-}
+//         if (findData[0]["menuName"] == menuData[i]["menuName"]) {
+//             menuData.splice(i, 1)
+//             localStorage.setItem("menuData", JSON.stringify(menuData));
+//             alert("Menu Removed Sucessfully ✅")
+//             location.reload()
+//         }
+//     }
+// }
