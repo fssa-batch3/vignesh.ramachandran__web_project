@@ -58,19 +58,21 @@
 ### Register page
 - Scenario 1: Successfully create an account
     - Steps:
-        1. Navigate to the Login page.
-        2. Click "Create an account" link.
-        3. Enter the required information such as name, email,phone_number and password.
-        4. Click the "Register" button.
+        1. Click the "login" button which is at the top right of the page.
+        2. The page navigate to the login page.
+        3. Click "Create an account" link.
+        4. Enter the required information such as name, email,phone_number and password.
+        5. Click the "Register" button.
     - Expected Result:
         - The user is redirected to the Login page.
 
 ### Login page
 - Scenario 1: Successfully login in to account
     - Steps:
-        1. Navigate to the login page.
-        2. Enter the required information such as email and password.
-        3. Click the "login" button.
+        1. Click the "login" button which is at the top right of the page
+        2. The page navigate to the login page.
+        3. Enter the required information such as email and password.
+        4. Click the "login" button.
     - Expected Result:
         - The user is redirected to the home page.
         - User profile created.
@@ -80,8 +82,10 @@
 - Scenario 1: Successfully view account details
     - Steps:
         1. Log in as a buyer.
-        2. Navigate to the profile page.
-        3. View the profile details such as name, email,phone_number and password.
+        2. click the "profile" icon which is at the top right of the page.
+        3. Then click "My profile".
+        4. The page is redirected to the profile page.
+        5. You can see the profile details such as name, email,phone_number and password.
     - Expected Result:
         - The user can view their profile details.
 
@@ -89,11 +93,12 @@
 ### Edit profile details
 - Scenario 1: Successfully edit profile details
     - Steps:
-        1. Log in as a seller.
-        2. Navigate to the profile page.
-        3. Click the "Edit profile" button.
-        4. Update the account details.
-        5. Click the "Save" button.
+        1. click the "profile" icon which is at the top right of the page.
+        2. Then click "My profile".
+        3. The page is redirected to the profile page.
+        4. Click the "Edit profile" button.
+        5. Update the account details such as name and password.
+        6. Click the "Save" button.
     - Expected Result:
         - The user's profile details are updated.
 
@@ -101,8 +106,10 @@
 ### Logout profile 
 - Scenario 1: Successfully logout profile 
     - Steps:
-        1. Navigate to the Profile page.
-        2. click "Logout" button.
+        1. click the "profile" icon which is at the top right of the page.
+        2. Then click "My profile".
+        3. The page is redirected to the profile page.
+        4. click "Logout" button.
     - Expected Result:
         - The user logged out from the profile page and redirected to the home page.
 
@@ -110,9 +117,11 @@
 ### View Menu/Category
 - Scenario 1: Successfully view Menu/Category
     - Steps:
-        1. Log in as a buyer.
-        2. Navigate to the Menu/Category listing page.
-        3. View the list of available Menu/Category.
+        1. You can either scroll the home page and click the "readmore" link as per menu name (or)
+            you can click the "Menu" which is in the nav bar, then it shows the available menu.
+        2. Then you click whatever menu you want.
+        3. It navigate to the Menu/Category listing page.
+        4. You can view the list of available Menu/Category.
     - Expected Result:
         - The user can view the list of available Menu/Category.
 
@@ -120,20 +129,29 @@
 ### View Dish
 - Scenario 1: Successfully view Dish
     - Steps:
-        1. Log in as a buyer.
-        2. Navigate to the available dish listing page.
-        3. Select a Menu/Category to view its dish.
+        1. You can either scroll the home page and click the "readmore" link as per menu name (or)
+            you can click the "Menu" which is in the nav bar, then it shows the available menu.
+        2. Then you click whatever menu you want.
+        3. It navigate to the Menu/Category listing page.
+        4. Then click the "view" button which category you want to see.
+        5. It navigate to the available dish for selected category.
     - Expected Result:
-        - The user can view the dish list of the selected Menu?Category.
+        - The user can view the dish list of the selected Menu/Category.
 
 
 ### Add Menu/Category to cart
 - Scenario 1: Successfully add Menu/Category to cart
     - Steps:
         1. Log in as a buyer.
-        2. Navigate to the Menu/Category listing page.
-        3. Select a Menu/Category to add to cart.
-        4. Click the "Add to Cart" button.
+        2. You can either scroll the home page and click the "readmore" link as per menu name (or)
+            you can click the "Menu" which is in the nav bar, then it shows the available menu.
+        3. Then you click whatever menu you want.
+        4. It navigate to the Menu/Category listing page.
+        5. Then click the "view" button which category you want to see.
+        6. It navigate to the available dish for selected category.
+        7. click the "Add to cart" button 
+        8. Select a Menu/Category to add to cart.
+        9. Click the "Add to Cart" button.
     - Expected Result:
         - The Menu/Category is added to the user's cart.
 
@@ -142,8 +160,9 @@
 - Scenario 1: Successfully view Menu/Category in cart
     - Steps:
         1. Log in as a buyer.
-        2. Navigate to the cart page.
-        3. View the list of Menu/Category in the cart.
+        2. click the "cart" in the nav bar.
+        3. It navigate to the cart page.
+        4. You can view the list of Menu/Category in the cart.
     - Expected Result:
         - The user can view the list of Menu/Category in the cart.
 
@@ -152,8 +171,10 @@
 - Scenario 1: Successfully remove Menu/Category from cart
     - Steps:
         1. Log in as a buyer.
-        2. Navigate to the cart page.
-        3. Remove the selected Menu/Category from the cart.
+        2. click the "cart" in the nav bar.
+        3. It navigate to the cart page.
+        4. click the "remove" button which cart menu you want to remove.
+        5. It remove the selected Menu/Category from the cart.
     - Expected Result:
         - The Menu/Category is removed from the user's cart.
 
@@ -162,7 +183,9 @@
 - Scenario 1: Successfully purchase a Menu/Category
     - Steps:
         1. Log in as a buyer.
-        2. Navigate to the cart page.
+        2. click the "cart" in the nav bar.
+        3. It navigate to the cart page.
+        4. click the "order" button which menu you want to order.
         3. Select required Menu/Category to Order.
         4. Enter the Delivery date and No.of.guest.
         5. Click the "Order" button.

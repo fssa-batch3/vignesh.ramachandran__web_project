@@ -1,4 +1,34 @@
 
+const footer_js =
+
+    `
+    <footer>
+        <div class="footer-box">
+            <div class="footer-content">
+                <img src="${root}/assets/img/main-logo.png" alt="Company Logo" />
+                <p>
+                    SR Catering service is a professional catering service provider located in Kumbakonam, catering both
+                    personal and corporate orders.
+                </p>
+            </div>
+            
+        </div>
+        <div class="footer-details">
+            <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
+            <p>(+91)6379370482</p>
+            <div class="footer-links">
+                <a href="https://www.instagram.com/vicky_sk_forever?r=nametag"> <img src="${root}/assets/img/instagram.jpg" alt="instagram" /> </a>
+                <a href="https://www.facebook.com/profile.php?id=100011341742455"> <img src="${root}/assets/img/facebook.jpg" alt="facebook link" /> </a>
+                <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"> <img src="${root}/assets/img/twitter.png" alt="twitter link" /> </a>
+            </div>
+        </div>
+    </footer>
+
+    `
+
+
+    document.body.insertAdjacentHTML("beforeend", footer_js);
+
 
 // const categoryData = JSON.parse(localStorage.getItem("categoryData"))
 
@@ -37,7 +67,7 @@ for (i = 0; i < 4; i++) {
         ul_list.append(li_links);
 
         a_links = document.createElement("a");
-        a_links.setAttribute("href", root +"/pages/products/Dishes/dish.html?menu=" + menuDataTrue[i]["id"] + "&category=" + categoryDataTrue[j]["id"]);
+        a_links.setAttribute("href", root + "/pages/products/Dishes/dish.html?menu=" + menuDataTrue[i]["id"] + "&category=" + categoryDataTrue[j]["id"]);
         a_links.setAttribute("class", "footer-navigation");
         a_links.innerText = categoryDataTrue[j]["categoryName"] + " " + menuDataTrue[i]["menuName"];
         li_links.append(a_links);

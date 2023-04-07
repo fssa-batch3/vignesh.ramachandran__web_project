@@ -23,8 +23,8 @@ const signUp = e => {
             userData.push({ "name": name, "email": email, "phone_number": phone_number, "password": password});
 
             // store data into local storage
-            // localStorage.setItem("userData", JSON.stringify(userData));
-            console.log(userData);
+            localStorage.setItem("userData", JSON.stringify(userData));
+            // console.log(userData);
 
 
             // after store data, reset form

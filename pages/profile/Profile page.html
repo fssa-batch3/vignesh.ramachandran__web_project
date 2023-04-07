@@ -86,7 +86,7 @@
             <form>
                 <div class="top">
                     <h2 class="heading"><span>My</span> Profile</h2>
-                    <button class="delete btn" type="button" onclick="deleteAcc()">Delete Account</button>
+                    <!-- <button class="delete btn" type="button" onclick="deleteAcc()">Delete Account</button> -->
                 </div>
 
                 <div class="profile_form">
@@ -174,33 +174,33 @@
 
         // delete account function
 
-        function deleteAcc() {
-            if (confirm("Are you sure to delete this account ?")) {
+        // function deleteAcc() {
+        //     if (confirm("Are you sure to delete this account ?")) {
 
-                //get value from local storage
-                let user_unique = JSON.parse(localStorage.getItem("user_unique"));
-                // let unique_id = unique_id_1["email"]
-                let userData = JSON.parse(localStorage.getItem("userData"));
+        //         //get value from local storage
+        //         let user_unique = JSON.parse(localStorage.getItem("user_unique"));
+        //         // let unique_id = unique_id_1["email"]
+        //         let userData = JSON.parse(localStorage.getItem("userData"));
 
-                function profile_data(e) {
-                    return e.email == user_unique;
-                }
+        //         function profile_data(e) {
+        //             return e.email == user_unique;
+        //         }
 
-                // finding the userData which user_unique correctly matches
-                let person_data = userData.find(profile_data);
+        //         // finding the userData which user_unique correctly matches
+        //         let person_data = userData.find(profile_data);
 
-                // find the index of person_data from userData
-                let result = userData.indexOf(person_data);
+        //         // find the index of person_data from userData
+        //         let result = userData.indexOf(person_data);
 
-                // deleting the indexof person data
-                userData.splice(result, 1);
+        //         // deleting the indexof person data
+        //         userData.splice(result, 1);
 
-                alert("Your Account was deleted")
-                localStorage.setItem("userData", JSON.stringify(userData));
+        //         alert("Your Account was deleted")
+        //         localStorage.setItem("userData", JSON.stringify(userData));
 
-                window.location.href = "../../index.html";
-            }
-        }
+        //         window.location.href = "../../index.html";
+        //     }
+        // }
 
 
         // logout function
