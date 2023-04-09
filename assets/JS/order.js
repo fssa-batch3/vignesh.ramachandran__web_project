@@ -4,12 +4,16 @@ const orderStatus = new URLSearchParams(window.location.search).get("orderStatus
 
 let cartData = JSON.parse(localStorage.getItem("cartData"));
 let userData = JSON.parse(localStorage.getItem("userData"));
+let user_unique = JSON.parse(localStorage.getItem("user_unique"))
 // let menuData = JSON.parse(localStorage.getItem("menuData"));
 let categoryData = JSON.parse(localStorage.getItem("categoryData"));
 let dishData = JSON.parse(localStorage.getItem("dishData"));
 
-let find_user = userData.filter(data=>
-        data.email == user_id)
+let find_user = userData.filter(data =>
+    data.email == user_unique)
+
+let cartData_user = cartData.filter(data =>
+    data.user_id == user_unique)
 
 // get data from userData
 document.getElementById("name").value = find_user[0]["name"]
@@ -20,7 +24,7 @@ document.getElementById("phone_number").value = find_user[0]["phone_number"]
 
 if (cartId) {
 
-    let cartdetails = cartData.filter(data =>
+    let cartdetails = cartData_user.filter(data =>
         data.uniqueId === cartId)
 
 
@@ -39,19 +43,7 @@ if (cartId) {
         data.id === categoryId);
     // console.log(category_name);
 
-    let n = cartdetails[0]["dishData"]
-    let z = cartdetails.length
 
-
-    let finddish = dishData.filter(product =>
-        n.some(find => find.id === product.id));
-    // console.log(finddish)
-
-    let userId = userData[0]["email"];
-    // console.log(userId)
-
-
-    let status = "";
     let totalCost = 0;
 
     for (let i = 0; i < cartdetails.length; i++) {
@@ -122,7 +114,7 @@ if (cartId) {
 
         document.querySelector(".order_details").append(div_seperation);
 
-        totalCost += cartData[i]["totalCost"] * cartData[i]["noOfGuest"]
+        totalCost += cartData_user[i]["totalCost"] * cartData_user[i]["noOfGuest"]
 
     }
 
@@ -179,19 +171,19 @@ else {
 
     let totalCost = 0;
 
-    for (let i = 0; i < cartData.length; i++) {
+    for (let i = 0; i < cartData_user.length; i++) {
 
         div_seperation = document.createElement("div");
         div_seperation.setAttribute("class", "seperation");
 
 
-        let menuId = cartData[i]["menu_id"];
+        let menuId = cartData_user[i]["menu_id"];
 
         // for getting menu name from url
         let menu_name = menuData.find(data =>
             data.id === menuId);
 
-        let categoryId = cartData[i]["category_id"];
+        let categoryId = cartData_user[i]["category_id"];
 
         // for getting category name from url
         let category_name = categoryData.find(data =>
@@ -218,7 +210,7 @@ else {
         input_1.setAttribute("id", "no_of_guest");
         input_1.setAttribute("min", "1")
         input_1.setAttribute("readonly", "true")
-        input_1.value = cartData[i]["noOfGuest"];
+        input_1.value = cartData_user[i]["noOfGuest"];
         div_1.append(input_1);
 
         // div for price
@@ -234,7 +226,7 @@ else {
         input_2.setAttribute("type", "number");
         input_2.setAttribute("id", "price" + i);
         input_2.setAttribute("readonly", "true")
-        input_2.value = cartData[i]["totalCost"] * cartData[i]["noOfGuest"];
+        input_2.value = cartData_user[i]["totalCost"] * cartData_user[i]["noOfGuest"];
         div_2.append(input_2);
 
         // div for delivery date
@@ -250,7 +242,7 @@ else {
         input_3.setAttribute("type", "date");
         input_3.setAttribute("id", "delivery_date");
         input_3.setAttribute("readonly", "true")
-        input_3.value = cartData[i]["dateOfDelivery"];
+        input_3.value = cartData_user[i]["dateOfDelivery"];
         div_3.append(input_3);
 
         ensure = document.createElement("p");
@@ -260,7 +252,7 @@ else {
 
         document.querySelector(".order_details").append(div_seperation);
 
-        totalCost += cartData[i]["totalCost"] * cartData[i]["noOfGuest"]
+        totalCost += cartData_user[i]["totalCost"] * cartData_user[i]["noOfGuest"]
 
     }
 
@@ -283,8 +275,9 @@ else {
 }
 
 
-// order button has onsubmit function
+// order page <form> tag has onsubmit function
 const placeOrder = e => {
+
     e.preventDefault()
 
     let orderData = JSON.parse(localStorage.getItem("orderData")) || [];
@@ -292,14 +285,13 @@ const placeOrder = e => {
     let findData = ""
 
     if (cartId) {
-        findData = cartData.filter(data =>
+        findData = cartData_user.filter(data =>
             data.uniqueId == cartId);
         console.log(findData)
     }
 
     else {
-        findData = cartData.filter(data=>
-            data.user_id = user_id)
+        findData = cartData_user;
     }
 
     let ordered_product = [];
@@ -312,12 +304,13 @@ const placeOrder = e => {
     let phone_number = document.getElementById("phone_number").value;
     let address = document.getElementById("address").value;
 
+    let dateOfDelivery = findData[0]["dateOfDelivery"];
+
     let menu_id = "";
     let category_id = "";
     let dish = "";
     let no_of_guest = "";
     let price = "";
-    let dateOfDelivery = "";
 
     for (let i = 0; i < findData.length; i++) {
 
@@ -327,7 +320,6 @@ const placeOrder = e => {
         dish = findData[i]["dishData"];
         no_of_guest = findData[i]["noOfGuest"];
         price = findData[i]["totalCost"] * findData[i]["noOfGuest"];
-        dateOfDelivery = findData[0]["dateOfDelivery"];
 
         totalCost += findData[i]["totalCost"] * findData[i]["noOfGuest"];
 
@@ -358,14 +350,23 @@ const placeOrder = e => {
                 }
             }
         }
-        else{
-            cartData.splice(0, cartData.length);
+        else {
+            for (k = cartData.length - 1; k >= 0; k--) {
+
+                if (user_unique == cartData[k]["user_id"]) {
+
+                    cartData.splice(k, 1)
+
+                }
+            }
             localStorage.setItem("cartData", JSON.stringify(cartData))
+
             location.reload();
+
         }
         window.location.href = "./my orders.html";
     }
-    
+
     else {
         alert("Please check the Delivery date.")
     }

@@ -1,7 +1,7 @@
 
 
 let transactionTable = JSON.parse(localStorage.getItem("transactionTable"));
-let menuData = JSON.parse(localStorage.getItem("menuData"));
+// let menuData = JSON.parse(localStorage.getItem("menuData"));
 let categoryData = JSON.parse(localStorage.getItem("categoryData"));
 let dishData = JSON.parse(localStorage.getItem("dishData"));
 

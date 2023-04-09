@@ -40,7 +40,7 @@ function addInput() {
 
 
     let inputCount = document.getElementsByName("dish").length;
-    console.log(inputCount)
+    // console.log(inputCount)
 
     n = ""
 
@@ -92,7 +92,7 @@ function addInput() {
 // creating select option depends upon the menuData
 let menulist = document.querySelector(".menulist")
 
-let menuData = JSON.parse(localStorage.getItem("menuData"));
+// let menuData = JSON.parse(localStorage.getItem("menuData"));
 
 let categoryData = JSON.parse(localStorage.getItem("categoryData"));
 

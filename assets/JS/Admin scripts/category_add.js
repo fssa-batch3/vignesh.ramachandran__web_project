@@ -76,7 +76,7 @@
 
 let menulist = document.querySelector(".menulist")
 
-let menuData = JSON.parse(localStorage.getItem("menuData"));
+// let menuData = JSON.parse(localStorage.getItem("menuData"));
 let categoryData = JSON.parse(localStorage.getItem("categoryData")) || [];
 
 for (let i = 0; i < menuData.length; i++) {
@@ -112,8 +112,6 @@ function getData() {
         for (i = 1; i <= 1; i++) {
             categoryData.push({ "menuType": menuType, "categoryName": categoryType, "id": i + "", "categoryImage": categoryImage,status:"true" })
         }
-        // categoryData.push({ "menuType": menuType, "category": category })
-        console.log(categoryData[0])
         alert("Category added sucessfully ✅");
 
         localStorage.setItem("categoryData", JSON.stringify(categoryData));

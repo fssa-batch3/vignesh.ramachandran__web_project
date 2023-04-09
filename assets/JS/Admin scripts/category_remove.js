@@ -2,7 +2,7 @@
 // // creating select option depends upon the menuData
 let menulist = document.querySelector(".menulist")
 
-let menuData = JSON.parse(localStorage.getItem("menuData"));
+// let menuData = JSON.parse(localStorage.getItem("menuData"));
 let categoryData = JSON.parse(localStorage.getItem("categoryData"));
 
 

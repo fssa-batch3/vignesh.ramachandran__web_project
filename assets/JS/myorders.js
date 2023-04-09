@@ -311,8 +311,8 @@ console.log(find_notDelivered_data);
 
 
 for(i=0; i<find_notDelivered_data.length; i++){
-    if(orderData[i]["dateOfDelivery"] <= m){
-        orderData[i]["orderStatus"] = "Delivered"
+    if(find_notDelivered_data[i]["dateOfDelivery"] <= m){
+        find_notDelivered_data[i]["orderStatus"] = "Delivered"
         localStorage.setItem("orderData", JSON.stringify(orderData));
     }
 }

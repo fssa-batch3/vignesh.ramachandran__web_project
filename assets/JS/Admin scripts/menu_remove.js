@@ -5,7 +5,7 @@ let menulist = document.querySelector(".menulist")
 let menuType = document.getElementById("menuName").value;
 
 // creating select option depends upon the menuData
-let menuData = JSON.parse(localStorage.getItem("menuData"));
+// let menuData = JSON.parse(localStorage.getItem("menuData"));
 
 for (i = 0; i < menuData.length; i++) {
     let option = document.createElement("option");

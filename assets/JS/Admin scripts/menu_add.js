@@ -129,8 +129,8 @@ function getData() {
         // console.log(menuData);
         localStorage.setItem("menuData", JSON.stringify(menuData));
 
-        location.reload();
         alert("Menu Added Sucessfully ✅");
+        location.reload();
 
     }
 
@@ -147,13 +147,13 @@ function getData() {
         // console.log(menuData);
         localStorage.setItem("menuData", JSON.stringify(menuData));
 
-        location.reload();
         alert("Menu Added Sucessfully ✅");
+        location.reload();
     }
 
 
     else if (menuType == findData[0]["menuName"]) {
-        alert(menuType + " " + "is already in the Database" + " " + "Create a new Menu")
+        alert(menuType + " " + "Menu is already in the Database" + " " + "Create a new Menu")
         location.reload()
 
     }
