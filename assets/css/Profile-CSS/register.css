@@ -92,8 +92,8 @@ main {
 #pattern {
     padding: .4rem 0;
     font-size: .9rem;
+    font-weight: bold;
     font-family: var(--parah-fontfamily);
-    color: var(--second-color);
     text-align: center;
 }
 .forget{
@@ -111,7 +111,7 @@ main {
 .btn_submit {
     padding: .625rem 1.25rem;
     width: 6.25rem;
-    color: var(--second-color);
+    color: var(--bg-color);
     background-color: var(--text-color);
     font-family: var(--parah-fontfamily);
     font-size: var(--parah-fontfamily);
@@ -120,8 +120,8 @@ main {
     border: transparent;
 }
 .btn_submit:hover {
-    background-color: var(--second-color);
-    color: var(--text-color);
+    transform: scale(1.1);
+    box-shadow: .5rem .5rem .625rem black;
 }
 .exciting_user {
     font-family: var(--parah-fontfamily);

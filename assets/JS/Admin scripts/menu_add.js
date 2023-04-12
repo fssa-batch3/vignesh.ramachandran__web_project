@@ -99,14 +99,16 @@
 
 
 
-let submitBtn = document.querySelector(".btn_submit");
-submitBtn.addEventListener("click", getData);
+// let submitBtn = document.querySelector(".btn_submit");
+// submitBtn.addEventListener("click", getData);
 
-function getData() {
+function getData(e) {
+
     let menuType = document.getElementById("menuName").value;
     // console.log(menuType);
     let menuImage = document.getElementById("menuImage").value;
     let menuAbout = document.getElementById("menuAbout").value;
+
 
     let menuData = JSON.parse(localStorage.getItem("menuData")) || [];
 
@@ -123,7 +125,7 @@ function getData() {
     if (menuData.length == 0) {
 
         for (i = 1; i <= n + 1; i++) {
-            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, status:"true", "description": menuAbout});
+            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, status: "true", "description": menuAbout });
         }
 
         // console.log(menuData);
@@ -141,7 +143,7 @@ function getData() {
         // console.log(localMenucount);
 
         for (i = localMenucount + 1; i <= localMenucount + 1; i++) {
-            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, status:"true", "description": menuAbout, });
+            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, status: "true", "description": menuAbout, });
         }
 
         // console.log(menuData);
@@ -157,10 +159,8 @@ function getData() {
         location.reload()
 
     }
- 
 
-
-
+    e.preventDefault();
 
 
 }

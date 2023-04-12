@@ -21,29 +21,36 @@ show = document.querySelector(".show");
 show.addEventListener("click", showMenuDetails);
 
 function showMenuDetails() {
-    menuType = document.getElementById("menuName").value;
-    // console.log(menuType);
 
-    // filtering get data from menuData
-    function getMenu(e) {
-        return e.id === menuType;
+    menuType = document.getElementById("menuName").value;
+
+    if(menuType !== ""){
+
+        // filtering get data from menuData
+        function getMenu(e) {
+            return e.id === menuType;
+        }
+
+        findData = menuData.filter(getMenu);
+        // console.log(findData[0]["menuName"]);
+
+        let menuName = document.getElementById("menuNameGet");
+        let menuImage = document.getElementById("menuImageGet");
+        let menuAbout = document.getElementById("menuAboutGet");
+        let menuStatus = document.getElementById("menustatusGet");
+        // console.log(menuName)
+
+        menuName.value = findData[0]["menuName"];
+        menuImage.value = findData[0]["image"];
+        menuAbout.value = findData[0]["description"];
+        menuStatus.value = findData[0]["status"];
+
+        show.setAttribute("style", "display:none");
+    }
+    else{
+        alert("Select Menu type")
     }
 
-    findData = menuData.filter(getMenu);
-    // console.log(findData[0]["menuName"]);
-
-    let menuName = document.getElementById("menuNameGet");
-    let menuImage = document.getElementById("menuImageGet");
-    let menuAbout = document.getElementById("menuAboutGet");
-    let menuStatus = document.getElementById("menustatusGet");
-    // console.log(menuName)
-
-    menuName.value = findData[0]["menuName"];
-    menuImage.value = findData[0]["image"];
-    menuAbout.value = findData[0]["description"];
-    menuStatus.value = findData[0]["status"];
-
-    show.setAttribute("style", "display:none");
 
 }
 

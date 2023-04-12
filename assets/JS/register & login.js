@@ -20,7 +20,7 @@ const signUp = e => {
 
         if (password == con_password) {
             // push into objects
-            userData.push({ "name": name, "email": email, "phone_number": phone_number, "password": password});
+            userData.push({ "name": name, "email": email, "phone_number": phone_number, "password": password });
 
             // store data into local storage
             localStorage.setItem("userData", JSON.stringify(userData));
@@ -47,6 +47,9 @@ const signUp = e => {
 }
 
 
+
+
+
 const signIn = e => {
     let email = document.getElementById("email").value
     let password = document.getElementById("password").value
@@ -68,4 +71,7 @@ const signIn = e => {
     }
     e.preventDefault();
 }
+
+
+
 

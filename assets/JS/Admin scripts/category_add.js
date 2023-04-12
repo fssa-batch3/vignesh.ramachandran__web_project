@@ -88,10 +88,10 @@ for (let i = 0; i < menuData.length; i++) {
 
 }
 
-let submitBtn = document.querySelector(".btn_submit");
-submitBtn.addEventListener("click", getData);
+// let submitBtn = document.querySelector(".btn_submit");
+// submitBtn.addEventListener("click", getData);
 
-function getData() {
+function getData(e) {
 
     let menuType = document.getElementById("menuName").value;
     let categoryType = document.getElementById("categoryName").value;
@@ -113,7 +113,6 @@ function getData() {
             categoryData.push({ "menuType": menuType, "categoryName": categoryType, "id": i + "", "categoryImage": categoryImage,status:"true" })
         }
         alert("Category added sucessfully ✅");
-
         localStorage.setItem("categoryData", JSON.stringify(categoryData));
 
     }
@@ -126,10 +125,12 @@ function getData() {
         }
 
         findData2 = findData.filter(getCategory);
-        console.log(findData2);
+        // console.log(findData2);
 
         if (findData2.length !== 0) {
             alert(findData2[0]["categoryName"] + " " + "for this menu" + " " + "is already in Database");
+            location.reload();
+
         }
 
         else if (findData2.length == 0) {
@@ -141,15 +142,15 @@ function getData() {
                 categoryData.push({ "menuType": menuType, "categoryName": categoryType, "id": i + "", "categoryImage": categoryImage, status:"true" })
                 // console.log(findData2)
                 alert("Category added sucessfully ✅")
-
                 localStorage.setItem("categoryData", JSON.stringify(categoryData));
 
             }
             location.reload();
 
         }
-
     }
+
+    e.preventDefault();
 
 }
 

@@ -34,48 +34,20 @@
     
     <main>
         <section>
-            <form>
+            <form role="form" onsubmit="getData(event)">
                 <h2>MENU-ADD</h2>
                 <div class="heading">
                     <h2>Create New Menu</h2>
                     <!-- <i class='bx bx-plus'></i> -->
                 </div>
 
-                <div class="input_group">
-                    <input type="text" class="menuname" placeholder="Eg: Breakfast Menu" id="menuName" required/>
-                    <input type="text" class="menuimage" placeholder="Enter Image URL" id="menuImage" required/>
-                    <textarea name="" class="menuabout" cols="30" rows="10" placeholder="Enter Menu Description" id="menuAbout" required></textarea>
+                <div class="input_group" >
+                    <input type="text" class="menuname" placeholder="Eg: Breakfast Menu" id="menuName" pattern="[A-Za-z.]+" title="Enter alphabet without space" required="true" />
+                    <input type="url" class="menuimage" placeholder="Enter Image URL" id="menuImage" required="true"/>
+                    <textarea name="" class="menuabout" cols="30" rows="10" placeholder="Enter Menu Description" id="menuAbout" required="true"></textarea>
                 </div>
-                <!-- <div class="input_group2">
 
-                </div> -->
-
-
-
-
-
-
-                <!-- <label class="details">Types in the Menu:</label>
-                    <div class="details_types">
-                        <label for="">1.<input type="text" placeholder="Enter type"/></label>
-                        <label for="">2.<input type="text" placeholder="Enter type"/></label>
-                        <label for="">3.<input type="text" placeholder="Enter type"/></label>
-                    </div>
-                    
-                    <label class="details">Image for Types</label>
-                    <div class="details_types_img">
-                        <div>
-                            <input type="file"/>
-                        </div>
-                        <div>
-                            <input type="file"/>
-                        </div>
-                        <div>
-                            <input type="file"/>
-                        </div>
-                    </div>    -->
-
-                <button class="btn_submit" type="button">Create</button>
+                <button class="btn_submit" type="submit">Create</button>
 
                 </div>
             </form>

@@ -300,6 +300,7 @@ let orderBtn = document.querySelectorAll(".order");
 orderBtn.forEach(function (orderFood) {
     orderFood.addEventListener("click", function () {
 
+        // after checking the move to the order page
         let before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
 
         let parent = this.closest(".cart_end");
@@ -321,6 +322,7 @@ let orderallBtn = document.querySelector(".orderall");
 orderallBtn.addEventListener("click", orderAll);
 
 function orderAll() {
+
     let a = true;
     let b = true;
 

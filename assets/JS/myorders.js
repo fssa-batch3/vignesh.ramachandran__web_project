@@ -291,7 +291,7 @@ cancelBtn.forEach(function (cancelOrder) {
         findData[0]["orderStatus"] = "Cancelled";
 
         localStorage.setItem("orderData", JSON.stringify(orderData));
-        alert("Ordered cancelled Sucessfully")
+        alert("Order cancelled Sucessfully")
         user_id.setAttribute("style", "display:none")
         location.reload();
 

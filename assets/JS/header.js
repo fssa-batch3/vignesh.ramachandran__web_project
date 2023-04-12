@@ -85,6 +85,48 @@ const before_login =
 </header>
 `
 
+// const admin_header =
+//     `
+//     <header>
+//         <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
+
+//         <div class="icon-left">
+//             <img src="${root}/assets/img/main-logo.png" alt="Company Logo" class="logo" />
+//             <h1>SR</h1>
+//             <div>
+//                 <p>Catering</p>
+//             </div>
+//         </div>
+
+//         <ul class="navigation" id="sidenav">
+//             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+//             <li><a href="${root}/index.html" class="navigation-link">HOME</a></li>
+//             <li class="dropdown">
+//                 <span class="navigation-link">MENU</span>
+//                 <div class="dropdown-content">
+                    
+//                 </div>
+//             </li>
+//             <li><a href="${root}/pages/homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
+//             <li><a href="${root}/pages/homepage/about us.html" class="navigation-link">ABOUT US</a></li>
+//             <li><a href="${root}/pages/homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
+//             <li><a href="${root}/pages/homepage/my cart.html" class="navigation-link">MY CART</a></li>
+//         </ul>
+
+//         <div class="dropdown_profile">
+//             <img src="${root}/assets/img/profile.png" alt="profile image" />
+//             <div class="dropdown_profile-content">
+//                 <div>
+//                     <a href="${root}/pages/profile/Profile page.html">My Profile</a>
+//                     <a href="${root}/pages/profile/my orders.html">My Orders</a>
+//                     <a href="${root}/pages/Admin/admin form.html">Admin Forms</a>
+//                 </div>
+//             </div>
+//         </div>
+//     </header>  
+//     `
+
 
 let user_id = JSON.parse(localStorage.getItem("user_unique"));
 // console.log(user_id)
@@ -100,6 +142,10 @@ if (user_id) {
         document.body.innerHTML = before_login;
     })
 }
+
+// else if()
+
+
 else {
 
     document.body.insertAdjacentHTML("afterbegin", before_login);
@@ -143,7 +189,7 @@ for (i = 0; i < menuDataTrue.length; i++) {
 
     let a_1 = document.createElement("a");
     a_1.innerText = menuDataTrue[i]["menuName"] + " Menu";
-    a_1.setAttribute("href", root+"/pages/products/Menus/category.html?menu=" + menuDataTrue[i]["id"]);
+    a_1.setAttribute("href", root + "/pages/products/Menus/category.html?menu=" + menuDataTrue[i]["id"]);
 
     div_menulist.append(a_1);
 }

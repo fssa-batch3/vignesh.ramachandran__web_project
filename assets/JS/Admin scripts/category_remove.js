@@ -22,23 +22,31 @@ showCatergoy.addEventListener("click", getCatDetails)
 function getCatDetails() {
     let menuType = document.getElementById("menuName").value;
 
-    function getMenu(e) {
-        return e.menuType === menuType;
+    if(menuType !== ""){
+
+        function getMenu(e) {
+            return e.menuType === menuType;
+        }
+        findData = categoryData.filter(getMenu)
+
+        // creating select option depends upon the categoryData
+        let categorylist = document.querySelector(".categorylist");
+
+        for (i = 0; i < findData.length; i++) {
+            let option = document.createElement("option");
+            option.value = findData[i]["id"];
+            option.innerText = findData[i]["categoryName"];
+
+            categorylist.append(option);
+        }
+
+        showCatergoy.setAttribute("style", "display:none");
+        
     }
-    findData = categoryData.filter(getMenu)
-
-    // creating select option depends upon the categoryData
-    let categorylist = document.querySelector(".categorylist");
-
-    for (i = 0; i < findData.length; i++) {
-        let option = document.createElement("option");
-        option.value = findData[i]["id"];
-        option.innerText = findData[i]["categoryName"];
-
-        categorylist.append(option);
+    else{
+        alert("Select Menu type")
     }
 
-    showCatergoy.setAttribute("style", "display:none");
 }
 
 
@@ -49,39 +57,50 @@ showDetails.addEventListener("click", showCatDetails);
 function showCatDetails() {
     let menuType = document.getElementById("menuName").value;
     let categoryType = document.getElementById("categoryName").value;
-    // console.log(categoryType)
 
-    // filtering menu
-    function getMenu(e) {
-        return e.menuType === menuType;
+    if(menuType == ""){
+        alert("Select Menu type")
     }
-    findData = categoryData.filter(getMenu)
-    // // console.log(findData[0]);
+
+    else if(menuType !== "" && categoryType !== ""){
+
+        // filtering menu
+        function getMenu(e) {
+            return e.menuType === menuType;
+        }
+        findData = categoryData.filter(getMenu)
+        // // console.log(findData[0]);
 
 
-    // let k = findData[0]["categoryData"]
-    // console.log(k)
+        // let k = findData[0]["categoryData"]
+        // console.log(k)
 
-    // filtering category
-    function getCategory(e) {
-        return e.id == categoryType;
+        // filtering category
+        function getCategory(e) {
+            return e.id == categoryType;
+        }
+        findData2 = findData.filter(getCategory);
+
+        // console.log(findData2[0]["categoryName"]);
+
+        // let yes = document.getElementById("categoryNameGet").value
+        let categoryName = document.getElementById("categoryNameGet")
+        let categoryStatus = document.getElementById("categoryStatusGet")
+        let categoryImage = document.getElementById("categoryImageGet")
+        // let categoryPrice = document.getElementById("categoryPriceGet")
+
+        categoryName.value = findData2[0]["categoryName"]
+        categoryStatus.value = findData2[0]["status"]
+        categoryImage.value = findData2[0]["categoryImage"]
+        // categoryPrice.value = categoryData[0]["categoryPrice"]
+
+        showDetails.setAttribute("style", "display:none");
     }
-    findData2 = findData.filter(getCategory);
 
-    // console.log(findData2[0]["categoryName"]);
+    else{
+        alert("Click the Show category button (or) Select Category type")
+    }
 
-    // let yes = document.getElementById("categoryNameGet").value
-    let categoryName = document.getElementById("categoryNameGet")
-    let categoryStatus = document.getElementById("categoryStatusGet")
-    let categoryImage = document.getElementById("categoryImageGet")
-    // let categoryPrice = document.getElementById("categoryPriceGet")
-
-    categoryName.value = findData2[0]["categoryName"]
-    categoryStatus.value = findData2[0]["status"]
-    categoryImage.value = findData2[0]["categoryImage"]
-    // categoryPrice.value = categoryData[0]["categoryPrice"]
-
-    showDetails.setAttribute("style", "display:none");
 
 }
 

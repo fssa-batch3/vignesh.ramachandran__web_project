@@ -110,7 +110,6 @@ span {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly; */
-
 }
 .cart_text h3 {
     font-family: var(--heading-fontfamily);
@@ -193,7 +192,6 @@ span {
 .remove {
     font-weight: bold;
     background-color: var(--second-color);
-    
 }
 .btn_cart {
     width: 18.75rem;
@@ -205,6 +203,10 @@ span {
     font-family: var(--parah-fontfamily);
     font-size: 15px;
     opacity: .8;
+}
+.update {
+    color: var(--bg-color);
+    background-color: var(--thickgreen-color);
 }
 /* .summary {
     position: sticky;

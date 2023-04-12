@@ -2,6 +2,57 @@
 let dishData = JSON.parse(localStorage.getItem("dishData")) || [];
 let transactionTable = JSON.parse(localStorage.getItem("transactionTable")) || [];
 
+
+
+// new code
+
+// creating select option depends upon the menuData
+let menulist = document.querySelector(".menulist")
+
+// let menuData = JSON.parse(localStorage.getItem("menuData"));
+let categoryData = JSON.parse(localStorage.getItem("categoryData"));
+
+
+
+    for (i = 0; i < menuData.length; i++) {
+        let option = document.createElement("option");
+        option.value = menuData[i]["id"];
+        option.innerText = menuData[i]["menuName"];
+
+        menulist.append(option);
+    }
+
+
+
+
+// get the local storage value to the select and option for category name
+let showCatergoy = document.querySelector(".show1")
+showCatergoy.addEventListener("click", getCatDetails)
+
+function getCatDetails() {
+
+    let menuType = document.getElementById("menuName").value;
+
+    if (menuType !== "") {
+
+        // creating select option depends upon the categoryData
+        let categorylist = document.querySelector(".categorylist");
+
+        for (i = 0; i < categoryData.length; i++) {
+            let option = document.createElement("option");
+            option.value = categoryData[i]["id"];
+            option.innerText = categoryData[i]["categoryName"];
+
+            categorylist.append(option);
+        }
+
+        showCatergoy.setAttribute("style", "display:none");
+    }
+    else {
+        alert("Select the Menu")
+    }
+}
+
 // selecting the plus button and empty div
 const addBtn = document.querySelector(".bx-plus")
 addBtn.addEventListener("click", addInput)
@@ -10,31 +61,45 @@ function addInput() {
 
     let container = document.getElementById("input_group");
 
+    let menuType = document.getElementById("menuName").value;
+    let categoryType = document.getElementById("categoryName").value;
+
+    // console.log(menuType);
+    // console.log(categoryType)
+
     function add_input() {
-        // create div_field
-        const div_field = document.createElement("div");
-        div_field.setAttribute("class", "field");
 
-        // create a new input element
-        let newInput = document.createElement("input");
-        newInput.type = "text";
-        newInput.placeholder = "Enter Dish Name";
-        newInput.id = n;
-        newInput.name = "dish";
-        // newInput.id = "dish" + (n);
-        newInput.required = "true";
+        if(menuType !== "" && categoryType!== "" ){
 
-        let inputPrice = document.createElement("input");
-        inputPrice.type = "number";
-        inputPrice.placeholder = "Enter Price";
-        inputPrice.id = "price" + n;
-        inputPrice.required = "true";
+            // create div_field
+            const div_field = document.createElement("div");
+            div_field.setAttribute("class", "field");
+
+            // create a new input element
+            let newInput = document.createElement("input");
+            newInput.type = "text";
+            newInput.placeholder = "Enter Dish Name";
+            newInput.id = n;
+            newInput.name = "dish";
+            // newInput.id = "dish" + (n);
+            newInput.required = "true";
+
+            let inputPrice = document.createElement("input");
+            inputPrice.type = "number";
+            inputPrice.placeholder = "Enter Price";
+            inputPrice.id = "price" + n;
+            inputPrice.required = "true";
 
 
-        // append html tags depends upon our wish
-        container.append(div_field);
-        div_field.appendChild(newInput);
-        div_field.append(inputPrice);
+            // append html tags depends upon our wish
+            container.append(div_field);
+            div_field.appendChild(newInput);
+            div_field.append(inputPrice);
+        }
+        else {
+            alert("Select Menu and Category type")
+        }
+
 
     }
 
@@ -58,80 +123,51 @@ function addInput() {
         let n = inputCount + localDishcount + 1;
         // console.log(n);
 
-        // create div_field
-        const div_field = document.createElement("div");
-        div_field.setAttribute("class", "field");
+        if(menuType !== "" && categoryType!== "" ){
 
-        // create a new input element
-        let newInput = document.createElement("input");
-        newInput.type = "text";
-        newInput.placeholder = "Enter Dish Name";
-        newInput.id = n;
-        newInput.name = "dish";
-        // newInput.id = "dish" + (n);
-        newInput.required = "true";
+            // create div_field
+            const div_field = document.createElement("div");
+            div_field.setAttribute("class", "field");
 
-        let inputPrice = document.createElement("input");
-        inputPrice.type = "number";
-        inputPrice.placeholder = "Enter Price";
-        inputPrice.id = "price" + n;
-        inputPrice.required = "true";
+            // create a new input element
+            let newInput = document.createElement("input");
+            newInput.type = "text";
+            newInput.placeholder = "Enter Dish Name";
+            newInput.id = n;
+            newInput.name = "dish";
+            // newInput.id = "dish" + (n);
+            newInput.required = "true";
+
+            let inputPrice = document.createElement("input");
+            inputPrice.type = "number";
+            inputPrice.placeholder = "Enter Price";
+            inputPrice.id = "price" + n;
+            inputPrice.required = "true";
 
 
-        // append html tags depends upon our wish
-        container.append(div_field);
-        div_field.appendChild(newInput);
-        div_field.append(inputPrice);
+            // append html tags depends upon our wish
+            container.append(div_field);
+            div_field.appendChild(newInput);
+            div_field.append(inputPrice);
 
+        }
+        else {
+            alert("Select Menu and Category type")
+        }
     }
 
 }
 
-// new code
-
-// creating select option depends upon the menuData
-let menulist = document.querySelector(".menulist")
-
-// let menuData = JSON.parse(localStorage.getItem("menuData"));
-
-let categoryData = JSON.parse(localStorage.getItem("categoryData"));
-
-for (i = 0; i < menuData.length; i++) {
-    let option = document.createElement("option");
-    option.value = menuData[i]["id"];
-    option.innerText = menuData[i]["menuName"];
-
-    menulist.append(option);
-}
-
-// get the local storage value to the select and option for category name
-let showCatergoy = document.querySelector(".show1")
-showCatergoy.addEventListener("click", getCatDetails)
-
-function getCatDetails() {
-    // creating select option depends upon the categoryData
-    let categorylist = document.querySelector(".categorylist");
-
-    for (i = 0; i < categoryData.length; i++) {
-        let option = document.createElement("option");
-        option.value = categoryData[i]["id"];
-        option.innerText = categoryData[i]["categoryName"];
-
-        categorylist.append(option);
-    }
-
-    showCatergoy.setAttribute("style", "display:none");
-}
 
 // new code
 
 
 
 // select the submit button and add event
-submitBtn = document.querySelector("#submit");
-submitBtn.addEventListener("click", getData);
+// submitBtn = document.querySelector("#submit");
+// submitBtn.addEventListener("click", getData);
 
-function getData() {
+function getData(e) {
 
 
     let inputCount = document.getElementsByName("dish").length;
@@ -214,14 +250,14 @@ function getData() {
                         // alert(b + " " + " Is Already presented in this Menu");
 
                         index = j + 1;
-                        console.log(index);
+                        // console.log(index);
 
                         // filtering Menu
                         function getMenu(e) {
                             return e.menuType === menuType;
                         }
                         findData = transactionTable.filter(getMenu)
-                        console.log(findData);
+                        // console.log(findData);
 
 
                         //  filtering Category
@@ -229,7 +265,7 @@ function getData() {
                             return e.categoryType === categoryType;
                         }
                         findData2 = findData.filter(getCategory)
-                        console.log(findData2)
+                        // console.log(findData2)
 
 
                         for (k = 0; k < findData2.length; k++) {
@@ -272,6 +308,9 @@ function getData() {
             console.log("hello")
         }
     }
+
+    e.preventDefault();
+
 }
 
 

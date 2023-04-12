@@ -23,23 +23,30 @@ showCatergoy.addEventListener("click", getCatDetails)
 function getCatDetails() {
     let menuType = document.getElementById("menuName").value;
 
-    function getMenu(e) {
-        return e.menuType === menuType;
+    if(menuType !== ""){
+
+        function getMenu(e) {
+            return e.menuType === menuType;
+        }
+        findData = categoryData.filter(getMenu)
+
+        // creating select option depends upon the categoryData
+        let categorylist = document.querySelector(".categorylist");
+
+        for (i = 0; i < findData.length; i++) {
+            let option = document.createElement("option");
+            option.value = findData[i]["id"];
+            option.innerText = findData[i]["categoryName"];
+
+            categorylist.append(option);
+        }
+
+        showCatergoy.setAttribute("style", "display:none");
     }
-    findData = categoryData.filter(getMenu)
 
-    // creating select option depends upon the categoryData
-    let categorylist = document.querySelector(".categorylist");
-
-    for (i = 0; i < findData.length; i++) {
-        let option = document.createElement("option");
-        option.value = findData[i]["id"];
-        option.innerText = findData[i]["categoryName"];
-
-        categorylist.append(option);
+    else{
+        alert("Select Menu type")
     }
-
-    showCatergoy.setAttribute("style", "display:none");
 }
 
 
@@ -73,90 +80,96 @@ function showDishes(e) {
     let menuType = document.getElementById("menuName").value;
     let categoryType = document.getElementById("categoryName").value;
 
-    // console.log(menuType);
-    // console.log(categoryType);
-
-    // filtering Menu
-    function getMenu(e) {
-        return e.menuType === menuType;
+    if(menuType == ""){
+        alert("Select Menu type")
     }
-    findData = transactionTable.filter(getMenu)
-    // console.log(findData);
 
+    else if(menuType !== "" && categoryType !== ""){
 
-    //  filtering Category
-    function getCategory(e) {
-        return e.categoryType === categoryType;
-    }
-    findData2 = findData.filter(getCategory)
-    // console.log(findData2);
-
-
-    // filtering the dish from the dishData using menu id and category id from the transactionTable
-    let findData3 = dishData.filter(product =>
-        findData2.some(find => find.dish === product.id));
-
-    // console.log(findData3);
-
-    for (i = 0; i < findData3.length; i++) {
-
-        const div_field = document.createElement("div");
-        div_field.setAttribute("class", "field");
-
-        let checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.class = "checkbox";
-        checkbox.value = findData3[i]["id"];
-
-        let newInput = document.createElement("input");
-        newInput.type = "text";
-        newInput.id = "dish" + (i);
-        newInput.value = findData3[i]["name"];
-
-        let priceInput = document.createElement("input");
-        priceInput.type = "number";
-        priceInput.id = "price" + (i);
-        priceInput.value = findData3[i]["price"]
-
-        let select_status = document.createElement("select");
-        select_status.setAttribute("id", "status" + (i));
-        div_field.append(select_status);
-
-        if (findData3[i]["status"] == "true") {
-            let option_1_status = document.createElement("option");
-            option_1_status.setAttribute("value", "true")
-            option_1_status.innerText = "True";
-            // option_1_status.innerText = findData3[i]["status"]x
-            select_status.append(option_1_status);
-
-            let option_2_status = document.createElement("option");
-            option_2_status.setAttribute("value", "false");
-            option_2_status.innerText = "False";
-            select_status.append(option_2_status);
+        // filtering Menu
+        function getMenu(e) {
+            return e.menuType === menuType;
         }
-        else {
-            let option_2_status = document.createElement("option");
-            option_2_status.setAttribute("value", "false");
-            option_2_status.innerText = "False";
-            select_status.append(option_2_status);
+        findData = transactionTable.filter(getMenu)
+        // console.log(findData);
 
-            let option_1_status = document.createElement("option");
-            option_1_status.setAttribute("value", "true")
-            option_1_status.innerText = "True";
-            select_status.append(option_1_status);
+
+        //  filtering Category
+        function getCategory(e) {
+            return e.categoryType === categoryType;
+        }
+        findData2 = findData.filter(getCategory)
+        // console.log(findData2);
+
+
+        // filtering the dish from the dishData using menu id and category id from the transactionTable
+        let findData3 = dishData.filter(product =>
+            findData2.some(find => find.dish === product.id));
+
+        // console.log(findData3);
+
+        for (i = 0; i < findData3.length; i++) {
+
+            const div_field = document.createElement("div");
+            div_field.setAttribute("class", "field");
+
+            let checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.class = "checkbox";
+            checkbox.value = findData3[i]["id"];
+
+            let newInput = document.createElement("input");
+            newInput.type = "text";
+            newInput.id = "dish" + (i);
+            newInput.value = findData3[i]["name"];
+
+            let priceInput = document.createElement("input");
+            priceInput.type = "number";
+            priceInput.id = "price" + (i);
+            priceInput.value = findData3[i]["price"]
+
+            let select_status = document.createElement("select");
+            select_status.setAttribute("id", "status" + (i));
+            div_field.append(select_status);
+
+            if (findData3[i]["status"] == "true") {
+                let option_1_status = document.createElement("option");
+                option_1_status.setAttribute("value", "true")
+                option_1_status.innerText = "True";
+                // option_1_status.innerText = findData3[i]["status"]x
+                select_status.append(option_1_status);
+
+                let option_2_status = document.createElement("option");
+                option_2_status.setAttribute("value", "false");
+                option_2_status.innerText = "False";
+                select_status.append(option_2_status);
+            }
+            else {
+                let option_2_status = document.createElement("option");
+                option_2_status.setAttribute("value", "false");
+                option_2_status.innerText = "False";
+                select_status.append(option_2_status);
+
+                let option_1_status = document.createElement("option");
+                option_1_status.setAttribute("value", "true")
+                option_1_status.innerText = "True";
+                select_status.append(option_1_status);
+            }
+
+            container.append(div_field)
+            div_field.append(checkbox);
+            div_field.append(newInput);
+            div_field.append(priceInput);
         }
 
+        show.setAttribute("style", "display:none");
 
-
-
-
-        container.append(div_field)
-        div_field.append(checkbox);
-        div_field.append(newInput);
-        div_field.append(priceInput);
     }
 
-    show.setAttribute("style", "display:none");
+    else {
+        alert("Click the show category button (or) Select the category ")
+    }
+
 }
 
 
