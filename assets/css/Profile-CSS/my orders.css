@@ -41,9 +41,30 @@ span {
     text-align: center;
 }
 
-/* .my-orders {
-    height: 40vh; 
-} */
+.status {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--text-color);
+}
+.status button {
+    padding: 1rem 0;
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    font-weight: bold;
+    border-radius: 1rem;
+}
+.not_deli{
+    color: var(--text-color);
+}
+.deli {
+    color: var(--thickgreen-color);
+}
+.cancelled {
+    color: var(--second-color);
+}
+
 .my-orders_list {
     border: 1px solid var(--text-color);
     border-radius: 1.875rem;
@@ -110,6 +131,17 @@ span {
 .btn:hover {
     transform: scale(1.1);
     box-shadow: .5rem .5rem .625rem black;
+}
+.reason {
+    display: none;
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    color: var(--text-color);
+}
+.reason span{
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    font-weight: bold;
 }
 
 .field {

@@ -109,16 +109,15 @@ function getData(e) {
     let menuImage = document.getElementById("menuImage").value;
     let menuAbout = document.getElementById("menuAbout").value;
 
-
     let menuData = JSON.parse(localStorage.getItem("menuData")) || [];
 
     // let categoryData = [];
 
     function getMenu(e) {
-        return e.menuName === menuType;
+        return e.menuName.toLowerCase()  ===  menuType.toLowerCase();
     }
     findData = menuData.filter(getMenu);
-    // console.log(findData)
+    console.log(findData)
 
     let n = findData.length;
 
@@ -154,7 +153,7 @@ function getData(e) {
     }
 
 
-    else if (menuType == findData[0]["menuName"]) {
+    else if (menuType.toLowerCase() == findData[0]["menuName"].toLowerCase()) {
         alert(menuType + " " + "Menu is already in the Database" + " " + "Create a new Menu")
         location.reload()
 

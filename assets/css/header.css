@@ -52,7 +52,9 @@ header {
     padding: 1.25rem;
     list-style: none;
 }
-
+.navigation div{
+    position: relative;
+}
 .navigation-link {
     margin: 0 1.25rem;
     color: var(--text-color);
@@ -67,11 +69,9 @@ header {
     color: var(--second-color);
     transition: all .2s ease;
 }
-
 .dropdown {
     position: relative;  
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -80,7 +80,6 @@ header {
     z-index: 1;
     width: 11.25rem;
     border-radius: 1.25rem;
-
 }
 .dropdown-content div {
     display: flex;
@@ -101,9 +100,20 @@ header {
 .dropdown-content a:hover {
     color: var(--second-color);
 }
+.cart_qty{
+    background-color: var(--second-color);
+    color: var(--bg-color);
+    position: absolute;
+    right: 1px;
+    bottom: 15px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-weight: bolder;
+    border-radius: 50%;
+}
 .dropdown_profile {
     position: relative;
-    
 }
 .dropdown_profile img {
     width: 3.125rem;
@@ -209,5 +219,16 @@ header {
         font-size: 36px;
         margin-left: 50px;
       }
-    
+      .cart_qty{
+        right: 38px;
+      }   
 }
+
+@media screen and (max-width:1150px){
+    .cart_qty{
+        height: 15px;
+        width: 15px;
+        right: 64px;
+    }
+}
+

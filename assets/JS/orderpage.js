@@ -5,9 +5,9 @@ categoryData = JSON.parse(localStorage.getItem("categoryData"));
 dishData = JSON.parse(localStorage.getItem("dishData"));
 user_unique = JSON.parse(localStorage.getItem("user_unique"));
 
-console.log(user_unique)
+// console.log(user_unique)
 
-console.log(cartData)
+// console.log(cartData)
 
 let cartData_user = cartData.filter(data =>
     data.user_id == user_unique)
@@ -234,32 +234,72 @@ div_orderAll.append(btn_orderall);
 // }
 
 
-// getting extra informatio like no.of.guest and date of delivery
-let updateBtn = document.querySelectorAll(".update")
-updateBtn.forEach(function (upDate) {
-    upDate.addEventListener("click", function () {
+// // getting extra informatio like no.of.guest and date of delivery
+// let updateBtn = document.querySelectorAll(".update")
+// updateBtn.forEach(function (upDate) {
+//     upDate.addEventListener("click", function () {
+
+//         let parent = this.closest(".cart_end")
+//         let getDate = parent.querySelector(".date").value;
+//         let getNumber = parent.querySelector(".number").value;
+
+//         let id = parent.querySelector(".remove").getAttribute("data-id");
+
+//         function getId(e) {
+//             return e.uniqueId == id
+//         }
+//         findcartId = cartData.filter(getId);
+//         // console.log(findcartId)
+
+//         // let y = parent.querySelector(".price").innerText.replace("₹", "");
+//         let y = findcartId[0]["totalCost"]
+//         // console.log(y);
+//         let up_totalcost = y * getNumber;
+//         // console.log(up_totalcost)
+
+//         findcartId[0]["dateOfDelivery"] = getDate;
+//         findcartId[0]["noOfGuest"] = getNumber;
+//         // findcartId[0]["totalCost"] = up_totalcost;
+
+//         localStorage.setItem("cartData", JSON.stringify(cartData));
+//         location.reload();
+
+//     })
+// })
+
+
+
+
+
+// getting extra information like no.of.guest 
+// let number_of_guest = document.querySelectorAll(".number")
+// number_of_guest.forEach(function (getGuest) {
+//     getGuest.addEventListener("click", function () {
+
+//         let parent = this.closest(".cart_end")
+//         update_btn = parent.querySelector(".update")
+//         update_btn.setAttribute("style", "display:block");
+
+//         order_btn = parent.querySelector(".order")
+//         order_btn.setAttribute("style", "display:none")
+
+//     })
+// })
+
+let number_of_guest = document.querySelectorAll(".number")
+number_of_guest.forEach(function (getGuest) {
+    getGuest.addEventListener("change", function () {
 
         let parent = this.closest(".cart_end")
-        let getDate = parent.querySelector(".date").value;
-        let getNumber = parent.querySelector(".number").value;
+        let product_id = parent.querySelector(".remove").dataset.id
 
-        let id = parent.querySelector(".remove").getAttribute("data-id");
+        let pdts = cartData_user.find(data=>
+            data.uniqueId == product_id)
 
-        function getId(e) {
-            return e.uniqueId == id
-        }
-        findcartId = cartData.filter(getId);
-        console.log(findcartId)
+        let quantity = parent.querySelector(".number").value
+        // console.log(quantity)
 
-        // let y = parent.querySelector(".price").innerText.replace("₹", "");
-        let y = findcartId[0]["totalCost"]
-        // console.log(y);
-        let up_totalcost = y * getNumber;
-        // console.log(up_totalcost)
-
-        findcartId[0]["dateOfDelivery"] = getDate;
-        findcartId[0]["noOfGuest"] = getNumber;
-        // findcartId[0]["totalCost"] = up_totalcost;
+        pdts["noOfGuest"] = quantity
 
         localStorage.setItem("cartData", JSON.stringify(cartData));
         location.reload();
@@ -268,28 +308,38 @@ updateBtn.forEach(function (upDate) {
 })
 
 
-
-// getting extra information like no.of.guest 
-let number_of_guest = document.querySelectorAll(".number")
-number_of_guest.forEach(function (getGuest) {
-    getGuest.addEventListener("click", function () {
-
-        let parent = this.closest(".cart_end")
-        update_btn = parent.querySelector(".update")
-        update_btn.setAttribute("style", "display:block");
-
-    })
-})
-
-
 // getting the date of delivery
+// let dateInput = document.querySelectorAll(".date");
+// dateInput.forEach(function (getDate) {
+//     getDate.addEventListener("click", function () {
+
+//         let parent = this.closest(".cart_end")
+//         update_btn = parent.querySelector(".update")
+//         update_btn.setAttribute("style", "display:block");
+
+//         order_btn = parent.querySelector(".order")
+//         order_btn.setAttribute("style", "display:none")
+
+//     })
+// })
+
+
 let dateInput = document.querySelectorAll(".date");
 dateInput.forEach(function (getDate) {
-    getDate.addEventListener("click", function () {
+    getDate.addEventListener("change", function () {
 
-        let parent = this.closest(".cart_end")
-        update_btn = parent.querySelector(".update")
-        update_btn.setAttribute("style", "display:block");
+        let parent = this.closest(".cart_end");
+        let product_id = parent.querySelector(".remove").dataset.id;
+
+        let pdts = cartData_user.find(data=>
+            data.uniqueId == product_id);
+
+        let date = parent.querySelector(".date").value
+        
+        pdts["dateOfDelivery"] = date;
+
+        localStorage.setItem("cartData", JSON.stringify(cartData));
+        location.reload();
 
     })
 })
@@ -307,8 +357,15 @@ orderBtn.forEach(function (orderFood) {
         let delivery_date = parent.querySelector(".date").value;
         let unique_id = parent.querySelector(".remove").getAttribute("data-id")
 
-        if (delivery_date <= before_date) {
-            alert("Delivery date should be at least 8 days from now.");
+        // console.log(unique_id)
+
+        find_cart = cartData.filter(data =>
+            data.uniqueId == unique_id)
+        
+        console.log(find_cart[0]["dateOfDelivery"] )
+
+        if (find_cart[0]["dateOfDelivery"] <= before_date) {
+            alert("Delivery date should be at least 8 days from now");
         }
         else {
             location.href = "../profile/Order page.html?cartId=" + unique_id;
@@ -345,7 +402,7 @@ function orderAll() {
         if (b !== false) {
 
             if (delivery_date <= before_date) {
-                alert("Delivery date should not be empty");
+                alert("Delivery date should not be empty (or) Delivery date should be at least 8 days from now");
                 a = false
             }
             // console.log(a);

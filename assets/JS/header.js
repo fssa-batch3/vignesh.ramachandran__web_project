@@ -28,7 +28,10 @@ const after_login =
         <li><a href="${root}/pages/homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
         <li><a href="${root}/pages/homepage/about us.html" class="navigation-link">ABOUT US</a></li>
         <li><a href="${root}/pages/homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-        <li><a href="${root}/pages/homepage/my cart.html" class="navigation-link">MY CART</a></li>
+        <div>
+            <li><a href="${root}/pages/homepage/my cart.html" class="navigation-link">MY CART</a></li>
+            <span class="cart_qty">7</span>
+        </div>
     </ul>
 
     <div class="dropdown_profile">
@@ -37,7 +40,6 @@ const after_login =
             <div>
                 <a href="${root}/pages/profile/Profile page.html">My Profile</a>
                 <a href="${root}/pages/profile/my orders.html">My Orders</a>
-                <a href="${root}/pages/Admin/admin form.html">Admin Forms</a>
             </div>
         </div>
     </div>
@@ -85,68 +87,88 @@ const before_login =
 </header>
 `
 
-// const admin_header =
-//     `
-//     <header>
-//         <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
+const admin_header =
+    `
+    <header>
+        <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
-//         <div class="icon-left">
-//             <img src="${root}/assets/img/main-logo.png" alt="Company Logo" class="logo" />
-//             <h1>SR</h1>
-//             <div>
-//                 <p>Catering</p>
-//             </div>
-//         </div>
+        <div class="icon-left">
+            <img src="${root}/assets/img/main-logo.png" alt="Company Logo" class="logo" />
+            <h1>SR</h1>
+            <div>
+                <p>Catering</p>
+            </div>
+        </div>
 
-//         <ul class="navigation" id="sidenav">
-//             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <ul class="navigation" id="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-//             <li><a href="${root}/index.html" class="navigation-link">HOME</a></li>
-//             <li class="dropdown">
-//                 <span class="navigation-link">MENU</span>
-//                 <div class="dropdown-content">
+            <li><a href="${root}/index.html" class="navigation-link">HOME</a></li>
+            <li class="dropdown">
+                <span class="navigation-link">MENU</span>
+                <div class="dropdown-content">
                     
-//                 </div>
-//             </li>
-//             <li><a href="${root}/pages/homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
-//             <li><a href="${root}/pages/homepage/about us.html" class="navigation-link">ABOUT US</a></li>
-//             <li><a href="${root}/pages/homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-//             <li><a href="${root}/pages/homepage/my cart.html" class="navigation-link">MY CART</a></li>
-//         </ul>
+                </div>
+            </li>
+            <li><a href="${root}/pages/homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
+            <li><a href="${root}/pages/homepage/about us.html" class="navigation-link">ABOUT US</a></li>
+            <li><a href="${root}/pages/homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
+            <div>
+                <li><a href="${root}/pages/homepage/my cart.html" class="navigation-link">MY CART</a></li>
+                <span class="cart_qty">0</span>
+            </div>
+        </ul>
 
-//         <div class="dropdown_profile">
-//             <img src="${root}/assets/img/profile.png" alt="profile image" />
-//             <div class="dropdown_profile-content">
-//                 <div>
-//                     <a href="${root}/pages/profile/Profile page.html">My Profile</a>
-//                     <a href="${root}/pages/profile/my orders.html">My Orders</a>
-//                     <a href="${root}/pages/Admin/admin form.html">Admin Forms</a>
-//                 </div>
-//             </div>
-//         </div>
-//     </header>  
-//     `
+        <div class="dropdown_profile">
+            <img src="${root}/assets/img/profile.png" alt="profile image" />
+            <div class="dropdown_profile-content">
+                <div>
+                    <a href="${root}/pages/profile/Profile page.html">My Profile</a>
+                    <a href="${root}/pages/Admin/total_orders.html">Catering Orders</a>
+                    <a href="${root}/pages/Admin/admin form.html">Admin Forms</a>
+                </div>
+            </div>
+        </div>
+    </header>  
+    `
 
 
 let user_id = JSON.parse(localStorage.getItem("user_unique"));
 // console.log(user_id)
+let admin_id = "vignesh.ramachandran@fssa.freshworks.com"
 
 
-if (user_id) {
+if (user_id !== admin_id && user_id !== null) {
     document.body.insertAdjacentHTML("afterbegin", after_login);
 
     //  logout
     const logoutBtn = document.querySelector("#logout");
     logoutBtn?.addEventListener("click", () => {
-        localStorage.removeItem("user_unique");
-        document.body.innerHTML = before_login;
+        if (confirm("Are you sure to logout this account ?")) {
+            localStorage.removeItem("user_unique");
+            document.body.innerHTML = before_login;
+        }
     })
 }
 
-// else if()
+
+else if (user_id == admin_id) {
+    document.body.insertAdjacentHTML("afterbegin", admin_header);
+
+    // logout
+    const logoutBtn = document.querySelector("#logout");
+    logoutBtn?.addEventListener("click", () => {
+        if (confirm("Are you sure to logout this account ?")) {
+            localStorage.removeItem("user_unique");
+            document.body.innerHTML = before_login;
+        }
+    })
+}
 
 
-else {
+
+
+else if (user_id == null) {
 
     document.body.insertAdjacentHTML("afterbegin", before_login);
 
@@ -195,3 +217,15 @@ for (i = 0; i < menuDataTrue.length; i++) {
 }
 
 div_dropdown_content.append(div_menulist);
+
+
+let cartData1 = JSON.parse(localStorage.getItem("cartData"));
+console.log(cartData1);
+
+let user_unique1 = JSON.parse(localStorage.getItem("user_unique"));
+
+let cart_user_data = cartData1.filter(data=>
+    data.user_id == user_unique1)
+
+let cartQty = document.querySelector(".cart_qty")
+cartQty.innerText = cart_user_data.length

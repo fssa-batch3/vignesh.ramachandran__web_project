@@ -194,12 +194,12 @@ saveBtn.forEach(function (saveDish) {
             return e.categoryType === categoryType;
         }
         findData2 = findData.filter(getCategory)
-        console.log(findData2);
+        // console.log(findData2);
 
         let findData3 = dishData.filter(product =>
             findData2.some(find => find.dish === product.id));
 
-        console.log(findData3);
+        // console.log(findData3);
 
         checkbox = document.querySelector('input[type=checkbox]:checked').value;
         // // console.log(checkbox);
@@ -213,7 +213,7 @@ saveBtn.forEach(function (saveDish) {
                 Dish_index = i;
             }
         }
-        console.log(Dish_index)
+        // console.log(Dish_index)
 
         let x = "status" + Dish_index
         let y = "dish" + Dish_index
@@ -223,10 +223,10 @@ saveBtn.forEach(function (saveDish) {
         let up_price = document.getElementById(z).value;
         let up_status = document.getElementById(x).value;
 
-        // findData2[Dish_index]["name"] = up_name;
-        // findData2[Dish_index]["price"] = up_price;
+        //to change the status in transaction table
         findData2[Dish_index]["status"] = up_status;
 
+        // to change or update in dishdata
         findData3[Dish_index]["status"] = up_status;
         findData3[Dish_index]["name"] = up_name;
         findData3[Dish_index]["price"] = up_price;

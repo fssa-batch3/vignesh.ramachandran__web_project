@@ -68,6 +68,7 @@ const signIn = e => {
         localStorage.setItem("user_unique", JSON.stringify(email));
         alert("Login Sucessful ✅");
         location.href = "../../index.html";
+        
     }
     e.preventDefault();
 }

@@ -3,25 +3,47 @@ orderData = JSON.parse(localStorage.getItem("orderData"));
 menuData = JSON.parse(localStorage.getItem("menuData"));
 categoryData = JSON.parse(localStorage.getItem("categoryData"));
 dishData = JSON.parse(localStorage.getItem("dishData"));
-user_unique = JSON.parse(localStorage.getItem("user_unique"))
+user_unique = JSON.parse(localStorage.getItem("user_unique"));
+
+view_orders()
+// let orderData = orderData.filter(data=>
+//     data.user_id == user_unique);
+
+// console.log(orderData);
 
 
+let statusBtn = document.querySelectorAll("#btn_status");
+statusBtn.forEach(function (showOrders) {
+    showOrders.addEventListener("click", function () {
 
-let orderData_user = orderData.filter(data =>
-    data.user_id == user_unique);
+        let div_for_append = document.querySelector("div.orders");
 
-// console.log(orderData_user);
+        div_for_append.innerText = ""
+
+        orderData = JSON.parse(localStorage.getItem("orderData"));
+
+        parent = this.innerText;
+        console.log(parent);
+
+        orderData = orderData.filter(data =>
+            data.orderStatus == parent + "")
+
+        view_orders()
 
 
+    })
+})
 
 
-for (let i = 0; i < orderData_user.length; i++) {
-    let count = orderData_user[i]["ordered_product"].length
+function view_orders(){
+
+for (let i = 0; i < orderData.length; i++) {
+    let count = orderData[i]["ordered_product"].length
     // console.log(count)
 
     for (let j = 0; j < count; j++) {
 
-        let menu_id = orderData_user[i]["ordered_product"][j]["menu_id"]
+        let menu_id = orderData[i]["ordered_product"][j]["menu_id"]
         // console.log(menu_id)
 
         // for getting menu name from url
@@ -29,7 +51,7 @@ for (let i = 0; i < orderData_user.length; i++) {
             data.id === menu_id);
         // console.log(menu_name)
 
-        let category_id = orderData_user[i]["ordered_product"][j]["category_id"]
+        let category_id = orderData[i]["ordered_product"][j]["category_id"]
 
         // for getting category name from url
         let category_name = categoryData.find(data =>
@@ -47,22 +69,27 @@ for (let i = 0; i < orderData_user.length; i++) {
 
         p_orderId = document.createElement("p");
         p_orderId.setAttribute("class", "order_id");
-        p_orderId.innerText = "Order Id:" + " " + orderData_user[i]["order_id"]
+        p_orderId.innerText = "Order Id:" + " " + orderData[i]["order_id"]
         div_header.append(p_orderId);
+
+        p_userId = document.createElement("p");
+        p_userId.setAttribute("class", "userId");
+        p_userId.innerText = "user Id:" + " " + orderData[i]["user_id"]
+        div_header.append(p_userId)
 
         p_order_status = document.createElement("p");
         p_order_status.setAttribute("id", "order_status");
 
-        if (orderData_user[i]["orderStatus"] == "Not Delivered") {
-            p_order_status.innerText = orderData_user[i]["orderStatus"];
+        if (orderData[i]["orderStatus"] == "Not Delivered") {
+            p_order_status.innerText = orderData[i]["orderStatus"];
             p_order_status.setAttribute("style", "color:var(--text-color)");
         }
-        if (orderData_user[i]["orderStatus"] == "Cancelled") {
-            p_order_status.innerText = orderData_user[i]["orderStatus"];
+        if (orderData[i]["orderStatus"] == "Cancelled") {
+            p_order_status.innerText = orderData[i]["orderStatus"];
             p_order_status.setAttribute("style", "color:var(--second-color)");
         }
-        if (orderData_user[i]["orderStatus"] == "Delivered") {
-            p_order_status.innerText = orderData_user[i]["orderStatus"];
+        if (orderData[i]["orderStatus"] == "Delivered") {
+            p_order_status.innerText = orderData[i]["orderStatus"];
             p_order_status.setAttribute("style", "color:var(--thickgreen-color)");
         }
 
@@ -85,16 +112,16 @@ for (let i = 0; i < orderData_user.length; i++) {
         button = document.createElement("button");
         button.setAttribute("class", "btn view");
         button.setAttribute("type", "button");
-        button.setAttribute("value", orderData_user[i]["ordered_product"][j]["dishData"])
+        button.setAttribute("value", orderData[i]["ordered_product"][j]["dishData"])
         button.innerText = "View Dishes";
         div_subject.append(button);
 
 
-        if (orderData_user[i]["orderStatus"] == "Cancelled" || orderData_user[i]["orderStatus"] == "Delivered") {
+        if (orderData[i]["orderStatus"] == "Cancelled" || orderData[i]["orderStatus"] == "Delivered") {
             button_cancel = document.createElement("button");
             button_cancel.setAttribute("class", "btn cancel");
             button_cancel.innerText = "Cancel Order";
-            button_cancel.setAttribute("value", orderData_user[i]["order_id"])
+            button_cancel.setAttribute("value", orderData[i]["order_id"])
             button_cancel.setAttribute("style", "display:none")
             div_subject.append(button_cancel);
         }
@@ -102,14 +129,14 @@ for (let i = 0; i < orderData_user.length; i++) {
             button_cancel = document.createElement("button");
             button_cancel.setAttribute("class", "btn cancel");
             button_cancel.innerText = "Cancel Order";
-            button_cancel.setAttribute("value", orderData_user[i]["order_id"])
+            button_cancel.setAttribute("value", orderData[i]["order_id"])
             div_subject.append(button_cancel);
         }
 
-        if(orderData_user[i]["orderStatus"] == "Cancelled"){
+        if (orderData[i]["orderStatus"] == "Cancelled") {
             p_reason = document.createElement("p");
             p_reason.setAttribute("class", "reason");
-            p_reason.innerText = orderData_user[i]["cancel_reason"];    
+            p_reason.innerText = orderData[i]["cancel_reason"];
             p_reason.setAttribute("style", "display:block")
             div_subject.append(p_reason);
 
@@ -117,7 +144,6 @@ for (let i = 0; i < orderData_user.length; i++) {
             span_reason.innerText = "Cancel Reason : "
             p_reason.prepend(span_reason);
         }
-        
 
 
         div_field = document.createElement("div");
@@ -134,7 +160,7 @@ for (let i = 0; i < orderData_user.length; i++) {
 
         input_1 = document.createElement("input");
         input_1.setAttribute("type", "date")
-        input_1.setAttribute("value", orderData_user[i]["dateOfDelivery"])
+        input_1.setAttribute("value", orderData[i]["dateOfDelivery"])
         input_1.setAttribute("readOnly", "true");
         div_1.append(input_1);
 
@@ -148,7 +174,7 @@ for (let i = 0; i < orderData_user.length; i++) {
 
         input_2 = document.createElement("input");
         input_2.setAttribute("type", "number");
-        input_2.setAttribute("value", orderData_user[i]["ordered_product"][j]["no_of_guest"]);
+        input_2.setAttribute("value", orderData[i]["ordered_product"][j]["no_of_guest"]);
         input_2.setAttribute("readOnly", "true");
         div_2.append(input_2);
 
@@ -162,7 +188,7 @@ for (let i = 0; i < orderData_user.length; i++) {
 
         input_3 = document.createElement("input");
         input_3.setAttribute("type", "number");
-        input_3.setAttribute("value", orderData_user[i]["ordered_product"][j]["price"]);
+        input_3.setAttribute("value", orderData[i]["ordered_product"][j]["price"]);
         input_3.setAttribute("readOnly", "true");
         div_3.append(input_3);
 
@@ -182,7 +208,7 @@ for (let i = 0; i < orderData_user.length; i++) {
         ul_dishes.setAttribute("class", "dishes");
         div_dropdown.append(ul_dishes);
 
-        let find_dish_data = orderData_user[i]["ordered_product"][j]["dishData"]
+        let find_dish_data = orderData[i]["ordered_product"][j]["dishData"]
         // console.log(find_dish_data);
 
         let finddish = dishData.filter(product =>
@@ -195,10 +221,13 @@ for (let i = 0; i < orderData_user.length; i++) {
             ul_dishes.append(li);
         }
 
-        document.querySelector("section.my-orders").append(div_my_orders_list);
+        document.querySelector("div.orders").append(div_my_orders_list);
 
     }
 }
+}
+
+
 
 
 // view dish
@@ -241,7 +270,6 @@ closeBtn.forEach(function (close_dish) {
 })
 
 
-
 // cancel order
 let cancelBtn = document.querySelectorAll(".cancel");
 cancelBtn.forEach(function (cancelOrder) {
@@ -253,7 +281,7 @@ cancelBtn.forEach(function (cancelOrder) {
         }
         else{
 
-            console.log(reason);
+            // console.log(reason);
             parent = this.closest(".my_order_text");
             user_id = parent.querySelector(".cancel");
 
@@ -280,7 +308,7 @@ cancelBtn.forEach(function (cancelOrder) {
 
 
 let m = moment().format("YYYY-MM-DD");
-console.log(m)
+// console.log(m)
 
 let find_notDelivered_data = orderData.filter(data =>
     data.orderStatus == "Not Delivered")
@@ -293,13 +321,3 @@ for (i = 0; i < find_notDelivered_data.length; i++) {
         localStorage.setItem("orderData", JSON.stringify(orderData));
     }
 }
-
-// let one_day_before = moment().add(1,'d').format("YYYY-MM-DD")
-// console.log(one_day_before);
-
-// for(i=0; i<find_notDelivered_data.length; i++){
-//     if(find_notDelivered_data[i]["dateOfDelivery"] == one_day_before){
-//         console.log(i)
-//     }
-// }
-

@@ -104,7 +104,7 @@ function getData(e) {
         return e.menuType === menuType;
     }
     findData = categoryData.filter(getMenu)
-    console.log(findData[0])
+    // console.log(findData)
 
 
     if (findData.length == 0) {
@@ -121,7 +121,7 @@ function getData(e) {
 
         // filtering category
         function getCategory(e) {
-            return e.categoryName == categoryType;
+            return e.categoryName.toLowerCase() == categoryType.toLowerCase();
         }
 
         findData2 = findData.filter(getCategory);

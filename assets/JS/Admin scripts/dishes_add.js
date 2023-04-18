@@ -35,13 +35,18 @@ function getCatDetails() {
 
     if (menuType !== "") {
 
+        let findData = categoryData.filter(data=>
+            data.menuType == menuType)
+
+        // console.log(findData)
+
         // creating select option depends upon the categoryData
         let categorylist = document.querySelector(".categorylist");
 
-        for (i = 0; i < categoryData.length; i++) {
+        for (i = 0; i < findData.length; i++) {
             let option = document.createElement("option");
-            option.value = categoryData[i]["id"];
-            option.innerText = categoryData[i]["categoryName"];
+            option.value = findData[i]["id"];
+            option.innerText = findData[i]["categoryName"];
 
             categorylist.append(option);
         }
@@ -81,6 +86,7 @@ function addInput() {
             newInput.placeholder = "Enter Dish Name";
             newInput.id = n;
             newInput.name = "dish";
+            newInput.pattern = "[A-Za-z]+ [A-Za-z]+"
             // newInput.id = "dish" + (n);
             newInput.required = "true";
 
@@ -88,6 +94,7 @@ function addInput() {
             inputPrice.type = "number";
             inputPrice.placeholder = "Enter Price";
             inputPrice.id = "price" + n;
+            inputPrice.pattern = "[0-9]{1,3}"
             inputPrice.required = "true";
 
 
@@ -134,7 +141,8 @@ function addInput() {
             newInput.type = "text";
             newInput.placeholder = "Enter Dish Name";
             newInput.id = n;
-            newInput.name = "dish";
+            newInput.name = "dish"
+            newInput.pattern = "[A-Za-z]+ [A-Za-z]+"
             // newInput.id = "dish" + (n);
             newInput.required = "true";
 
@@ -142,6 +150,9 @@ function addInput() {
             inputPrice.type = "number";
             inputPrice.placeholder = "Enter Price";
             inputPrice.id = "price" + n;
+            inputPrice.pattern = "[0-9]{1,3}"
+            inputPrice.min = "0"
+            inputPrice.max = "999"
             inputPrice.required = "true";
 
 
@@ -244,10 +255,7 @@ function getData(e) {
                 for (j = 0; j < localDishcount; j++) {
                     // console.log("rajini")
 
-                    if (dishes == dishData[j]["name"]) {
-                        // console.log(dishes)
-                        b = dishData[j]["name"];
-                        // alert(b + " " + " Is Already presented in this Menu");
+                    if (dishes.toLowerCase() == dishData[j]["name"].toLowerCase()) {
 
                         index = j + 1;
                         // console.log(index);

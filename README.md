@@ -60,7 +60,7 @@
     - Steps:
         1. Click the "login" button which is at the top right of the page.
         2. The page navigate to the login page.
-        3. Click "Create an account" link.
+        3. Click "Create an account" link which is at the bottom of the form .
         4. Enter the required information such as name, email,phone_number and password.
         5. Click the "Register" button.
     - Expected Result:
@@ -173,7 +173,7 @@
         2. click the "My cart" in the nav bar.
         3. It navigate to the cart page.
         4. click the "remove" button which cart menu you want to remove.
-        5. It remove the selected Menu/Category from the cart.
+        5. It removes the selected Menu/Category from the cart.
     - Expected Result:
         - The Menu/Category is removed from the user's cart.
 
@@ -187,7 +187,7 @@
         4. After the Menu is added to the cart, click the "My cart" in the nav bar.
         5. It navigate to the cart page.
         6. Before click "order" button, you should enter the "Delivery date" (Delivery date should be at least 8 days from now).
-        7. Then you enter the "No.of.guest" as your wish.Then click the "Update" button.
+        7. Then you enter the "No.of.guest" as your wish.
         8. After that click the "Order" button which menu you want to order.
         9. Then it navigate to the Order form.
         10. In the form you should enter the correct Delivery address.
@@ -225,63 +225,228 @@
         2. Click the "profile" icon which is at the top right of the page. Then click the "My orders"
         3. It navigate to the my orders page.
         4. Click the "Cancel" button which menu you want to cancel. (Note: Not delivered menu only allow to cancel)
+        5. Then it ask the reason. In the reason box you should enter the reason.
+        6. Then press "ok".
     - Expected Result:
         - The order status changed from Not deliverd to Cancelled.
+        - The order is cancelled.
 
 
 
 ## Admin
 
-### Create a new Menu/Category/Dish to sell
-- Scenario 1: Successfully create a new Menu/Category/Dish to sell
+### Create a new Menu
+- Scenario 1: Successfully Admin create a new Menu
     - Steps:
-        1. Log in as a admin.
-        2. Navigate to the Menu/Category/Dish creation page.
-        3. Enter the Menu/Category/Dish details such as name, description and price.
-        4. Upload Menu/Category images.
-        5. Click the "Create" button.
+        1. Log in as a admin.(email: vignesh.ramachandran@fssa.freshworks.com, password: Vicky@10)
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Admin forms"
+        3. It navigate to the forms page.
+        4. Then click the "arrow" which is near to "Menu add".
+        5. It navigate to the Menu add form page.
+        6. In this form, in first box enter the Menu name eg:Breakfast.
+        7. In next box enter the link(url) of Menu image.
+        8. In the bottom box enter the Menu description.
+        9. Then click the "create" button.
     - Expected Result:
-        - The new Menu/Category/Dish is created and added to the user's list of Menu/Category/Dish.
+        - The new Menu is created and added to the menu data.
 
-### View list of products
-- Scenario 1: Successfully view list of Menu/Category/Dish.
+### Read Menu
+- Scenario 1: Successfully Admin can read Menu
     - Steps:
-        1. Log in as a admin.
-        2. Navigate to the Menu/Category/Dish list page.
-        3. View the list of Menu/Category/Dish.
+        1. Log in as a admin.(email: vignesh.ramachandran@fssa.freshworks.com, password: Vicky@10)
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Admin forms"
+        3. It navigate to the forms page.
+        4. Then click the "arrow" which is near to "Menu remove".
+        5. It navigate to the Menu remove form page.
+        6. First select the menu name which is you want to see.
+        7. Then press the "show details" button.
+        8. You can see the Menu details such as Menu name, Menu image url, Menu description, and Menu status.
     - Expected Result:
-        - The admin can view their list of Menu/Category/Dish.
+        - Admin can see the Menu details.
 
-### Edit product details
-- Scenario 1: Successfully edit Menu/Category/Dish details
+### Edit Menu
+- Scenario 1: Successfully Admin can edit Menu
     - Steps:
-        1. Log in as a admin.
-        2. Navigate to the Menu/Category/Dish page.
-        3. Select a Menu/Category/Dish to edit.
-        4. Click the "Edit" button.
-        5. Update the Menu/Category/Dish details.
-        6. Click the "Save" button.
+        1. Log in as a admin.(email: vignesh.ramachandran@fssa.freshworks.com, password: Vicky@10)
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Admin forms"
+        3. It navigate to the forms page.
+        4. Then click the "arrow" which is near to "Menu remove".
+        5. It navigate to the Menu remove form page.
+        6. First select the menu name which is you want to see.
+        7. Then press the "show details" button.
+        8. You can see the Menu details such as Menu name, Menu image url, Menu description, and Menu status.
+        9. You can edit the Menu image url, Menu description.
+        10. Then click the "Save" button.
     - Expected Result:
-        - The Menu/Category/Dish details are updated.
+        - Menu details edited (or) updated sucessfully.
+
+### Remove Menu
+- Scenario 1: Successfully Admin can Remove Menu from Menu list
+    - Steps:
+        1. Log in as a admin.(email: vignesh.ramachandran@fssa.freshworks.com, password: Vicky@10)
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Admin forms"
+        3. It navigate to the forms page.
+        4. Then click the "arrow" which is near to "Menu remove".
+        5. It navigate to the Menu remove form page.
+        6. First select the menu name which is you want to see.
+        7. Then press the "show details" button.
+        8. You can see the Menu details such as Menu name, Menu image url, Menu description, and Menu status.
+        9. In this form there is true/false option. 
+        10. If you want to remove the Menu means change the "true" to "false".
+        11. Then click the "Save" button.
+    - Expected Result:
+        - Menu is removed from the Menu list sucessfully.
+
+### Create a new Category for Menu
+- Scenario 1: Successfully Admin create a new Category
+    - Steps:
+        1. Log in as a admin.(email: vignesh.ramachandran@fssa.freshworks.com, password: Vicky@10)
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Admin forms"
+        3. It navigate to the forms page.
+        4. Then click the "arrow" which is near to "Category add".
+        5. It navigate to the Category add form page.
+        6. In this form first select the Menu name.
+        7. Then enter the Category name in the first box. eg:Ordinary.
+        8. Then enter the Category image link(url) in the second box.
+        9. Then click the "Create" button.
+    - Expected Result:
+        - The new Category for select Menu is created and added to the Category data.
+
+### Read Category
+- Scenario 1: Successfully Admin can read Category
+    - Steps:
+        1. Log in as a admin.(email: vignesh.ramachandran@fssa.freshworks.com, password: Vicky@10)
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Admin forms"
+        3. It navigate to the forms page.
+        4. Then click the "arrow" which is near to "Category remove".
+        5. It navigate to the Category remove form page.
+        6. First select the menu name which is you want to see.
+        7. Then click the "show Category" button.
+        8. Then select the Category name which is you want to see.
+        9. Then click the "show details" button.
+        10. You can see the Category details such as Category name, Category image url and Category status.
+    - Expected Result:
+        - Admin can see the Category details.
+
+### Edit Category
+- Scenario 1: Successfully Admin can edit Category
+    - Steps:
+        1. Log in as a admin.(email: vignesh.ramachandran@fssa.freshworks.com, password: Vicky@10)
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Admin forms"
+        3. It navigate to the forms page.
+        4. Then click the "arrow" which is near to "Category remove".
+        5. It navigate to the Category remove form page.
+        6. First select the menu name which is you want to see.
+        7. Then click the "show Category" button.
+        8. Then select the Category name which is you want to see.
+        9. Then click the "show details" button.
+        10. You can see the Category details such as Category name, Category image url and Category status.
+        11. You can edit the Category image url.
+        12. Then click the "Save" button.
+    - Expected Result:
+        - Category details edited (or) updated sucessfully.
+
+### Remove Category
+- Scenario 1: Successfully Admin can Remove Category from Category list
+    - Steps:
+        1. Log in as a admin.(email: vignesh.ramachandran@fssa.freshworks.com, password: Vicky@10)
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Admin forms"
+        3. It navigate to the forms page.
+        4. Then click the "arrow" which is near to "Category remove".
+        5. It navigate to the Category remove form page.
+        6. First select the menu name which is you want to see.
+        7. Then click the "show Category" button.
+        8. Then select the Category name which is you want to see.
+        9. Then click the "show details" button.
+        10. You can see the Category details such as Category name, Category image url and Category status.
+        11. In this form there is true/false option.
+        12. If you want to remove the Category means change the "true" to "false".
+        13. Then click the "Save" button.
+    - Expected Result:
+        - Category is removed from the Category list sucessfully.
+
+### Create a new Dish for Category
+- Scenario 1: Successfully Admin create a new Dish
+    - Steps:
+        1. Log in as a admin.(email: vignesh.ramachandran@fssa.freshworks.com, password: Vicky@10)
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Admin forms"
+        3. It navigate to the forms page.
+        4. Then click the "arrow" which is near to "Dish add".
+        5. It navigate to the Dish add form page.
+        6. In this form first select the Menu name.
+        7. Then click the "show Category" button.
+        8. Then select the Category name which is you want to see.
+        9. Then click the plus "+" button how many times means depends upon how many dishes to add.
+        10. Then enter the Dish name, and price for the dish.
+        11. Then click the "Create" button.
+    - Expected Result:
+        - The new Dish for selected Category is created and added to the Dish data.
+
+### Read Dish
+- Scenario 1: Successfully Admin can read Dish
+    - Steps:
+        1. Log in as a admin.(email: vignesh.ramachandran@fssa.freshworks.com, password: Vicky@10)
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Admin forms"
+        3. It navigate to the forms page.
+        4. Then click the "arrow" which is near to "Dish remove".
+        5. It navigate to the Dish remove form page.
+        6. First select the menu name which is you want to see.
+        7. Then click the "show Category" button.
+        8. Then select the Category name which is you want to see.
+        9. Then click the "show dishes" button.
+        10. You can see the Dish details such as Dish name,status and Price.
+    - Expected Result:
+        - Admin can see the Dish details.
+
+### Edit Dish
+- Scenario 1: Successfully Admin can edit Dish
+    - Steps:
+        1. Log in as a admin.(email: vignesh.ramachandran@fssa.freshworks.com, password: Vicky@10)
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Admin forms"
+        3. It navigate to the forms page.
+        4. Then click the "arrow" which is near to "Dish remove".
+        5. It navigate to the Dish remove form page.
+        6. First select the menu name which is you want to see.
+        7. Then click the "show Category" button.
+        8. Then select the Category name which is you want to see.
+        9. Then click the "show dishes" button.
+        10. You can see the Dish details such as Dish name,status and Price.
+        11. If you want to edit means click the "checkbox" that which dish you want to edit.
+        12. You can edit the Dish name, price.(once at a time)
+        13. Then click the "Save" button.
+    - Expected Result:
+        - Dish details edited (or) updated sucessfully.
+
+### Remove Dish
+- Scenario 1: Successfully Admin can Remove Dish from Dish list
+    - Steps:
+        1. Log in as a admin.(email: vignesh.ramachandran@fssa.freshworks.com, password: Vicky@10)
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Admin forms"
+        3. It navigate to the forms page.
+        4. Then click the "arrow" which is near to "Dish remove".
+        5. It navigate to the Dish remove form page.
+        6. First select the menu name which is you want to see.
+        7. Then click the "show Category" button.
+        8. Then select the Category name which is you want to see.
+        9. Then click the "show dishes" button.
+        10. You can see the Dish details such as Dish name,status and Price.
+        11. In this form there is true/false option.
+        12. If you want to remove the Dish means change the "true" to "false".
+        13. Then click the "Save" button.
+    - Expected Result:
+        - Dish is removed from the Dish list sucessfully.
 
 ### View list of orders
 - Scenario 1: Successfully view list of orders
     - Steps:
         1. Log in as a admin.
-        2. Navigate to the orders page.
-        3. View the list of orders.
+        2. Click the "profile" icon which is at the top right of the page. Then click the "Catering orders"
+        3. You can see the total orders which is ordered by customers.
+        4. You can see the Orders like Not delivered/Delivered/Cancelled.
     - Expected Result:
-        - The admin can view the list of orders.
+        - The admin can see the list of orders.
+        
 
-### View order details
-- Scenario 1: Successfully view order details
-    - Steps:
-        1. Log in as a admin.
-        2. Navigate to the orders page.
-        3. Select an order to view.
-        4. Click the "View Order" button.
-    - Expected Result:
-        - The admin can view the details of the selected order.
             
             
             
