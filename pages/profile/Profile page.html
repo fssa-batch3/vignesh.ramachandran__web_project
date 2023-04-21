@@ -36,7 +36,7 @@
         <!-- profile starts -->
         <section class="profile">
 
-            <form>
+            <form role="form" onsubmit="save(event)">
                 <div class="top">
                     <h2 class="heading"><span>My</span> Profile</h2>
                     <!-- <button class="delete btn" type="button" onclick="deleteAcc()">Delete Account</button> -->
@@ -50,13 +50,24 @@
 
                     <div class="details">
                         <label for="name">Name:</label>
-                        <input type="text" name="name" id="name" readonly />
+                        <input type="text" name="name" id="name" pattern="[A-Za-z.]+"
+                            title="Enter alphabet without space" required="true" readonly />
                         <label for="email">Email:</label>
                         <input type="email" name="email" id="email" disabled />
                         <label for="number">Phone Number:</label>
                         <input type="number" name="phone no." id="phone_number" disabled />
                         <label for="password">Password:</label>
-                        <input type="password" name="password" id="password" readonly />
+                        <input type="password" name="password" id="password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Must contain at least one number, one uppercase, lowercase and one symbol, and at least 8 or more characters"
+                            required="true" readonly />
+                        <div id="pattern">
+                            <span class="number_pass">Must contain at least one number,</span>
+                            <span class="upper_pass">one uppercase,</span>
+                            <span class="lower_pass">one lowercase,</span>
+                            <span class="symbol_pass">one symbol,</span>
+                            <span class="char_pass">and at least 8 or more characters</span>
+                        </div>
                         <div class="show_password">
                             <input type="checkbox" id="show">
                             <label>Show password</label>
@@ -70,7 +81,7 @@
                         <img src="../../assets/img/edit.jpg" alt="edit button" />
                         <p>Edit profile</p>
                     </button>
-                    <button type="button" class="save btn" style="display:none;">Save</button>
+                    <button type="submit" class="save btn" style="display:none;">Save</button>
                     <a href="../../index.html"><button class="btn back" type="button">Back</button></a>
                     <!-- </a> -->
                 </div>
@@ -117,7 +128,7 @@
             const type = Password.getAttribute("type") === "password" ? "text" : "password";
             Password.setAttribute("type", type);
         })
-        
+
 
         //get value from local storage
         let user_unique = JSON.parse(localStorage.getItem("user_unique"));
@@ -200,9 +211,18 @@
         edit.addEventListener("click", findReadonly);
 
         // save button
-        const save = document.querySelector(".save");
-        save.addEventListener("click", update)
-        save.addEventListener("click", findReadonly1)
+        // const save = document.querySelector(".save");
+
+        // save.addEventListener("click", update)
+        // save.addEventListener("click", findReadonly1)
+        const save = e => {
+            update();
+            findReadonly1();
+
+            e.preventDefault();
+
+        }
+
 
 
 
@@ -214,8 +234,7 @@
             document.querySelector(".edit").setAttribute("style", "display:none");
             let head = document.querySelector(".heading");
             head.innerHTML = "<span>My</span> Profile-Edit"
-
-
+            document.querySelector("#pattern").setAttribute("style", "display:block");
         }
 
         function findReadonly1(e) {
@@ -223,7 +242,69 @@
             document.getElementById("password").setAttribute("readonly", "true")
             document.querySelector(".save").setAttribute("style", "display:none")
             document.querySelector(".edit").setAttribute("style", "display:flex");
+            document.querySelector("#pattern").removeAttribute("style");
         }
+
+
+
+        // password pattern recognization
+        let password = document.getElementById("password");
+
+        let number_pass = document.querySelector(".number_pass");
+        let upper_pass = document.querySelector(".upper_pass");
+        let lower_pass = document.querySelector(".lower_pass");
+        let symbol_pass = document.querySelector(".symbol_pass");
+        let char_pass = document.querySelector(".char_pass");
+
+        password.addEventListener("input", () => {
+            const password_value = password.value;
+
+            // check upper case
+            const has_upper = /[A-Z]/.test(password_value);
+            if (has_upper == true) {
+                upper_pass.style.color = "green";
+            }
+            else{
+                upper_pass.style.color = "var(--second-color)"
+            }
+
+            // check lower case
+            const has_lower = /[a-z]/.test(password_value);
+            if (has_lower == true) {
+                lower_pass.style.color = "green";
+            }
+            else{
+                lower_pass.style.color = "var(--second-color)";
+            }
+
+            // check number 
+            const has_symbol = /[!@#$%^&*_=+-]/.test(password_value);
+            if (has_symbol == true) {
+                symbol_pass.style.color = "green";
+            }
+            else{
+                symbol_pass.style.color = "var(--second-color)";
+            }
+
+            // check char
+            const has_number = /\d/.test(password_value);
+            if (has_number == true) {
+                number_pass.style.color = "green";
+            }
+            else{
+                number_pass.style.color = "var(--second-color)";
+            }
+
+            // check length
+            const char_length = password_value.length >= 8;
+            if (char_length == true) {
+                char_pass.style.color = "green";
+            }
+            else{
+                char_pass.style.color = "var(--second-color)";
+            }
+
+        })
 
 
 

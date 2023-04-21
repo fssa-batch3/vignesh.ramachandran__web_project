@@ -28,7 +28,7 @@ const after_login =
         <li><a href="${root}/pages/homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
         <li><a href="${root}/pages/homepage/about us.html" class="navigation-link">ABOUT US</a></li>
         <li><a href="${root}/pages/homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-        <div>
+        <div class = "cartu">
             <li><a href="${root}/pages/homepage/my cart.html" class="navigation-link">MY CART</a></li>
             <span class="cart_qty">7</span>
         </div>
@@ -113,7 +113,7 @@ const admin_header =
             <li><a href="${root}/pages/homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
             <li><a href="${root}/pages/homepage/about us.html" class="navigation-link">ABOUT US</a></li>
             <li><a href="${root}/pages/homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-            <div>
+            <div class = "cartu">
                 <li><a href="${root}/pages/homepage/my cart.html" class="navigation-link">MY CART</a></li>
                 <span class="cart_qty">0</span>
             </div>

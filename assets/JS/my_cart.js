@@ -119,6 +119,7 @@ for (let i = 0; i < cartData_user.length; i++) {
     input_2.setAttribute("class", "number");
     input_2.setAttribute("required", "true");
     input_2.setAttribute("min", "1")
+    // input_2.setAttribute("max", "1500")
     input_2.setAttribute("value", cartData_user[i]["noOfGuest"])
     label_2.append(input_2);
 
@@ -298,11 +299,18 @@ number_of_guest.forEach(function (getGuest) {
 
         let quantity = parent.querySelector(".number").value
         // console.log(quantity)
+        if(quantity <=1500){
+            pdts["noOfGuest"] = quantity
 
-        pdts["noOfGuest"] = quantity
+            localStorage.setItem("cartData", JSON.stringify(cartData));
+            location.reload();
+        }
+        else{
+            alert("You can't order food for above 1500 guest")
+            location.reload();
+        }
 
-        localStorage.setItem("cartData", JSON.stringify(cartData));
-        location.reload();
+
 
     })
 })

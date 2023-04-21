@@ -187,7 +187,7 @@
         4. After the Menu is added to the cart, click the "My cart" in the nav bar.
         5. It navigate to the cart page.
         6. Before click "order" button, you should enter the "Delivery date" (Delivery date should be at least 8 days from now).
-        7. Then you enter the "No.of.guest" as your wish.
+        7. Then you enter the "No.of.guest" under "1500" guest only.
         8. After that click the "Order" button which menu you want to order.
         9. Then it navigate to the Order form.
         10. In the form you should enter the correct Delivery address.

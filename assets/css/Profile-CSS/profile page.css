@@ -112,6 +112,14 @@ form h2 {
     font-size: var(--h2-font);
     border-radius: 1rem;
 } 
+#pattern{
+    display: none;
+    padding: .4rem 0;
+    font-size: .9rem;
+    font-weight: bold;
+    font-family: var(--parah-fontfamily);
+    text-align: center;
+}
 .btn_content {
     /* display: flex;
     flex-direction: row;

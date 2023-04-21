@@ -96,6 +96,7 @@ function addtoCart() {
             // console.log(cartData[0])
             alert("Menu added into the Cart ✅")
             localStorage.setItem("cartData", JSON.stringify(cartData));
+            location.reload();
         }
 
         else if (find_user.length !== 0) {
