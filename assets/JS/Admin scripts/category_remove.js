@@ -55,6 +55,8 @@ let showDetails = document.querySelector(".show2")
 showDetails.addEventListener("click", showCatDetails);
 
 function showCatDetails() {
+    let saveBtn = document.querySelector(".save");
+
     let menuType = document.getElementById("menuName").value;
     let categoryType = document.getElementById("categoryName").value;
 
@@ -101,15 +103,15 @@ function showCatDetails() {
         alert("Click the Show category button (or) Select Category type")
     }
 
-
+    saveBtn.removeAttribute("style");
 }
 
 
 // save edited (updated) details
-let saveBtn = document.querySelector(".save");
-saveBtn.addEventListener("click", saveData);
+// let saveBtn = document.querySelector(".save");
+// saveBtn.addEventListener("click", saveData);
 
-function saveData() {
+const change = e => {
     let upStatus = document.getElementById("categoryStatusGet").value;
     let upImage = document.getElementById("categoryImageGet").value;
     // let upPrice = document.getElementById("categoryPriceGet").value;

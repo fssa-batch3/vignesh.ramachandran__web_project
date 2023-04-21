@@ -34,7 +34,7 @@
     
     <main>
         <section>
-            <form class="remove_form">
+            <form class="remove_form" role="form" onsubmit="change(event)">
                 <h2>REMOVE-MENU</h2>
                 <div class="select_menu">
                     <h3>Select Menu</h3>
@@ -45,18 +45,16 @@
                     <button class="btn show" type="button">Show Details</button>
                 </div>
                 <div class="menu_details">
-                    <input type="text" class="menu_name" id="menuNameGet" readonly />
-                    <input type="text" class="menu_description" id="menuAboutGet"  />
-                    <input type="text" class="menu_image" id="menuImageGet" />
-                    <select name="" id="menustatusGet">
-                        <option value="">Select</option>
+                    <input type="text" class="menu_name" id="menuNameGet" pattern="[A-Za-z.]+" title="Enter alphabet without space" required readonly />
+                    <input type="text" class="menu_description" id="menuAboutGet"  required />
+                    <input type="url" class="menu_image" id="menuImageGet" pattern="https?://.+" title="It should be URL.eg:http, https" required />
+                    <select name="" id="menustatusGet" required>
                         <option value="true">True</option>
                         <option value="false">False</option>
-
                     </select>
                 </div>
 
-                <button class="btn save" type="button">Save</button>
+                <button class="btn save" type="submit" style="display: none;">Save</button>
                 <!-- <button class="btn delete" type="button">Delete</button> -->
             </form>
         </section>

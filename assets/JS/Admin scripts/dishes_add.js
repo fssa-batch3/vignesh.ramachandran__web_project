@@ -152,7 +152,7 @@ function addInput() {
             inputPrice.id = "price" + n;
             inputPrice.pattern = "[0-9]{1,3}"
             inputPrice.min = "0"
-            inputPrice.max = "999"
+            inputPrice.max = "150"
             inputPrice.required = "true";
 
 

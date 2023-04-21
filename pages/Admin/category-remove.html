@@ -34,12 +34,12 @@
     
     <main>
         <section>
-            <form>
+            <form role="form" onsubmit="change(event)">
                 <h2>Category Remove</h2>
 
                 <div class="select_menu">
                     <h3>Select Menu</h3>
-                    <select name="menu" id="menuName" class="menulist">
+                    <select name="menu" id="menuName" class="menulist" required>
                         <option value="">Select</option>
 
                     </select>
@@ -49,25 +49,24 @@
 
                 <div class="select_category">
                     <h3>Select Category</h3>
-                    <select name="category" id="categoryName" class="categorylist">
+                    <select name="category" id="categoryName" class="categorylist" required>
                         <option value="">Select</option>
 
                     </select>
                     <button class="btn show2" type="button">Show Details</button>
                 </div>
                 <div class="category_details">
-                    <input type="text" class="category_name" id="categoryNameGet" readonly />
-                    <select name="" id="categoryStatusGet">
-                        <option value="">Select</option>
+                    <input type="text" class="category_name" id="categoryNameGet" pattern="[A-Za-z.]+" title="Enter name without name" readonly />
+                    <select name="" id="categoryStatusGet" required>
                         <option value="true">True</option>
                         <option value="false">False</option>
                     </select>
-                    <input type="text" class="category_image" id="categoryImageGet" />
+                    <input type="url" class="category_image" id="categoryImageGet" pattern="https?://.+" title="It should be URL.eg:http, https" required />
                     <!-- <input type="number" class="category_price" id="categoryPriceGet"  /> -->
                 </div>
 
                 <!-- <button class="btn delete" type="button">Delete</button> -->
-                <button type="button" class="btn save">Save</button>
+                <button type="submit" class="btn save" style="display: none;">Save</button>
 
             </form>
         </section>

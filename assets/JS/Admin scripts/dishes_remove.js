@@ -23,7 +23,7 @@ showCatergoy.addEventListener("click", getCatDetails)
 function getCatDetails() {
     let menuType = document.getElementById("menuName").value;
 
-    if(menuType !== ""){
+    if (menuType !== "") {
 
         function getMenu(e) {
             return e.menuType === menuType;
@@ -44,7 +44,7 @@ function getCatDetails() {
         showCatergoy.setAttribute("style", "display:none");
     }
 
-    else{
+    else {
         alert("Select Menu type")
     }
 }
@@ -75,16 +75,18 @@ show.addEventListener("click", showDishes);
 
 function showDishes(e) {
 
+    let saveBtn = document.querySelector(".save")
+
     let container = document.querySelector("#input_group");
 
     let menuType = document.getElementById("menuName").value;
     let categoryType = document.getElementById("categoryName").value;
 
-    if(menuType == ""){
+    if (menuType == "") {
         alert("Select Menu type")
     }
 
-    else if(menuType !== "" && categoryType !== ""){
+    else if (menuType !== "" && categoryType !== "") {
 
         // filtering Menu
         function getMenu(e) {
@@ -127,9 +129,12 @@ function showDishes(e) {
             priceInput.type = "number";
             priceInput.id = "price" + (i);
             priceInput.value = findData3[i]["price"]
+            priceInput.min = "0";
+            priceInput.max = "150";
 
             let select_status = document.createElement("select");
             select_status.setAttribute("id", "status" + (i));
+            select_status.setAttribute("required", "true")
             div_field.append(select_status);
 
             if (findData3[i]["status"] == "true") {
@@ -163,6 +168,8 @@ function showDishes(e) {
         }
 
         show.setAttribute("style", "display:none");
+        saveBtn.removeAttribute("style");
+
 
     }
 
@@ -177,7 +184,7 @@ let saveBtn = document.querySelectorAll(".save")
 // saveBtn.addEventListener("click", saveDish)
 
 saveBtn.forEach(function (saveDish) {
-    saveDish.addEventListener("click", function () {
+    saveDish.addEventListener("click", change = e => {
         let menuType = document.getElementById("menuName").value;
         let categoryType = document.getElementById("categoryName").value;
 
@@ -223,20 +230,29 @@ saveBtn.forEach(function (saveDish) {
         let up_price = document.getElementById(z).value;
         let up_status = document.getElementById(x).value;
 
-        //to change the status in transaction table
-        findData2[Dish_index]["status"] = up_status;
+        if (up_price !== "" && up_price !== "--" && up_price <= 150) {
+            //to change the status in transaction table
+            findData2[Dish_index]["status"] = up_status;
 
-        // to change or update in dishdata
-        findData3[Dish_index]["status"] = up_status;
-        findData3[Dish_index]["name"] = up_name;
-        findData3[Dish_index]["price"] = up_price;
+            // to change or update in dishdata
+            findData3[Dish_index]["status"] = up_status;
+            findData3[Dish_index]["name"] = up_name;
+            findData3[Dish_index]["price"] = up_price;
 
-        // m[Dish_index]["name"] = up_dish
+            // m[Dish_index]["name"] = up_dish
 
-        localStorage.setItem("dishData", JSON.stringify(dishData));
-        localStorage.setItem("transactionTable", JSON.stringify(transactionTable));
-        alert("Dish Renamed Sucessfully ✅")
-        location.reload()
+            localStorage.setItem("dishData", JSON.stringify(dishData));
+            localStorage.setItem("transactionTable", JSON.stringify(transactionTable));
+            alert("Dish Renamed Sucessfully ✅")
+            location.reload()
+        }
+        else {
+            alert("Price not should be empty(or) above 150. It should be 0 to 150")
+            // location.reload();
+        }
+
+        e.preventDefault();
+
 
     })
 })

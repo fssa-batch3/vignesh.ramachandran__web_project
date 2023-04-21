@@ -21,6 +21,7 @@ show = document.querySelector(".show");
 show.addEventListener("click", showMenuDetails);
 
 function showMenuDetails() {
+    let saveBtn = document.querySelector(".save");
 
     menuType = document.getElementById("menuName").value;
 
@@ -46,6 +47,7 @@ function showMenuDetails() {
         menuStatus.value = findData[0]["status"];
 
         show.setAttribute("style", "display:none");
+        saveBtn.removeAttribute("style");
     }
     else{
         alert("Select Menu type")
@@ -56,10 +58,10 @@ function showMenuDetails() {
 
 
 // save edited(updated)data to local storage
-let saveBtn = document.querySelector(".save");
-saveBtn.addEventListener("click", saveData)
+// let saveBtn = document.querySelector(".save");
+// saveBtn.addEventListener("click", saveData)
 
-function saveData() {
+const change = e => {
     // let upName = document.getElementById("menuNameGet").value;
     let upImage = document.getElementById("menuImageGet").value;
     let upAbout = document.getElementById("menuAboutGet").value;
