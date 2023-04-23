@@ -220,7 +220,7 @@ div_dropdown_content.append(div_menulist);
 
 
 let cartData1 = JSON.parse(localStorage.getItem("cartData"));
-console.log(cartData1);
+// console.log(cartData1);
 
 let user_unique1 = JSON.parse(localStorage.getItem("user_unique"));
 

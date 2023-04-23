@@ -23,7 +23,7 @@ statusBtn.forEach(function (showOrders) {
         orderData = JSON.parse(localStorage.getItem("orderData"));
 
         parent = this.innerText;
-        console.log(parent);
+        // console.log(parent);
 
         orderData = orderData.filter(data =>
             data.orderStatus == parent + "")
@@ -221,7 +221,7 @@ for (let i = 0; i < orderData.length; i++) {
             ul_dishes.append(li);
         }
 
-        document.querySelector("div.orders").append(div_my_orders_list);
+        document.querySelector("div.orders").prepend(div_my_orders_list);
 
     }
 }

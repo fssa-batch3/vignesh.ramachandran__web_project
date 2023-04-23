@@ -46,8 +46,9 @@
                 </div>
                 <div class="menu_details">
                     <input type="text" class="menu_name" id="menuNameGet" pattern="[A-Za-z.]+" title="Enter alphabet without space" required readonly />
-                    <input type="text" class="menu_description" id="menuAboutGet"  required />
                     <input type="url" class="menu_image" id="menuImageGet" pattern="https?://.+" title="It should be URL.eg:http, https" required />
+                    <input type="text" class="menu_description" id="menuAboutGet" pattern="^(?!\s)[a-zA-Z\s\W]+$" required />
+                    <!-- ^(?!\s)[a-zA-Z\s]+$ -->
                     <select name="" id="menustatusGet" required>
                         <option value="true">True</option>
                         <option value="false">False</option>

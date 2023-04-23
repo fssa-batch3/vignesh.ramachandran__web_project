@@ -90,7 +90,7 @@ form h2 {
     border: 2px solid var(--text-color);
 }
 .menuabout {
-    height: 100px;
+    /* height: 100px; */
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
     background: var(--other-color);

@@ -106,8 +106,11 @@ form h2 {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     align-items: center;
     justify-items: center;
-    gap: 1.5rem;
+    column-gap: 1.5rem;
     padding-bottom: 1rem;
+}
+.input_qty {
+    width: 20px;
 }
 .field input {
     width: 100%;
@@ -122,6 +125,7 @@ form h2 {
 .field input:focus {
     border: 2px solid var(--text-color);
 }
+
 .bx-x{
     width: 3rem;
     height: 2rem;

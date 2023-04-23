@@ -22,6 +22,7 @@ showCatergoy.addEventListener("click", getCatDetails)
 
 function getCatDetails() {
     let menuType = document.getElementById("menuName").value;
+    let menu_option = document.querySelector("#menuName");
 
     if (menuType !== "") {
 
@@ -42,6 +43,7 @@ function getCatDetails() {
         }
 
         showCatergoy.setAttribute("style", "display:none");
+        menu_option.setAttribute("disabled", "true");
     }
 
     else {
@@ -76,6 +78,7 @@ show.addEventListener("click", showDishes);
 function showDishes(e) {
 
     let saveBtn = document.querySelector(".save")
+    let category_option = document.querySelector("#categoryName")
 
     let container = document.querySelector("#input_group");
 
@@ -169,6 +172,7 @@ function showDishes(e) {
 
         show.setAttribute("style", "display:none");
         saveBtn.removeAttribute("style");
+        category_option.setAttribute("disabled", "true")
 
 
     }
@@ -231,20 +235,53 @@ saveBtn.forEach(function (saveDish) {
         let up_status = document.getElementById(x).value;
 
         if (up_price !== "" && up_price !== "--" && up_price <= 150) {
-            //to change the status in transaction table
-            findData2[Dish_index]["status"] = up_status;
 
-            // to change or update in dishdata
-            findData3[Dish_index]["status"] = up_status;
-            findData3[Dish_index]["name"] = up_name;
-            findData3[Dish_index]["price"] = up_price;
+            let a = true;
 
-            // m[Dish_index]["name"] = up_dish
+            if (up_name.trim() === "") {
+                alert("Enter the Dish name")
+            }
+            else {
 
-            localStorage.setItem("dishData", JSON.stringify(dishData));
-            localStorage.setItem("transactionTable", JSON.stringify(transactionTable));
-            alert("Dish Renamed Sucessfully ✅")
-            location.reload()
+                for (k = 0; k < findData3.length; k++) {
+                    
+                    let edited_dishName = up_name.replace(/\(\d+\)/, "")
+                    // console.log(edited_dishName);
+
+                    if (edited_dishName.toLowerCase() == findData3[k]["name"].replace(/\(\d+\)/, "").toLowerCase()) {
+
+                        alert(up_name + " " + "already presented in the given menu & category as dishId =" + findData3[k]["id"])
+                        a = false;
+
+                    }
+                    // else {
+                    //     console.log("no dishes")
+                    //     a = true;
+                    // }
+
+                }
+
+                if (a !== false) {
+                    //to change the status in transaction table
+                    findData2[Dish_index]["status"] = up_status;
+
+                    // to change or update in dishdata
+                    findData3[Dish_index]["status"] = up_status;
+                    findData3[Dish_index]["name"] = up_name;
+                    findData3[Dish_index]["price"] = up_price;
+
+                    // m[Dish_index]["name"] = up_dish
+
+                    localStorage.setItem("dishData", JSON.stringify(dishData));
+                    localStorage.setItem("transactionTable", JSON.stringify(transactionTable));
+                    alert("Dish Renamed Sucessfully ✅")
+                    location.reload()
+                }
+
+            }
+
+
+
         }
         else {
             alert("Price not should be empty(or) above 150. It should be 0 to 150")

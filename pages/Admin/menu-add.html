@@ -44,7 +44,7 @@
                 <div class="input_group" >
                     <input type="text" class="menuname" placeholder="Eg: Breakfast Menu" id="menuName" pattern="[A-Za-z.]+" title="Enter alphabet without space" required="true" />
                     <input type="url" class="menuimage" placeholder="Enter Image URL" id="menuImage" pattern="https?://.+" title="It should be URL.eg:http, https" required="true"/>
-                    <textarea name="" class="menuabout" cols="30" rows="10" placeholder="Enter Menu Description" id="menuAbout" required="true"></textarea>
+                    <input name="description" class="menuabout" placeholder="Enter Menu Description" id="menuAbout" pattern="^(?!\s)[a-zA-Z\s\W]+$" required="true"/>
                 </div>
 
                 <button class="btn_submit" type="submit">Create</button>

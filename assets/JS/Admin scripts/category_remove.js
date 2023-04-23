@@ -21,6 +21,7 @@ showCatergoy.addEventListener("click", getCatDetails)
 
 function getCatDetails() {
     let menuType = document.getElementById("menuName").value;
+    let menu_option = document.querySelector("#menuName")
 
     if(menuType !== ""){
 
@@ -41,6 +42,7 @@ function getCatDetails() {
         }
 
         showCatergoy.setAttribute("style", "display:none");
+        menu_option.setAttribute("disabled", "true")
         
     }
     else{
@@ -56,6 +58,7 @@ showDetails.addEventListener("click", showCatDetails);
 
 function showCatDetails() {
     let saveBtn = document.querySelector(".save");
+    let category_option = document.querySelector("#categoryName")
 
     let menuType = document.getElementById("menuName").value;
     let categoryType = document.getElementById("categoryName").value;
@@ -97,6 +100,7 @@ function showCatDetails() {
         // categoryPrice.value = categoryData[0]["categoryPrice"]
 
         showDetails.setAttribute("style", "display:none");
+        category_option.setAttribute("disabled", "true");
     }
 
     else{

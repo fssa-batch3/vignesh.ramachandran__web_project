@@ -143,7 +143,12 @@ span {
     font-size: var(--h2-font);
     font-weight: bold;
 }
-
+.arr_status{
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--thickgreen-color);
+    font-weight: bolder;
+}
 .field {
     display: flex;
     flex-direction: column;

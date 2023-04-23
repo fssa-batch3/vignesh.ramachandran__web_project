@@ -114,14 +114,14 @@ function getData(e) {
     // let categoryData = [];
 
     function getMenu(e) {
-        return e.menuName.toLowerCase()  ===  menuType.toLowerCase();
+        return e.menuName.toLowerCase() === menuType.toLowerCase();
     }
     findData = menuData.filter(getMenu);
-    console.log(findData)
+    // console.log(findData)
 
     let n = findData.length;
 
-    if (menuData.length == 0) {
+    if (menuData.length == 0 && menuAbout !== "") {
 
         for (i = 1; i <= n + 1; i++) {
             menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, status: "true", "description": menuAbout });
@@ -137,19 +137,25 @@ function getData(e) {
 
     else if (findData.length == 0) {
 
-        let localMenucount = menuData.length;
-
-        // console.log(localMenucount);
-
-        for (i = localMenucount + 1; i <= localMenucount + 1; i++) {
-            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, status: "true", "description": menuAbout, });
+        if (menuAbout.trim() === "") {
+            alert("Description should not be empty")
         }
 
-        // console.log(menuData);
-        localStorage.setItem("menuData", JSON.stringify(menuData));
+        else {
+            let localMenucount = menuData.length;
 
-        alert("Menu Added Sucessfully ✅");
-        location.reload();
+            // console.log(localMenucount);
+
+            for (i = localMenucount + 1; i <= localMenucount + 1; i++) {
+                menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, status: "true", "description": menuAbout, });
+            }
+
+            // console.log(menuData);
+            localStorage.setItem("menuData", JSON.stringify(menuData));
+
+            alert("Menu Added Sucessfully ✅");
+            location.reload();
+        }
     }
 
 

@@ -22,6 +22,8 @@ show.addEventListener("click", showMenuDetails);
 
 function showMenuDetails() {
     let saveBtn = document.querySelector(".save");
+    let menu_option = document.querySelector("#menuName")
+    // console.log(menu_option);
 
     menuType = document.getElementById("menuName").value;
 
@@ -48,6 +50,7 @@ function showMenuDetails() {
 
         show.setAttribute("style", "display:none");
         saveBtn.removeAttribute("style");
+        menu_option.setAttribute("disabled","true")
     }
     else{
         alert("Select Menu type")
