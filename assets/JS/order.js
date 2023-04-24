@@ -302,7 +302,7 @@ const placeOrder = e => {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let phone_number = document.getElementById("phone_number").value;
-    let address = document.getElementById("address").value;
+    let address = document.getElementById("address").value.trim().split(/\s+/g).join(" ");
 
     let dateOfDelivery = findData[0]["dateOfDelivery"];
 
@@ -311,6 +311,14 @@ const placeOrder = e => {
     let dish = "";
     let no_of_guest = "";
     let price = "";
+
+    function validate(){
+        if(/^\s*$/g.test(address)){
+            alert("Enter the valid address");
+            address=reset();
+        }
+    }
+    validate()
 
     for (let i = 0; i < findData.length; i++) {
 

@@ -43,7 +43,7 @@ span {
 }
 .my-order_form{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
     gap: 1rem;
     margin:auto;
     border: 3px solid var(--text-color);
@@ -52,6 +52,20 @@ span {
     height: 80vh; */
     background-color: var(--other-color);
     padding: 2rem;
+}
+.my-order_form h2 {
+    font-family: var(--heading-fontfamily);
+    font-size: var(--big-font);
+    color: var(--second-color);
+    text-align: center;
+    padding: 1rem; 
+}
+.my-order_form h3 {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+    /* border: 2px solid var(--text-color); */
+    text-align: center;
 }
 .details{
     /* display: flex;
@@ -65,21 +79,8 @@ span {
     gap: 2rem;
     padding: 4%;
 }
-.details h2 {
-    font-family: var(--heading-fontfamily);
-    font-size: var(--big-font);
-    color: var(--second-color);
-    text-align: center;
-    padding: 1rem;
-    
-}
-.details h3 {
-    font-family: var(--parah-fontfamily);
-    font-size: var(--h2-font);
-    color: var(--text-color);
-    /* border: 2px solid var(--text-color); */
-    text-align: center;
-}
+
+
 .details div {
     display: grid;
     gap: 1.5rem;
@@ -230,10 +231,8 @@ footer {
     .footer-details {
         flex-direction: column;
     }
-    aside,aside img {
-        display: none;
-    }
 }
+
 @media screen and (max-width:460px){
     html {
         font-size: 10px;

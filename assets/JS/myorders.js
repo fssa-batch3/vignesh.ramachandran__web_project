@@ -116,11 +116,11 @@ function view_orders() {
             button.innerText = "View Dishes";
             div_subject.append(button);
 
-            button_cancel = document.createElement("button");
-            button_cancel.setAttribute("class", "btn cancel");
-            button_cancel.innerText = "Cancel Order";
-            button_cancel.setAttribute("value", orderData_user[i]["order_id"])
-            div_subject.append(button_cancel);
+            // button_cancel = document.createElement("button");
+            // button_cancel.setAttribute("class", "btn cancel");
+            // button_cancel.innerText = "Cancel Order";
+            // button_cancel.setAttribute("value", orderData_user[i]["order_id"])
+            // div_subject.append(button_cancel);
 
 
             if (orderData_user[i]["orderStatus"] == "Cancelled" || orderData_user[i]["orderStatus"] == "Delivered") {
@@ -128,10 +128,17 @@ function view_orders() {
                 // button_cancel.setAttribute("class", "btn cancel");
                 // button_cancel.innerText = "Cancel Order";
                 // button_cancel.setAttribute("value", orderData_user[i]["order_id"])
-                button_cancel.setAttribute("style", "display:none")
+                // button_cancel.setAttribute("style", "display:none")
                 // div_subject.append(button_cancel);
+                console.log("rajini")
             }
             else {
+
+                button_cancel = document.createElement("button");
+                button_cancel.setAttribute("class", "btn cancel");
+                button_cancel.innerText = "Cancel Order";
+                button_cancel.setAttribute("value", orderData_user[i]["order_id"])
+                div_subject.append(button_cancel);
 
                 // one day before delivery cancel button will be disappeard
                 let getDate = orderData_user[i]["dateOfDelivery"]
