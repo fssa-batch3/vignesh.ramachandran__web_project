@@ -1,80 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
     family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
+            rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
-        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
+            rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
 
-    <link rel="icon" href="../../assets/img/main-logo.png">
+        <link rel="icon" href="../../assets/img/main-logo.png">
 
-    <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
 
-    <link rel="stylesheet" href="../../assets/css/Admin/dishes-add.css">
+        <link rel="stylesheet" href="../../assets/css/Admin/dishes-add.css">
 
-    <!-- unique id creation -->
-    <title>Dishes Add</title>
-</head>
+        <!-- unique id creation -->
+        <title>Dishes Add</title>
+    </head>
 
-<body>
+    <body>
 
-    <main>
-        <form role="form" onsubmit="getData(event)">
-            <h2>DISHES - ADD</h2>
+        <main>
+            <form role="form" onsubmit="getData(event)">
+                <h2>DISHES - ADD</h2>
 
-            <div class="menu-type">
-                <label>Select Menu</label>
-                <select class="menulist" id="menuName" required="true">
-                    <option value="">Select</option>
+                <div class="menu-type">
+                    <label>Select Menu</label>
+                    <select class="menulist" id="menuName" required="true">
+                        <option value="">Select</option>
 
-                </select>
-                <button class="btn show1" type="submit">Show Category</button>
-            </div>
-            <div class="category-type">
-                <label>Select Category</label>
-                <select class="categorylist" id="categoryName" required="true">
-                    <option value="">Select</option>
+                    </select>
+                    <button class="btn show1" type="submit">Show Category</button>
+                </div>
+                <div class="category-type">
+                    <label>Select Category</label>
+                    <select class="categorylist" id="categoryName" required="true">
+                        <option value="">Select</option>
 
-                </select>
-            </div>
-
-
-            <div class="container">
-                <div class="heading">
-                    <p>Add Dishes in the Category</p>
-                    <i class='bx bx-plus'></i>
+                    </select>
                 </div>
 
-                <div id="input_group">
-                    <!-- <input type="text" id="dish1">
-                    <i class="bx bx-x"></i> -->
+                <div class="container">
+                    <div class="heading">
+                        <p>Add Dishes in the Category</p>
+                        <i class="bx bx-plus"></i>
+                    </div>
+
+                    <div id="input_group">
+                        <!-- <input type="text" id="dish1">
+                            <i class="bx bx-x"></i> -->
+                    </div>
                 </div>
-            </div>
-            <button type="submit" class="btn_submit" id="submit">Create</button>
-        </form>
+                <button type="submit" class="btn_submit" id="submit">Create</button>
+            </form>
 
-    </main>
+        </main>
 
-    <script src="../../assets/JS/header.js"></script>
+        <script src="../../assets/JS/header.js"></script>
 
-    <script src="../../assets/JS/Admin scripts/dishes_add.js"></script>
+        <script src="../../assets/JS/Admin scripts/dishes_add.js"></script>
 
-</body>
+    </body>
 
 </html>

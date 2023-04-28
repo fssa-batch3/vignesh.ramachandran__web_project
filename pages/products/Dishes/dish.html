@@ -1,278 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
     family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
+            rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
-        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
+            rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-    <link rel="stylesheet" href="../../../assets/css/header.css">
-    <link rel="stylesheet" href="../../../assets/css/Dishes-CSS/dishes.css">
+        <link rel="stylesheet" href="../../../assets/css/header.css">
+        <link rel="stylesheet" href="../../../assets/css/Dishes-CSS/dishes.css">
 
-    <link rel="stylesheet" href="../../../assets/css/normalize.css">
+        <link rel="stylesheet" href="../../../assets/css/normalize.css">
 
-    <link rel="icon" href="../../../assets/img/main-logo.png">
+        <link rel="icon" href="../../../assets/img/main-logo.png">
 
-    <!-- unique id creation -->
-    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-    <title>Dishes</title>
-</head>
+        <!-- unique id creation -->
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+        <title>Dishes</title>
+    </head>
 
-<body>
-    <!-- header starts -->
-    <!-- <header>
-        <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
+    <body>
+        <!-- header starts -->
+        <!-- <header>
+            <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
-        <div class="icon-left">
+            <div class="icon-left">
             <img src="../../../assets/img/main-logo.png" alt="Company Logo" class="logo" />
             <h1>SR</h1>
             <div>
-                <p>Catering</p>
+            <p>Catering</p>
             </div>
-        </div>
+            </div>
 
-        <ul class="navigation" id="sidenav">
+            <ul class="navigation" id="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
             <li><a href="../../../index.html" class="navigation-link">HOME</a></li>
             <li class="dropdown">
-                <span class="navigation-link">MENU</span>
-                <div class="dropdown-content">
-                    <div>
-                        <a href="../Menus/menu-morning.html">Breakfast Menu</a>
-                        <a href="../Menus/menu-lunch.html">Lunch Menu</a>
-                        <a href="../Menus/menu-hightea.html">Hightea Menu</a>
-                        <a href="../Menus/menu-dinner.html">Dinner Menu</a>
-                        <a href="../Menus/menu-custom.html">Custom Menu</a>
-                    </div>
-                </div>
+            <span class="navigation-link">MENU</span>
+            <div class="dropdown-content">
+            <div>
+            <a href="../Menus/menu-morning.html">Breakfast Menu</a>
+            <a href="../Menus/menu-lunch.html">Lunch Menu</a>
+            <a href="../Menus/menu-hightea.html">Hightea Menu</a>
+            <a href="../Menus/menu-dinner.html">Dinner Menu</a>
+            <a href="../Menus/menu-custom.html">Custom Menu</a>
+            </div>
+            </div>
             </li>
             <li><a href="../../homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
             <li><a href="../../homepage/about us.html" class="navigation-link">ABOUT US</a></li>
             <li><a href="../../homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
             <li><a href="../../homepage/my cart.html" class="navigation-link">MY CART</a></li>
-        </ul>
+            </ul>
 
-        <div class="dropdown_profile">
+            <div class="dropdown_profile">
             <img src="../../../assets/img/profile.png" alt="profile image" />
             <div class="dropdown_profile-content">
-                <div>
-                    <a href="../../profile/Profile page.html">My Profile</a>
-                    <a href="../../profile/register.html">Register</a>
-                    <a href="../../profile/Login.html">Log in</a>
-                    <a href="../../profile/my orders.html">My Orders</a>
-                </div>
+            <div>
+            <a href="../../profile/Profile page.html">My Profile</a>
+            <a href="../../profile/register.html">Register</a>
+            <a href="../../profile/Login.html">Log in</a>
+            <a href="../../profile/my orders.html">My Orders</a>
             </div>
-        </div>
-    </header> -->
-    <!-- header ends -->
+            </div>
+            </div>
+            </header> -->
+        <!-- header ends -->
 
-    <!-- main starts -->
+        <!-- main starts -->
 
-    <main>
-        <!-- sub-menu starts -->
-        <div class="ingredient-image">
-            <!-- <h2>Ordinary Breakfast</h2> -->
-        </div>
+        <main>
+            <!-- sub-menu starts -->
+            <div class="ingredient-image">
+                <!-- <h2>Ordinary Breakfast</h2> -->
+            </div>
 
-        <section class="category">
-            <div class="content">
-                <!-- <h3><span>SR</span>'s Ordinary Breakfast</h3> -->
-                <!-- <ul class="dishes">
-                    <li>  IDLY</li>
-                    <li>  KITCHADI</li>
-                    <li>  VADA</li>
-                    <li>  POORI - VEG GRAVY</li>
-                    <li>  IDIYAPPAM (OR) MINI UTTAPPAM</li>
-                    <li>  MINI LADDU</li>
-                    <li>  SAMBAR</li>
-                    <li>  COCONUT CHUTNY</li>
-                    <li>  HOT MILK & COFFEE</li>
-                    <li> MINERAL WATER</li>
-                    <li> BANANA LEAF</li>
-                </ul> -->
-                <div class="nxt_page">
-                    <!-- <p>₹150/plate</p> -->
-                    <button class="add_to_cart">Add to Cart
-                        <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image" />
-                    </button>
-                    <!-- <a href="../../profile/Order page.html"><button class="buy_now">Buy Now</button></a> -->
-                </div>
-                <div class="about">
-                    <!-- <img src="../../../assets/img/Dishes/ordinary tiffin.jpg" alt="ordinary tiffin" /> -->
-                    <div>
-                        <h2>Food brings us all together, nothing bonds us like it</h2>
-                        <p>Morning Breakfast is the most energetic food in any event or function. It is our pleasure to
-                            serve the tasty food and our Ordinary Breakfast
-                            Service cost is moderate. Our menu includes traditional breakfast items like Idly, Ghee
-                            Pongal, Vada, Poori Masala, Idiyappam, Sambar,
-                            Dry Fruit Kesari, Coffee, Coconut Chutney and etc. We also aim to be
-                            environmentallyfriendly, recycling or composting our waste, using
-                            local suppliers and cleaning our kitchen with professional cleaning products.
-                        </p>
+            <section class="category">
+                <div class="content">
+                    <!-- <h3><span>SR</span>'s Ordinary Breakfast</h3> -->
+                    <!-- <ul class="dishes">
+                        <li>  IDLY</li>
+                        <li>  KITCHADI</li>
+                        <li>  VADA</li>
+                        <li>  POORI - VEG GRAVY</li>
+                        <li>  IDIYAPPAM (OR) MINI UTTAPPAM</li>
+                        <li>  MINI LADDU</li>
+                        <li>  SAMBAR</li>
+                        <li>  COCONUT CHUTNY</li>
+                        <li>  HOT MILK & COFFEE</li>
+                        <li> MINERAL WATER</li>
+                        <li> BANANA LEAF</li>
+                        </ul> -->
+                    <div class="nxt_page">
+                        <!-- <p>₹150/plate</p> -->
+                        <button class="add_to_cart">Add to Cart
+                            <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image">
+                        </button>
+                        <!-- <a href="../../profile/Order page.html"><button class="buy_now">Buy Now</button></a> -->
+                    </div>
+                    <div class="about">
+                        <!-- <img src="../../../assets/img/Dishes/ordinary tiffin.jpg" alt="ordinary tiffin" /> -->
+                        <div>
+                            <h2>Food brings us all together, nothing bonds us like it</h2>
+                            <p>Morning Breakfast is the most energetic food in any event or function. It is our pleasure to
+                                serve the tasty food and our Ordinary Breakfast
+                                Service cost is moderate. Our menu includes traditional breakfast items like Idly, Ghee
+                                Pongal, Vada, Poori Masala, Idiyappam, Sambar,
+                                Dry Fruit Kesari, Coffee, Coconut Chutney and etc. We also aim to be
+                                environmentallyfriendly, recycling or composting our waste, using
+                                local suppliers and cleaning our kitchen with professional cleaning products.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- sub-menu ends -->
+            </section>
+            <!-- sub-menu ends -->
 
-        <!-- related menu starts -->
-        <section class="related-menu">
+            <!-- related menu starts -->
+            <section class="related-menu">
 
-            <!-- <h2 class="related-menu_heading">Related <span>Breakfast</span> Menus</h2>
-            <div class="related-menu_content">
-                <div class="related-menu1">
+                <!-- <h2 class="related-menu_heading">Related <span>Breakfast</span> Menus</h2>
+                    <div class="related-menu_content">
+                    <div class="related-menu1">
                     <img src="../../../assets/img/Dishes/special tiffin.jpg" alt="special tiffin" />
                     <a href="./morning-special.html">
-                        <h2><span>Special</span> Breakfast</h2>
+                    <h2><span>Special</span> Breakfast</h2>
                     </a>
-                </div>
-                <div class="related-menu1">
+                    </div>
+                    <div class="related-menu1">
                     <img src="../../../assets/img/Dishes/vip tiffin.jpg" alt="vip tiffin" />
                     <a href="./morning-vip.html">
-                        <h2><span>VIP</span> Breakfast</h2>
+                    <h2><span>VIP</span> Breakfast</h2>
                     </a>
-                </div>
-            </div> -->
+                    </div>
+                    </div> -->
 
-        </section>
-        <!-- related menu ends -->
-    </main>
-    <!-- main ends -->
+            </section>
+            <!-- related menu ends -->
+        </main>
+        <!-- main ends -->
 
-    <!-- footer starts -->
+        <!-- footer starts -->
 
-    <!-- <footer>
-        <div class="footer-box">
+        <!-- <footer>
+            <div class="footer-box">
             <div class="footer-content">
-                <img src="../../../assets/img/main-logo.png" alt="Company Logo" />
-                <p>
-                    SR Catering service is a professional catering service provider located in Kumbakonam, catering both
-                    personal and corporate orders.
-                </p>
+            <img src="../../../assets/img/main-logo.png" alt="Company Logo" />
+            <p>
+            SR Catering service is a professional catering service provider located in Kumbakonam, catering both
+            personal and corporate orders.
+            </p>
             </div>
 
-        </div>
-        <div class="footer-details">
+            </div>
+            <div class="footer-details">
             <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
             <p>(+91)6379370482</p>
             <div class="footer-links">
-                <a href="https://www.instagram.com/vicky_sk_forever?r=nametag"> <img
-                        src="../../../assets/img/instagram.jpg" alt="instagram" /> </a>
-                <a href="https://www.facebook.com/profile.php?id=100011341742455"> <img
-                        src="../../../assets/img/facebook.jpg" alt="facebook link" /> </a>
-                <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"> <img
-                        src="../../../assets/img/twitter.png" alt="twitter link" /> </a>
+            <a href="https://www.instagram.com/vicky_sk_forever?r=nametag"> <img
+            src="../../../assets/img/instagram.jpg" alt="instagram" /> </a>
+            <a href="https://www.facebook.com/profile.php?id=100011341742455"> <img
+            src="../../../assets/img/facebook.jpg" alt="facebook link" /> </a>
+            <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"> <img
+            src="../../../assets/img/twitter.png" alt="twitter link" /> </a>
             </div>
-        </div>
+            </div>
 
-    </footer> -->
-    <!-- footer ends -->
+            </footer> -->
+        <!-- footer ends -->
 
-    <!-- script starts -->
-    <script src="../../../assets/JS/header.js"></script>
+        <!-- script starts -->
+        <script src="../../../assets/JS/header.js"></script>
 
-    <script>
-
-        // for getting menu id
-        const menuId = new URLSearchParams(window.location.search).get("menu")
+        <script>// for getting menu id
+        const menuId = new URLSearchParams(window.location.search).get("menu");
 
         // let menuData = JSON.parse(localStorage.getItem("menuData"));
 
-        let menuDetails = menuData.find(data =>
-            data.id === menuId)
-
+        const menuDetails = menuData.find((data) => data.id === menuId);
 
         // for getting category id
         const categoryId = new URLSearchParams(window.location.search).get("category");
 
-        let categoryData = JSON.parse(localStorage.getItem("categoryData"));
+        const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 
-        let categoryDetails = categoryData.find(data =>
-            data.id === categoryId)
-
+        const categoryDetails = categoryData.find((data) => data.id === categoryId);
 
         // for getting page name, eg:ordinary dinner
-        let ingredientImage = document.querySelector(".ingredient-image")
+        const ingredientImage = document.querySelector(".ingredient-image");
 
         category_name = document.createElement("h2");
-        category_name.innerText = categoryDetails["categoryName"] + " " + menuDetails["menuName"];
+        category_name.innerText = `${categoryDetails.categoryName} ${menuDetails.menuName}`;
 
         ingredientImage.append(category_name);
 
+        const transactionTable = JSON.parse(localStorage.getItem("transactionTable"));
 
-        let transactionTable = JSON.parse(localStorage.getItem("transactionTable"));
-
-        let dishData = JSON.parse(localStorage.getItem("dishData"));
+        const dishData = JSON.parse(localStorage.getItem("dishData"));
 
         // filtering Menu
         function getMenu(e) {
-            return e.menuType === menuId;
+          return e.menuType === menuId;
         }
-        findData = transactionTable.filter(getMenu)
+        findData = transactionTable.filter(getMenu);
         // console.log(findData);
-
 
         //  filtering Category
         function getCategory(e) {
-            return e.categoryType === categoryId;
+          return e.categoryType === categoryId;
         }
-        findData2 = findData.filter(getCategory)
+        findData2 = findData.filter(getCategory);
         // console.log(findData2)
 
         // comparing the dish id from the findData2 to id from the dishData
-        let findData3 = dishData.filter(product =>
-            findData2.some(find => find.dish === product.id))
+        const findData3 = dishData.filter((product) =>
+  findData2.some((find) => find.dish === product.id)
+);
 
         // filtering get status=true from menuData
         function getStatus(e) {
-            return e.status === "true";
+          return e.status === "true";
         }
         dishDataTrue = findData3.filter(getStatus);
         // console.log(dishDataTrue);
 
-
-        let div_content = document.querySelector(".content")
+        let div_content = document.querySelector(".content");
 
         un_ordered_list = document.createElement("ul");
         un_ordered_list.setAttribute("class", "dishes");
         div_content.prepend(un_ordered_list);
 
         for (i = 0; i < dishDataTrue.length; i++) {
-            list = document.createElement("li");
-            list.innerText = dishDataTrue[i]["name"] + " " + "--" + " " + dishDataTrue[i]["price"];
-            un_ordered_list.append(list);
-
+          list = document.createElement("li");
+          list.innerText =
+    `${dishDataTrue[i].name} ` + `--` + ` ${dishDataTrue[i].price}`;
+          un_ordered_list.append(list);
         }
 
-        let div_nxt_page = document.querySelector(".nxt_page")
+        const div_nxt_page = document.querySelector(".nxt_page");
 
-        let cost = 0
+        let cost = 0;
         for (j = 0; j < dishDataTrue.length; j++) {
-
-            cost += parseInt(dishDataTrue[j]["price"]);
+  cost += parseInt(dishDataTrue[j].price);
         }
 
         price = document.createElement("p");
-        price.innerText = "₹ " + cost;
+        price.innerText = `₹ ${cost}`;
         div_nxt_page.prepend(price);
 
         heading = document.createElement("h3");
-        heading.innerText = " " + categoryDetails["categoryName"] + " " + menuDetails["menuName"];
+        heading.innerText = ` ${categoryDetails.categoryName} ${menuDetails.menuName}`;
         div_content.prepend(heading);
 
         highlight = document.createElement("span");
@@ -282,70 +273,66 @@
         // related menu
 
         // <h2 class="related-menu_heading">Related <span>Breakfast</span> Menus</h2>
-        h2_name = document.createElement("h2");
-        h2_name.setAttribute("class", "related-menu_heading");
-        h2_name.innerText = "Related ";
+        h2Name = document.createElement("h2");
+        h2Name.setAttribute("class", "related-menu_heading");
+        h2Name.innerText = "Related ";
 
         span_menu = document.createElement("span");
-        span_menu.innerText = menuDetails["menuName"] + " Menu"
-        h2_name.append(span_menu);
+        span_menu.innerText = `${menuDetails.menuName} Menu`;
+        h2Name.append(span_menu);
 
-        document.querySelector(".related-menu").append(h2_name);
+        document.querySelector(".related-menu").append(h2Name);
 
         // <div class="related-menu_content">
         div_content = document.createElement("div");
         div_content.setAttribute("class", "related-menu_content");
 
-        let find_cat = categoryData.filter(data=>
-            data.menuType == menuId); 
+        const find_cat = categoryData.filter((data) => data.menuType == menuId);
 
-        let related_cat = find_cat.filter(data =>
-            data.id !== categoryId);
+        const related_cat = find_cat.filter((data) => data.id !== categoryId);
 
-        console.log(related_cat)
+        console.log(related_cat);
 
-        let categoryDataTrue = related_cat.filter(data=>
-            data.status == "true")
+        const categoryDataTrue = related_cat.filter((data) => data.status == "true");
 
         for (i = 0; i < categoryDataTrue.length; i++) {
-            // <div class="related-menu1">
-            div_menu = document.createElement("div");
-            div_menu.setAttribute("class", "related-menu1");
-            div_content.append(div_menu);
+          // <div class="related-menu1">
+          div_menu = document.createElement("div");
+          div_menu.setAttribute("class", "related-menu1");
+          div_content.append(div_menu);
 
-            // <img src="../../../assets/img/Dishes/special tiffin.jpg" alt="special tiffin" />
-            image = document.createElement("img");
-            image.setAttribute("src", categoryDataTrue[i]["categoryImage"]);
-            div_menu.append(image);
+          // <img src="../../../assets/img/Dishes/special tiffin.jpg" alt="special tiffin" />
+          image = document.createElement("img");
+          image.setAttribute("src", categoryDataTrue[i].categoryImage);
+          div_menu.append(image);
 
-            // <a href="./morning-special.html">
-            a_link = document.createElement("a");
-            a_link.setAttribute("href", "../../products/Dishes/dish.html?menu=" + menuId + "&category=" + categoryDataTrue[i]["id"]);
-            div_menu.append(a_link);
+          // <a href="./morning-special.html">
+          a_link = document.createElement("a");
+          a_link.setAttribute(
+    "href",
+    `../../products/Dishes/dish.html?menu=${menuId}&category=${categoryDataTrue[i].id}`
+  );
+          div_menu.append(a_link);
 
-            // <h2><span>Special</span> Breakfast</h2>
-            h2_category = document.createElement("h2");
-            h2_category.innerText =" " + menuDetails["menuName"];
-            a_link.append(h2_category);
+          // <h2><span>Special</span> Breakfast</h2>
+          h2_category = document.createElement("h2");
+          h2_category.innerText = ` ${menuDetails.menuName}`;
+          a_link.append(h2_category);
 
-            span_category = document.createElement("span");
-            span_category.innerText = categoryDataTrue[i]["categoryName"];
-            h2_category.prepend(span_category);
+          span_category = document.createElement("span");
+          span_category.innerText = categoryDataTrue[i].categoryName;
+          h2_category.prepend(span_category);
 
-            document.querySelector(".related-menu").append(div_content)
+          document.querySelector(".related-menu").append(div_content);
         }
-
-
-
     </script>
 
-    <script src="../../../assets/JS/add_to_cart.js"></script>
+        <script src="../../../assets/JS/add_to_cart.js"></script>
 
-    <script src="../../../assets/JS/footer.js"></script>
+        <script src="../../../assets/JS/footer.js"></script>
 
+        <!-- script ends -->
 
-    <!-- script ends -->
-
-</body>
+    </body>
 
 </html>

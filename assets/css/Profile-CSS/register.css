@@ -108,6 +108,13 @@ main {
     justify-content: space-around;
     padding: 2rem 0;
 }
+.error{
+    padding: 10px 0  0 0 ;
+    text-align: center;
+    font-size: .9rem;
+    font-family: var(--parah-fontfamily);
+    font-weight: bold;
+}
 .btn_submit {
     padding: .625rem 1.25rem;
     width: 6.25rem;

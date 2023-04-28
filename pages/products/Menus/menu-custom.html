@@ -1,711 +1,732 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
     family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap" 
-    rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap" 
+            rel="stylesheet">
 
-    <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet"
+            href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-    <link rel="stylesheet" href="../../../assets/css/header.css">
-    <link rel="stylesheet" href="../../../assets/css/Menu-CSS/menu-custom.css">
+        <link rel="stylesheet" href="../../../assets/css/header.css">
+        <link rel="stylesheet" href="../../../assets/css/Menu-CSS/menu-custom.css">
 
-    <link rel="stylesheet" href="../../../assets/css/normalize.css">
+        <link rel="stylesheet" href="../../../assets/css/normalize.css">
 
-    <link rel="icon" href="../../../assets/img/main-logo.png" >
-    <title>Custom menu</title>
-</head>
-<body>
-    <!-- header starts -->
-    <header>  
-        <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
+        <link rel="icon" href="../../../assets/img/main-logo.png">
+        <title>Custom menu</title>
+    </head>
+    <body>
+        <!-- header starts -->
+        <header>  
+            <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
-        <div class="icon-left">
-            <img src="../../../assets/img/main-logo.png" alt="Company Logo" class="logo" />
-            <h1>SR</h1>
-            <div>
-                <p>Catering</p>
+            <div class="icon-left">
+                <img src="../../../assets/img/main-logo.png" alt="Company Logo" class="logo">
+                <h1>SR</h1>
+                <div>
+                    <p>Catering</p>
+                </div>
             </div>
-        </div>
         
-        <ul class="navigation" id="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class="navigation" id="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-            <li><a href="../../../index.html" class="navigation-link">HOME</a></li>
-            <li class="dropdown">
-                <span class="navigation-link">MENU</span>
-                <div class="dropdown-content">
+                <li>
+                    <a href="../../../index.html" class="navigation-link">HOME</a>
+                </li>
+                <li class="dropdown">
+                    <span class="navigation-link">MENU</span>
+                    <div class="dropdown-content">
+                        <div>
+                            <a href="./menu-morning.html">Breakfast Menu</a>
+                            <a href="./menu-lunch.html">Lunch Menu</a>
+                            <a href="./menu-hightea.html">Hightea Menu</a>
+                            <a href="./menu-dinner.html">Dinner Menu</a>
+                            <a href="./menu-custom.html">Custom Menu</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="../../homepage/Events/events.html" class="navigation-link">EVENTS</a>
+                </li>
+                <li>
+                    <a href="../../homepage/about us.html" class="navigation-link">ABOUT US</a>
+                </li>
+                <li>
+                    <a href="../../homepage/contact us.html" class="navigation-link">CONTACT US</a>
+                </li>
+                <li>
+                    <a href="../../homepage/my cart.html" class="navigation-link">MY CART</a>
+                </li>
+            </ul>
+
+            <div class="dropdown_profile">
+                <img src="../../../assets/img/profile.png" alt="profile image">
+                <div class="dropdown_profile-content">
                     <div>
-                        <a href="./menu-morning.html">Breakfast Menu</a>
-                        <a href="./menu-lunch.html">Lunch Menu</a>
-                        <a href="./menu-hightea.html">Hightea Menu</a>
-                        <a href="./menu-dinner.html">Dinner Menu</a>
-                        <a href="./menu-custom.html">Custom Menu</a>
+                        <a href="../../profile/Profile page.html">My Profile</a>
+                        <a href="../../profile/register.html">Register</a>
+                        <a href="../../profile/Login.html">Log in</a>
+                        <a href="../../profile/my orders.html">My Orders</a>
                     </div>
                 </div>
-            </li>
-            <li><a href="../../homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
-            <li><a href="../../homepage/about us.html" class="navigation-link">ABOUT US</a></li>
-            <li><a href="../../homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-            <li><a href="../../homepage/my cart.html" class="navigation-link">MY CART</a></li>
-        </ul>
-
-        <div class="dropdown_profile">
-            <img src="../../../assets/img/profile.png" alt="profile image"  />
-            <div class="dropdown_profile-content">
-                <div>
-                    <a href="../../profile/Profile page.html">My Profile</a>
-                    <a href="../../profile/register.html">Register</a>
-                    <a href="../../profile/Login.html">Log in</a>
-                    <a href="../../profile/my orders.html">My Orders</a>
-                </div>
             </div>
-        </div>
-    </header>
-    <!-- header ends --> 
+        </header>
+        <!-- header ends --> 
 
-    <!-- main starts -->
-    <main>
-        <!-- custom menu starts -->
-        <div class="ingredient-image">
-            <h2>Custom Menu</h2>
-        </div>
+        <!-- main starts -->
+        <main>
+            <!-- custom menu starts -->
+            <div class="ingredient-image">
+                <h2>Custom Menu</h2>
+            </div>
 
-        <section class="custom-menu">
-            <div class="variety">
+            <section class="custom-menu">
+                <div class="variety">
 
-                <!-- <div class="variety_types">
-                    <img class="variety_types_img" src="../../../assets/img/Dishes/soup menu.jpg" alt="soup image" />
-                    <div>
+                    <!-- <div class="variety_types">
+                        <img class="variety_types_img" src="../../../assets/img/Dishes/soup menu.jpg" alt="soup image" />
+                        <div>
                         <h2>Soup Menus</h2>
                         <ul>
-                            <li><input type="checkbox" /><p>Veg Soup </p><p>₹40</p></li>
-                            <li><input type="checkbox" /><p>Tomato Soup </p><p>₹35</p></li>
-                            <li><input type="checkbox" /><p>Mushroom Soup </p><p>₹70</p></li>
-                            <li><input type="checkbox" /><p>Chicken Soup </p><p>₹80</p></li>
-                            <li><input type="checkbox" /><p>Mutton Soup </p><p>₹90</p></li>
-                            <li><input type="checkbox" /><p>Veg Noodle Soup</p><p>₹50</p></li>
-                            <li><input type="checkbox" /><p>Sweetcorn Soup </p><p>₹60</p></li>
+                        <li><input type="checkbox" /><p>Veg Soup </p><p>₹40</p></li>
+                        <li><input type="checkbox" /><p>Tomato Soup </p><p>₹35</p></li>
+                        <li><input type="checkbox" /><p>Mushroom Soup </p><p>₹70</p></li>
+                        <li><input type="checkbox" /><p>Chicken Soup </p><p>₹80</p></li>
+                        <li><input type="checkbox" /><p>Mutton Soup </p><p>₹90</p></li>
+                        <li><input type="checkbox" /><p>Veg Noodle Soup</p><p>₹50</p></li>
+                        <li><input type="checkbox" /><p>Sweetcorn Soup </p><p>₹60</p></li>
                         </ul>
                         <a href="../../homepage/my cart.html"><button class="add_to_cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image" /></button></a>
-                    </div>
-                </div>
+                        </div>
+                        </div>
 
-                <div class="variety_types">
-                    <img class="variety_types_img" src="../../../assets/img/Dishes/roti menu.jpg" alt="roti image" />
-                    <div>
+                        <div class="variety_types">
+                        <img class="variety_types_img" src="../../../assets/img/Dishes/roti menu.jpg" alt="roti image" />
+                        <div>
                         <h2>Roti Menus</h2>
                         <ul>
-                            <li><input type="checkbox" /><p>Roti</p><p>₹30</p></li>
-                            <li><input type="checkbox" /><p>Naan</p><p>₹40</p></li>
-                            <li><input type="checkbox" /><p>Butter Naan</p><p>₹50</p></li>
-                            <li><input type="checkbox" /><p>Chapati</p><p>₹40</p></li>
-                            <li><input type="checkbox" /><p>Kulcha</p><p>₹50</p></li>
-                            <li><input type="checkbox" /><p>Pulka</p><p>₹50</p></li>
-                            <li><input type="checkbox" /><p>Bhatura</p><p>₹35</p></li>
+                        <li><input type="checkbox" /><p>Roti</p><p>₹30</p></li>
+                        <li><input type="checkbox" /><p>Naan</p><p>₹40</p></li>
+                        <li><input type="checkbox" /><p>Butter Naan</p><p>₹50</p></li>
+                        <li><input type="checkbox" /><p>Chapati</p><p>₹40</p></li>
+                        <li><input type="checkbox" /><p>Kulcha</p><p>₹50</p></li>
+                        <li><input type="checkbox" /><p>Pulka</p><p>₹50</p></li>
+                        <li><input type="checkbox" /><p>Bhatura</p><p>₹35</p></li>
                         </ul>
                         <a href="../../homepage/my cart.html"><button class="add_to_cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image" /></button></a>
-                    </div>
-                </div>
+                        </div>
+                        </div>
 
-                <div class="variety_types">
-                    <img class="variety_types_img" src="../../../assets/img/Dishes/parotta menu.jpg" alt="parotta image" />
-                    <div>
+                        <div class="variety_types">
+                        <img class="variety_types_img" src="../../../assets/img/Dishes/parotta menu.jpg" alt="parotta image" />
+                        <div>
                         <h2>Parotta Menus</h2>
                         <ul>
-                            <li><input type="checkbox" /><p>Veg Parotta</p><p>₹10</p></li>
-                            <li><input type="checkbox" /><p>Egg parotta</p><p>₹15</p></li>
-                            <li><input type="checkbox" /><p>Chicken parotta</p><p>₹70</p></li>
-                            <li><input type="checkbox" /><p>Aloo parotta</p><p>₹30</p></li>
-                            <li><input type="checkbox" /><p>Kothu parotta</p><p>₹40</p></li>
-                            <li><input type="checkbox" /><p>Chilli parotta</p><p>₹60</p></li>
+                        <li><input type="checkbox" /><p>Veg Parotta</p><p>₹10</p></li>
+                        <li><input type="checkbox" /><p>Egg parotta</p><p>₹15</p></li>
+                        <li><input type="checkbox" /><p>Chicken parotta</p><p>₹70</p></li>
+                        <li><input type="checkbox" /><p>Aloo parotta</p><p>₹30</p></li>
+                        <li><input type="checkbox" /><p>Kothu parotta</p><p>₹40</p></li>
+                        <li><input type="checkbox" /><p>Chilli parotta</p><p>₹60</p></li>
                         </ul>
                         <a href="../../homepage/my cart.html"><button class="add_to_cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image"/></button></a>
-                    </div>
-                </div>
+                        </div>
+                        </div>
 
-                <div class="variety_types">
-                    <img class="variety_types_img" src="../../../assets/img/Dishes/non-veg-menu.jpg" alt="non-vegetarian image" />
-                    <div>
+                        <div class="variety_types">
+                        <img class="variety_types_img" src="../../../assets/img/Dishes/non-veg-menu.jpg" alt="non-vegetarian image" />
+                        <div>
                         <h2>Non-Veg Menus</h2>
                         <ul>
-                            <li><input type="checkbox" /><p>Mutton fry</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Mutton gravy</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Chettinad Chicken gravy</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Chicken 65</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Grilled Chicken</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Fish fry</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Mutton fry</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Mutton gravy</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Chettinad Chicken gravy</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Chicken 65</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Grilled Chicken</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Fish fry</p><p>--</p></li>
                         </ul>
                         <a href="../../homepage/my cart.html"><button class="add_to_cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image" /></button></a>
-                    </div>
-                </div>
+                        </div>
+                        </div>
 
-                <div class="variety_types">
-                    <img class="variety_types_img" src="../../../assets/img/Dishes/biriyani menu.jpg" alt="biriyani image" />
-                    <div>
+                        <div class="variety_types">
+                        <img class="variety_types_img" src="../../../assets/img/Dishes/biriyani menu.jpg" alt="biriyani image" />
+                        <div>
                         <h2>Biriyani Menus</h2>
                         <ul>
-                            <li><input type="checkbox" /><p>Veg biriyani</p><p>₹60</p></li>
-                            <li><input type="checkbox" /><p>Chicken biriyani</p><p>₹80</p></li>
-                            <li><input type="checkbox" /><p>Mutton biriyani</p><p>₹100</p></li>
-                            <li><input type="checkbox" /><p>Quail biriyani</p><p>₹110</p></li>
-                            <li><input type="checkbox" /><p>Veg pulav</p><p>₹50</p></li>
-                            <li><input type="checkbox" /><p>Mushroom pulav</p><p>₹70</p></li>
+                        <li><input type="checkbox" /><p>Veg biriyani</p><p>₹60</p></li>
+                        <li><input type="checkbox" /><p>Chicken biriyani</p><p>₹80</p></li>
+                        <li><input type="checkbox" /><p>Mutton biriyani</p><p>₹100</p></li>
+                        <li><input type="checkbox" /><p>Quail biriyani</p><p>₹110</p></li>
+                        <li><input type="checkbox" /><p>Veg pulav</p><p>₹50</p></li>
+                        <li><input type="checkbox" /><p>Mushroom pulav</p><p>₹70</p></li>
                         </ul>
                         <a href="../../homepage/my cart.html"><button class="add_to_cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image"/></button></a>
-                    </div>
-                </div>
+                        </div>
+                        </div>
 
-                <div class="variety_types">
-                    <img class="variety_types_img" src="../../../assets/img/Dishes/welcome drinks.jpg" alt="welcome drink image" />
-                    <div>
+                        <div class="variety_types">
+                        <img class="variety_types_img" src="../../../assets/img/Dishes/welcome drinks.jpg" alt="welcome drink image" />
+                        <div>
                         <h2>Welcome Drinks</h2>
                         <ul>
-                            <li><input type="checkbox" /><p>Tea</p><p>₹7</p></li>
-                            <li><input type="checkbox" /><p>Coffee</p><p>₹7</p></li>
-                            <li><input type="checkbox" /><p>Pista Milk</p><p>₹15</p></li>
-                            <li><input type="checkbox" /><p>Masala Tea</p><p>₹10</p></li>
-                            <li><input type="checkbox" /><p>Lemon Juice</p><p>₹10</p></li>
-                            <li><input type="checkbox" /><p>Grape Juice</p><p>₹20</p></li>
+                        <li><input type="checkbox" /><p>Tea</p><p>₹7</p></li>
+                        <li><input type="checkbox" /><p>Coffee</p><p>₹7</p></li>
+                        <li><input type="checkbox" /><p>Pista Milk</p><p>₹15</p></li>
+                        <li><input type="checkbox" /><p>Masala Tea</p><p>₹10</p></li>
+                        <li><input type="checkbox" /><p>Lemon Juice</p><p>₹10</p></li>
+                        <li><input type="checkbox" /><p>Grape Juice</p><p>₹20</p></li>
                         </ul>
                         <a href="../../homepage/my cart.html"><button class="add_to_cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image"/></button></a>
-                    </div>
-                </div>
+                        </div>
+                        </div>
 
-                <div class="variety_types">
-                    <img class="variety_types_img" src="../../../assets/img/Dishes/desserts.jpg" alt="dessert image" />
-                    <div>
+                        <div class="variety_types">
+                        <img class="variety_types_img" src="../../../assets/img/Dishes/desserts.jpg" alt="dessert image" />
+                        <div>
                         <h2>Desserts</h2>
                         <ul >
-                            <li><input type="checkbox" /><p>Gulab Jamun</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Rasamalai</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Coconut Pudding</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Chocolate Cake</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Ice Cream Varieties</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Pumpkin Halwa</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Gulab Jamun</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Rasamalai</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Coconut Pudding</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Chocolate Cake</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Ice Cream Varieties</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Pumpkin Halwa</p><p>--</p></li>
                         </ul>
                         <a href="../../homepage/my cart.html"><button class="add_to_cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image"/></button></a>
-                    </div>
-                </div>
+                        </div>
+                        </div>
 
-                <div class="variety_types">
-                    <img class="variety_types_img" src="../../../assets/img/Dishes/starters.jpg" alt="starter image" />
-                    <div>
+                        <div class="variety_types">
+                        <img class="variety_types_img" src="../../../assets/img/Dishes/starters.jpg" alt="starter image" />
+                        <div>
                         <h2>Starters</h2>
                         <ul>
-                            <li><input type="checkbox" /><p>Gopi 65</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Baby Corn Salt & Pepper</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Gopi Lolipop</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Paneer 65</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Cheese Corn Ball</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Mushroom 65</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Gopi 65</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Baby Corn Salt & Pepper</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Gopi Lolipop</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Paneer 65</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Cheese Corn Ball</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Mushroom 65</p><p>--</p></li>
                         </ul>
                         <a href="../../homepage/my cart.html"><button class="add_to_cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image"/></button></a>
-                    </div>
-                </div>
+                        </div>
+                        </div>
 
-                <div class="variety_types">
-                    <img class="variety_types_img" src="../../../assets/img/Dishes/dosa varities.jpg" alt="dosa image" />
-                    <div>
+                        <div class="variety_types">
+                        <img class="variety_types_img" src="../../../assets/img/Dishes/dosa varities.jpg" alt="dosa image" />
+                        <div>
                         <h2>Dosa varities</h2>
                         <ul>
-                            <li><input type="checkbox" /><p>Ghee Dosa</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Veg Mix Uttapam</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Masala Dosa</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Podi Dosa</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Carrot Dosa</p><p>--</p></li>
-                            <li><input type="checkbox" /><p>Butter Dosa</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Ghee Dosa</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Veg Mix Uttapam</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Masala Dosa</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Podi Dosa</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Carrot Dosa</p><p>--</p></li>
+                        <li><input type="checkbox" /><p>Butter Dosa</p><p>--</p></li>
                         </ul>
                         <a href="../../homepage/my cart.html"><button class="add_to_cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image"/></button></a>
-                    </div>
-                </div> -->
+                        </div>
+                        </div> -->
 
-            </div>
-        </section>
-        <!-- custom menu ends -->
-    </main>
-    <!-- main ends -->
+                </div>
+            </section>
+            <!-- custom menu ends -->
+        </main>
+        <!-- main ends -->
     
-    <!-- footer starts -->
+        <!-- footer starts -->
 
-    <footer>
-        <div class="footer-box">
-            <div class="footer-content">
-                <img src="../../../assets/img/main-logo.png" alt="Company Logo" />
+        <footer>
+            <div class="footer-box">
+                <div class="footer-content">
+                    <img src="../../../assets/img/main-logo.png" alt="Company Logo">
+                    <p>
+                        SR Catering service is a professional catering service provider located in Kumbakonam, catering both personal and corporate orders.
+                    </p>
+                </div>
+                <div class="footer-content">
+                    <h3>
+                        <span>Breakfast</span> Menus
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="../Dishes/morning-ordinary.html" class="footer-navigation">Ordinary Breakfast</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/morning-special.html" class="footer-navigation">Special Breakfast</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/morning-vip.html" class="footer-navigation">VIP Breakfast</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-content">
+                    <h3>
+                        <span>Lunch</span> Menus
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="../Dishes/lunch-ordinary.html" class="footer-navigation">Ordinary Lunch</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/lunch-special.html" class="footer-navigation">Special Lunch</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/lunch-vip.html" class="footer-navigation">VIP Lunch</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-content">
+                    <h3>
+                        <span>Hightea</span> Menus
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="../Dishes/hightea-ordinary.html" class="footer-navigation">Ordinary Hightea</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/hightea-special.html" class="footer-navigation">Special Hightea</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/hightea-vip.html" class="footer-navigation">VIP Hightea</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-content">
+                    <h3>
+                        <span>Dinner</span> Menus
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="../Dishes/dinner-ordinary.html" class="footer-navigation">Ordinary Dinner</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/dinner-special.html" class="footer-navigation">Special Dinner</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/dinner-vip.html" class="footer-navigation">VIP Dinner</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-details">
                 <p>
-                    SR Catering service is a professional catering service provider located in Kumbakonam, catering both personal and corporate orders.
+                    Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span>
                 </p>
+                <p>(+91)6379370482</p>
+                <div class="footer-links">
+                    <a href="https://www.instagram.com/vicky_sk_forever?r=nametag">
+                        <img src="../../../assets/img/instagram.jpg" alt="instagram"> 
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100011341742455">
+                        <img src="../../../assets/img/facebook.jpg" alt="facebook link"> 
+                    </a>
+                    <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08">
+                        <img src="../../../assets/img/twitter.png" alt="twitter link"> 
+                    </a>
+                </div>
             </div>
-            <div class="footer-content">
-                <h3><span>Breakfast</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/morning-ordinary.html" class="footer-navigation">Ordinary Breakfast</a></li>
-                    <li><a href="../Dishes/morning-special.html" class="footer-navigation">Special Breakfast</a></li>
-                    <li><a href="../Dishes/morning-vip.html" class="footer-navigation">VIP Breakfast</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Lunch</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/lunch-ordinary.html" class="footer-navigation">Ordinary Lunch</a></li>
-                    <li><a href="../Dishes/lunch-special.html" class="footer-navigation">Special Lunch</a></li>
-                    <li><a href="../Dishes/lunch-vip.html" class="footer-navigation">VIP Lunch</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Hightea</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/hightea-ordinary.html" class="footer-navigation">Ordinary Hightea</a></li>
-                    <li><a href="../Dishes/hightea-special.html" class="footer-navigation">Special Hightea</a></li>
-                    <li><a href="../Dishes/hightea-vip.html" class="footer-navigation">VIP Hightea</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Dinner</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/dinner-ordinary.html" class="footer-navigation">Ordinary Dinner</a></li>
-                    <li><a href="../Dishes/dinner-special.html" class="footer-navigation">Special Dinner</a></li>
-                    <li><a href="../Dishes/dinner-vip.html" class="footer-navigation">VIP Dinner</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-details">
-            <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
-            <p>(+91)6379370482</p>
-            <div class="footer-links">
-                <a href="https://www.instagram.com/vicky_sk_forever?r=nametag" > <img src="../../../assets/img/instagram.jpg" alt="instagram"/> </a>
-                <a href="https://www.facebook.com/profile.php?id=100011341742455"> <img src="../../../assets/img/facebook.jpg" alt="facebook link"/> </a>
-                <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"> <img src="../../../assets/img/twitter.png" alt="twitter link"/> </a>
-            </div>
-        </div>
         
-    </footer>
-    <!-- footer ends -->
+        </footer>
+        <!-- footer ends -->
 
-    <!-- script starts -->
-    <script>
-
-        const custom_menu =
-        [
-            {
-                name : "Soup Menus",
-                image : {
-                    source : "../../../assets/img/Dishes/soup menu.jpg",
-                    text : "soup image"
+        <!-- script starts -->
+        <script>const custom_menu = [
+          {
+            name: "Soup Menus",
+              image: {
+                source: "../../../assets/img/Dishes/soup menu.jpg",
+                text: "soup image",
+              },
+              sub_names: [
+                {
+                  dish: "Veg Soup",
+                  price: 40,
                 },
-                sub_names :
-                [
-                    {
-                        dish : "Veg Soup",
-                        price : 40
-                    },
-                    {
-                        dish : "Tomato Soup",
-                        price : 35
-                    },
-                    {
-                        dish: "Mushroom Soup",
-                        price : 70
-                    },
-                    {
-                        dish : "Chicken Soup",
-                        price : 80
-                    },
-                    {
-                        dish : "Mutton Soup",
-                        price : 90
-                    },
-                    {
-                        dish : "Veg Noodle Soup",
-                        price : 50
-                    },
-                    {
-                        dish : "Sweetcorn Soup", 
-                        price : 60
-                    }
-                ],
-                
-            },
-
-            {
-                name : "Roti Menus",
-                image : {
-                    source : "../../../assets/img/Dishes/roti menu.jpg",
-                    text : "roti image",
+                {
+                  dish: "Tomato Soup",
+                  price: 35,
                 },
-                sub_names : 
-                [
-                    {
-                        dish : "Roti", 
-                        price : 30
-                    },
-                    {
-                        dish : "Naan",
-                        price : 40
-                    }, 
-                    {
-                        dish : "Butter Naan",
-                        price : 50
-                    }, 
-                    {
-                        dish : "Chapati",
-                        price : 40
-                    }, 
-                    {
-                        dish : "Kulcha",
-                        price : 50
-                    }, 
-                    {
-                        dish : "Pulka",
-                        price : 50 
-                    },
-                    {
-                        dish : "Bhatura",
-                        price  : 35
-                    }
-                ],
-                
-            },
-
-            {
-                name : "Parotta Menus",
-                image : {
-                    source : "../../../assets/img/Dishes/parotta menu.jpg",
-                    text : "parotta image",
+                {
+                  dish: "Mushroom Soup",
+                  price: 70,
                 },
-                sub_names : 
-                [
-                    {
-                        dish : "Veg Parotta", 
-                        price : 10
-                    },
-                    {
-                        dish : "Egg Parotta",
-                        price : 15
-                    }, 
-                    {
-                        dish : "Chicken parotta",
-                        price : "₹70"
-                    }, 
-                    {
-                        dish : "Aloo parotta",
-                        price : 30
-                    }, 
-                    {
-                        dish : "Kothu parotta",
-                        price : 40
-                    }, 
-                    {
-                        dish : "Chilli parotta",
-                        price  : 60
-                    },
-                ],
-                
-            },
-
-            {
-                name : "Non-Veg Menus",
-                image : {
-                    source : "../../../assets/img/Dishes/non-veg-menu.jpg",
-                    text : "non-vegetarian image",
+                {
+                  dish: "Chicken Soup",
+                  price: 80,
                 },
-                sub_names: 
-                [
-                    {
-                        dish : "Mutton fry",
-                        price : "--"
-                    },  
-                    {
-                        dish : "Mutton gravy",
-                        price : "--"
-                    }, 
-                    {
-                        dish : "Chettinad Chicken gravy",
-                        price : "--"
-                    }, 
-                    {
-                        dish : "Chicken 65",
-                        price : "--"
-                    }, 
-                    {
-                        dish : "Grilled Chicken",
-                        price : "--"
-                    },
-                    {
-                        dish : "Fish fry",
-                        price : "--"
-                    }
-                ],
-                
-            },
-
-            {
-                name : "Biriyani Menus",
-                image : {
-                    source : "../../../assets/img/Dishes/biriyani menu.jpg",
-                    text : "biriyani image",
+                {
+                  dish: "Mutton Soup",
+                  price: 90,
                 },
-                sub_names : 
-                [
-                    {
-                        dish : "Veg biriyani",
-                        price : 60
-                    }, 
-                    {
-                        dish : "Chicken biriyani",
-                        price  : 80
-                    }, 
-                    {
-                        dish : "Mutton biriyani", 
-                        price : 100
-                    }, 
-                    {
-                        dish : "Quail biriyani",
-                        price : 110
-                    }, 
-                    {
-                        dish : "Veg pulav",
-                        price : 50
-                    },
-                    {
-                        dish : "Mushroom pulav",
-                        price  : 70
-                    }
-                ],
-                
-            },
-
-            {
-                name : "Welcome Drinks",
-                image : {
-                    source : "../../../assets/img/Dishes/welcome drinks.jpg", 
-                    text : "welcome drink image",
-                }, 
-                sub_names : 
-                [
-                    {
-                        dish : "Tea",
-                        price : 7
-                    },
-                    {
-                        dish : "Coffee",
-                        price : 7
-                    }, 
-                    {
-                        dish : "Pista Milk", 
-                        price : 15
-                    }, 
-                    {
-                        dish :"Masala Tea",
-                        price : 10
-                    }, 
-                    {
-                        dish : "Lemon Juice", 
-                        price : 10
-                    }, 
-                    {
-                        dish : "Grape Juice",
-                        price : 20
-                    }
-                ],
-                
-            },
-
-            {
-                name : "Desserts",
-                image : {
-                    source :"../../../assets/img/Dishes/desserts.jpg",
-                    text : "dessert image",
+                {
+                  dish: "Veg Noodle Soup",
+                  price: 50,
                 },
-                sub_names : 
-                [
-                    {
-                        dish : "Gulab Jamun",
-                        price : "--"
-                    }, 
-                    {
-                        dish : "Rasamalai",
-                        price : "--"
-                    }, 
-                    {
-                        dish : "Coconut Pudding",
-                        price : "--"
-                    }, 
-                    {
-                        dish : "Chocolate Cake",
-                        price : "--"
-                    },
-                    {
-                        dish : "Ice Cream Varieties",
-                        price : "--"
-                    }, 
-                    {
-                        dish : "Pumpkin Halwa",
-                        price : "--"
-                    }
-                ],
-                
-            },
-
-            {
-                name : "Starters",
-                image : {
-                    source : "../../../assets/img/Dishes/starters.jpg",
-                    text : "starter image",
+                {
+                  dish: "Sweetcorn Soup",
+                  price: 60,
                 },
-                sub_names : 
-                [
-                    {
-                        dish : "Gopi 65",
-                        price : "--"
-                    }, 
-                    {
-                        dish : "Baby Corn Salt & Pepper", 
-                        price : "--"
-                    }, 
-                    {
-                        dish : "Gopi Lolipop",
-                        price : "--"
-                    },
-                    {
-                        dish : "Paneer 65",
-                        price : "--"
-                    }, 
-                    {
-                        dish : "Cheese Corn Ball",
-                        price : "--"
-                    },
-                    {
-                        dish : "Mushroom 65",
-                        price : "--"
-                    }
-                ],
-                
-            },
+              ],
+          },
 
-            {
-                name : "Dosa varities",
-                image : {
-                    source : "../../../assets/img/Dishes/dosa varities.jpg",
-                    text : "dosa image"
+          {
+              name: "Roti Menus",
+              image: {
+                source: "../../../assets/img/Dishes/roti menu.jpg",
+                text: "roti image",
+              },
+              sub_names: [
+                {
+                  dish: "Roti",
+                  price: 30,
                 },
-                sub_names : 
-                [
-                    {
-                        dish : "Ghee Dosa",
-                        price : "--",
-                    },
-                    {
-                        dish : "Veg Mix Uttapam",
-                        price : "--"
-                    },
-                    {
-                        dish : "Masala Dosa",
-                        price : "--"
-                    },
-                    {
-                        dish : "Podi Dosa",
-                        price : "--"
-                    },
-                    {
-                        dish : "Carrot Dosa",
-                        price : "--"
-                    },
-                    {
-                        dish : "Butter Dosa",
-                        price : "--"
-                    }
-                ],
-                
-            },
-            
-        ]
+                {
+                  dish: "Naan",
+                  price: 40,
+                },
+                {
+                  dish: "Butter Naan",
+                  price: 50,
+                },
+                {
+                  dish: "Chapati",
+                  price: 40,
+                },
+                {
+                  dish: "Kulcha",
+                  price: 50,
+                },
+                {
+                  dish: "Pulka",
+                  price: 50,
+                },
+                {
+                  dish: "Bhatura",
+                  price: 35,
+                },
+              ],
+          },
 
-        for(i=0; i<custom_menu.length; i++)
-        {
-            let div_variety_types;
-            let img_variety_types_img;
-            let div;
-            let heading;
-            let ul;
-            let list;
-            let input;
-            let types;
-            let price;
+          {
+              name: "Parotta Menus",
+              image: {
+                source: "../../../assets/img/Dishes/parotta menu.jpg",
+                text: "parotta image",
+              },
+              sub_names: [
+                {
+                  dish: "Veg Parotta",
+                  price: 10,
+                },
+                {
+                  dish: "Egg Parotta",
+                  price: 15,
+                },
+                {
+                  dish: "Chicken parotta",
+                  price: "₹70",
+                },
+                {
+                  dish: "Aloo parotta",
+                  price: 30,
+                },
+                {
+                  dish: "Kothu parotta",
+                  price: 40,
+                },
+                {
+                  dish: "Chilli parotta",
+                  price: 60,
+                },
+              ],
+          },
 
-            div_variety_types = document.createElement ('div');
-            div_variety_types.setAttribute ("class", "variety_types");
-            console.log(div_variety_types);
+          {
+              name: "Non-Veg Menus",
+              image: {
+              source: "../../../assets/img/Dishes/non-veg-menu.jpg",
+                text: "non-vegetarian image",
+              },
+              sub_names: [
+                {
+                  dish: "Mutton fry",
+                  price: "--",
+                },
+                {
+                  dish: "Mutton gravy",
+                  price: "--",
+                },
+                {
+                  dish: "Chettinad Chicken gravy",
+                  price: "--",
+                },
+                {
+                  dish: "Chicken 65",
+                  price: "--",
+                },
+                {
+                  dish: "Grilled Chicken",
+                  price: "--",
+                },
+                {
+                  dish: "Fish fry",
+                  price: "--",
+                },
+              ],
+          },
 
-            img_variety_types_img = document.createElement ("img");
-            img_variety_types_img.setAttribute("class", "variety_types_img");
-            img_variety_types_img.setAttribute("src", custom_menu[i]["image"]["source"]);
-            img_variety_types_img.setAttribute("alt", custom_menu[i]["image"]["text"])
-            div_variety_types.append(img_variety_types_img);
+          {
+              name: "Biriyani Menus",
+              image: {
+                source: "../../../assets/img/Dishes/biriyani menu.jpg",
+                text: "biriyani image",
+              },
+              sub_names: [
+                {
+                  dish: "Veg biriyani",
+                  price: 60,
+                },
+                {
+                  dish: "Chicken biriyani",
+                  price: 80,
+                },
+                {
+                  dish: "Mutton biriyani",
+                  price: 100,
+                },
+                {
+                  dish: "Quail biriyani",
+                  price: 110,
+                },
+                {
+                  dish: "Veg pulav",
+                  price: 50,
+                },
+                {
+                  dish: "Mushroom pulav",
+                  price: 70,
+                },
+              ],
+          },
 
-            div = document.createElement("div");
-            div_variety_types.append(div);
+          {
+            name: "Welcome Drinks",
+              image: {
+                source: "../../../assets/img/Dishes/welcome drinks.jpg",
+                text: "welcome drink image",
+              },
+              sub_names: [
+                {
+                  dish: "Tea",
+                  price: 7,
+                },
+                {
+                  dish: "Coffee",
+                  price: 7,
+                },
+                {
+                  dish: "Pista Milk",
+                  price: 15,
+                },
+                {
+                  dish: "Masala Tea",
+                  price: 10,
+                },
+                {
+                  dish: "Lemon Juice",
+                  price: 10,
+                },
+                {
+                  dish: "Grape Juice",
+                  price: 20,
+                },
+              ],
+          },
 
-            heading = document.createElement("h2");
-            heading.innerText = custom_menu[i]["name"];
-            div.append(heading);
-            
+          {
+              name: "Desserts",
+              image: {
+                source: "../../../assets/img/Dishes/desserts.jpg",
+                text: "dessert image",
+              },
+              sub_names: [
+                {
+                  dish: "Gulab Jamun",
+                  price: "--",
+                },
+                {
+                  dish: "Rasamalai",
+                  price: "--",
+                },
+                {
+                  dish: "Coconut Pudding",
+                  price: "--",
+                },
+                {
+                  dish: "Chocolate Cake",
+                  price: "--",
+                },
+                {
+                  dish: "Ice Cream Varieties",
+                  price: "--",
+                },
+                {
+                  dish: "Pumpkin Halwa",
+                  price: "--",
+                },
+              ],
+          },
+
+          {
+              name: "Starters",
+              image: {
+                source: "../../../assets/img/Dishes/starters.jpg",
+                text: "starter image",
+              },
+              sub_names: [
+                {
+                  dish: "Gopi 65",
+                  price: "--",
+                },
+                {
+                  dish: "Baby Corn Salt & Pepper",
+                  price: "--",
+                },
+                {
+                  dish: "Gopi Lolipop",
+                  price: "--",
+                },
+                {
+                  dish: "Paneer 65",
+                  price: "--",
+                },
+                {
+                  dish: "Cheese Corn Ball",
+                  price: "--",
+                },
+                {
+                  dish: "Mushroom 65",
+                  price: "--",
+                },
+              ],
+          },
+
+          {
+              name: "Dosa varities",
+              image: {
+                source: "../../../assets/img/Dishes/dosa varities.jpg",
+                text: "dosa image",
+              },
+              sub_names: [
+                {
+                  dish: "Ghee Dosa",
+                  price: "--",
+                },
+                {
+                  dish: "Veg Mix Uttapam",
+                  price: "--",
+                },
+                {
+                  dish: "Masala Dosa",
+                  price: "--",
+                },
+                {
+                  dish: "Podi Dosa",
+                  price: "--",
+                },
+                {
+                  dish: "Carrot Dosa",
+                  price: "--",
+                },
+                {
+                  dish: "Butter Dosa",
+                  price: "--",
+                },
+    ],
+  },
+];
+
+for (i = 0; i < custom_menu.length; i++) {
+          let div_variety_types;
+          let img_variety_types_img;
+          let div;
+          let heading;
+          let ul;
+          let list;
+          let input;
+          let types;
+          let price;
+
+          div_variety_types = document.createElement("div");
+          div_variety_types.setAttribute("class", "variety_types");
+          console.log(div_variety_types);
+
+          img_variety_types_img = document.createElement("img");
+          img_variety_types_img.setAttribute("class", "variety_types_img");
+          img_variety_types_img.setAttribute("src", custom_menu[i].image.source);
+          img_variety_types_img.setAttribute("alt", custom_menu[i].image.text);
+          div_variety_types.append(img_variety_types_img);
+
+          div = document.createElement("div");
+          div_variety_types.append(div);
+
+          heading = document.createElement("h2");
+          heading.innerText = custom_menu[i].name;
+          div.append(heading);
+
             ul = document.createElement("ul");
-            div.append(ul);
+          div.append(ul);
 
-            for(j=0; j<custom_menu[i]["sub_names"].length; j++)
-            {
-                list = document.createElement("li");
-                ul.append(list);
-            
-                input = document.createElement("input");
-                input.setAttribute("type", "checkbox")
-                list.append(input);
+          for (j = 0; j < custom_menu[i].sub_names.length; j++) {
+              list = document.createElement("li");
+              ul.append(list);
 
-                types = document.createElement("p");
-                types.innerText = custom_menu[i]["sub_names"][j]["dish"];
-                list.append(types);
+    input = document.createElement("input");
+              input.setAttribute("type", "checkbox");
+              list.append(input);
 
-                price = document.createElement("p");
-                price.innerText = "₹" + " " + custom_menu[i]["sub_names"][j]["price"];
-                list.append(price);
+              types = document.createElement("p");
+              types.innerText = custom_menu[i].sub_names[j].dish;
+              list.append(types);
 
-            }
+              price = document.createElement("p");
+              price.innerText = `₹` + ` ${custom_menu[i].sub_names[j].price}`;
+              list.append(price);
+          }
 
-                link = document.createElement("a");
-                link.setAttribute("href", "../../homepage/my cart.html");
-                div.append(link);
+          link = document.createElement("a");
+          link.setAttribute("href", "../../homepage/my cart.html");
+          div.append(link);
 
-                button_add_cart = document.createElement("button");
-                button_add_cart.setAttribute("class", "add_to_cart");
-                button_add_cart.innerText = "Add to Cart";
-                link.append(button_add_cart);
+          button_add_cart = document.createElement("button");
+          button_add_cart.setAttribute("class", "add_to_cart");
+          button_add_cart.innerText = "Add to Cart";
+          link.append(button_add_cart);
 
-                plus_image = document.createElement("img");
-                plus_image.setAttribute("class", "plus-image");
-                plus_image.setAttribute("src", "../../../assets/img/plus.png");
-                plus_image.setAttribute("alt", "plus image");
-                button_add_cart.append(plus_image);
+          plus_image = document.createElement("img");
+          plus_image.setAttribute("class", "plus-image");
+          plus_image.setAttribute("src", "../../../assets/img/plus.png");
+          plus_image.setAttribute("alt", "plus image");
+          button_add_cart.append(plus_image);
 
-            document.querySelector("div.variety").append(div_variety_types);
-        }
-        
-
+          document.querySelector("div.variety").append(div_variety_types);
+}
     </script>
-    <!-- script ends -->
+        <!-- script ends -->
 
-
-
-</body>
+    </body>
 </html>

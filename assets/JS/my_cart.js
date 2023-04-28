@@ -299,7 +299,7 @@ number_of_guest.forEach(function (getGuest) {
 
         let quantity = parent.querySelector(".number").value
         // console.log(quantity)
-        if(quantity <=1500){
+        if(quantity>=1 && quantity <=1500){
             pdts["noOfGuest"] = quantity
 
             localStorage.setItem("cartData", JSON.stringify(cartData));

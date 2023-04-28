@@ -1,85 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
     family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
+            rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
-        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
+            rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
 
-    <link rel="icon" href="../../assets/img/main-logo.png">
+        <link rel="icon" href="../../assets/img/main-logo.png">
     
-    <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
 
-    <link rel="stylesheet" href="../../assets/css/Admin/category remove.css">
-    <title>category Remove</title>
-</head>
+        <link rel="stylesheet" href="../../assets/css/Admin/category remove.css">
+        <title>category Remove</title>
+    </head>
 
-<body>
+    <body>
     
-    <main>
-        <section>
-            <form role="form" onsubmit="change(event)">
-                <h2>Category Remove</h2>
+        <main>
+            <section>
+                <form role="form" onsubmit="change(event)">
+                    <h2>Category Remove</h2>
 
-                <div class="select_menu">
-                    <h3>Select Menu</h3>
-                    <select name="menu" id="menuName" class="menulist" required>
-                        <option value="">Select</option>
+                    <div class="select_menu">
+                        <h3>Select Menu</h3>
+                        <select name="menu" id="menuName" class="menulist" required>
+                            <option value="">Select</option>
 
-                    </select>
-                    <button class="btn show1" type="button">Show Category</button>
-                </div>
+                        </select>
+                        <button class="btn show1" type="button">Show Category</button>
+                    </div>
 
+                    <div class="select_category">
+                        <h3>Select Category</h3>
+                        <select name="category" id="categoryName" class="categorylist" required>
+                            <option value="">Select</option>
 
-                <div class="select_category">
-                    <h3>Select Category</h3>
-                    <select name="category" id="categoryName" class="categorylist" required>
-                        <option value="">Select</option>
+                        </select>
+                        <button class="btn show2" type="button">Show Details</button>
+                    </div>
+                    <div class="category_details">
+                        <input type="text" class="category_name" id="categoryNameGet" pattern="[A-Za-z.]+" title="Enter name without name" readonly>
+                        <select name="" id="categoryStatusGet" required>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                        <input type="url" class="category_image" id="categoryImageGet" pattern="https?://.+" title="It should be URL.eg:http, https" required>
+                        <!-- <input type="number" class="category_price" id="categoryPriceGet"  /> -->
+                    </div>
 
-                    </select>
-                    <button class="btn show2" type="button">Show Details</button>
-                </div>
-                <div class="category_details">
-                    <input type="text" class="category_name" id="categoryNameGet" pattern="[A-Za-z.]+" title="Enter name without name" readonly />
-                    <select name="" id="categoryStatusGet" required>
-                        <option value="true">True</option>
-                        <option value="false">False</option>
-                    </select>
-                    <input type="url" class="category_image" id="categoryImageGet" pattern="https?://.+" title="It should be URL.eg:http, https" required />
-                    <!-- <input type="number" class="category_price" id="categoryPriceGet"  /> -->
-                </div>
+                    <!-- <button class="btn delete" type="button">Delete</button> -->
+                    <button type="submit" class="btn save" style="display: none;">Save</button>
 
-                <!-- <button class="btn delete" type="button">Delete</button> -->
-                <button type="submit" class="btn save" style="display: none;">Save</button>
+                </form>
+            </section>
 
-            </form>
-        </section>
+        </main>
 
-    </main>
+        <script src="../../assets/JS/header.js"></script>
 
-    <script src="../../assets/JS/header.js"></script>
+        <script src="../../assets/JS/Admin scripts/category_remove.js"></script>
 
-    <script src="../../assets/JS/Admin scripts/category_remove.js"></script>
-
-
-
-
-</body>
+    </body>
 
 </html>
