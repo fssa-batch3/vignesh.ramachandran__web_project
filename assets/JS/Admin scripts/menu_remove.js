@@ -1,87 +1,80 @@
-
-
-let menulist = document.querySelector(".menulist")
+const menulist = document.querySelector(".menulist");
 
 let menuType = document.getElementById("menuName").value;
 
 // creating select option depends upon the menuData
 // let menuData = JSON.parse(localStorage.getItem("menuData"));
 
-for (i = 0; i < menuData.length; i++) {
-    let option = document.createElement("option");
-    option.value = menuData[i]["id"];
-    option.innerText = menuData[i]["menuName"];
+for (let i = 0; i < menuData.length; i++) {
+  const option = document.createElement("option");
+  option.value = menuData[i].id;
+  option.innerText = menuData[i].menuName;
 
-    menulist.append(option);
-
+  menulist.append(option);
 }
 
+let findData = "";
+
 // getData from the local storage
-show = document.querySelector(".show");
+const show = document.querySelector(".show");
 show.addEventListener("click", showMenuDetails);
 
 function showMenuDetails() {
-    let saveBtn = document.querySelector(".save");
-    let menu_option = document.querySelector("#menuName")
-    // console.log(menu_option);
+  const saveBtn = document.querySelector(".save");
+  const menu_option = document.querySelector("#menuName");
+  // console.log(menu_option);
 
-    menuType = document.getElementById("menuName").value;
+  menuType = document.getElementById("menuName").value;
 
-    if(menuType !== ""){
+  if (menuType !== "") {
+    // filtering get data from menuData
+    findData = menuData.filter((data) => data.id === menuType);
 
-        // filtering get data from menuData
-        function getMenu(e) {
-            return e.id === menuType;
-        }
+    // function getMenu(e) {
+    //   return e.id === menuType;
+    // }
 
-        findData = menuData.filter(getMenu);
-        // console.log(findData[0]["menuName"]);
+    // findData = menuData.filter(getMenu);
+    // console.log(findData[0]["menuName"]);
 
-        let menuName = document.getElementById("menuNameGet");
-        let menuImage = document.getElementById("menuImageGet");
-        let menuAbout = document.getElementById("menuAboutGet");
-        let menuStatus = document.getElementById("menustatusGet");
-        // console.log(menuName)
+    const menuName = document.getElementById("menuNameGet");
+    const menuImage = document.getElementById("menuImageGet");
+    const menuAbout = document.getElementById("menuAboutGet");
+    const menuStatus = document.getElementById("menustatusGet");
+    // console.log(menuName)
 
-        menuName.value = findData[0]["menuName"];
-        menuImage.value = findData[0]["image"];
-        menuAbout.value = findData[0]["description"];
-        menuStatus.value = findData[0]["status"];
+    menuName.value = findData[0].menuName;
+    menuImage.value = findData[0].image;
+    menuAbout.value = findData[0].description;
+    menuStatus.value = findData[0].status;
 
-        show.setAttribute("style", "display:none");
-        saveBtn.removeAttribute("style");
-        menu_option.setAttribute("disabled","true")
-    }
-    else{
-        alert("Select Menu type")
-    }
-
-
+    show.setAttribute("style", "display:none");
+    saveBtn.removeAttribute("style");
+    menu_option.setAttribute("disabled", "true");
+  } else {
+    alert("Select Menu type");
+  }
 }
-
 
 // save edited(updated)data to local storage
 // let saveBtn = document.querySelector(".save");
 // saveBtn.addEventListener("click", saveData)
 
-const change = e => {
-    // let upName = document.getElementById("menuNameGet").value;
-    let upImage = document.getElementById("menuImageGet").value;
-    let upAbout = document.getElementById("menuAboutGet").value;
-    let upStatus = document.getElementById("menustatusGet").value;
+const change = (e) => {
+  // let upName = document.getElementById("menuNameGet").value;
+  const upImage = document.getElementById("menuImageGet").value;
+  const upAbout = document.getElementById("menuAboutGet").value;
+  const upStatus = document.getElementById("menustatusGet").value;
 
-    // findData[0]["menuName"] = upName
-    findData[0]["image"] = upImage;
-    findData[0]["description"] = upAbout;
-    findData[0]["status"] = upStatus;
+  // findData[0]["menuName"] = upName
+  findData[0].image = upImage;
+  findData[0].description = upAbout;
+  findData[0].status = upStatus;
 
-    localStorage.setItem("menuData", JSON.stringify(menuData));
-    alert("Menu Details Edited Sucessfully ✅")
-    location.reload()
-
-}
-
-
+  localStorage.setItem("menuData", JSON.stringify(menuData));
+  alert("Menu Details Edited Sucessfully ✅");
+  window.location.reload();
+};
 
 // // remove the selected menu from the localstorage
 // let removeBtn = document.querySelector(".delete");

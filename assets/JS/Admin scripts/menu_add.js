@@ -45,7 +45,6 @@
 
 // }
 
-
 // // 2nd field
 // function addInput2() {
 //     const div_field2 = document.createElement("div");
@@ -62,12 +61,11 @@
 
 //     const price = document.createElement("input");
 //     price.type = "number";
-//     price.placeholder = "Enter Price" 
+//     price.placeholder = "Enter Price"
 
 //     const btn = document.createElement("i");
 //     btn.className = "bx bx-x";
 //     btn.addEventListener("click", removeInput);
-
 
 //     div_input2.append(div_field2);
 //     div_field2.append(name2);
@@ -77,95 +75,82 @@
 
 // }
 
-
-
 // input remove event
 // function removeInput() {
 //     this.parentElement.remove()
 
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // let submitBtn = document.querySelector(".btn_submit");
 // submitBtn.addEventListener("click", getData);
 
 function getData(e) {
+  const menuType = document.getElementById("menuName").value;
+  // console.log(menuType);
+  const menuImage = document.getElementById("menuImage").value;
+  const menuAbout = document.getElementById("menuAbout").value;
 
-    let menuType = document.getElementById("menuName").value;
-    // console.log(menuType);
-    let menuImage = document.getElementById("menuImage").value;
-    let menuAbout = document.getElementById("menuAbout").value;
+  const menuData = JSON.parse(localStorage.getItem("menuData")) || [];
 
-    let menuData = JSON.parse(localStorage.getItem("menuData")) || [];
+  // let categoryData = [];
 
-    // let categoryData = [];
+  function getMenu(e) {
+    return e.menuName.toLowerCase() === menuType.toLowerCase();
+  }
+  const findData = menuData.filter(getMenu);
+  // console.log(findData)
 
-    function getMenu(e) {
-        return e.menuName.toLowerCase() === menuType.toLowerCase();
-    }
-    findData = menuData.filter(getMenu);
-    // console.log(findData)
+  const n = findData.length;
 
-    let n = findData.length;
-
-    if (menuData.length == 0 && menuAbout !== "") {
-
-        for (i = 1; i <= n + 1; i++) {
-            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, status: "true", "description": menuAbout });
-        }
-
-        // console.log(menuData);
-        localStorage.setItem("menuData", JSON.stringify(menuData));
-
-        alert("Menu Added Sucessfully ✅");
-        location.reload();
-
+  if (menuData.length === 0 && menuAbout !== "") {
+    for (let i = 1; i <= n + 1; i++) {
+      menuData.push({
+        menuName: menuType,
+        id: `${i}`,
+        image: menuImage,
+        status: "true",
+        description: menuAbout,
+      });
     }
 
-    else if (findData.length == 0) {
+    // console.log(menuData);
+    localStorage.setItem("menuData", JSON.stringify(menuData));
 
-        if (menuAbout.trim() === "") {
-            alert("Description should not be empty")
-        }
+    alert("Menu Added Sucessfully ✅");
+    window.location.reload();
+  } else if (findData.length === 0) {
+    if (menuAbout.trim() === "") {
+      alert("Description should not be empty");
+    } else {
+      const localMenucount = menuData.length;
 
-        else {
-            let localMenucount = menuData.length;
+      // console.log(localMenucount);
 
-            // console.log(localMenucount);
+      for (let i = localMenucount + 1; i <= localMenucount + 1; i++) {
+        menuData.push({
+          menuName: menuType,
+          id: `${i}`,
+          image: menuImage,
+          status: "true",
+          description: menuAbout,
+        });
+      }
 
-            for (i = localMenucount + 1; i <= localMenucount + 1; i++) {
-                menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, status: "true", "description": menuAbout, });
-            }
+      // console.log(menuData);
+      localStorage.setItem("menuData", JSON.stringify(menuData));
 
-            // console.log(menuData);
-            localStorage.setItem("menuData", JSON.stringify(menuData));
-
-            alert("Menu Added Sucessfully ✅");
-            location.reload();
-        }
+      alert("Menu Added Sucessfully ✅");
+      window.location.reload();
     }
+  } else if (menuType.toLowerCase() === findData[0].menuName.toLowerCase()) {
+    alert(
+      `${menuType} ` +
+        `Menu is already in the Database` +
+        ` ` +
+        `Create a new Menu`
+    );
+    window.location.reload();
+  }
 
-
-    else if (menuType.toLowerCase() == findData[0]["menuName"].toLowerCase()) {
-        alert(menuType + " " + "Menu is already in the Database" + " " + "Create a new Menu")
-        location.reload()
-
-    }
-
-    e.preventDefault();
-
-
+  e.preventDefault();
 }

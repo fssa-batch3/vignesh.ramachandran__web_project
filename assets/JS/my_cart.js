@@ -1,230 +1,222 @@
-
-cartData = JSON.parse(localStorage.getItem("cartData"));
-// menuData = JSON.parse(localStorage.getItem("menuData"));
-categoryData = JSON.parse(localStorage.getItem("categoryData"));
-dishData = JSON.parse(localStorage.getItem("dishData"));
-user_unique = JSON.parse(localStorage.getItem("user_unique"));
+const cartData = JSON.parse(localStorage.getItem("cartData"));
+// const menuData = JSON.parse(localStorage.getItem("menuData"));
+const categoryData = JSON.parse(localStorage.getItem("categoryData"));
+const dishData = JSON.parse(localStorage.getItem("dishData"));
+const user_unique = JSON.parse(localStorage.getItem("user_unique"));
 
 // console.log(user_unique)
 
 // console.log(cartData)
 
-let cartData_user = cartData.filter(data =>
-    data.user_id == user_unique)
+const cartData_user = cartData.filter((data) => data.user_id === user_unique);
 
 // console.log(cartData_user)
 
-let m = moment().format("YYYY-MM-DD");
+const m = moment().format("YYYY-MM-DD");
 
 for (let i = 0; i < cartData_user.length; i++) {
+  const menuId = cartData_user[i].menu_id;
 
-    let menuId = cartData_user[i]["menu_id"];
+  // for getting menu name from url
+  const menu_name = menuData.find((data) => data.id === menuId);
+  // console.log(menu_name)
 
-    // for getting menu name from url
-    let menu_name = menuData.find(data =>
-        data.id === menuId);
-    // console.log(menu_name)
+  const categoryId = cartData_user[i].category_id;
 
+  // for getting category name from url
+  const category_name = categoryData.find((data) => data.id === categoryId);
+  // console.log(category_name);
 
-    let categoryId = cartData_user[i]["category_id"];
+  const n = cartData_user[i].dishData;
 
-    // for getting category name from url
-    let category_name = categoryData.find(data =>
-        data.id === categoryId);
-    // console.log(category_name);
+  const finddish = dishData.filter((product) =>
+    n.some((find) => find.id === product.id)
+  );
+  // console.log(finddish)
 
-    let n = cartData_user[i]["dishData"]
+  const divCartContent = document.createElement("div");
+  divCartContent.setAttribute("role", "form");
+  divCartContent.setAttribute("class", "cart_content");
 
+  const divCartText = document.createElement("div");
+  divCartText.setAttribute("class", "cart_text");
+  divCartContent.append(divCartText);
 
-    let finddish = dishData.filter(product =>
-        n.some(find => find.id === product.id));
-    // console.log(finddish)
+  const h3 = document.createElement("h3");
+  h3.innerText = `${category_name.categoryName} ${menu_name.menuName}`;
+  divCartText.append(h3);
 
+  // h2_cart = document.createElement("h2");
+  // h2_cart.innerText = cartData_user[i]["menuName"];
+  // divCartText.append(h2_cart);
 
+  const divChange = document.createElement("div");
+  divChange.setAttribute("class", "change");
+  divCartContent.append(divChange);
 
-    div_cart_content = document.createElement("div");
-    div_cart_content.setAttribute("role", "form");
-    div_cart_content.setAttribute("class", "cart_content");
+  const divCartDishes = document.createElement("div");
+  divCartDishes.setAttribute("class", "cart_dishes");
+  divChange.append(divCartDishes);
 
-    div_cart_text = document.createElement("div");
-    div_cart_text.setAttribute("class", "cart_text");
-    div_cart_content.append(div_cart_text)
+  // h3 = document.createElement("h3");
+  // h3.innerText = cartData_user[i]["categoryName"] + " " + cartData_user[i]["menuName"];
+  // divCartDishes.append(h3);
 
-    h3 = document.createElement("h3");
-    h3.innerText = category_name["categoryName"] + " " + menu_name["menuName"];
-    div_cart_text.append(h3);
+  const span = document.createElement("span");
+  span.innerText = "SR's ";
+  h3.prepend(span);
 
-    // h2_cart = document.createElement("h2");
-    // h2_cart.innerText = cartData_user[i]["menuName"];
-    // div_cart_text.append(h2_cart);
+  const ulDishes = document.createElement("ul");
+  ulDishes.setAttribute("class", "dishes");
+  divCartDishes.append(ulDishes);
 
+  // let a = cartData_user[i]["dishData"]
+  // console.log(a)
 
-    div_change = document.createElement("div");
-    div_change.setAttribute("class", "change");
-    div_cart_content.append(div_change)
+  for (let j = 0; j < finddish.length; j++) {
+    const li = document.createElement("li");
+    li.innerText = finddish[j].name;
 
-    div_cart_dishes = document.createElement("div");
-    div_cart_dishes.setAttribute("class", "cart_dishes");
-    div_change.append(div_cart_dishes);
+    ulDishes.append(li);
+  }
 
-    // h3 = document.createElement("h3");
-    // h3.innerText = cartData_user[i]["categoryName"] + " " + cartData_user[i]["menuName"];
-    // div_cart_dishes.append(h3);
+  const divCartEnd = document.createElement("div");
+  divCartEnd.setAttribute("class", "cart_end");
+  divChange.append(divCartEnd);
 
-    span = document.createElement("span");
-    span.innerText = "SR's ";
-    h3.prepend(span);
+  const divCartEnd1 = document.createElement("div");
+  divCartEnd1.setAttribute("class", "inside");
+  divCartEnd.append(divCartEnd1);
 
-    ul_dishes = document.createElement("ul");
-    ul_dishes.setAttribute("class", "dishes");
-    div_cart_dishes.append(ul_dishes);
+  const label1 = document.createElement("label");
+  label1.innerText = "Date:";
+  divCartEnd1.append(label1);
 
-    // let a = cartData_user[i]["dishData"]
-    // console.log(a)
+  const input1 = document.createElement("input");
+  input1.setAttribute("type", "date");
+  input1.setAttribute("class", "date");
+  input1.setAttribute("required", "true");
+  input1.setAttribute("value", cartData_user[i].dateOfDelivery);
+  label1.append(input1);
 
-    for (let j = 0; j < finddish.length; j++) {
+  const label2 = document.createElement("label");
+  label2.innerText = "No.Of.Guest:";
+  divCartEnd1.append(label2);
 
-        li = document.createElement("li");
-        li.innerText = finddish[j]["name"]
+  const input2 = document.createElement("input");
+  input2.setAttribute("type", "number");
+  input2.setAttribute("class", "number");
+  input2.setAttribute("required", "true");
+  input2.setAttribute("min", "1");
+  // input2.setAttribute("max", "1500")
+  input2.setAttribute("value", cartData_user[i].noOfGuest);
+  label2.append(input2);
 
-        ul_dishes.append(li);
+  const update = document.createElement("button");
+  update.setAttribute("type", "button");
+  update.setAttribute("class", "btn update");
+  update.setAttribute("style", "display:none");
+  update.innerText = "Update";
+  divCartEnd1.append(update);
 
-    }
+  // img = document.createElement("img");
+  // img.setAttribute("src", "../../assets/img/Dishes/ordinary tiffin.jpg");
+  // img.setAttribute("alt", "ordinary tiffin");
+  // divCartEnd.append(img);
 
-    div_cart_end = document.createElement("div");
-    div_cart_end.setAttribute("class", "cart_end");
-    div_change.append(div_cart_end);
+  const price = document.createElement("p");
+  price.setAttribute("class", "price");
 
-    div_cart_end_1 = document.createElement("div");
-    div_cart_end_1.setAttribute("class", "inside");
-    div_cart_end.append(div_cart_end_1);
+  // let cost = 0
+  // for (let k = 0; k < a.length; k++) {
+  //     cost += parseInt(a[k]["price"])
+  // }
+  price.innerText = `₹ ${
+    cartData_user[i].totalCost * cartData_user[i].noOfGuest
+  }`;
+  divCartEnd.append(price);
 
-    label_1 = document.createElement("label");
-    label_1.innerText = "Date:";
-    div_cart_end_1.append(label_1);
+  const divBtnCart = document.createElement("div");
+  divBtnCart.setAttribute("class", "btn_cart");
+  divCartEnd.append(divBtnCart);
 
-    input_1 = document.createElement("input");
-    input_1.setAttribute("type", "date");
-    input_1.setAttribute("class", "date");
-    input_1.setAttribute("required", "true");
-    input_1.setAttribute("value", cartData_user[i]["dateOfDelivery"])
-    label_1.append(input_1);
+  const a_1 = document.createElement("a");
+  // a_1.setAttribute("href", "../profile/Order page.html?cartId=" + cartData_user[i]["uniqueId"]);
+  divBtnCart.append(a_1);
 
-    label_2 = document.createElement("label");
-    label_2.innerText = "No.Of.Guest:";
-    div_cart_end_1.append(label_2);
+  const button1 = document.createElement("button");
+  button1.setAttribute("class", "btn order");
+  button1.setAttribute("type", "button");
+  button1.innerText = "ORDER";
+  a_1.append(button1);
 
-    input_2 = document.createElement("input");
-    input_2.setAttribute("type", "number");
-    input_2.setAttribute("class", "number");
-    input_2.setAttribute("required", "true");
-    input_2.setAttribute("min", "1")
-    // input_2.setAttribute("max", "1500")
-    input_2.setAttribute("value", cartData_user[i]["noOfGuest"])
-    label_2.append(input_2);
+  const a_2 = document.createElement("a");
+  a_2.setAttribute("href", "#");
+  divBtnCart.append(a_2);
 
-    update = document.createElement("button");
-    update.setAttribute("type", "button");
-    update.setAttribute("class", "btn update");
-    update.setAttribute("style", "display:none");
-    update.innerText = "Update"
-    div_cart_end_1.append(update);
+  const button_2 = document.createElement("button");
+  button_2.setAttribute("class", "btn remove");
+  button_2.setAttribute("data-id", cartData_user[i].uniqueId);
+  button_2.setAttribute("type", "button");
+  button_2.innerText = "REMOVE";
+  a_2.append(button_2);
 
-    // img = document.createElement("img");
-    // img.setAttribute("src", "../../assets/img/Dishes/ordinary tiffin.jpg");
-    // img.setAttribute("alt", "ordinary tiffin");
-    // div_cart_end.append(img);
+  const ensure = document.createElement("p");
+  ensure.setAttribute("class", "ensure");
+  ensure.innerText =
+    "Please check the Delivery date and No.of.guest before order";
+  divCartEnd.append(ensure);
 
-    price = document.createElement("p");
-    price.setAttribute("class", "price");
+  document.querySelector("div.cart").append(divCartContent);
 
-    // let cost = 0
-    // for (let k = 0; k < a.length; k++) {
-    //     cost += parseInt(a[k]["price"])
-    // }
-    price.innerText = "₹ " + cartData_user[i]["totalCost"] * cartData_user[i]["noOfGuest"];
-    div_cart_end.append(price);
+  // summary table
+  const div_sum_content = document.querySelector(".sum_content");
 
+  const div_sum_details = document.createElement("div");
+  div_sum_details.setAttribute("class", "sum_details");
+  div_sum_content.append(div_sum_details);
 
-    div_btn_cart = document.createElement("div");
-    div_btn_cart.setAttribute("class", "btn_cart");
-    div_cart_end.append(div_btn_cart);
+  const p_name = document.createElement("p");
+  p_name.innerText = `${category_name.categoryName} ${menu_name.menuName}`;
+  div_sum_details.append(p_name);
 
-    a_1 = document.createElement("a");
-    // a_1.setAttribute("href", "../profile/Order page.html?cartId=" + cartData_user[i]["uniqueId"]);
-    div_btn_cart.append(a_1);
+  const date = document.createElement("p");
+  date.innerText = cartData_user[i].dateOfDelivery;
+  div_sum_details.append(date);
 
-    button_1 = document.createElement("button");
-    button_1.setAttribute("class", "btn order");
-    button_1.setAttribute("type", "button");
-    button_1.innerText = "ORDER";
-    a_1.append(button_1);
-
-    a_2 = document.createElement("a");
-    a_2.setAttribute("href", "#");
-    div_btn_cart.append(a_2);
-
-    button_2 = document.createElement("button");
-    button_2.setAttribute("class", "btn remove");
-    button_2.setAttribute("data-id", cartData_user[i]["uniqueId"])
-    button_2.setAttribute("type", "button");
-    button_2.innerText = "REMOVE";
-    a_2.append(button_2);
-
-    ensure = document.createElement("p")
-    ensure.setAttribute("class", "ensure");
-    ensure.innerText = "Please check the Delivery date and No.of.guest before order"
-    div_cart_end.append(ensure)
-
-    document.querySelector("div.cart").append(div_cart_content);
-
-    // summary table
-    div_sum_content = document.querySelector(".sum_content")
-
-    div_sum_details = document.createElement("div")
-    div_sum_details.setAttribute("class", "sum_details")
-    div_sum_content.append(div_sum_details);
-
-    p_name = document.createElement("p");
-    p_name.innerText = category_name["categoryName"] + " " + menu_name["menuName"];
-    div_sum_details.append(p_name);
-
-    date = document.createElement("p");
-    date.innerText = cartData_user[i]["dateOfDelivery"];
-    div_sum_details.append(date);
-
-    p_price = document.createElement("p");
-    p_price.innerText = "₹ " + cartData_user[i]["totalCost"] * cartData_user[i]["noOfGuest"];
-    div_sum_details.append(p_price);
-
+  const p_price = document.createElement("p");
+  p_price.innerText = `₹ ${
+    cartData_user[i].totalCost * cartData_user[i].noOfGuest
+  }`;
+  div_sum_details.append(p_price);
 }
 
+const div_sum_content = document.querySelector(".sum_content");
 
-div_sum_end = document.createElement("div");
+const div_sum_end = document.createElement("div");
 div_sum_end.setAttribute("class", "sum_end");
 div_sum_content.append(div_sum_end);
 
-p_total = document.createElement("p")
+const p_total = document.createElement("p");
 p_total.innerText = "Total Price";
 div_sum_end.append(p_total);
 
-let totalcost = 0
+let totalcost = 0;
 for (let s = 0; s < cartData_user.length; s++) {
-
-    totalcost += cartData_user[s]["totalCost"] * cartData_user[s]["noOfGuest"]
+  totalcost += cartData_user[s].totalCost * cartData_user[s].noOfGuest;
 }
 
-p_totalprice = document.createElement("p")
-p_totalprice.innerText = "₹ " + totalcost;
+const p_totalprice = document.createElement("p");
+p_totalprice.innerText = `₹ ${totalcost}`;
 div_sum_end.append(p_totalprice);
 
 // orderall button
-let div_orderAll = document.querySelector(".cart_orderall");
+const div_orderAll = document.querySelector(".cart_orderall");
 
-let btn_orderall = document.createElement("button");
+const btn_orderall = document.createElement("button");
 btn_orderall.setAttribute("type", "button");
 btn_orderall.setAttribute("class", "btn orderall");
-btn_orderall.innerText = "ORDER ALL" + " " + "(" + cartData_user.length + ")";
+btn_orderall.innerText = `ORDER ALL (${cartData_user.length})`;
 
 div_orderAll.append(btn_orderall);
 
@@ -233,7 +225,6 @@ div_orderAll.append(btn_orderall);
 
 //     let date = document.getElementById("")
 // }
-
 
 // // getting extra informatio like no.of.guest and date of delivery
 // let updateBtn = document.querySelectorAll(".update")
@@ -268,11 +259,7 @@ div_orderAll.append(btn_orderall);
 //     })
 // })
 
-
-
-
-
-// getting extra information like no.of.guest 
+// getting extra information like no.of.guest
 // let number_of_guest = document.querySelectorAll(".number")
 // number_of_guest.forEach(function (getGuest) {
 //     getGuest.addEventListener("click", function () {
@@ -287,34 +274,27 @@ div_orderAll.append(btn_orderall);
 //     })
 // })
 
-let number_of_guest = document.querySelectorAll(".number")
-number_of_guest.forEach(function (getGuest) {
-    getGuest.addEventListener("change", function () {
+const number_of_guest = document.querySelectorAll(".number");
+number_of_guest.forEach(function getguest(getGuest) {
+  getGuest.addEventListener("change", function empty() {
+    const parent = this.closest(".cart_end");
+    const product_id = parent.querySelector(".remove").dataset.id;
 
-        let parent = this.closest(".cart_end")
-        let product_id = parent.querySelector(".remove").dataset.id
+    const pdts = cartData_user.find((data) => data.uniqueId === product_id);
 
-        let pdts = cartData_user.find(data=>
-            data.uniqueId == product_id)
+    const quantity = parent.querySelector(".number").value;
+    // console.log(quantity)
+    if (quantity >= 1 && quantity <= 1500) {
+      pdts.noOfGuest = quantity;
 
-        let quantity = parent.querySelector(".number").value
-        // console.log(quantity)
-        if(quantity>=1 && quantity <=1500){
-            pdts["noOfGuest"] = quantity
-
-            localStorage.setItem("cartData", JSON.stringify(cartData));
-            location.reload();
-        }
-        else{
-            alert("You can't order food for above 1500 guest")
-            location.reload();
-        }
-
-
-
-    })
-})
-
+      localStorage.setItem("cartData", JSON.stringify(cartData));
+      window.location.reload();
+    } else {
+      alert("You can't order food for above 1500 guest");
+      window.location.reload();
+    }
+  });
+});
 
 // getting the date of delivery
 // let dateInput = document.querySelectorAll(".date");
@@ -331,126 +311,113 @@ number_of_guest.forEach(function (getGuest) {
 //     })
 // })
 
+const dateInput = document.querySelectorAll(".date");
+dateInput.forEach(function getdate(getDate) {
+  getDate.addEventListener("change", function empty() {
+    const parent = this.closest(".cart_end");
+    const product_id = parent.querySelector(".remove").dataset.id;
 
-let dateInput = document.querySelectorAll(".date");
-dateInput.forEach(function (getDate) {
-    getDate.addEventListener("change", function () {
+    const pdts = cartData_user.find((data) => data.uniqueId === product_id);
 
-        let parent = this.closest(".cart_end");
-        let product_id = parent.querySelector(".remove").dataset.id;
+    const date = parent.querySelector(".date").value;
 
-        let pdts = cartData_user.find(data=>
-            data.uniqueId == product_id);
+    pdts.dateOfDelivery = date;
 
-        let date = parent.querySelector(".date").value
-        
-        pdts["dateOfDelivery"] = date;
-
-        localStorage.setItem("cartData", JSON.stringify(cartData));
-        location.reload();
-
-    })
-})
-
+    localStorage.setItem("cartData", JSON.stringify(cartData));
+    window.location.reload();
+  });
+});
 
 // order button creation
-let orderBtn = document.querySelectorAll(".order");
-orderBtn.forEach(function (orderFood) {
-    orderFood.addEventListener("click", function () {
+const orderBtn = document.querySelectorAll(".order");
+orderBtn.forEach(function orderfood(orderFood) {
+  orderFood.addEventListener("click", function () {
+    // after checking the move to the order page
+    const before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
 
-        // after checking the move to the order page
-        let before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
+    const parent = this.closest(".cart_end");
+    // const delivery_date = parent.querySelector(".date").value;
+    const unique_id = parent.querySelector(".remove").getAttribute("data-id");
 
-        let parent = this.closest(".cart_end");
-        let delivery_date = parent.querySelector(".date").value;
-        let unique_id = parent.querySelector(".remove").getAttribute("data-id")
+    // console.log(unique_id)
 
-        // console.log(unique_id)
+    const find_cart = cartData.filter((data) => data.uniqueId === unique_id);
 
-        find_cart = cartData.filter(data =>
-            data.uniqueId == unique_id)
-        
-        console.log(find_cart[0]["dateOfDelivery"] )
+    // console.log(find_cart[0].dateOfDelivery);
 
-        if (find_cart[0]["dateOfDelivery"] <= before_date) {
-            alert("Delivery date should be at least 8 days from now");
-        }
-        else {
-            location.href = "../profile/Order page.html?cartId=" + unique_id;
-        }
-    })
-})
-
-
-// orderall button get
-let orderallBtn = document.querySelector(".orderall");
-orderallBtn.addEventListener("click", orderAll);
-
-function orderAll() {
-
-    let a = true;
-    let b = true;
-
-    let before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
-
-    // let parent = this.closest(".cart_end");
-    // let delivery_date = parent.querySelector(".date").value;
-    // let unique_id = parent.querySelector(".remove").getAttribute("data-id")
-
-    for (i = 1; i < cartData_user.length; i++) {
-
-        let delivery_date = cartData_user[0]["dateOfDelivery"]
-
-        if (delivery_date !== cartData_user[i]["dateOfDelivery"]) {
-            alert("If you orderall all delivery date should be same")
-            b = false
-        }
-        // console.log(b);
-
-        if (b !== false) {
-
-            if (delivery_date <= before_date) {
-                alert("Delivery date should not be empty (or) Delivery date should be at least 8 days from now");
-                a = false
-            }
-            // console.log(a);
-
-            if (a !== false) {
-                location.href = "../profile/Order page.html?cartStatus=" + false;
-            }
-        }
+    if (find_cart[0].dateOfDelivery <= before_date) {
+      alert("Delivery date should be at least 8 days from now");
+    } else {
+      window.location.href = `../profile/Order page.html?cartId=${unique_id}`;
     }
+  });
+});
 
+// orderall button function
+function orderAll() {
+  let a = true;
+  let b = true;
+
+  const before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
+
+  // let parent = this.closest(".cart_end");
+  // let delivery_date = parent.querySelector(".date").value;
+  // let unique_id = parent.querySelector(".remove").getAttribute("data-id")
+
+  for (let i = 1; i < cartData_user.length; i++) {
+    const delivery_date = cartData_user[0].dateOfDelivery;
+
+    if (delivery_date !== cartData_user[i].dateOfDelivery) {
+      alert("If you orderall all delivery date should be same");
+      b = false;
+    }
+    // console.log(b);
+
+    if (b !== false) {
+      if (delivery_date <= before_date) {
+        alert(
+          "Delivery date should not be empty (or) Delivery date should be at least 8 days from now"
+        );
+        a = false;
+      }
+      // console.log(a);
+
+      if (a !== false) {
+        window.location.href = `../profile/Order page.html?cartStatus=${false}`;
+      }
+    }
+  }
 }
 
-
+// orderall button get
+const orderallBtn = document.querySelector(".orderall");
+orderallBtn.addEventListener("click", orderAll);
 
 // remove from cart
-let removeBtn = document.querySelectorAll(".remove");
+const removeBtn = document.querySelectorAll(".remove");
 
-removeBtn.forEach(function (removeCart) {
-    removeCart.addEventListener("click", function () {
+removeBtn.forEach(function removecart(removeCart) {
+  removeCart.addEventListener("click", function empty() {
+    const confirmed = window.confirm(
+      "Are you sure, Do you want to remove this menu from the cart?"
+    );
 
-        const confirmed = confirm("Are you sure, Do you want to remove this menu from the cart?");
+    if (confirmed) {
+      const cartid = this.dataset.id;
+      // console.log(cartid);
 
-        if (confirmed) {
+      const remove_menu = cartData.find((data) => data.uniqueId === cartid);
+      // function getIndex(e) {
+      //   return e.uniqueId == cartid;
+      // }
+      // const remove_menu = cartData.find(getIndex);
 
-            let cartid = this.dataset.id;
-            // console.log(cartid);
+      const index = cartData.indexOf(remove_menu);
 
-            function getIndex(e) {
-                return e.uniqueId == cartid;
-            }
-
-            let remove_menu = cartData.find(getIndex);
-
-            let index = cartData.indexOf(remove_menu);
-
-            cartData.splice(index, 1);
-            localStorage.setItem("cartData", JSON.stringify(cartData))
-            alert("Menu is removed from the Cart")
-            location.reload();
-
-        }
-    })
-})
+      cartData.splice(index, 1);
+      localStorage.setItem("cartData", JSON.stringify(cartData));
+      alert("Menu is removed from the Cart");
+      window.location.reload();
+    }
+  });
+});

@@ -1,5 +1,3 @@
-
-
 // // saving only the category name, id, image and price
 // let categoryData = JSON.parse(localStorage.getItem("categoryData")) || [];
 
@@ -18,8 +16,6 @@
 //     }
 
 //     findData = categoryData.filter(getCategory);
-
-
 
 //     // if there in no data in category []
 //     if (categoryData.length == 0) {
@@ -41,7 +37,6 @@
 
 //     }
 
-
 //     else {
 //         let m = categoryData.length
 
@@ -57,122 +52,87 @@
 //     }
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // with menu name -2
 
-let menulist = document.querySelector(".menulist")
+const menulist = document.querySelector(".menulist");
 
 // let menuData = JSON.parse(localStorage.getItem("menuData"));
-let categoryData = JSON.parse(localStorage.getItem("categoryData")) || [];
+const categoryData = JSON.parse(localStorage.getItem("categoryData")) || [];
 
 for (let i = 0; i < menuData.length; i++) {
-    let option = document.createElement("option");
-    option.value = menuData[i]["id"];
-    option.innerText = menuData[i]["menuName"];
+  const option = document.createElement("option");
+  option.value = menuData[i].id;
+  option.innerText = menuData[i].menuName;
 
-    menulist.append(option);
-
+  menulist.append(option);
 }
 
 // let submitBtn = document.querySelector(".btn_submit");
 // submitBtn.addEventListener("click", getData);
 
 function getData(e) {
+  const menuType = document.getElementById("menuName").value;
+  const categoryType = document.getElementById("categoryName").value;
+  const categoryImage = document.getElementById("categoryImage").value;
+  // let categoryPrice = document.getElementById("categoryPrice").value;
 
-    let menuType = document.getElementById("menuName").value;
-    let categoryType = document.getElementById("categoryName").value;
-    let categoryImage = document.getElementById("categoryImage").value;
-    // let categoryPrice = document.getElementById("categoryPrice").value;
+  // filtering menu
+  function getMenu(e) {
+    return e.menuType === menuType;
+  }
+  const findData = categoryData.filter(getMenu);
+  // console.log(findData);
 
-
-    // filtering menu
-    function getMenu(e) {
-        return e.menuType === menuType;
+  if (findData.length === 0) {
+    for (let i = 1; i <= 1; i++) {
+      categoryData.push({
+        menuType,
+        categoryName: categoryType,
+        id: `${i}`,
+        categoryImage,
+        status: "true",
+      });
     }
-    findData = categoryData.filter(getMenu)
-    // console.log(findData)
+    alert("Category added sucessfully ✅");
+    localStorage.setItem("categoryData", JSON.stringify(categoryData));
+  } else if (findData.length !== 0) {
+    // filtering category
+    function getCategory(e) {
+      return e.categoryName.toLowerCase() == categoryType.toLowerCase();
+    }
 
+    const findData2 = findData.filter(getCategory);
+    console.log(findData2);
 
-    if (findData.length == 0) {
+    if (findData2.length !== 0) {
+      alert(
+        `${findData2[0].categoryName} ` +
+          `for this menu` +
+          ` ` +
+          `is already in Database`
+      );
+      window.location.reload();
+    } else if (findData2.length === 0) {
+      const m = findData.length;
 
-        for (i = 1; i <= 1; i++) {
-            categoryData.push({ "menuType": menuType, "categoryName": categoryType, "id": i + "", "categoryImage": categoryImage,status:"true" })
-        }
+      for (let i = m + 1; i <= m + 1; i++) {
+        categoryData.push({
+          menuType,
+          categoryName: categoryType,
+          id: `${i}`,
+          categoryImage,
+          status: "true",
+        });
+        // console.log(findData2)
         alert("Category added sucessfully ✅");
         localStorage.setItem("categoryData", JSON.stringify(categoryData));
-
+      }
+      window.location.reload();
     }
+  }
 
-    else if (findData.length !== 0) {
-
-        // filtering category
-        function getCategory(e) {
-            return e.categoryName.toLowerCase() == categoryType.toLowerCase();
-        }
-
-        findData2 = findData.filter(getCategory);
-        // console.log(findData2);
-
-        if (findData2.length !== 0) {
-            alert(findData2[0]["categoryName"] + " " + "for this menu" + " " + "is already in Database");
-            location.reload();
-
-        }
-
-        else if (findData2.length == 0) {
-
-            let m = findData.length
-
-            for (i = m + 1; i <= m + 1; i++) {
-
-                categoryData.push({ "menuType": menuType, "categoryName": categoryType, "id": i + "", "categoryImage": categoryImage, status:"true" })
-                // console.log(findData2)
-                alert("Category added sucessfully ✅")
-                localStorage.setItem("categoryData", JSON.stringify(categoryData));
-
-            }
-            location.reload();
-
-        }
-    }
-
-    e.preventDefault();
-
+  e.preventDefault();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // with proper menu id and cateogry details -3
 
@@ -225,8 +185,6 @@ function getData(e) {
 //     findData2 = k.filter(getCategory);
 //     // console.log(findData2[0]);
 
-
-
 //     if (findData[0]["id"] == 5) {
 
 //         if (k.length == 0) {
@@ -258,7 +216,6 @@ function getData(e) {
 //             }
 //         }
 
-
 //         else if (findData2[0]["categoryName"] == categoryType) {
 
 //             alert(findData2[0]["categoryName"] + " " + "is already in Database")
@@ -266,7 +223,6 @@ function getData(e) {
 //         }
 
 //     }
-
 
 //     else {
 

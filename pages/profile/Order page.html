@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +7,26 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
     family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
-            rel="stylesheet">
+            rel="stylesheet"
+        >
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
             href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
-            rel="stylesheet">
+            rel="stylesheet"
+        >
 
         <script src="../../assets/JS/vendor/moment.js"></script>
         <script src="../../assets/JS/vendor/moment.js"></script>
 
-        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+        >
 
         <link rel="stylesheet" href="../../assets/css/normalize.css">
 
@@ -87,26 +92,44 @@
             <!-- order form starts -->
             <section class="my-order">
                 <form class="my-order_form" role="form" onsubmit="placeOrder(event)">
-
                     <div class="details">
                         <h2>CATERING ORDER</h2>
                         <h3>Personal Details</h3>
                         <div class="name">
                             <label>NAME: </label>
-                            <input type="text" id="name" placeholder="Enter your name" readonly>
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your name"
+                                readonly
+                            >
                         </div>
                         <div class="email">
                             <label>EMAIL ID: </label>
-                            <input type="email" id="email" placeholder="Enter your email" readonly>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                readonly
+                            >
                         </div>
                         <div class="number">
                             <label>PHONE NUMBER: </label>
-                            <input type="number" id="phone_number" placeholder="Phone number" readonly>
+                            <input
+                                type="number"
+                                id="phone_number"
+                                placeholder="Phone number"
+                                readonly
+                            >
                         </div>
                         <div class="address">
                             <label>DELIVERY ADDRESS: </label>
-                            <textarea type="text" id="address" placeholder="Enter your delivery address"
-                                pattern="[A-Za-z.]+" title="Enter alphabet without space" required="true"></textarea>
+                            <textarea
+                                type="text"
+                                id="address"
+                                placeholder="Enter your delivery address"
+                                required="true"
+                            ></textarea>
                         </div>
                         <!-- <div class="door_no">
                             <label for="">Door.no</label>
@@ -154,18 +177,15 @@
                             <!-- <label for="">Total Price</label>
                                 <input type="text" name="" id="total_price" value="300"> -->
                             <!-- </div> -->
-
                         </div>
                     </aside>
                     <!-- <a href="./my orders.html"></a> -->
-
                 </form>
                 <!-- <aside>
                     <img src="../../assets/img/order page gif.gif" alt="biryani vapour gif" />
                     </aside> -->
             </section>
             <!-- order form ends -->
-
         </main>
         <!-- main ends -->
 
@@ -173,19 +193,22 @@
         <footer>
             <div class="footer-details">
                 <p>
-                    Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span>
+                    Copyright © 2021 - 2023 SR Catering - Website Designed By
+                    <span>vicky</span>
                 </p>
                 <p>(+91)6379370482</p>
                 <div class="footer-links">
                     <a href="https://www.instagram.com/vicky_sk_forever?r=nametag">
-                        <img
-                            src="../../assets/img/instagram.jpg" alt="instagram"> </a>
+                        <img src="../../assets/img/instagram.jpg" alt="instagram">
+                    </a>
                     <a href="https://www.facebook.com/profile.php?id=100011341742455">
-                        <img
-                            src="../../assets/img/facebook.jpg" alt="facebook link"> </a>
-                    <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08">
-                        <img
-                            src="../../assets/img/twitter.png" alt="twitter link"> </a>
+                        <img src="../../assets/img/facebook.jpg" alt="facebook link">
+                    </a>
+                    <a
+                        href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"
+                    >
+                        <img src="../../assets/img/twitter.png" alt="twitter link">
+                    </a>
                 </div>
             </div>
         </footer>
@@ -194,71 +217,10 @@
         <!-- script starts -->
         <script src="../../assets/JS/header.js"></script>
 
-        <script>const cartId_1 = new URLSearchParams(window.location.search).get("cartId");
-        const cartStatus = new URLSearchParams(window.location.search).get(
-  "cartStatus"
-);
-        const cartData_1 = JSON.parse(localStorage.getItem("cartData"));
-        const userData_1 = JSON.parse(localStorage.getItem("userData"));
-        const user_unique_1 = JSON.parse(localStorage.getItem("user_unique"));
-
-        if (cartStatus == "false" && cartData_user.length == 0) {
-  window.addEventListener("popstate", function (event) {
-            if (isloggedin()) {
-              event.preventDefault();
-              window.location.href = `${root}/index.html`;
-            }
-          });
-
-          function isloggedin() {
-    // const user_id = JSON.parse(localStorage.getItem("user_unique"))
-    if (user_id) {
-      return true;
-    }
-    return false;
-  }
-
-  if (isloggedin()) {
-            window.location.href = `${root}/index.html`;
-  }
-        } else if (cartId_1) {
-  const find_user_1 = userData_1.filter((data) => data.email == user_unique_1);
-
-  const cartData_user_1 = cartData_1.filter(
-    (data) => data.user_id == user_unique_1
-  );
-
-  console.log(cartData_user_1);
-
-          const find_cartId = cartData_user_1.find((data) => data.uniqueId == cartId_1);
-
-          if (find_cartId == undefined) {
-            window.addEventListener("popstate", function (event) {
-              if (isloggedin()) {
-                event.preventDefault();
-                window.location.href = `${root}/index.html`;
-              }
-            });
-
-            function isloggedin() {
-      // const user_id = JSON.parse(localStorage.getItem("user_unique"))
-      if (user_id) {
-        return true;
-      }
-      return false;
-    }
-
-    if (isloggedin()) {
-              window.location.href = `${root}/index.html`;
-    }
-          }
-        }
-    </script>
+        <script>    </script>
 
         <script src="../../assets/JS/order.js"></script>
 
         <!-- scripts ends -->
-
     </body>
-
 </html>

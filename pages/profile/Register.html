@@ -210,7 +210,7 @@
 
           // check upper case
           const has_upper = /[A-Z]/.test(password_value);
-          if (has_upper == true) {
+          if (has_upper === true) {
             upper_pass.style.color = "green";
           } else {
             upper_pass.style.color = "var(--second-color)";
@@ -218,7 +218,7 @@
 
           // check lower case
           const has_lower = /[a-z]/.test(password_value);
-          if (has_lower == true) {
+          if (has_lower === true) {
             lower_pass.style.color = "green";
           } else {
             lower_pass.style.color = "var(--second-color)";
@@ -226,7 +226,7 @@
 
           // check number
           const has_symbol = /[!@#$%^&*_=+-]/.test(password_value);
-          if (has_symbol == true) {
+          if (has_symbol === true) {
             symbol_pass.style.color = "green";
           } else {
             symbol_pass.style.color = "var(--second-color)";
@@ -234,7 +234,7 @@
 
           // check char
           const has_number = /\d/.test(password_value);
-          if (has_number == true) {
+          if (has_number === true) {
             number_pass.style.color = "green";
           } else {
             number_pass.style.color = "var(--second-color)";
@@ -242,7 +242,7 @@
 
           // check length
           const char_length = password_value.length >= 8;
-          if (char_length == true) {
+          if (char_length === true) {
             char_pass.style.color = "green";
           } else {
             char_pass.style.color = "var(--second-color)";

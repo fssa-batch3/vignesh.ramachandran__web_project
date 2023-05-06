@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
     family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
+            rel="stylesheet"
+        >
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
-      rel="stylesheet"
-    />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
+            rel="stylesheet"
+        >
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
-    />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+        >
 
-    <link rel="stylesheet" href="../../assets/css/header.css" />
-    <link rel="stylesheet" href="../../assets/css/Profile-CSS/login.css" />
+        <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/Profile-CSS/login.css">
 
-    <link rel="stylesheet" href="../../assets/css/normalize.css" />
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
 
-    <link rel="icon" href="../../assets/img/main-logo.png" />
+        <link rel="icon" href="../../assets/img/main-logo.png">
 
-    <script src="../../assets/JS/register & login.js"></script>
-    <title>Log In</title>
-  </head>
+        <script src="../../assets/JS/register & login.js"></script>
+        <title>Log In</title>
+    </head>
 
-  <body>
-    <!-- header starts -->
-    <!-- <header> 
+    <body>
+        <!-- header starts -->
+        <!-- <header> 
             <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
             <div class="icon-left">
@@ -83,89 +83,93 @@
             </div>
             </div>
             </header> -->
-    <!-- header ends -->
+        <!-- header ends -->
 
-    <!-- main starts -->
-    <main>
-      <!-- login form starts -->
-      <section>
-        <form class="login_page" role="form" onsubmit="signIn(event)">
-          <img src="../../assets/img/main-logo.png" alt="company logo" />
-          <h2 class="name_login"><span>Log</span> In</h2>
+        <!-- main starts -->
+        <main>
+            <!-- login form starts -->
+            <section>
+                <form class="login_page" role="form" onsubmit="signIn(event)">
+                    <img src="../../assets/img/main-logo.png" alt="company logo">
+                    <h2 class="name_login">
+                        <span>Log</span> In
+                    </h2>
 
-          <label>Email ID: </label>
-          <input
-            type="email"
-            for="email"
-            placeholder="Enter your email"
-            class="input_box"
-            id="email"
-            pattern="^([a-z]+[a-z0-9_+\-\. ]*[a-z0-9]+)@(gmail|fssa|yahoo|hotmail|outlook)\.(freshworks.com|com|net|org|edu|in)$"
-            required="true"
-          />
-          <label>Password: </label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            class="input_box"
-            id="password"
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Must contain at least one number, one uppercase, lowercase and one symbol, and at least 8 or more characters"
-            required="true"
-          />
-          <div id="pattern">
-            <span class="number_pass">Must contain at least one number,</span>
-            <span class="upper_pass">one uppercase,</span>
-            <span class="lower_pass">one lowercase,</span>
-            <span class="symbol_pass">one symbol,</span>
-            <span class="char_pass">and at least 8 or more characters</span>
-          </div>
-          <div class="visible_pass">
-            <input type="checkbox" id="show" />
-            <label>Show password</label>
-          </div>
+                    <label>Email ID: </label>
+                    <input
+                        type="email"
+                        for="email"
+                        placeholder="Enter your email"
+                        class="input_box"
+                        id="email"
+                        pattern="^([a-z]+[a-z0-9_+\-\. ]*[a-z0-9]+)@(gmail|fssa|yahoo|hotmail|outlook)\.(freshworks.com|com|net|org|edu|in)$"
+                        required="true"
+                    >
+                    <label>Password: </label>
+                    <input
+                        type="password"
+                        placeholder="Enter your password"
+                        class="input_box"
+                        id="password"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must contain at least one number, one uppercase, lowercase and one symbol, and at least 8 or more characters"
+                        required="true"
+                    >
+                    <div id="pattern">
+                        <span class="number_pass">Must contain at least one number,</span>
+                        <span class="upper_pass">one uppercase,</span>
+                        <span class="lower_pass">one lowercase,</span>
+                        <span class="symbol_pass">one symbol,</span>
+                        <span class="char_pass">and at least 8 or more characters</span>
+                    </div>
+                    <div class="visible_pass">
+                        <input type="checkbox" id="show">
+                        <label>Show password</label>
+                    </div>
 
-          <div class="for_button">
-            <button class="btn_login" type="submit">Log in</button>
-          </div>
-          <!-- <a href="./forget_password.html" class="forget_pass">Forget Password?</a> -->
-          <p>New to Website? <a href="./register.html">Create an account</a></p>
-        </form>
-      </section>
-      <!-- login form ends -->
-    </main>
-    <!-- main ends -->
+                    <div class="for_button">
+                        <button class="btn_login" type="submit">Log in</button>
+                    </div>
+                    <!-- <a href="./forget_password.html" class="forget_pass">Forget Password?</a> -->
+                    <p>
+                        New to Website? <a href="./register.html">Create an account</a>
+                    </p>
+                </form>
+            </section>
+            <!-- login form ends -->
+        </main>
+        <!-- main ends -->
 
-    <!-- footer starts -->
+        <!-- footer starts -->
 
-    <footer>
-      <div class="footer-details">
-        <p>
-          Copyright © 2021 - 2023 SR Catering - Website Designed By
-          <span>vicky</span>
-        </p>
-        <p>(+91)6379370482</p>
-        <div class="footer-links">
-          <a href="https://www.instagram.com/vicky_sk_forever?r=nametag">
-            <img src="../../assets/img/instagram.jpg" alt="instagram" />
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=100011341742455">
-            <img src="../../assets/img/facebook.jpg" alt="facebook link" />
-          </a>
-          <a
-            href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"
-          >
-            <img src="../../assets/img/twitter.png" alt="twitter link" />
-          </a>
-        </div>
-      </div>
-    </footer>
-    <!-- footer ends -->
+        <footer>
+            <div class="footer-details">
+                <p>
+                    Copyright © 2021 - 2023 SR Catering - Website Designed By
+                    <span>vicky</span>
+                </p>
+                <p>(+91)6379370482</p>
+                <div class="footer-links">
+                    <a href="https://www.instagram.com/vicky_sk_forever?r=nametag">
+                        <img src="../../assets/img/instagram.jpg" alt="instagram">
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100011341742455">
+                        <img src="../../assets/img/facebook.jpg" alt="facebook link">
+                    </a>
+                    <a
+                        href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"
+                    >
+                        <img src="../../assets/img/twitter.png" alt="twitter link">
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <!-- footer ends -->
 
-    <!-- script starts -->
-    <script src="../../assets/JS/header.js"></script>
+        <!-- script starts -->
+        <script src="../../assets/JS/header.js"></script>
 
-    <script>
+        <script>
       // show password
       const Password = document.querySelector("#password");
       const Checkbox = document.querySelector("#show");
@@ -251,6 +255,6 @@
       }
     </script>
 
-    <!-- script ends -->
-  </body>
+        <!-- script ends -->
+    </body>
 </html>

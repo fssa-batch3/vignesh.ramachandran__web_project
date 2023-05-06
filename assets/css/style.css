@@ -20,6 +20,9 @@
 span {
     color: var(--second-color);
 }
+/* body{
+    overflow-x: hidden;
+} */
 
 /* header {
     display: flex;

@@ -2,8 +2,7 @@ const root = window.location.origin;
 
 console.log(root);
 
-const after_login =
-    `
+const after_login = `
 <header>
     <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
@@ -44,14 +43,9 @@ const after_login =
         </div>
     </div>
 </header>
-`
+`;
 
-
-
-
-
-const before_login =
-    `
+const before_login = `
 <header>
     <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
@@ -85,10 +79,9 @@ const before_login =
         
     </div>
 </header>
-`
+`;
 
-const admin_header =
-    `
+const admin_header = `
     <header>
         <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
@@ -130,102 +123,96 @@ const admin_header =
             </div>
         </div>
     </header>  
-    `
+    `;
 
-
-let user_id = JSON.parse(localStorage.getItem("user_unique"));
+const user_id = JSON.parse(localStorage.getItem("user_unique"));
 // console.log(user_id)
-let admin_id = "vignesh.ramachandran@fssa.freshworks.com"
-
+const admin_id = "vignesh.ramachandran@fssa.freshworks.com";
 
 if (user_id !== admin_id && user_id !== null) {
-    document.body.insertAdjacentHTML("afterbegin", after_login);
+  document.body.insertAdjacentHTML("afterbegin", after_login);
 
-    //  logout
-    const logoutBtn = document.querySelector("#logout");
-    logoutBtn?.addEventListener("click", () => {
-        if (confirm("Are you sure to logout this account ?")) {
-            localStorage.removeItem("user_unique");
-            document.body.innerHTML = before_login;
-        }
-    })
+  //  logout
+  const logoutBtn = document.querySelector("#logout");
+  logoutBtn?.addEventListener("click", () => {
+    if (window.confirm("Are you sure to logout this account ?")) {
+      localStorage.removeItem("user_unique");
+      document.body.innerHTML = before_login;
+    }
+  });
+} else if (user_id === admin_id) {
+  document.body.insertAdjacentHTML("afterbegin", admin_header);
+
+  // logout
+  const logoutBtn = document.querySelector("#logout");
+  logoutBtn?.addEventListener("click", () => {
+    if (window.confirm("Are you sure to logout this account ?")) {
+      localStorage.removeItem("user_unique");
+      document.body.innerHTML = before_login;
+    }
+  });
+} else if (user_id == null) {
+  document.body.insertAdjacentHTML("afterbegin", before_login);
+
+  // //  logout button
+  // const logoutBtn = document.querySelector("#logout");
+  // logoutBtn?.removeEventListener("click", () => document.body.innerHTML = after_login);
+  // localStorage.removeItem("user_id")
 }
-
-
-else if (user_id == admin_id) {
-    document.body.insertAdjacentHTML("afterbegin", admin_header);
-
-    // logout
-    const logoutBtn = document.querySelector("#logout");
-    logoutBtn?.addEventListener("click", () => {
-        if (confirm("Are you sure to logout this account ?")) {
-            localStorage.removeItem("user_unique");
-            document.body.innerHTML = before_login;
-        }
-    })
-}
-
-
-
-
-else if (user_id == null) {
-
-    document.body.insertAdjacentHTML("afterbegin", before_login);
-
-    // //  logout button
-    // const logoutBtn = document.querySelector("#logout");
-    // logoutBtn?.removeEventListener("click", () => document.body.innerHTML = after_login);
-    // localStorage.removeItem("user_id")
-}
-
-
 
 function openNav() {
-    document.getElementById("sidenav").style.width = "190px";
-    // document.body.style.backgroundColor = "var(--other-color)";
+  document.getElementById("sidenav").style.width = "190px";
+  // document.body.style.backgroundColor = "var(--other-color)";
 }
 
 function closeNav() {
-    document.getElementById("sidenav").style.width = "0";
-    // document.body.style.backgroundColor = "white";
+  document.getElementById("sidenav").style.width = "0";
+  // document.body.style.backgroundColor = "white";
 }
-
-
 
 // All menus lists
 
-let menuData = JSON.parse(localStorage.getItem("menuData"));
+const menuData = JSON.parse(localStorage.getItem("menuData"));
 
 // filtering get status=true from menuData
 function getStatus(e) {
-    return e.status === "true";
+  return e.status === "true";
 }
-menuDataTrue = menuData.filter(getStatus);
+const menuDataTrue = menuData.filter(getStatus);
 
 // creating nav bar
-let div_dropdown_content = document.querySelector(".dropdown-content")
+const div_dropdown_content = document.querySelector(".dropdown-content");
 
-let div_menulist = document.createElement("div");
+const div_menulist = document.createElement("div");
 
-for (i = 0; i < menuDataTrue.length; i++) {
+for (let i = 0; i < menuDataTrue.length; i++) {
+  const a_1 = document.createElement("a");
+  a_1.innerText = `${menuDataTrue[i].menuName} Menu`;
+  a_1.setAttribute(
+    "href",
+    `${root}/pages/products/Menus/category.html?menu=${menuDataTrue[i].id}`
+  );
 
-    let a_1 = document.createElement("a");
-    a_1.innerText = menuDataTrue[i]["menuName"] + " Menu";
-    a_1.setAttribute("href", root + "/pages/products/Menus/category.html?menu=" + menuDataTrue[i]["id"]);
-
-    div_menulist.append(a_1);
+  div_menulist.append(a_1);
 }
 
 div_dropdown_content.append(div_menulist);
 
+// for mycart qty
+const cartData1 = JSON.parse(localStorage.getItem("cartData"));
+const cartQty = document.querySelector(".cart_qty");
 
-let cartData1 = JSON.parse(localStorage.getItem("cartData"));
-// console.log(cartData1);
+if (cartData1 === null) {
+  cartQty.innerText = 0;
+}
 
-let user_unique1 = JSON.parse(localStorage.getItem("user_unique"));
+const user_unique1 = JSON.parse(localStorage.getItem("user_unique"));
 
-let cart_user_data = cartData1.filter(data=>
-    data.user_id == user_unique1)
-
-let cartQty = document.querySelector(".cart_qty")
-cartQty.innerText = cart_user_data.length
+const cart_user_data = cartData1.filter(
+  (data) => data.user_id === user_unique1
+);
+if (cart_user_data.length === 0) {
+  cartQty.setAttribute("style", "display:none");
+} else {
+  cartQty.innerText = cart_user_data.length;
+}

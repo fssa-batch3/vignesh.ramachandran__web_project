@@ -1,7 +1,4 @@
-
-const footer_js =
-
-    `
+const footer_js = `
     <footer>
         <div class="footer-box">
             <div class="footer-content">
@@ -24,60 +21,50 @@ const footer_js =
         </div>
     </footer>
 
-    `
+    `;
 
-
-    document.body.insertAdjacentHTML("beforeend", footer_js);
-
+document.body.insertAdjacentHTML("beforeend", footer_js);
 
 // const categoryData = JSON.parse(localStorage.getItem("categoryData"))
 
-let div_footer = document.querySelector(".footer-box");
+const div_footer = document.querySelector(".footer-box");
 
-for (i = 0; i < 4; i++) {
+for (let i = 0; i < 4; i++) {
+  // <div class="footer-content">
+  const div_content = document.createElement("div");
+  div_content.setAttribute("class", "footer-content");
 
-    // <div class="footer-content">
-    let div_content = document.createElement("div");
-    div_content.setAttribute("class", "footer-content");
+  // <h3><span>Breakfast</span> Menus</h3>
+  const h3_name = document.createElement("h3");
+  h3_name.innerText = " Menu";
+  div_content.append(h3_name);
 
-    // <h3><span>Breakfast</span> Menus</h3>
-    let h3_name = document.createElement("h3");
-    h3_name.innerText = " Menu";
-    div_content.append(h3_name);
+  const span = document.createElement("span");
+  span.innerText = menuDataTrue[i].menuName;
+  h3_name.prepend(span);
 
-    span = document.createElement("span");
-    span.innerText = menuDataTrue[i]["menuName"];
-    h3_name.prepend(span);
+  // <ul>
+  const ul_list = document.createElement("ul");
+  div_content.append(ul_list);
 
-    // <ul>
-    ul_list = document.createElement("ul");
-    div_content.append(ul_list);
+  const findData = categoryData.filter((data) => data.menuType == i + 1);
 
+  const categoryDataTrue = findData.filter((data) => data.status == "true");
 
-    findData = categoryData.filter(data =>
-        data.menuType == i + 1)
+  for (let j = 0; j < categoryDataTrue.length; j++) {
+    // <li><a href="./pages/products/Dishes/morning-ordinary.html" class="footer-navigation">Ordinary Breakfast</a></li>
+    const li_links = document.createElement("li");
+    ul_list.append(li_links);
 
-    categoryDataTrue = findData.filter(data =>
-        data.status == "true")
+    const a_links = document.createElement("a");
+    a_links.setAttribute(
+      "href",
+      `${root}/pages/products/Dishes/dish.html?menu=${menuDataTrue[i].id}&category=${categoryDataTrue[j].id}`
+    );
+    a_links.setAttribute("class", "footer-navigation");
+    a_links.innerText = `${categoryDataTrue[j].categoryName} ${menuDataTrue[i].menuName}`;
+    li_links.append(a_links);
+  }
 
-    for (j = 0; j < categoryDataTrue.length; j++) {
-
-        // <li><a href="./pages/products/Dishes/morning-ordinary.html" class="footer-navigation">Ordinary Breakfast</a></li>
-        li_links = document.createElement("li");
-        ul_list.append(li_links);
-
-        a_links = document.createElement("a");
-        a_links.setAttribute("href", root + "/pages/products/Dishes/dish.html?menu=" + menuDataTrue[i]["id"] + "&category=" + categoryDataTrue[j]["id"]);
-        a_links.setAttribute("class", "footer-navigation");
-        a_links.innerText = categoryDataTrue[j]["categoryName"] + " " + menuDataTrue[i]["menuName"];
-        li_links.append(a_links);
-    }
-
-
-    div_footer.append(div_content);
+  div_footer.append(div_content);
 }
-
-
-
-
-

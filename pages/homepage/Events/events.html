@@ -91,7 +91,8 @@
 
         <script src="../../../assets/JS/header.js"></script>
 
-        <script>categoryData = JSON.parse(localStorage.getItem("categoryData"));
+        <script>
+        const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 
         const events = [
           {
@@ -159,24 +160,24 @@
         ];
 
         for (i = 0; i < events.length; i++) {
-          div_event = document.createElement("div");
+          const div_event = document.createElement("div");
           div_event.setAttribute("class", "event-1");
-          console.log(div_event);
+          // console.log(div_event);
 
-          img = document.createElement("img");
+          const img = document.createElement("img");
           img.setAttribute("src", events[i].image.source);
           img.setAttribute("alt", events[i].image.text);
           div_event.append(img);
 
-          h3 = document.createElement("h3");
+          const h3 = document.createElement("h3");
           h3.innerText = events[i].name;
           div_event.append(h3);
 
-          a = document.createElement("a");
+          const a = document.createElement("a");
           a.setAttribute("href", events[i].link);
           div_event.append(a);
 
-          button = document.createElement("button");
+          const button = document.createElement("button");
           button.innerText = "View";
           a.append(button);
 
