@@ -1,14 +1,14 @@
 const cartId = new URLSearchParams(window.location.search).get("cartId");
-const orderStatus = new URLSearchParams(window.location.search).get(
-  "orderStatus"
-);
+// const orderStatus = new URLSearchParams(window.location.search).get(
+//   "orderStatus"
+// );
 
 const cartData = JSON.parse(localStorage.getItem("cartData"));
 const userData = JSON.parse(localStorage.getItem("userData"));
 const user_unique = JSON.parse(localStorage.getItem("user_unique"));
 // let menuData = JSON.parse(localStorage.getItem("menuData"));
 const categoryData = JSON.parse(localStorage.getItem("categoryData"));
-const dishData = JSON.parse(localStorage.getItem("dishData"));
+// const dishData = JSON.parse(localStorage.getItem("dishData"));
 
 // back function from myorders
 const cartId_1 = new URLSearchParams(window.location.search).get("cartId");
@@ -16,7 +16,7 @@ const cartStatus = new URLSearchParams(window.location.search).get(
   "cartStatus"
 );
 const cartData_1 = JSON.parse(localStorage.getItem("cartData"));
-const userData_1 = JSON.parse(localStorage.getItem("userData"));
+// const userData_1 = JSON.parse(localStorage.getItem("userData"));
 const user_unique_1 = JSON.parse(localStorage.getItem("user_unique"));
 
 function isloggedin() {
@@ -29,7 +29,7 @@ function isloggedin() {
 // isloggedin();
 
 if (cartStatus === "false" && cart_user_data.length === 0) {
-  window.addEventListener("popstate", function eVent(event) {
+  window.addEventListener("popstate", (event) => {
     if (isloggedin()) {
       event.preventDefault();
       window.location.href = `${root}/index.html`;
@@ -56,7 +56,7 @@ if (cartStatus === "false" && cart_user_data.length === 0) {
   );
 
   if (find_cartId === undefined) {
-    window.addEventListener("popstate", function eVent(event) {
+    window.addEventListener("popstate", (event) => {
       if (isloggedin()) {
         event.preventDefault();
         window.location.href = `${root}/index.html`;
@@ -321,7 +321,8 @@ if (cartId) {
 }
 
 // order page <form> tag has onsubmit function
-const placeOrder = (e) => {
+const form_id = document.getElementById("placeOrder");
+function placeOrder(e) {
   e.preventDefault();
 
   const orderData = JSON.parse(localStorage.getItem("orderData")) || [];
@@ -428,4 +429,6 @@ const placeOrder = (e) => {
   } else {
     alert("Please check the Delivery date.");
   }
-};
+}
+
+form_id.addEventListener("submit", placeOrder);

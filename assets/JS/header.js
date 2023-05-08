@@ -164,11 +164,13 @@ function openNav() {
   document.getElementById("sidenav").style.width = "190px";
   // document.body.style.backgroundColor = "var(--other-color)";
 }
+// openNav();
 
 function closeNav() {
   document.getElementById("sidenav").style.width = "0";
   // document.body.style.backgroundColor = "white";
 }
+// closeNav();
 
 // All menus lists
 

@@ -17,7 +17,6 @@ let findData = "";
 
 // getData from the local storage
 const show = document.querySelector(".show");
-show.addEventListener("click", showMenuDetails);
 
 function showMenuDetails() {
   const saveBtn = document.querySelector(".save");
@@ -56,11 +55,10 @@ function showMenuDetails() {
   }
 }
 
-// save edited(updated)data to local storage
-// let saveBtn = document.querySelector(".save");
-// saveBtn.addEventListener("click", saveData)
+show.addEventListener("click", showMenuDetails);
 
-const change = (e) => {
+const form_id = document.getElementById("change");
+form_id.addEventListener("submit", () => {
   // let upName = document.getElementById("menuNameGet").value;
   const upImage = document.getElementById("menuImageGet").value;
   const upAbout = document.getElementById("menuAboutGet").value;
@@ -74,7 +72,7 @@ const change = (e) => {
   localStorage.setItem("menuData", JSON.stringify(menuData));
   alert("Menu Details Edited Sucessfully ✅");
   window.location.reload();
-};
+});
 
 // // remove the selected menu from the localstorage
 // let removeBtn = document.querySelector(".delete");

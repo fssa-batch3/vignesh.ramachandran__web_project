@@ -1,10 +1,9 @@
 // const transactionTable = JSON.parse(localStorage.getItem("transactionTable"));
 // const dishData = JSON.parse(localStorage.getItem("dishData"));
-const userData = JSON.parse(localStorage.getItem("userData"));
+// const userData = JSON.parse(localStorage.getItem("userData"));
 const user_unique = JSON.parse(localStorage.getItem("user_unique"));
 // console.log(user_unique);
 const addtoCartBtn = document.querySelector(".add_to_cart");
-addtoCartBtn.addEventListener("click", addtoCart);
 function addtoCart() {
   if (user_unique == null) {
     alert("Please Login");
@@ -131,3 +130,5 @@ function addtoCart() {
     }
   }
 }
+
+addtoCartBtn.addEventListener("click", addtoCart);

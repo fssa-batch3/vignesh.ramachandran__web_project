@@ -12,7 +12,7 @@ const cartData_user = cartData.filter((data) => data.user_id === user_unique);
 
 // console.log(cartData_user)
 
-const m = moment().format("YYYY-MM-DD");
+// const m = moment().format("YYYY-MM-DD");
 
 for (let i = 0; i < cartData_user.length; i++) {
   const menuId = cartData_user[i].menu_id;
@@ -275,7 +275,7 @@ div_orderAll.append(btn_orderall);
 // })
 
 const number_of_guest = document.querySelectorAll(".number");
-number_of_guest.forEach(function getguest(getGuest) {
+number_of_guest.forEach((getGuest) => {
   getGuest.addEventListener("change", function empty() {
     const parent = this.closest(".cart_end");
     const product_id = parent.querySelector(".remove").dataset.id;
@@ -312,7 +312,7 @@ number_of_guest.forEach(function getguest(getGuest) {
 // })
 
 const dateInput = document.querySelectorAll(".date");
-dateInput.forEach(function getdate(getDate) {
+dateInput.forEach((getDate) => {
   getDate.addEventListener("change", function empty() {
     const parent = this.closest(".cart_end");
     const product_id = parent.querySelector(".remove").dataset.id;
@@ -330,8 +330,8 @@ dateInput.forEach(function getdate(getDate) {
 
 // order button creation
 const orderBtn = document.querySelectorAll(".order");
-orderBtn.forEach(function orderfood(orderFood) {
-  orderFood.addEventListener("click", function () {
+orderBtn.forEach((orderFood) => {
+  orderFood.addEventListener("click", function empty() {
     // after checking the move to the order page
     const before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
 
@@ -396,7 +396,7 @@ orderallBtn.addEventListener("click", orderAll);
 // remove from cart
 const removeBtn = document.querySelectorAll(".remove");
 
-removeBtn.forEach(function removecart(removeCart) {
+removeBtn.forEach((removeCart) => {
   removeCart.addEventListener("click", function empty() {
     const confirmed = window.confirm(
       "Are you sure, Do you want to remove this menu from the cart?"

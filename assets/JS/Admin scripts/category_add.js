@@ -98,11 +98,11 @@ function getData(e) {
   } else if (findData.length !== 0) {
     // filtering category
     function getCategory(e) {
-      return e.categoryName.toLowerCase() == categoryType.toLowerCase();
+      return e.categoryName.toLowerCase() === categoryType.toLowerCase();
     }
 
     const findData2 = findData.filter(getCategory);
-    console.log(findData2);
+    // console.log(findData2);
 
     if (findData2.length !== 0) {
       alert(
@@ -133,6 +133,8 @@ function getData(e) {
 
   e.preventDefault();
 }
+
+getData();
 
 // with proper menu id and cateogry details -3
 

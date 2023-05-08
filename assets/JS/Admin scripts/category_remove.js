@@ -12,19 +12,17 @@ for (let i = 0; i < menuData.length; i++) {
   menulist.append(option);
 }
 
-// get the local storage value to the select and option for category name
-const showCatergoy = document.querySelector(".show1");
-showCatergoy.addEventListener("click", getCatDetails);
-
 function getCatDetails() {
   const menuType = document.getElementById("menuName").value;
   const menu_option = document.querySelector("#menuName");
 
   if (menuType !== "") {
-    function getMenu(e) {
-      return e.menuType === menuType;
-    }
-    const findData = categoryData.filter(getMenu);
+    const findData = categoryData.filter((data) => data.menuType === menuType);
+    // function getMenu(e) {
+    //   return e.menuType === menuType;
+    // }
+    // const findData = categoryData.filter(getMenu);
+    // console.log(findData);
 
     // creating select option depends upon the categoryData
     const categorylist = document.querySelector(".categorylist");
@@ -44,9 +42,9 @@ function getCatDetails() {
   }
 }
 
-// show the details of the category
-const showDetails = document.querySelector(".show2");
-showDetails.addEventListener("click", showCatDetails);
+// get the local storage value to the select and option for category name
+const showCatergoy = document.querySelector(".show1");
+showCatergoy.addEventListener("click", getCatDetails);
 
 let findData = "";
 let findData2 = "";
@@ -62,22 +60,17 @@ function showCatDetails() {
     alert("Select Menu type");
   } else if (menuType !== "" && categoryType !== "") {
     // filtering menu
-    function getMenu(e) {
-      return e.menuType === menuType;
-    }
-    findData = categoryData.filter(getMenu);
-    // // console.log(findData[0]);
+    findData = categoryData.filter((data) => data.menuType === menuType);
+
+    console.log(findData);
 
     // let k = findData[0]["categoryData"]
     // console.log(k)
 
     // filtering category
-    function getCategory(e) {
-      return e.id == categoryType;
-    }
-    findData2 = findData.filter(getCategory);
+    findData2 = findData.filter((data) => data.id === categoryType);
 
-    // console.log(findData2[0]["categoryName"]);
+    console.log(findData2);
 
     // let yes = document.getElementById("categoryNameGet").value
     const categoryName = document.getElementById("categoryNameGet");
@@ -99,11 +92,17 @@ function showCatDetails() {
   saveBtn.removeAttribute("style");
 }
 
+// show the details of the category
+const showDetails = document.querySelector(".show2");
+showDetails.addEventListener("click", showCatDetails);
+
 // save edited (updated) details
 // let saveBtn = document.querySelector(".save");
 // saveBtn.addEventListener("click", saveData);
 
-const change = (e) => {
+// const change = (e) => {
+function saveData(e) {
+  e.preventDefault();
   const upStatus = document.getElementById("categoryStatusGet").value;
   const upImage = document.getElementById("categoryImageGet").value;
   // let upPrice = document.getElementById("categoryPriceGet").value;
@@ -112,12 +111,13 @@ const change = (e) => {
   findData2[0].categoryImage = upImage;
   // findData2[0]["categoryPrice"] = upPrice;
 
-  // console.log(findData2[0])
-
   localStorage.setItem("categoryData", JSON.stringify(categoryData));
   alert("Category Details updated Sucessfully ✅");
   window.location.reload();
-};
+}
+
+const form_change = document.getElementById("change");
+form_change.addEventListener("submit", saveData);
 
 // // delete the category from the menuData
 // let deleteBtn = document.querySelector(".delete");

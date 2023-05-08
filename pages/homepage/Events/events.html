@@ -93,7 +93,6 @@
 
         <script>
         const categoryData = JSON.parse(localStorage.getItem("categoryData"));
-
         const events = [
           {
             name: "Birthday Party",
@@ -103,7 +102,6 @@
             },
             link: "./birthday party.html",
           },
-
           {
             name: "Puberty Function",
             image: {
@@ -112,7 +110,6 @@
             },
             link: "./puberty function.html",
           },
-
           {
             name: "Engagement",
             image: {
@@ -121,7 +118,6 @@
             },
             link: "./engagement.html",
           },
-
           {
             name: "Marriage",
             image: {
@@ -130,7 +126,6 @@
             },
             link: "./marriage.html",
           },
-
           {
             name: "House Warming Function",
             image: {
@@ -139,7 +134,6 @@
             },
             link: "./house warming function.html",
           },
-
           {
             name: "Valaikappu Function",
             image: {
@@ -148,7 +142,6 @@
             },
             link: "./valaikappu function.html",
           },
-
           {
             name: "Private Party",
             image: {
@@ -158,8 +151,7 @@
             link: "./private party.html",
           },
         ];
-
-        for (i = 0; i < events.length; i++) {
+        for (let i = 0; i < events.length; i++) {
           const div_event = document.createElement("div");
           div_event.setAttribute("class", "event-1");
           // console.log(div_event);
@@ -181,7 +173,7 @@
           button.innerText = "View";
           a.append(button);
 
-  document.querySelector("div.events_lists").append(div_event);
+          document.querySelector("div.events_lists").append(div_event);
         }
     </script>
 

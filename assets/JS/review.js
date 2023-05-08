@@ -1,6 +1,13 @@
 // rating function
 const order_url_id = new URLSearchParams(window.location.search).get("orderId");
+const menu_url_id = new URLSearchParams(window.location.search).get("menuId");
+const category_url_id = new URLSearchParams(window.location.search).get(
+  "categoryId"
+);
 // console.log(order_url_id);
+// console.log(menu_url_id);
+// console.log(category_url_id);
+
 const orderData = JSON.parse(localStorage.getItem("orderData"));
 
 // const btn = document.querySelectorAll(".btn_post");
@@ -22,13 +29,14 @@ revForm.addEventListener("submit", (event) => {
   // console.log(star_value);
 
   const findData = orderData.filter((data) => data.order_id === order_url_id);
-  const rev_menuId = findData[0]["ordered_product"][0]["menu_id"];
+
+  const rev_menuId = menu_url_id;
   // console.log(rev_menuId);
 
-  const rev_catId = findData[0]["ordered_product"][0]["category_id"];
+  const rev_catId = category_url_id;
   // console.log(rev_catId);
 
-  const rev_userId = findData[0]["user_id"]
+  const rev_userId = findData[0].user_id;
   // console.log(rev_userId);
 
   const rev_message = document
@@ -41,7 +49,7 @@ revForm.addEventListener("submit", (event) => {
     if (/^\s*$/g.test(rev_message)) {
       alert("Enter the feedback");
     } else {
-      console.log(rev_message);
+      // console.log(rev_message);
 
       reviewDetails.push({
         order_id: order_url_id,
@@ -51,18 +59,18 @@ revForm.addEventListener("submit", (event) => {
         star: star_value,
         feedback: rev_message,
       });
-      console.log(reviewDetails[0]);
-
-      window.location.href = "../../pages/profile/my orders.html";
+      // console.log(reviewDetails)
     }
   }
   validate();
 
   localStorage.setItem("reviewDetails", JSON.stringify(reviewDetails));
+
+  window.location.href = "../../pages/profile/my orders.html";
 });
 // });
 
-editBtn.forEach(function edit_post(editPost) {
+editBtn.forEach((editPost) => {
   editPost.addEventListener("click", () => {
     widget.style.display = "block";
     post.style.display = "none";

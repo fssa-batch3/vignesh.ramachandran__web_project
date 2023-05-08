@@ -1,6 +1,6 @@
-function event_menu() {
-  const categoryData = JSON.parse(localStorage.getItem("categoryData"));
+const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 
+function event_menu() {
   const div_content = document.querySelector(".bdy_menu-content");
 
   for (let i = 0; i < menuDataTrue.length; i++) {
@@ -47,6 +47,7 @@ function event_menu() {
     div_content.appendChild(dropdownMenu);
   }
 }
+event_menu();
 
 // const links = [
 //     { href: '../../products/Dishes/dinner-ordinary.html', text: 'Ordinary Dinner' },

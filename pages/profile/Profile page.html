@@ -129,7 +129,7 @@
         <script src="../../assets/JS/header.js"></script>
 
         <script>// islogged out
-        window.addEventListener("popstate", function (event) {
+        window.addEventListener("popstate", (event) => {
   if (!isloggedin()) {
             event.preventDefault();
             window.location.href = `${root}/pages/profile/Login.html`;
@@ -152,7 +152,7 @@
         const Password = document.querySelector("#password");
         const Checkbox = document.querySelector("#show");
 
-        Checkbox.addEventListener("click", function () {
+        Checkbox.addEventListener("click", () => {
           const type =
     Password.getAttribute("type") === "password" ? "text" : "password";
           Password.setAttribute("type", type);

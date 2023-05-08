@@ -168,7 +168,7 @@
         mobileInput.addEventListener("input", () => {
           const inputValue = mobileInput.value.trim(); // remove leading/trailing whitespace
           const isValidInput =
-    /^[6-9]\d{9}$/.test(inputValue) && !/^\d*(\d)\1{9}\d*$/.test(inputValue); // use regex to match the updated criteria
+            /^[6-9]\d{9}$/.test(inputValue) && !/^\d*(\d)\1{9}\d*$/.test(inputValue); // use regex to match the updated criteria
           if (!isValidInput || inputValue === "") {
             // formGroup.classList.remove('valid');
             // formGroup.classList.add('invalid');
@@ -190,7 +190,7 @@
         const Password = document.querySelector("#password");
         const Checkbox = document.querySelector("#show");
 
-        Checkbox.addEventListener("click", function () {
+        Checkbox.addEventListener("click", () => {
           const type =
     Password.getAttribute("type") === "password" ? "text" : "password";
           Password.setAttribute("type", type);

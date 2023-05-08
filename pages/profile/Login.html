@@ -174,7 +174,7 @@
       const Password = document.querySelector("#password");
       const Checkbox = document.querySelector("#show");
 
-      Checkbox.addEventListener("click", function () {
+      Checkbox.addEventListener("click", () => {
         const type =
           Password.getAttribute("type") === "password" ? "text" : "password";
         Password.setAttribute("type", type);
@@ -234,7 +234,7 @@
       });
 
       // islogged in
-      window.addEventListener("popstate", function (event) {
+      window.addEventListener("popstate", (event) => {
         if (isloggedin()) {
           event.preventDefault();
           window.location.href = `${root}/index.html`;

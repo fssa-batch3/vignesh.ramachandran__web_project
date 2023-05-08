@@ -4,30 +4,6 @@ const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 const dishData = JSON.parse(localStorage.getItem("dishData"));
 // const user_unique = JSON.parse(localStorage.getItem("user_unique"));
 
-view_orders();
-// let orderData = orderData.filter(data=>
-//     data.user_id == user_unique);
-
-// console.log(orderData);
-
-const statusBtn = document.querySelectorAll(".btn_toggle");
-statusBtn.forEach(function showorders(showOrders) {
-  showOrders.addEventListener("click", function empty() {
-    const div_for_append = document.querySelector("div.orders");
-
-    div_for_append.innerText = "";
-
-    orderData = JSON.parse(localStorage.getItem("orderData"));
-
-    const parent = this.innerText;
-    // console.log(parent);
-
-    orderData = orderData.filter((data) => data.orderStatus === `${parent}`);
-
-    view_orders();
-  });
-});
-
 function view_orders() {
   for (let i = 0; i < orderData.length; i++) {
     const count = orderData[i].ordered_product.length;
@@ -54,7 +30,7 @@ function view_orders() {
       div_my_orders_list.setAttribute("class", "my-orders_list");
 
       const div_header = document.createElement("div");
-      div_header.setAttribute("class", "header");
+      div_header.setAttribute("class", "head_order");
       div_my_orders_list.append(div_header);
 
       const p_orderId = document.createElement("p");
@@ -106,22 +82,130 @@ function view_orders() {
       button.innerText = "View Dishes";
       div_subject.append(button);
 
-      if (
-        orderData[i].orderStatus === "Cancelled" ||
-        orderData[i].orderStatus === "Delivered"
-      ) {
-        const button_cancel = document.createElement("button");
-        button_cancel.setAttribute("class", "btn cancel");
-        button_cancel.innerText = "Cancel Order";
-        button_cancel.setAttribute("value", orderData[i].order_id);
-        button_cancel.setAttribute("style", "display:none");
-        div_subject.append(button_cancel);
-      } else {
+      if (orderData[i].orderStatus === "Not Delivered") {
         const button_cancel = document.createElement("button");
         button_cancel.setAttribute("class", "btn cancel");
         button_cancel.innerText = "Cancel Order";
         button_cancel.setAttribute("value", orderData[i].order_id);
         div_subject.append(button_cancel);
+      }
+
+      const reviewDetails = JSON.parse(localStorage.getItem("reviewDetails"));
+
+      if (orderData[i].orderStatus === "Delivered") {
+        let a = true;
+        for (let d = 0; d < reviewDetails.length; d++) {
+          if (orderData[i].order_id === reviewDetails[d].order_id) {
+            // console.log(orderData_user[i].ordered_product[j].menu_id)
+            // console.log(reviewDetails[d].menu_id)
+            if (
+              orderData[i].ordered_product[j].menu_id ===
+                reviewDetails[d].menu_id &&
+              orderData[i].ordered_product[j].category_id ===
+                reviewDetails[d].category_id
+            ) {
+              const starWidget = document.createElement("div");
+              starWidget.classList.add("star-widget");
+
+              for (let c = 1; c <= 5; c++) {
+                const starInput = document.createElement("input");
+                starInput.setAttribute("type", "radio");
+                starInput.setAttribute("name", "rate");
+                starInput.setAttribute("id", `rate-${c}`);
+                starInput.setAttribute("value", c);
+
+                const starLabel = document.createElement("label");
+                starLabel.setAttribute("for", `rate-${c}`);
+                starLabel.classList.add("fa", "fa-star");
+
+                if (c <= reviewDetails[d].star) {
+                  starInput.setAttribute("checked", true);
+                  starLabel.setAttribute("style", "color:#fd4;");
+                }
+
+                starWidget.appendChild(starInput);
+                starWidget.appendChild(starLabel);
+              }
+
+              const p_feedback = document.createElement("p");
+              p_feedback.setAttribute("class", "revFeedback");
+              p_feedback.innerText = reviewDetails[d].feedback;
+
+              div_subject.append(starWidget);
+              div_subject.append(p_feedback);
+              a = false;
+            }
+          }
+        }
+
+        if (a === true) {
+          const button_review = document.createElement("button");
+          button_review.setAttribute("type", "button");
+          button_review.setAttribute("class", "btnReview");
+          button_review.innerText = "Give Review";
+          div_subject.append(button_review);
+        }
+
+        // const div_container = document.createElement("div");
+        // div_container.setAttribute("class", "container");
+
+        // const div_post = document.createElement("div");
+        // div_post.setAttribute("class", "post");
+        // div_container.append(div_post);
+
+        // const div_text = document.createElement("div");
+        // div_text.setAttribute("class", "text");
+        // div_text.innerText = "Thanks for rating us!";
+        // div_post.append(div_text);
+
+        // const div_edit = document.createElement("div");
+        // div_edit.setAttribute("class", "edit");
+        // div_edit.innerText = "EDIT";
+        // div_post.append(div_edit);
+
+        // const div_star = document.createElement("div");
+        // div_star.setAttribute("class", "star-widget");
+        // div_container.append(div_star);
+
+        // for (let s = 1; s < 6; s++) {
+        //   const label_star = document.createElement("label");
+        //   label_star.setAttribute("for", `rate-${s}`);
+        //   label_star.setAttribute("class", "fa fa-star");
+        //   div_star.prepend(label_star);
+
+        //   const input_radio = document.createElement("input");
+        //   input_radio.type = "radio";
+        //   input_radio.name = "rate";
+        //   input_radio.id = `rate-${s}`;
+        //   div_star.prepend(input_radio);
+        // }
+        // div_subject.append(div_container);
+
+        // const form = document.createElement("form");
+        // form.setAttribute("action", "#");
+        // div_star.append(form);
+
+        // const heading_rating = document.createElement("h2");
+        // heading_rating.setAttribute("id", "header");
+        // form.append(heading_rating);
+
+        // const div_review = document.createElement("div");
+        // div_review.setAttribute("class", "textarea");
+        // form.append(div_review);
+
+        // const textarea = document.createElement("textarea");
+        // textarea.setAttribute("cols", "30");
+        // textarea.setAttribute("placeholder", "Describe your experience..");
+        // div_review.append(textarea);
+
+        // const div_btn = document.createElement("div");
+        // div_btn.setAttribute("class", "btn_post");
+        // form.append(div_btn);
+
+        // const button_submit = document.createElement("button");
+        // button_submit.setAttribute("type", "submit");
+        // button_submit.innerText = "Post";
+        // div_btn.append(button_submit);
       }
 
       if (orderData[i].orderStatus === "Cancelled") {
@@ -218,84 +302,104 @@ function view_orders() {
       document.querySelector("div.orders").prepend(div_my_orders_list);
     }
   }
-}
 
-// view dish
-const viewBtn = document.querySelectorAll(".view");
-viewBtn.forEach(function showdishes(showDishes) {
-  showDishes.addEventListener("click", function empty() {
-    const parent = this.closest(".my-orders_list");
+  // view dish
+  const viewBtn = document.querySelectorAll(".view");
+  viewBtn.forEach((showDishes) => {
+    showDishes.addEventListener("click", function empty() {
+      const parent = this.closest(".my-orders_list");
 
-    const div_dish = parent.querySelector("#show");
-    div_dish.setAttribute("style", "display:block");
+      const div_dish = parent.querySelector("#show");
+      div_dish.setAttribute("style", "display:block");
 
-    const div_back_1 = parent.querySelector(".my_order_text div");
-    div_back_1.style.opacity = "0.5";
+      const div_back_1 = parent.querySelector(".my_order_text div");
+      div_back_1.style.opacity = "0.5";
 
-    const div_back = parent.querySelector(".field");
-    div_back.style.opacity = "0.2";
+      const div_back = parent.querySelector(".field");
+      div_back.style.opacity = "0.2";
+    });
   });
-});
 
-// close dish
-const closeBtn = document.querySelectorAll("#closeDish");
-closeBtn.forEach(function closedish(close_dish) {
-  close_dish.addEventListener("click", function empty() {
-    const parent = this.closest(".my-orders_list");
-    const div_dish = parent.querySelector(".dropdown_menu-type-content");
-    div_dish.removeAttribute("style");
+  // close dish
+  const closeBtn = document.querySelectorAll("#closeDish");
+  closeBtn.forEach((close_dish) => {
+    close_dish.addEventListener("click", function empty() {
+      const parent = this.closest(".my-orders_list");
+      const div_dish = parent.querySelector(".dropdown_menu-type-content");
+      div_dish.removeAttribute("style");
 
-    const div_back_1 = parent.querySelector(".my_order_text div");
-    div_back_1.removeAttribute("style");
+      const div_back_1 = parent.querySelector(".my_order_text div");
+      div_back_1.removeAttribute("style");
 
-    const div_back = parent.querySelector(".field");
-    div_back.removeAttribute("style");
+      const div_back = parent.querySelector(".field");
+      div_back.removeAttribute("style");
+    });
   });
-});
 
-// cancel order
-const cancelBtn = document.querySelectorAll(".cancel");
-cancelBtn.forEach(function cancelorder(cancelOrder) {
-  cancelOrder.addEventListener("click", function empty() {
-    const reason = prompt("Enter the reason", "");
-    if (reason == null || reason === "") {
-      alert("Enter the reason");
-    } else {
-      // console.log(reason);
-      const parent = this.closest(".my_order_text");
-      const user_id = parent.querySelector(".cancel");
+  // cancel order
+  const cancelBtn = document.querySelectorAll(".cancel");
+  cancelBtn.forEach((cancelOrder) => {
+    cancelOrder.addEventListener("click", function empty() {
+      const reason = prompt("Enter the reason", "");
+      if (reason == null || reason === "") {
+        alert("Enter the reason");
+      } else {
+        // console.log(reason);
+        const parent = this.closest(".my_order_text");
+        const user_id = parent.querySelector(".cancel");
 
-      const findData = orderData.filter(
-        (data) => data.order_id === user_id.value
-      );
-      // console.log(findData)
+        const findData = orderData.filter(
+          (data) => data.order_id === user_id.value
+        );
+        // console.log(findData)
 
-      findData[0].orderStatus = "Cancelled";
-      findData[0].cancel_reason = reason;
-      // console.log(findData[0]);
+        findData[0].orderStatus = "Cancelled";
+        findData[0].cancel_reason = reason;
+        // console.log(findData[0]);
 
+        localStorage.setItem("orderData", JSON.stringify(orderData));
+        alert("Order cancelled Sucessfully");
+        // user_id.setAttribute("style", "display:none")
+        window.location.reload();
+
+        const indicate_status = parent.querySelector("#order_status");
+        indicate_status.setAttribute("style", "color:red");
+      }
+    });
+  });
+
+  const m = moment().format("YYYY-MM-DD");
+  // console.log(m)
+
+  const find_notDelivered_data = orderData.filter(
+    (data) => data.orderStatus === "Not Delivered"
+  );
+  // console.log(find_notDelivered_data);
+
+  for (let i = 0; i < find_notDelivered_data.length; i++) {
+    if (find_notDelivered_data[i].dateOfDelivery <= m) {
+      find_notDelivered_data[i].orderStatus = "Delivered";
       localStorage.setItem("orderData", JSON.stringify(orderData));
-      alert("Order cancelled Sucessfully");
-      // user_id.setAttribute("style", "display:none")
-      window.location.reload();
-
-      const indicate_status = parent.querySelector("#order_status");
-      indicate_status.setAttribute("style", "color:red");
     }
-  });
-});
-
-const m = moment().format("YYYY-MM-DD");
-// console.log(m)
-
-const find_notDelivered_data = orderData.filter(
-  (data) => data.orderStatus === "Not Delivered"
-);
-// console.log(find_notDelivered_data);
-
-for (let i = 0; i < find_notDelivered_data.length; i++) {
-  if (find_notDelivered_data[i].dateOfDelivery <= m) {
-    find_notDelivered_data[i].orderStatus = "Delivered";
-    localStorage.setItem("orderData", JSON.stringify(orderData));
   }
 }
+
+view_orders();
+
+const statusBtn = document.querySelectorAll(".btn_toggle");
+statusBtn.forEach((showOrders) => {
+  showOrders.addEventListener("click", function empty() {
+    const div_for_append = document.querySelector("div.orders");
+
+    div_for_append.innerText = "";
+
+    orderData = JSON.parse(localStorage.getItem("orderData"));
+
+    const parent = this.innerText;
+    // console.log(parent);
+
+    orderData = orderData.filter((data) => data.orderStatus === `${parent}`);
+
+    view_orders();
+  });
+});

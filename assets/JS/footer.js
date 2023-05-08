@@ -49,7 +49,7 @@ for (let i = 0; i < 4; i++) {
 
   const findData = categoryData.filter((data) => data.menuType == i + 1);
 
-  const categoryDataTrue = findData.filter((data) => data.status == "true");
+  const categoryDataTrue = findData.filter((data) => data.status === "true");
 
   for (let j = 0; j < categoryDataTrue.length; j++) {
     // <li><a href="./pages/products/Dishes/morning-ordinary.html" class="footer-navigation">Ordinary Breakfast</a></li>

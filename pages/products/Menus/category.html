@@ -167,12 +167,13 @@
         const getCategory = categoryData.filter((data) => data.menuType === menuId);
 
         // filtering get status=true from menuData
-        function getStatus(e) {
-          return e.status === "true";
-        }
-        categoryDataTrue = getCategory.filter(getStatus);
+        const categoryDataTrue = getCategory.filter((data) => data.status === "true");
+        // function getStatus(e) {
+        //   return e.status === "true";
+        // }
+        // const categoryDataTrue = getCategory.filter(getStatus);
 
-        ingredientImage = document.querySelector(".ingredient-image");
+        const ingredientImage = document.querySelector(".ingredient-image");
 
         const menu_name = document.createElement("h2");
         menu_name.innerText = `${menuDetails.menuName} ` + `Menu`;

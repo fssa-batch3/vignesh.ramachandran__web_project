@@ -15,17 +15,17 @@ for (let i = 0; i < menuData.length; i++) {
 
 // get the local storage value to the select and option for category name
 const showCatergoy = document.querySelector(".show1");
-showCatergoy.addEventListener("click", getCatDetails);
 
 function getCatDetails() {
   const menuType = document.getElementById("menuName").value;
   const menu_option = document.querySelector("#menuName");
 
   if (menuType !== "") {
-    function getMenu(e) {
-      return e.menuType === menuType;
-    }
-    const findData = categoryData.filter(getMenu);
+    const findData = categoryData.filter((data) => data.menuType === menuType);
+    // function getMenu(e) {
+    //   return e.menuType === menuType;
+    // }
+    // const findData = categoryData.filter(getMenu);
 
     // creating select option depends upon the categoryData
     const categorylist = document.querySelector(".categorylist");
@@ -44,6 +44,8 @@ function getCatDetails() {
     alert("Select Menu type");
   }
 }
+
+showCatergoy.addEventListener("click", getCatDetails);
 
 // // get the local storage value to the select and option for category name
 // let showCatergoy = document.querySelector(".show1")
@@ -66,9 +68,8 @@ function getCatDetails() {
 
 // show dishes
 const show = document.querySelector(".show2");
-show.addEventListener("click", showDishes);
 
-function showDishes(e) {
+function showDishes() {
   const saveBtn = document.querySelector(".save");
   const category_option = document.querySelector("#categoryName");
 
@@ -81,17 +82,23 @@ function showDishes(e) {
     alert("Select Menu type");
   } else if (menuType !== "" && categoryType !== "") {
     // filtering Menu
-    function getMenu(e) {
-      return e.menuType === menuType;
-    }
-    const findData = transactionTable.filter(getMenu);
+    const findData = transactionTable.filter(
+      (data) => data.menuType === menuType
+    );
+    // function getMenu(e) {
+    //   return e.menuType === menuType;
+    // }
+    // const findData = transactionTable.filter(getMenu);
     // console.log(findData);
 
     //  filtering Category
-    function getCategory(e) {
-      return e.categoryType === categoryType;
-    }
-    const findData2 = findData.filter(getCategory);
+    const findData2 = findData.filter(
+      (data) => data.categoryType === categoryType
+    );
+    // function getCategory(e) {
+    //   return e.categoryType === categoryType;
+    // }
+    // const findData2 = findData.filter(getCategory);
     // console.log(findData2);
 
     // filtering the dish from the dishData using menu id and category id from the transactionTable
@@ -114,6 +121,7 @@ function showDishes(e) {
       newInput.type = "text";
       newInput.id = `dish${i}`;
       newInput.value = findData3[i].name;
+      newInput.setAttribute("readonly", "true");
 
       const priceInput = document.createElement("input");
       priceInput.type = "number";
@@ -164,115 +172,120 @@ function showDishes(e) {
   }
 }
 
-const saveBtn = document.querySelectorAll(".save");
-// saveBtn.addEventListener("click", saveDish)
+show.addEventListener("click", showDishes);
 
-saveBtn.forEach(function (saveDish) {
-  saveDish.addEventListener(
-    "click",
-    (change = (e) => {
-      const menuType = document.getElementById("menuName").value;
-      const categoryType = document.getElementById("categoryName").value;
+// const saveBtn = document.querySelectorAll(".save");
 
-      // filtering Menu
-      function getMenu(e) {
-        return e.menuType === menuType;
+// saveBtn.forEach(function (saveDish) {
+//   saveDish.addEventListener(
+//     "click",
+//     (change = (e) => {
+
+const form_id = document.querySelectorAll("#change");
+form_id.forEach((saveDish) => {
+  saveDish.addEventListener("submit", () => {
+    const menuType = document.getElementById("menuName").value;
+    const categoryType = document.getElementById("categoryName").value;
+
+    // filtering Menu
+    function getMenu(e) {
+      return e.menuType === menuType;
+    }
+    const findData = transactionTable.filter(getMenu);
+    // console.log(findData);
+
+    //  filtering Category
+    function getCategory(e) {
+      return e.categoryType === categoryType;
+    }
+    const findData2 = findData.filter(getCategory);
+    // console.log(findData2[16]);
+
+    const findData3 = dishData.filter((product) =>
+      findData2.some((find) => find.dish === product.id)
+    );
+
+    // console.log(findData3);
+
+    const checkbox = document.querySelector(
+      "input[type=checkbox]:checked"
+    ).value;
+    // console.log(checkbox);
+    // console.log(typeof checkbox);
+
+    // let m = findData2[0]["dishData"]
+
+    let Dish_index = "";
+
+    for (let i = 0; i < findData2.length; i++) {
+      if (findData2[i].dish == checkbox) {
+        Dish_index = i;
       }
-      const findData = transactionTable.filter(getMenu);
-      // console.log(findData);
+    }
+    console.log(Dish_index);
 
-      //  filtering Category
-      function getCategory(e) {
-        return e.categoryType === categoryType;
-      }
-      const findData2 = findData.filter(getCategory);
-      // console.log(findData2);
+    const x = `status${Dish_index}`;
+    // const y = `dish${Dish_index}`;
+    const z = `price${Dish_index}`;
 
-      const findData3 = dishData.filter((product) =>
-        findData2.some((find) => find.dish === product.id)
+    // const up_name = document.getElementById(y).value;
+    const up_price = document.getElementById(z).value;
+    const up_status = document.getElementById(x).value;
+
+    if (up_price !== "" && up_price !== "--" && up_price <= 150) {
+      // let a = true;
+
+      // if (up_name.trim() === "") {
+      //   alert("Enter the Dish name");
+      // } else {
+      //   for (let k = 0; k < findData3.length; k++) {
+      //     const edited_dishName = up_name.replace(/\(\d+\)/, "");
+      //     // console.log(edited_dishName);
+
+      //     if (
+      //       edited_dishName.toLowerCase() ===
+      //       findData3[k].name.replace(/\(\d+\)/, "").toLowerCase()
+      //     ) {
+      //       alert(
+      //         `${up_name} ` +
+      //           `already presented in the given menu & category as dishId =${findData3[k].id}`
+      //       );
+      //       a = false;
+      //     }
+      //   }
+
+      // if (a !== false) {
+      // to change the status in transaction table
+      findData2[Dish_index].status = up_status;
+
+      // to change or update in dishdata
+      findData3[Dish_index].status = up_status;
+      // findData3[Dish_index].name = up_name;
+      findData3[Dish_index].price = up_price;
+
+      // m[Dish_index]["name"] = up_dish
+
+      localStorage.setItem("dishData", JSON.stringify(dishData));
+      localStorage.setItem(
+        "transactionTable",
+        JSON.stringify(transactionTable)
       );
+      alert("Dish updated Sucessfully ✅");
+      window.location.reload();
+      // }
+      // }
+    } else {
+      alert("Price not should be empty(or) above 150. It should be 0 to 150");
+      // location.reload();
+    }
 
-      // console.log(findData3);
-
-      const checkbox = document.querySelector(
-        "input[type=checkbox]:checked"
-      ).value;
-      // // console.log(checkbox);
-
-      // let m = findData2[0]["dishData"]
-
-      let Dish_index = "";
-
-      for (let i = 0; i < findData2.length; i++) {
-        if (findData2[i].dish === checkbox) {
-          Dish_index = i;
-        }
-      }
-      // console.log(Dish_index)
-
-      const x = `status${Dish_index}`;
-      const y = `dish${Dish_index}`;
-      const z = `price${Dish_index}`;
-
-      const up_name = document.getElementById(y).value;
-      const up_price = document.getElementById(z).value;
-      const up_status = document.getElementById(x).value;
-
-      if (up_price !== "" && up_price !== "--" && up_price <= 150) {
-        let a = true;
-
-        if (up_name.trim() === "") {
-          alert("Enter the Dish name");
-        } else {
-          for (let k = 0; k < findData3.length; k++) {
-            const edited_dishName = up_name.replace(/\(\d+\)/, "");
-            // console.log(edited_dishName);
-
-            if (
-              edited_dishName.toLowerCase() ===
-              findData3[k].name.replace(/\(\d+\)/, "").toLowerCase()
-            ) {
-              alert(
-                `${up_name} ` +
-                  `already presented in the given menu & category as dishId =${findData3[k].id}`
-              );
-              a = false;
-            }
-            // else {
-            //     console.log("no dishes")
-            //     a = true;
-            // }
-          }
-
-          if (a !== false) {
-            // to change the status in transaction table
-            findData2[Dish_index].status = up_status;
-
-            // to change or update in dishdata
-            findData3[Dish_index].status = up_status;
-            findData3[Dish_index].name = up_name;
-            findData3[Dish_index].price = up_price;
-
-            // m[Dish_index]["name"] = up_dish
-
-            localStorage.setItem("dishData", JSON.stringify(dishData));
-            localStorage.setItem(
-              "transactionTable",
-              JSON.stringify(transactionTable)
-            );
-            alert("Dish Renamed Sucessfully ✅");
-            window.location.reload();
-          }
-        }
-      } else {
-        alert("Price not should be empty(or) above 150. It should be 0 to 150");
-        // location.reload();
-      }
-
-      e.preventDefault();
-    })
-  );
+    // e.preventDefault();
+  });
 });
+
+//     })
+//   );
+// });
 
 // // creating select option depends upon the menuData
 // let menulist = document.querySelector(".menulist")

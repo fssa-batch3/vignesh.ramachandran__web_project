@@ -20,7 +20,6 @@ for (let i = 0; i < menuData.length; i++) {
 
 // get the local storage value to the select and option for category name
 const showCatergoy = document.querySelector(".show1");
-showCatergoy.addEventListener("click", getCatDetails);
 
 function getCatDetails() {
   const menuType = document.getElementById("menuName").value;
@@ -49,9 +48,10 @@ function getCatDetails() {
   }
 }
 
+showCatergoy.addEventListener("click", getCatDetails);
+
 // selecting the plus button and empty div
 const addBtn = document.querySelector(".bx-plus");
-addBtn.addEventListener("click", addInput);
 
 function addInput() {
   const container = document.getElementById("input_group");
@@ -181,17 +181,22 @@ function addInput() {
   }
 }
 
+addBtn.addEventListener("click", addInput);
+
 // new code
 
 // select the submit button and add event
 // submitBtn = document.querySelector("#submit");
 // submitBtn.addEventListener("click", getData);
 
+const form_id = document.getElementById("getData");
+
 function getData(e) {
+  e.preventDefault();
   const inputCount = document.getElementsByName("dish").length;
   // console.log(inputCount);
 
-  const localDishcount = dishData.length;
+  let localDishcount = dishData.length;
   // console.log(localDishcount)
 
   const n = inputCount + localDishcount;
@@ -202,6 +207,108 @@ function getData(e) {
 
   // console.log(menuType);
   // console.log(categoryType);
+
+  function check() {
+    // let inputCount = document.getElementsByName("dish").length;
+
+    for (let i = localDishcount + 1; i < n + 1; i++) {
+      localDishcount = dishData.length;
+      // console.log(localDishcount);
+
+      // let b = "";
+      let a = true;
+      // console.log(i)
+      const dishes = document.getElementById(i).value;
+      // console.log(dishes);
+      if (dishes.trim() === "") {
+        alert("Please enter the Dish name");
+      } else {
+        const price = document.getElementById(`price${i}`).value;
+        // console.log(price);
+
+        // new code
+        let index = "";
+        for (let j = 0; j < localDishcount; j++) {
+          // console.log("rajini")
+
+          if (
+            dishes.replace(/\(\d+\)/, "").toLowerCase() ===
+            dishData[j].name.replace(/\(\d+\)/, "").toLowerCase()
+          ) {
+            index = j + 1;
+            // console.log(index);
+
+            // filtering Menu
+            const findData = transactionTable.filter(
+              (data) => data.menuType === menuType
+            );
+            // function getMenu(e) {
+            //   return e.menuType === menuType;
+            // }
+            // const findData = transactionTable.filter(getMenu);
+            // console.log(findData);
+
+            //  filtering Category
+            const findData2 = findData.filter(
+              (data) => data.categoryType === categoryType
+            );
+            // function getCategory(e) {
+            //   return e.categoryType === categoryType;
+            // }
+            // const findData2 = findData.filter(getCategory);
+            // console.log(findData2);
+
+            for (let k = 0; k < findData2.length; k++) {
+              if (index === findData2[k].dish) {
+                alert(
+                  `${dishes} ` +
+                    `already presented in the given menu & category as dishId =${findData2[k].dish}`
+                );
+                a = false;
+              }
+              // else {
+              //     console.log("no dishes")
+              //     a = true;
+              // }
+            }
+            window.location.reload();
+          }
+        }
+
+        // new code
+        if (a !== false) {
+          if (dishes.trim() === "") {
+            alert("Please Enter the Dish name");
+          } else {
+            dishData.push({
+              name: dishes,
+              id: localDishcount + 1,
+              price,
+              status: "true",
+            });
+            transactionTable.push({
+              menuType,
+              categoryType,
+              dish: i,
+              status: "true",
+            });
+
+            // console.log(dishData);
+            // console.log(transactionTable);
+
+            // localStorage.setItem("dishData", JSON.stringify(dishData));
+            // localStorage.setItem(
+            //   "transactionTable",
+            //   JSON.stringify(transactionTable)
+            // );
+            alert("Dish Added Sucessfully ✅");
+
+            window.location.reload();
+          }
+        }
+      }
+    }
+  }
 
   if (dishData.length === 0 && transactionTable.length === 0) {
     // loop for getting dishes by using id
@@ -229,109 +336,13 @@ function getData(e) {
 
     window.location.reload();
   } else {
-    function check() {
-      // let inputCount = document.getElementsByName("dish").length;
-
-      for (let i = localDishcount + 1; i < n + 1; i++) {
-        const localDishcount = dishData.length;
-        // console.log(localDishcount);
-
-        // let b = "";
-        let a = true;
-        // console.log(i)
-        dishes = document.getElementById(i).value;
-        // console.log(dishes);
-        if (dishes.trim() === "") {
-          alert("Please enter the Dish name");
-        } else {
-          price = document.getElementById(`price${i}`).value;
-          // console.log(price);
-
-          // new code
-          let index = "";
-          for (j = 0; j < localDishcount; j++) {
-            // console.log("rajini")
-
-            if (
-              dishes.replace(/\(\d+\)/, "").toLowerCase() ==
-              dishData[j].name.replace(/\(\d+\)/, "").toLowerCase()
-            ) {
-              index = j + 1;
-              // console.log(index);
-
-              // filtering Menu
-              function getMenu(e) {
-                return e.menuType === menuType;
-              }
-              findData = transactionTable.filter(getMenu);
-              // console.log(findData);
-
-              //  filtering Category
-              function getCategory(e) {
-                return e.categoryType === categoryType;
-              }
-              findData2 = findData.filter(getCategory);
-              // console.log(findData2)
-
-              for (k = 0; k < findData2.length; k++) {
-                if (index == findData2[k].dish) {
-                  alert(
-                    `${dishes} ` +
-                      `already presented in the given menu & category as dishId =${findData2[k].dish}`
-                  );
-                  a = false;
-                }
-                // else {
-                //     console.log("no dishes")
-                //     a = true;
-                // }
-              }
-              location.reload();
-            }
-          }
-
-          // new code
-          if (a !== false) {
-            if (dishes.trim() === "") {
-              alert("Please Enter the Dish name");
-            } else {
-              dishData.push({
-                name: dishes,
-                id: localDishcount + 1,
-                price,
-                status: "true",
-              });
-              transactionTable.push({
-                menuType,
-                categoryType,
-                dish: i,
-                status: "true",
-              });
-
-              // console.log(dishData);
-              // console.log(transactionTable);
-
-              localStorage.setItem("dishData", JSON.stringify(dishData));
-              localStorage.setItem(
-                "transactionTable",
-                JSON.stringify(transactionTable)
-              );
-              alert("Dish Added Sucessfully ✅");
-
-              location.reload();
-            }
-          }
-        }
-      }
-    }
-
-    if (check() === true) {
-      console.log("hello");
-    }
+    check();
   }
 
-  e.preventDefault();
+  // e.preventDefault();
 }
+
+form_id.addEventListener("submit", getData);
 
 /*
 // creating select option depends upon the menuData
