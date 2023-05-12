@@ -282,7 +282,7 @@ number_of_guest.forEach((getGuest) => {
 
     const pdts = cartData_user.find((data) => data.uniqueId === product_id);
 
-    const quantity = parent.querySelector(".number").value;
+    const quantity = parseInt(parent.querySelector(".number").value);
     // console.log(quantity)
     if (quantity >= 1 && quantity <= 1500) {
       pdts.noOfGuest = quantity;
@@ -356,7 +356,7 @@ orderBtn.forEach((orderFood) => {
 // orderall button function
 function orderAll() {
   let a = true;
-  let b = true;
+  const b = true;
 
   const before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
 
@@ -364,28 +364,41 @@ function orderAll() {
   // let delivery_date = parent.querySelector(".date").value;
   // let unique_id = parent.querySelector(".remove").getAttribute("data-id")
 
-  for (let i = 1; i < cartData_user.length; i++) {
-    const delivery_date = cartData_user[0].dateOfDelivery;
+  for (let i = 0; i < cartData_user.length; i++) {
+    // const delivery_date = cartData_user[0].dateOfDelivery;
 
-    if (delivery_date !== cartData_user[i].dateOfDelivery) {
-      alert("If you orderall all delivery date should be same");
-      b = false;
+    // if (delivery_date !== cartData_user[i].dateOfDelivery) {
+    //   alert("If you orderall all delivery date should be same");
+    //   b = false;
+    // }
+    // // console.log(b);
+
+    // if (b !== false) {
+    //   if (delivery_date <= before_date) {
+    //     alert(
+    //       "Delivery date should not be empty (or) Delivery date should be at least 8 days from now"
+    //     );
+    //     a = false;
+    //   }
+    //   // console.log(a);
+
+    //   if (a !== false) {
+    //     window.location.href = `../profile/Order page.html?cartStatus=${false}`;
+    //   }
+    // }
+
+    console.log(before_date);
+
+    if (cartData_user[i].dateOfDelivery <= before_date) {
+      alert(
+        "Delivery date should not be empty (or) Delivery date should be at least 8 days from now"
+      );
+      a = false;
+      break;
     }
-    // console.log(b);
-
-    if (b !== false) {
-      if (delivery_date <= before_date) {
-        alert(
-          "Delivery date should not be empty (or) Delivery date should be at least 8 days from now"
-        );
-        a = false;
-      }
-      // console.log(a);
-
-      if (a !== false) {
-        window.location.href = `../profile/Order page.html?cartStatus=${false}`;
-      }
-    }
+  }
+  if (a !== false) {
+    window.location.href = `../profile/Order page.html?cartStatus=${false}`;
   }
 }
 
