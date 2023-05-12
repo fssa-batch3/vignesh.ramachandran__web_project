@@ -206,15 +206,16 @@ const cartQty = document.querySelector(".cart_qty");
 
 if (cartData1 === null) {
   cartQty.innerText = 0;
-}
-
-const user_unique1 = JSON.parse(localStorage.getItem("user_unique"));
-
-const cart_user_data = cartData1.filter(
-  (data) => data.user_id === user_unique1
-);
-if (cart_user_data.length === 0) {
   cartQty.setAttribute("style", "display:none");
 } else {
-  cartQty.innerText = cart_user_data.length;
+  const user_unique1 = JSON.parse(localStorage.getItem("user_unique"));
+
+  const cart_user_data = cartData1.filter(
+    (data) => data.user_id === user_unique1
+  );
+  if (cart_user_data.length === 0) {
+    cartQty.setAttribute("style", "display:none");
+  } else {
+    cartQty.innerText = cart_user_data.length;
+  }
 }

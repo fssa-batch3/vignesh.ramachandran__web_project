@@ -204,7 +204,10 @@
         2. Click the "profile" icon which is at the top right of the page.
         3. Click the "My orders"
         4. It navigate to the my orders page.
-        5. User can see the list of orders.(delivered/not delivered/cancelled)
+        5. User can see the list of orders.
+        6. If you want to see the order details means click the "View Details" button.
+        7. It navigate to the order details page.
+        8. Here you can see the order details like no_of_guest, price, delivery date and order status.
     - Expected Result:
         - The buyer can see the list of orders.
 
@@ -214,7 +217,11 @@
         1. Log in as a buyer.
         2. Click the "profile" icon which is at the top right of the page.
         3. It navigate to the my orders page.
-        4. Click the "View" button of which ordered menu's dish you want to see.
+        4. User can see the list of orders.
+        5. Then click the "View Details" button to the order details.
+        6. It navigate to the order details page.
+        7. Here you can see the order details like no_of_guest, price, delivery date and order status.
+        8. Then click the "View Dishes" button of which ordered menu's dish you want to see.
     - Expected Result:
         - The buyer can see the dish details of the selected menu.
 
@@ -224,9 +231,13 @@
         1. Log in as a buyer.
         2. Click the "profile" icon which is at the top right of the page. Then click the "My orders"
         3. It navigate to the my orders page.
-        4. Click the "Cancel" button which menu you want to cancel. (Note: Not delivered menu only allow to cancel)
-        5. Then it ask the reason. In the reason box you should enter the reason.
-        6. Then press "ok".
+        4. User can see the list of orders.
+        5. Then click the "View Details" button to the order details.
+        6. It navigate to the order details page.
+        7. Here you can see the order details like no_of_guest, price, delivery date and order status.
+        8. Click the "Cancel" button which menu you want to cancel. (Note: Not delivered menu only allow to cancel)
+        9. Then it ask the reason. In the reason box you should enter the reason.
+        10. Then press "ok".
     - Expected Result:
         - The order status changed from Not deliverd to Cancelled.
         - The order is cancelled.
@@ -412,7 +423,7 @@
         9. Then click the "show dishes" button.
         10. You can see the Dish details such as Dish name,status and Price.
         11. If you want to edit means click the "checkbox" that which dish you want to edit.
-        12. You can edit the Dish name, price.(once at a time)
+        12. You can edit the Dish price.(once at a time)
         13. Then click the "Save" button.
     - Expected Result:
         - Dish details edited (or) updated sucessfully.
@@ -445,10 +456,3 @@
         4. You can see the Orders like Not delivered/Delivered/Cancelled.
     - Expected Result:
         - The admin can see the list of orders.
-        
-
-            
-            
-            
-            
-            

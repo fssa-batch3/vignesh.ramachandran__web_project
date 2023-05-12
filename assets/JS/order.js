@@ -10,25 +10,28 @@ const user_unique = JSON.parse(localStorage.getItem("user_unique"));
 const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 // const dishData = JSON.parse(localStorage.getItem("dishData"));
 
+const find_user = userData.filter((data) => data.email === user_unique);
+
+const cartData_user = cartData.filter((data) => data.user_id === user_unique);
+
 // back function from myorders
-const cartId_1 = new URLSearchParams(window.location.search).get("cartId");
+const cartId_url = new URLSearchParams(window.location.search).get("cartId");
 const cartStatus = new URLSearchParams(window.location.search).get(
   "cartStatus"
 );
-const cartData_1 = JSON.parse(localStorage.getItem("cartData"));
+// const cartData = JSON.parse(localStorage.getItem("cartData"));
 // const userData_1 = JSON.parse(localStorage.getItem("userData"));
-const user_unique_1 = JSON.parse(localStorage.getItem("user_unique"));
+// const user_unique = JSON.parse(localStorage.getItem("user_unique"));
 
 function isloggedin() {
-  // const user_id = JSON.parse(localStorage.getItem("user_unique"))
-  if (user_unique_1) {
+  if (user_unique) {
     return true;
   }
   return false;
 }
 // isloggedin();
 
-if (cartStatus === "false" && cart_user_data.length === 0) {
+if (cartStatus === "false" && cartData_user.length === 0) {
   window.addEventListener("popstate", (event) => {
     if (isloggedin()) {
       event.preventDefault();
@@ -40,19 +43,19 @@ if (cartStatus === "false" && cart_user_data.length === 0) {
   if (isloggedin()) {
     window.location.href = `${root}/index.html`;
   }
-} else if (cartId_1) {
+} else if (cartId_url) {
   // const find_user_1 = userData_1.filter(
-  //   (data) => data.email == user_unique_1
+  //   (data) => data.email == user_unique
   // );
 
-  const cartData_user_1 = cartData_1.filter(
-    (data) => data.user_id === user_unique_1
+  const cartData_user_1 = cartData.filter(
+    (data) => data.user_id === user_unique
   );
 
   // console.log(cartData_user_1);
 
   const find_cartId = cartData_user_1.find(
-    (data) => data.uniqueId === cartId_1
+    (data) => data.uniqueId === cartId_url
   );
 
   if (find_cartId === undefined) {
@@ -78,9 +81,7 @@ if (cartStatus === "false" && cart_user_data.length === 0) {
 }
 // back function from myorders end
 
-const find_user = userData.filter((data) => data.email === user_unique);
 
-const cartData_user = cartData.filter((data) => data.user_id === user_unique);
 
 // get data from userData
 document.getElementById("name").value = find_user[0].name;
@@ -172,7 +173,7 @@ if (cartId) {
 
     document.querySelector(".order_details").append(div_seperation);
 
-    totalCost += cartData_user[i].totalCost * cartData_user[i].noOfGuest;
+    totalCost += cartdetails[i].totalCost * cartdetails[i].noOfGuest;
   }
 
   const div_last = document.createElement("div");
@@ -191,36 +192,8 @@ if (cartId) {
 
   document.querySelector(".order_details").append(div_last);
 } else {
-  // let cartdetails = cartData.filter(data =>
-  //     data.orderStatus == orderStatus)
-
-  // console.log(cartdetails);
-
-  // let menuId = cartdetails[0]["menu_id"];
-
-  // // for getting menu name from url
-  // let menu_name = menuData.find(data =>
-  //     data.id === menuId);
-  // console.log(menu_name)
-
-  // let categoryId = cartdetails[0]["category_id"];
-
-  // // for getting category name from url
-  // let category_name = categoryData.find(data =>
-  //     data.id === categoryId);
-  // console.log(category_name);
-
-  // let n = cartdetails[0]["dishData"]
-  // // let z = cartdetails.length
-
-  // let finddish = dishData.filter(product =>
-  //     n.some(find => find.id === product.id));
-  // // console.log(finddish)
-
-  // let userId = userData[0]["email"];
-  // // console.log(userId)
-
   let totalCost = 0;
+  // console.log(cartData_user);
 
   for (let i = 0; i < cartData_user.length; i++) {
     const div_seperation = document.createElement("div");
@@ -321,11 +294,121 @@ if (cartId) {
 }
 
 // order page <form> tag has onsubmit function
+// const form_id = document.getElementById("placeOrder");
+// function placeOrder(e) {
+//   e.preventDefault();
+
+//   const orderData = JSON.parse(localStorage.getItem("orderData")) || [];
+
+//   let findData = "";
+
+//   if (cartId) {
+//     findData = cartData_user.filter((data) => data.uniqueId === cartId);
+//     // console.log(findData);
+//   } else {
+//     findData = cartData_user;
+//   }
+
+//   const ordered_product = [];
+//   let totalCost = 0;
+
+//   // orderData []
+//   const order_id = findData[0].uniqueId;
+//   const name = document.getElementById("name").value;
+//   const email = document.getElementById("email").value;
+//   const phone_number = document.getElementById("phone_number").value;
+//   let address = document
+//     .getElementById("address")
+//     .value.trim()
+//     .split(/\s+/g)
+//     .join(" ");
+
+//   const { dateOfDelivery } = findData[0];
+
+//   let menu_id = "";
+//   let category_id = "";
+//   let dish = "";
+//   let no_of_guest = "";
+//   let price = "";
+
+//   function validate() {
+//     if (/^\s*$/g.test(address)) {
+//       alert("Enter the valid address");
+//       address = reset();
+//     }
+//   }
+//   validate();
+
+//   for (let i = 0; i < findData.length; i++) {
+//     // ordered_product []
+//     menu_id = findData[i].menu_id;
+//     category_id = findData[i].category_id;
+//     dish = findData[i].dishData;
+//     no_of_guest = findData[i].noOfGuest;
+//     price = findData[i].totalCost * findData[i].noOfGuest;
+
+//     totalCost += findData[i].totalCost * findData[i].noOfGuest;
+
+//     ordered_product.push({
+//       menu_id,
+//       category_id,
+//       dishData: dish,
+//       no_of_guest,
+//       price,
+//     });
+//   }
+
+//   const delivery_date = document.getElementById("delivery_date").value;
+//   const order_date = moment().format("DD/MM/YYYY hh:mm:ssA");
+
+//   const before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
+
+//   if (delivery_date >= before_date) {
+//     orderData.push({
+//       order_id,
+//       name,
+//       user_id: email,
+//       phone_number,
+//       address,
+//       dateOfDelivery,
+//       order_date,
+//       ordered_product,
+//       totalCost,
+//       orderStatus: "Not Delivered",
+//     });
+
+//     alert("Order Placed Sucessfully");
+//     localStorage.setItem("orderData", JSON.stringify(orderData));
+
+//     if (cartId) {
+//       for (let j = 0; j < cartData.length; j++) {
+//         if (findData[0].uniqueId === cartData[j].uniqueId) {
+//           cartData.splice(j, 1);
+//           localStorage.setItem("cartData", JSON.stringify(cartData));
+//           window.location.reload();
+//         }
+//       }
+//     } else {
+//       for (let k = cartData.length - 1; k >= 0; k--) {
+//         if (user_unique === cartData[k].user_id) {
+//           cartData.splice(k, 1);
+//         }
+//       }
+//       localStorage.setItem("cartData", JSON.stringify(cartData));
+
+//       window.location.reload();
+//     }
+//     window.location.href = "./my orders.html";
+//   } else {
+//     alert("Please check the Delivery date.");
+//   }
+// }
+
 const form_id = document.getElementById("placeOrder");
 function placeOrder(e) {
   e.preventDefault();
-
   const orderData = JSON.parse(localStorage.getItem("orderData")) || [];
+  const orderProduct = JSON.parse(localStorage.getItem("orderProduct")) || [];
 
   let findData = "";
 
@@ -336,7 +419,7 @@ function placeOrder(e) {
     findData = cartData_user;
   }
 
-  const ordered_product = [];
+  // const ordered_product = [];
   let totalCost = 0;
 
   // orderData []
@@ -350,14 +433,6 @@ function placeOrder(e) {
     .split(/\s+/g)
     .join(" ");
 
-  const { dateOfDelivery } = findData[0];
-
-  let menu_id = "";
-  let category_id = "";
-  let dish = "";
-  let no_of_guest = "";
-  let price = "";
-
   function validate() {
     if (/^\s*$/g.test(address)) {
       alert("Enter the valid address");
@@ -366,69 +441,70 @@ function placeOrder(e) {
   }
   validate();
 
+  let menu_id;
+  let category_id;
+  // let dish = "";
+  let no_of_guest = 0;
+  let price = 0;
+  let delivery_date = "";
+
   for (let i = 0; i < findData.length; i++) {
     // ordered_product []
     menu_id = findData[i].menu_id;
     category_id = findData[i].category_id;
-    dish = findData[i].dishData;
+    // dish = findData[i].dishData;
     no_of_guest = findData[i].noOfGuest;
     price = findData[i].totalCost * findData[i].noOfGuest;
+    delivery_date = findData[i].dateOfDelivery;
 
     totalCost += findData[i].totalCost * findData[i].noOfGuest;
 
-    ordered_product.push({
+    orderProduct.push({
+      order_id,
       menu_id,
       category_id,
-      dishData: dish,
       no_of_guest,
       price,
+      delivery_date,
+      order_status: "Not Delivered",
     });
   }
 
-  const delivery_date = document.getElementById("delivery_date").value;
   const order_date = moment().format("DD/MM/YYYY hh:mm:ssA");
 
-  const before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
+  orderData.push({
+    order_id,
+    user_id: email,
+    name,
+    phone_number,
+    address,
+    order_date,
+    totalCost,
+  });
 
-  if (delivery_date >= before_date) {
-    orderData.push({
-      order_id,
-      name,
-      user_id: email,
-      phone_number,
-      address,
-      dateOfDelivery,
-      order_date,
-      ordered_product,
-      totalCost,
-      orderStatus: "Not Delivered",
-    });
+  alert("Order Placed Sucessfully");
+  localStorage.setItem("orderData", JSON.stringify(orderData));
+  localStorage.setItem("orderProduct", JSON.stringify(orderProduct));
 
-    alert("Order Placed Sucessfully");
-    localStorage.setItem("orderData", JSON.stringify(orderData));
-
-    if (cartId) {
-      for (let j = 0; j < cartData.length; j++) {
-        if (findData[0].uniqueId === cartData[j].uniqueId) {
-          cartData.splice(j, 1);
-          localStorage.setItem("cartData", JSON.stringify(cartData));
-          window.location.reload();
-        }
+  if (cartId) {
+    for (let j = 0; j < cartData.length; j++) {
+      if (findData[0].uniqueId === cartData[j].uniqueId) {
+        cartData.splice(j, 1);
+        localStorage.setItem("cartData", JSON.stringify(cartData));
+        window.location.reload();
       }
-    } else {
-      for (let k = cartData.length - 1; k >= 0; k--) {
-        if (user_unique === cartData[k].user_id) {
-          cartData.splice(k, 1);
-        }
-      }
-      localStorage.setItem("cartData", JSON.stringify(cartData));
-
-      window.location.reload();
     }
-    window.location.href = "./my orders.html";
   } else {
-    alert("Please check the Delivery date.");
+    for (let k = cartData.length - 1; k >= 0; k--) {
+      if (user_unique === cartData[k].user_id) {
+        cartData.splice(k, 1);
+      }
+    }
+    localStorage.setItem("cartData", JSON.stringify(cartData));
+
+    window.location.reload();
   }
+  window.location.href = "./my orders.html";
 }
 
 form_id.addEventListener("submit", placeOrder);
