@@ -4,9 +4,6 @@ const menu_url_id = new URLSearchParams(window.location.search).get("menuId");
 const category_url_id = new URLSearchParams(window.location.search).get(
   "categoryId"
 );
-// console.log(order_url_id);
-// console.log(menu_url_id);
-// console.log(category_url_id);
 
 const orderData = JSON.parse(localStorage.getItem("orderData"));
 
@@ -18,8 +15,6 @@ const editBtn = document.querySelectorAll(".edit");
 
 const reviewDetails = JSON.parse(localStorage.getItem("reviewDetails")) || [];
 
-// btn.forEach(function save_post(savePost) {
-//   savePost.addEventListener("click", () => {
 revForm.addEventListener("submit", (event) => {
   event.preventDefault();
   widget.style.display = "none";
@@ -68,7 +63,6 @@ revForm.addEventListener("submit", (event) => {
 
   window.location.href = "../../pages/profile/my orders.html";
 });
-// });
 
 editBtn.forEach((editPost) => {
   editPost.addEventListener("click", () => {

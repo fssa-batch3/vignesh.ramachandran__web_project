@@ -31,10 +31,6 @@ function event_menu() {
     const categoryDataTrue = getCategory.filter(
       (data) => data.status === "true"
     );
-    // function getStatus(e) {
-    //   return e.status === "true";
-    // }
-    // const categoryDataTrue = getCategory.filter(getStatus);
 
     for (let j = 0; j < categoryDataTrue.length; j++) {
       const link = document.createElement("a");
@@ -48,16 +44,3 @@ function event_menu() {
   }
 }
 event_menu();
-
-// const links = [
-//     { href: '../../products/Dishes/dinner-ordinary.html', text: 'Ordinary Dinner' },
-//     { href: '../../products/Dishes/dinner-special.html', text: 'Special Dinner' },
-//     { href: '../../products/Dishes/dinner-vip.html', text: 'VIP Dinner' }
-// ];
-
-// for (const link of links) {
-// const a = document.createElement('a');
-// a.href = link.href;
-// a.textContent = link.text;
-// innerDiv.appendChild(a);
-// }

@@ -32,88 +32,54 @@
     </head>
 
     <body>
-
-        <!-- Header starts -->
-        <!-- <header>
-            <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
-
-            <div class="icon-left">
-            <img src="./assets/img/main-logo.png" alt="Company Logo" class="logo" />
-            <h1>SR</h1>
-            <div>
-            <p>Catering</p>
-            </div>
-            </div>
-
-            <ul class="navigation" id="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-            <li><a href="./index.html" class="navigation-link">HOME</a></li>
-            <li class="dropdown">
-            <span class="navigation-link">MENU</span>
-            <div class="dropdown-content">
-            <div>
-            <a href="./pages/products/Menus/category.html?menu=">Breakfast Menu</a>
-            <a href="./pages/products/Menus/menu-lunch.html">Lunch Menu</a>
-            <a href="./pages/products/Menus/menu-hightea.html">Hightea Menu</a>
-            <a href="./pages/products/Menus/menu-dinner.html">Dinner Menu</a>
-            <a href="./pages/products/Menus/menu-custom.html">Custom Menu</a>
-            </div>
-            </div>
-            </li>
-            <li><a href="./pages/homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
-            <li><a href="./pages/homepage/about us.html" class="navigation-link">ABOUT US</a></li>
-            <li><a href="./pages/homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-            <li><a href="./pages/homepage/my cart.html" class="navigation-link">MY CART</a></li>
-            </ul>
-
-            <div class="dropdown_profile">
-            <button class="btn login" id="login">Login</button>
-            <img src="./assets/img/profile.png" alt="profile image" />
-            <div class="dropdown_profile-content">
-            <div>
-            <a href="./pages/profile/Profile page.html">My Profile</a>
-            <a href="./pages/profile/register.html">Register</a>
-            <a href="./pages/profile/Login.html">Log in</a>
-            <a href="./pages/profile/my orders.html">My Orders</a>
-            </div>
-            </div>
-            </div>
-            </header> -->
-
-        <!-- Header ends -->
-
         <!-- main starts -->
 
         <main>
 
-            <div class="image-slider">
-                <figure>
-                    <img src="https://b.zmtcdn.com/data/dish_photos/9c9/bf7a221b2081f059d2e87eb649be59c9.jpg?output-format=webp" alt="">
-                    <img src="https://b.zmtcdn.com/data/dish_photos/e83/75a2e56fd7e36eb7cc4f146d16ad6e83.jpg?output-format=webp" alt="">
-                    <img src="https://b.zmtcdn.com/data/dish_photos/0d5/e905d26cd1bce961a718ff548bcd60d5.jpg" alt="">
-                    <img src="https://b.zmtcdn.com/data/dish_photos/58b/ef214c726b7904b8cfbf950d5499158b.jpg?output-format=webp" alt="">
-                    <img src="https://b.zmtcdn.com/data/dish_photos/710/fa1615d6ce930e6401adbdfe7ac0f710.jpg?output-format=webp" alt="">
+            <!-- <img src="https://b.zmtcdn.com/data/dish_photos/9c9/bf7a221b2081f059d2e87eb649be59c9.jpg?output-format=webp" alt=""> -->
+            <!-- <img src="https://b.zmtcdn.com/data/dish_photos/e83/75a2e56fd7e36eb7cc4f146d16ad6e83.jpg?output-format=webp" alt=""> -->
+
+            <div class="image_slider">
+                <div class="slide_image">
                     <img src="https://b.zmtcdn.com/data/dish_photos/015/227d8c2ff600f91503cf49108b7d9015.jpg" alt="">
-                    <img src="https://b.zmtcdn.com/data/dish_photos/1aa/a54e5b1770a07fa3442a64d8e40241aa.jpg" alt="">
-                    <img src="https://b.zmtcdn.com/data/dish_photos/a97/02e417992eadc71ba9650b10fc4d9a97.jpg" alt="">
-                    <img src="https://b.zmtcdn.com/data/dish_photos/21f/c108768ee8346c6d6a9923dc1924321f.jpg" alt="">
+                </div>
+                <div class="slide_image">
                     <img src="https://b.zmtcdn.com/data/dish_photos/eb9/160aa67bad2b96a5c7b681358758feb9.jpg" alt="">
+                </div>
+                <div class="slide_image">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/a97/02e417992eadc71ba9650b10fc4d9a97.jpg" alt="">
+                </div>
+                <div class="slide_image">
                     <img src="https://b.zmtcdn.com/data/dish_photos/717/2ba31dcfdb0db5aca8083b7f8662c717.jpg" alt="">
+                </div>
+                <div class="slide_image">
                     <img src="https://b.zmtcdn.com/data/dish_photos/6b7/1c5a969c81cb08db73a4d7f28e3526b7.jpg" alt="">
-                </figure>
+                </div>
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            
+
+            <!-- The dots/circles -->
+            <div class="spin_roller">
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
 
             <!-- Food image starts -->
-            <div class="food-image">
+            <!-- <div class="food-image">
                 <p> We are focussed on giving your event a new dimension</p>
                 <a href="./pages/homepage/contact us.html">
                     <button type="button">
                         Contact Us
                     </button>
                 </a>
-            </div>
+            </div> -->
             <!-- Food image ends -->
 
             <!-- All menu list starts -->
@@ -127,63 +93,6 @@
 
                 <div class="mainmenu-list">
 
-                    <!-- <div class="lists">
-                        <img src="./assets/img/breakfast.jpg" alt="breakfast image" />
-                        <div class="lists-text">
-                        <h2><span>Breakfast</span> Menu</h2>
-                        <p>SR Catering Service offers best breakfast menu that is available for all parties and weddings; we also assist customers to create a personalized
-                        menu just according to client’s taste and perfect for the occasion
-                        </p>
-                        <a href="./pages/products/Menus/menu-morning.html" >read more...</a>
-                        </div>
-                        </div>
-
-                        <div class="lists">
-                        <img src="./assets/img/lunch.jpeg" alt="lunch image" />
-                        <div class="lists-text">
-                        <h2><span>Lunch</span> Menu</h2>
-                        <p>
-                        SR Catering Service provides delicious lunch menu that suits all functions and parties; we also allow clients to create a personalized
-                        menu just according to their taste, budget
-                        </p>
-                        <a href="./pages/products/Menus/menu-lunch.html">read more...</a>
-                        </div>
-                        </div>
-
-                        <div class="lists">
-                        <img src="./assets/img/hightea.jpg" alt="hightea image" />
-                        <div class="lists-text">
-                        <h2><span>High Tea</span> Menu</h2>
-                        <p>
-                        SR Catering Service gives evening tea and snacks menu which is available for all functions; we also help customers to create a personalized menu 
-                        just according to client’s taste and perfect for the occasion
-                        </p>
-                        <a href="./pages/products/Menus/menu-hightea.html">read more...</a>
-                        </div>
-                        </div>
-
-                        <div class="lists">
-                        <img src="./assets/img/dinner.jpg" alt="dinner image" />
-                        <div class="lists-text">
-                        <h2><span>Dinner</span> Menu</h2>
-                        <p>
-                        SR Catering Service present a detailed dinner menu which is available for all parties, wedding and reception; we also aid customers to create a 
-                        personalized and special menu just according to the taste and budget
-                        </p>
-                        <a href="./pages/products/Menus/menu-dinner.html">read more...</a>
-                        </div>
-                        </div>
-
-                        <div class="lists">
-                        <img src="./assets/img/custom menu.jpg" alt="custom menu image" />
-                        <div class="lists-text">
-                        <h2><span>Custom</span> Menu</h2>
-                        <p>SR Catering Service is offering a wide range of vegetarian and non vegetarian menus, also includes chinese varieties of noodles, fried rice, gravy etc... 
-                        we also assist customers to create a personalized and special menu just according to the taste, budget and perfect for the occasion
-                        </p>
-                        <a href="./pages/products/Menus/menu-custom.html">read more...</a>
-                        </div>
-                        </div> -->
                 </div>
             </section>
             <!-- All menu list ends -->
@@ -325,78 +234,12 @@
                 </div>
             </section>
             <!-- how it works ends -->
-            <div>
+            <!-- <div>
                 <img src="./assets/img/Homepage/walking chef.gif" class="gif" alt="walking chef">
-            </div>
+            </div> -->
 
         </main>
         <!-- main ends -->
-
-        <!-- footer starts -->
-        <!-- <footer>
-            <div class="footer-box">
-            <div class="footer-content">
-            <img src="./assets/img/main-logo.png" alt="Company Logo" />
-            <p>
-            SR Catering service is a professional catering service provider located in Kumbakonam, catering both
-            personal and corporate orders.
-            </p>
-            </div>
-            <div class="footer-content">
-            <h3><span>Breakfast</span> Menus</h3>
-            <ul>
-            <li><a href="./pages/products/Dishes/morning-ordinary.html" class="footer-navigation">Ordinary
-            Breakfast</a></li>
-            <li><a href="./pages/products/Dishes/morning-special.html" class="footer-navigation">Special
-            Breakfast</a></li>
-            <li><a href="./pages/products/Dishes/morning-vip.html" class="footer-navigation">VIP Breakfast</a>
-            </li>
-            </ul>
-            </div>
-            <div class="footer-content">
-            <h3><span>Lunch</span> Menus</h3>
-            <ul>
-            <li><a href="./pages/products/Dishes/lunch-ordinary.html" class="footer-navigation">Ordinary
-            Lunch</a></li>
-            <li><a href="./pages/products/Dishes/lunch-special.html" class="footer-navigation">Special Lunch</a>
-            </li>
-            <li><a href="./pages/products/Dishes/lunch-vip.html" class="footer-navigation">VIP Lunch</a></li>
-            </ul>
-            </div>
-            <div class="footer-content">
-            <h3><span>Hightea</span> Menus</h3>
-            <ul>
-            <li><a href="./pages/products/Dishes/hightea-ordinary.html" class="footer-navigation">Ordinary
-            Hightea</a></li>
-            <li><a href="./pages/products/Dishes/hightea-special.html" class="footer-navigation">Special
-            Hightea</a></li>
-            <li><a href="./pages/products/Dishes/hightea-vip.html" class="footer-navigation">VIP Hightea</a>
-            </li>
-            </ul>
-            </div>
-            <div class="footer-content">
-            <h3><span>Dinner</span> Menus</h3>
-            <ul>
-            <li><a href="./pages/products/Dishes/dinner-ordinary.html" class="footer-navigation">Ordinary
-            Dinner</a></li>
-            <li><a href="./pages/products/Dishes/dinner-special.html" class="footer-navigation">Special
-            Dinner</a></li>
-            <li><a href="./pages/products/Dishes/dinner-vip.html" class="footer-navigation">VIP Dinner</a></li>
-            </ul>
-            </div>
-            </div>
-            <div class="footer-details">
-            <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
-            <p>(+91)6379370482</p>
-            <div class="footer-links">
-            <a href="https://www.instagram.com/vicky_sk_forever?r=nametag"> <img src="./assets/img/instagram.jpg" alt="instagram" /> </a>
-            <a href="https://www.facebook.com/profile.php?id=100011341742455"> <img src="./assets/img/facebook.jpg" alt="facebook link" /> </a>
-            <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"> <img src="./assets/img/twitter.png" alt="twitter link" /> </a>
-            </div>
-            </div>
-
-            </footer> -->
-        <!-- footer ends -->
 
         <!-- script starts -->
         <script src="./assets/JS/header.js"></script>

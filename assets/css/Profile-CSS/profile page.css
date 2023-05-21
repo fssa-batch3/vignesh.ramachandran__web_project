@@ -22,43 +22,28 @@ span {
 }
 
 
-
-/* .profile {
-    height: 95vh; 
-} */
-form{
-    margin:2% 5%;
-    /* height: 90%; */
-    border-radius: 1.875rem;
-    box-shadow: .625rem .5rem .625rem var(--text-color);
-    background-color: var(--other-color);
+.profile {
+    display: flex;
+    justify-content: center;
 }
-
-.profile_form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    justify-items: center;
-    padding: 1rem;
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 70%; */
+form {
+    padding: 1rem 2rem;
+    margin:2% 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
 
 form h2 {
     text-align: center;
     font-family: var(--heading-fontfamily);
     font-size: var(--big-font);
     color: var(--text-color);
-    padding: 1.25rem 0;
 }
 .top {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     justify-items: center;
     align-items: center;
+    padding: 1rem 0 1.5rem 0;
 }
 .delete {
     color: var(--text-color);
@@ -66,52 +51,69 @@ form h2 {
     justify-content: flex-end;
 }
 
-.profile_photo {
+/* .profile_photo {
     width: 100%;
     display: grid;
     align-items: center;
     justify-items: center;
     gap: 1rem;
-    /* width: 30%;
-    height: 90%; */
-}
+} */
 
-.sr {
+/* .sr {
     border-radius: 50%;
     width:21rem;  
     height: 21rem;
     padding: 1rem;
-}
-.details{
+} */
+/* .profile_form {
     display: grid;
-    gap: 1rem;
-    padding: 2rem 5rem;
-    /* height: 75%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    justify-items: center;
+    padding: 1rem;
+} */
+.profile_form {
+    display: grid;
+    gap: 2rem;
 }
-.details label {
-    /* width: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: center; */
-    font-family: var(--parah-fontfamily);
+.profile_form div {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.profile_form div label {
+    font-family: var(--heading-fontfamily);
     font-size: var(--h2-font);
     color: var(--text-color);
     font-weight: bold;
 }
+.profile_form div input {
+    color: var(--text-color);
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: var(--bg-color);
+    padding-bottom: .2rem;
+    padding-left: 1rem;
+    font-size: var(--h2-font);
+}
+/* .details{
+    display: grid;
+    gap: 1rem;
+    padding: 2rem 5rem;
+} */
+/* .details label {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+    font-weight: bold;
+} */
 
-.details input {
-    /* width: 50%; */
+/* .details input {
     color: var(--text-color);
     border: 1px solid var(--text-color);
     background-color: var(--bg-color);
     padding: .5rem;
     font-size: var(--h2-font);
     border-radius: 1rem;
-} 
+}  */
 #pattern{
     display: none;
     padding: .4rem 0;
@@ -120,28 +122,30 @@ form h2 {
     font-family: var(--parah-fontfamily);
     text-align: center;
 }
+.show_password {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    color: var(--second-color);
+    text-align: center;
+    padding: 1rem;
+}
 .btn_content {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-evenly; */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 1rem;
+    grid-template-columns: auto auto;
     align-items: center;
     justify-items: center;
 }
 .btn {
     font-family: var(--parah-fontfamily);
-    font-size: var(--p-font);
+    font-size: 1rem;
     padding: .625rem 1.25rem;
     border-radius: 1.25rem;
     border: transparent;
     font-weight: bold;
 }
 .btn:hover {
-    transform: scale(1.1);
-    transition: .2s;
-    box-shadow: .5rem 0 .625rem black;
+    transition: .5s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
 
 .edit {
@@ -150,21 +154,13 @@ form h2 {
     align-items: center;
     justify-content: space-around;
     color: var(--text-color);
-    background-color: var(--bg-color);
-    /* width: 10rem; */
-    /* height: 2.25rem; */
+    background-color: var(--other-color);
 }
-/* .edit_button:hover {
-    transform: scale(1.1);
-    transition: .2s;
-    box-shadow: .5rem 0 .5rem black;
-    
-} */
 .edit img {
     width: 1.25rem;
     height: 1.25rem;
-    
 }
+
 .save {
     color: var(--bg-color);
     background-color: var(--thickgreen-color);
@@ -172,24 +168,17 @@ form h2 {
 
 .back  {
     color: var(--text-color);
-    background-color: var(--bg-color);
-    
+    background-color: var(--other-color);
 }
 .logout_button{
     display: grid;
     justify-items: center;
-    padding: 2rem;
-    /* margin-top: 2.5rem;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center; */
+    padding: 1rem;
 }
 .logout {
     color: var(--bg-color);
     background-color: var(--second-color);
     padding: .5rem 1rem;
-    /* width: 7.5rem; */
 }
 
 
@@ -198,11 +187,9 @@ form h2 {
 
 
 footer {
-    /* height: 10vh; */
     background-color: var(--other-color);
 }
 .footer-details {
-    /* height: 16%; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -243,75 +230,3 @@ footer {
     }
     
 }
-
-/* @media screen and (max-width:400px){
-    html{
-        font-size: 8px;
-    }
-
-
-    .bx-menu {
-        display: block;
-    }
-    .navigation {
-        display: none;
-    }
-    .responsive-navigation {
-        display:none;
-        overflow: hidden;
-        position: absolute;
-        top: 9%;
-        right: -100px;
-        width: 80px;
-        z-index: 10001;
-        padding: 0;
-        background-color: var(--other-color);
-        transition: all .3s ;
-        border-radius: 1rem;
-    }
-    .responsive-navigation li {
-        padding: .5rem 0;
-        border-bottom: .5px solid var(--bg-color);
-
-    }
-    .bx-menu:hover .responsive-navigation {
-        display: block;
-        right: 0;
-    }
-    .profile_form {
-        height: 80%;
-        padding: 0 1rem;
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-    .details {
-        height: 50%;
-        width: 90%;
-    }
-    .details input {
-        width: 54%;
-    }
-    .profile_details {
-        height: 50%;
-        width: 90%;
-    }
-    .profile_img {
-        height: 45%;
-        width: 90%;
-    }
-    .sr {
-        width: 50%;
-    }
-
-
-    .footer-details {
-        flex-wrap: wrap;
-    }
-}
-
-@media screen and (max-width:300px) {
-    html {
-        font-size: 7px;
-    }
-    
-} */

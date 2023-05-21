@@ -18,6 +18,14 @@ function view_orders() {
     const menu_name = newMenuData.find((data) => data.id === menu_id);
     const category_name = categoryData.find((data) => data.id === category_id);
 
+    const cat_menudata = categoryData.filter(
+      (data) => data.menuType === menu_id
+    );
+    // console.log(cat_menudata);
+
+    const cat_catdata = cat_menudata.find((data) => data.id === category_id);
+    // console.log(cat_catdata);
+
     // <div class="my-orders_list">
     const div_my_orders_list = document.createElement("div");
     div_my_orders_list.setAttribute("class", "my-orders_list");
@@ -32,7 +40,7 @@ function view_orders() {
     div_head_order.append(p_orderId);
 
     const user_id_ref = orderData.find(
-      (data) => data?.order_id === orderProduct[i].order_id
+      (data) => data.order_id === orderProduct[i].order_id
     );
     // console.log(user_id_ref);
 
@@ -63,6 +71,14 @@ function view_orders() {
     const div_my_order_text = document.createElement("div");
     div_my_order_text.setAttribute("class", "my_order_text");
     div_my_orders_list.append(div_my_order_text);
+
+    const div_menuImage = document.createElement("div");
+    div_menuImage.setAttribute("class", "menuImage");
+    div_my_order_text.append(div_menuImage);
+
+    const img_menu = document.createElement("img");
+    img_menu.setAttribute("src", cat_catdata.categoryImage);
+    div_menuImage.append(img_menu);
 
     const div_subject = document.createElement("div");
     div_subject.setAttribute("class", "subject");
@@ -373,6 +389,17 @@ statusBtn.forEach((showOrders) => {
     orderProduct = orderProduct.filter(
       (data) => data.order_status === `${parent}`
     );
+
+    if (parent === "Not Delivered") {
+      orderProduct.sort(
+        (a, b) => new Date(b.delivery_date) - new Date(a.delivery_date)
+      );
+    }
+    if (parent === "Delivered") {
+      orderProduct.sort(
+        (a, b) => new Date(a.delivery_date) - new Date(b.delivery_date)
+      );
+    }
 
     view_orders();
   });

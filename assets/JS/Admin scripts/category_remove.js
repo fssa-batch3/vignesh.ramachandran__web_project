@@ -96,11 +96,9 @@ function showCatDetails() {
 const showDetails = document.querySelector(".show2");
 showDetails.addEventListener("click", showCatDetails);
 
-// save edited (updated) details
-// let saveBtn = document.querySelector(".save");
-// saveBtn.addEventListener("click", saveData);
+// after updating form function
+const form_change = document.getElementById("change");
 
-// const change = (e) => {
 function saveData(e) {
   e.preventDefault();
   const upStatus = document.getElementById("categoryStatusGet").value;
@@ -116,7 +114,6 @@ function saveData(e) {
   window.location.reload();
 }
 
-const form_change = document.getElementById("change");
 form_change.addEventListener("submit", saveData);
 
 // // delete the category from the menuData
