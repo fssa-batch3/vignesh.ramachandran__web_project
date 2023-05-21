@@ -3,15 +3,13 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    margin: 1rem 0;
     padding: 0 1rem;
     justify-content: space-between;
     position: sticky;
     top: 0px;
     z-index: 10;
     background-color: var(--bg-color);
-    box-shadow: 10px 8px 15px 5px grey;
-    border-radius: 2rem;
+    border-bottom: 1px solid black;
 }
 
 .icon-left {
@@ -33,6 +31,7 @@ header {
     color: var(--second-color);
     font-size: var(--name-font);
     font-weight: bold;
+    margin: 0           ;
 }
 
 .logo {
@@ -154,7 +153,7 @@ header {
     font-weight: bold;
     border: transparent;
 }
-.login {
+/* .login {
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
     color: var(--bg-color);
@@ -163,7 +162,7 @@ header {
 .btn:hover{
     transform: scale(1.1);
     box-shadow: .5rem .5rem .5rem black;
-}
+} */
 .closebtn {
     display: none;
     font-size: 3rem;
@@ -177,6 +176,31 @@ header {
     color: var(--text-color);
     cursor: pointer;
 }
+
+.login {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    /* position: relative; */
+    border: none;
+    background: var(--second-color);
+    color: var(--bg-color);
+    padding: .5rem 1rem;
+    font-weight: bold;
+    transition: 0.2s;
+    border-radius: 1rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #c0392b 0px 7px 2px, #000 0px 8px 5px;
+  }
+  
+  button:hover {
+    opacity: 1;
+  }
+  
+  button:active {
+    top: 4px;
+    box-shadow: #c0392b 0px 3px 2px,#000 0px 3px 5px;
+  }
 
 @media screen and (max-width:1150px){
     .bx-menu {
@@ -220,15 +244,16 @@ header {
         margin-left: 50px;
       }
       .cart_qty{
-        right: 38px;
-      }   
-}
-
-@media screen and (max-width:1150px){
-    .cart_qty{
         height: 15px;
         width: 15px;
         right: 64px;
+      }   
+}
+
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 8px;
     }
+    
 }
 

@@ -46,36 +46,45 @@
 
                     <div class="profile_form">
 
-                        <div class="profile_photo">
+                        <!-- <div class="profile_photo">
                             <img class="sr" src="../../assets/img/sr.jpg" alt="profile image">
-                        </div>
+                        </div> -->
 
-                        <div class="details">
-                            <label for="name">Name:</label>
-                            <input type="text" name="name" id="name" pattern="[A-Za-z.]+"
-                                title="Enter alphabet without space" required="true" readonly>
-                            <label for="email">Email:</label>
-                            <input type="email" name="email" id="email" disabled>
-                            <label for="number">Phone Number:</label>
-                            <input type="number" name="phone no." id="phone_number" disabled>
-                            <label for="password">Password:</label>
-                            <input type="password" name="password" id="password"
-                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                title="Must contain at least one number, one uppercase, lowercase and one symbol, and at least 8 or more characters"
-                                required="true" readonly>
-                            <div id="pattern">
-                                <span class="number_pass">Must contain at least one number,</span>
-                                <span class="upper_pass">one uppercase,</span>
-                                <span class="lower_pass">one lowercase,</span>
-                                <span class="symbol_pass">one symbol,</span>
-                                <span class="char_pass">and at least 8 or more characters</span>
-                            </div>
-                            <div class="show_password">
-                                <input type="checkbox" id="show">
-                                <label>Show password</label>
-                            </div>
-                        </div>
+                        <!-- <div class="details"> -->
+                      <div>
+                        <label for="name">Name :</label>
+                        <input type="text" name="name" id="name" pattern="[A-Za-z.]+"
+                          title="Enter alphabet without space" required="true" readonly>
+                      </div>
+                      <div>
+                        <label for="email">Email :</label>
+                        <input type="email" name="email" id="email" disabled>
+                      </div>
+                      <div>
+                        <label for="number">Phone Number :</label>
+                        <input type="number" name="phone no." id="phone_number" disabled>
+                      </div>
+                      <div>
+                        <label for="password">Password :</label>
+                        <input type="password" name="password" id="password"
+                          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          title="Must contain at least one number, one uppercase, lowercase and one symbol, and at least 8 or more characters"
+                          required="true" readonly>
+                      </div>
+                            
+                      <div id="pattern">
+                        <span class="number_pass">Must contain at least one number,</span>
+                        <span class="upper_pass">one uppercase,</span>
+                        <span class="lower_pass">one lowercase,</span>
+                        <span class="symbol_pass">one symbol,</span>
+                        <span class="char_pass">and at least 8 or more characters</span>
+                      </div>
+                        <!-- </div> -->
 
+                    </div>
+                    <div class="show_password">
+                      <input type="checkbox" id="show">
+                      <label>Show password</label>
                     </div>
 
                     <div class="btn_content">
@@ -250,7 +259,7 @@
           document.querySelector(".edit").setAttribute("style", "display:none");
           const head = document.querySelector(".heading");
           head.innerHTML = "<span>My</span> Profile-Edit";
-          document.querySelector("#pattern").setAttribute("style", "display:block");
+          document.querySelector("#pattern").setAttribute("style", "display:inline-block");
         }
 
         function findReadonly1(e) {

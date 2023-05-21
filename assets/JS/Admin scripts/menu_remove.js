@@ -2,9 +2,6 @@ const menulist = document.querySelector(".menulist");
 
 let menuType = document.getElementById("menuName").value;
 
-// creating select option depends upon the menuData
-// let menuData = JSON.parse(localStorage.getItem("menuData"));
-
 for (let i = 0; i < menuData.length; i++) {
   const option = document.createElement("option");
   option.value = menuData[i].id;
@@ -28,13 +25,6 @@ function showMenuDetails() {
   if (menuType !== "") {
     // filtering get data from menuData
     findData = menuData.filter((data) => data.id === menuType);
-
-    // function getMenu(e) {
-    //   return e.id === menuType;
-    // }
-
-    // findData = menuData.filter(getMenu);
-    // console.log(findData[0]["menuName"]);
 
     const menuName = document.getElementById("menuNameGet");
     const menuImage = document.getElementById("menuImageGet");

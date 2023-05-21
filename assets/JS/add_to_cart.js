@@ -16,14 +16,6 @@ function addtoCart() {
       (data) => data.menuType === menuId
     );
 
-    // console.log(menuDetails)
-
-    // for getting menu name from url
-
-    // const menu_name = menuData.find((data) => data.id === menuId);
-
-    // console.log(menu_name["menuName"]);
-
     // for getting category id from url
     const categoryId = new URLSearchParams(window.location.search).get(
       "category"
@@ -33,13 +25,6 @@ function addtoCart() {
       (data) => data.categoryType === categoryId
     );
 
-    // console.log(categoryDetails);
-
-    // for getting category name from url
-    // let category_name = categoryData.find((data) => data.id === categoryId);
-
-    // console.log(category_name["categoryName"]);
-
     // filtering the dish from the dishData using menu id and category id from the transactionTable
     const findData = dishData.filter((product) =>
       categoryDetails.some((find) => find.dish === product.id)
@@ -48,11 +33,6 @@ function addtoCart() {
     // console.log(findData);
     const dishDataTrue = findData.filter((data) => data.status === "true");
 
-    // function getStatus(e) {
-    //   return e.status === "true";
-    // }
-    // dishDataTrue = findData.filter(getStatus);
-
     const dishes_id = [];
 
     for (let i = 0; i < dishDataTrue.length; i++) {
@@ -60,16 +40,10 @@ function addtoCart() {
       dishes_id.push({ id: value });
     }
 
-    // console.log(dishes_id);
-
     const cartData = JSON.parse(localStorage.getItem("cartData")) || [];
 
     const find_user = cartData.filter((data) => data.user_id === user_unique);
 
-    // console.log(find_user[0]["menu_id"])
-
-    // let m_name = menu_name["menuName"];
-    // let c_name = category_name["categoryName"];
     const no_of_guest = 1;
     const date_of_delivery = "";
     const uuid = uuidv4();

@@ -1,90 +1,8 @@
-// const addBtn = document.querySelector(".bx-plus");
-// const div_input = document.querySelector(".input_group");
-// const div_input2 = document.querySelector(".input_group2")
-
-// addBtn.addEventListener("click", addInput);
-
-// function addInput() {
-
-//     const div_field = document.createElement("div");
-//     div_field.className = "field";
-
-//     const name = document.createElement("input");
-//     name.type = "text";
-//     name.id = "name";
-//     name.placeholder = "Enter Menu Name";
-
-//     const image = document.createElement("input");
-//     image.type = "file";
-//     image.id = "image";
-
-//     const description = document.createElement("textarea")
-//     description.type = "text";
-//     description.placeholder = "Enter About Menu";
-//     description.className = "about_menu";
-
-//     const btn = document.createElement("i");
-//     btn.className = "bx bx-x";
-//     btn.addEventListener("click", removeInput);
-
-//     const addCategory = document.createElement("p");
-//     addCategory.innerText = "Add Category";
-//     addCategory.className = "add_category";
-
-//     const plus = document.createElement("i");
-//     plus.className = "bx bx-plus";
-//     plus.addEventListener("click", addInput2)
-
-//     div_input.append(div_field);
-//     div_field.append(name);
-//     div_field.append(image);
-//     div_field.append(description);
-//     div_field.append(btn);
-//     div_field.append(addCategory);
-//     addCategory.append(plus)
-
-// }
-
-// // 2nd field
-// function addInput2() {
-//     const div_field2 = document.createElement("div");
-//     div_field2.setAttribute("class", "field");
-
-//     const name2 = document.createElement("input");
-//     name2.type = "text";
-//     name2.placeholder = "Enter Category Name";
-//     name2.id = "name";
-
-//     const image2 = document.createElement("input");
-//     image2.type = "file";
-//     image2.id = "image";
-
-//     const price = document.createElement("input");
-//     price.type = "number";
-//     price.placeholder = "Enter Price"
-
-//     const btn = document.createElement("i");
-//     btn.className = "bx bx-x";
-//     btn.addEventListener("click", removeInput);
-
-//     div_input2.append(div_field2);
-//     div_field2.append(name2);
-//     div_field2.append(image2);
-//     div_field2.append(price)
-//     div_field2.append(btn);
-
-// }
-
-// input remove event
-// function removeInput() {
-//     this.parentElement.remove()
-
-// }
-
-// let submitBtn = document.querySelector(".btn_submit");
-// submitBtn.addEventListener("click", getData);
+const form_id = document.querySelector("#form_id");
 
 function getData(e) {
+  e.preventDefault();
+
   const menuType = document.getElementById("menuName").value;
   // console.log(menuType);
   const menuImage = document.getElementById("menuImage").value;
@@ -92,13 +10,11 @@ function getData(e) {
 
   const menuData = JSON.parse(localStorage.getItem("menuData")) || [];
 
-  // let categoryData = [];
+  const findData = menuData.filter(
+    (data) => data.menuName.toLowerCase() === menuType.toLowerCase()
+  );
 
-  function getMenu(e) {
-    return e.menuName.toLowerCase() === menuType.toLowerCase();
-  }
-  const findData = menuData.filter(getMenu);
-  // console.log(findData)
+  // console.log(findData);
 
   const n = findData.length;
 
@@ -151,6 +67,6 @@ function getData(e) {
     );
     window.location.reload();
   }
-
-  e.preventDefault();
 }
+
+form_id.addEventListener("submit", getData);

@@ -21,10 +21,6 @@ span {
     color: var(--second-color);
 }
 
-/* .about-catering {
-
-    height: 120vh
-} */
 .ingredient-image {
     background-image: url(../img/ingredient.jpg);
     background-repeat: no-repeat;
@@ -39,10 +35,6 @@ span {
     text-align: center;
 }
 .about-catering_content {
-    /* display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     justify-items: center;
@@ -54,9 +46,7 @@ span {
     height: 26.5625rem;
     
 }
-/* .about-catering_text {
-    width: 40%;
-} */
+
 .about-catering_text h2 {
     font-family: var(--heading-fontfamily);
     font-size: var(--big-font);
@@ -89,7 +79,6 @@ span {
 
 
 .about-us {
-    /* height: 100vh; */
     background-image: url(../img/photo1.jpg);
     background-size: cover;
 
@@ -111,17 +100,8 @@ span {
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-column-gap: 25rem;
     grid-row-gap: 7rem;
-    /* height: 80vh;
-    display: flex;  
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-    align-content: space-around; */
 }
 .qualities_us {
-
-    /* width: 20%;
-    height: 18.75rem; */
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -149,7 +129,6 @@ span {
 }
 
 footer {
-    /* height: 60vh; */
     background-color: var(--other-color);
 }
 .footer-box {
@@ -157,20 +136,12 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     justify-items: center;
     gap: 2rem;
-    /* height: 69%
-    margin: 0 3.125rem;;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly; */
     padding:2rem 0;
     margin: 0 2rem;
     border-bottom: 2px solid var(--text-color);
 }   
 .footer-content {
     padding: 1rem;
-    /* display: flex;
-    flex-direction: column;
-    width: 20%; */
 }
 .footer-content img {
     width: 12.5rem;
@@ -250,81 +221,3 @@ footer {
     }
     
 }
-
-
-
-/* @media screen and (max-width:400px){
-    html{
-        font-size: 8px;
-    }
-
-
-    .bx-menu {
-        display: block;
-    }
-    .navigation {
-        display: none;
-    }
-    .responsive-navigation {
-        display:none;
-        overflow: hidden;
-        position: absolute;
-        top: 9%;
-        right: -100px;
-        width: 80px;
-        z-index: 10001;
-        padding: 0;
-        background-color: var(--other-color);
-        transition: all .3s ;
-        border-radius: 1rem;
-    }
-    .responsive-navigation li {
-        padding: .5rem 0;
-        border-bottom: .5px solid var(--bg-color);
-
-    }
-    .bx-menu:hover .responsive-navigation {
-        display: block;
-        right: 0;
-    }
-    .about-catering {
-        height: 90vh;
-    }
-    .about-us {
-        height: 75vh;
-    }
-    .about-us_qualities {
-        height: 60vh;
-    }
-    .qualities_us {
-        width: 30%;
-        padding: .5rem;
-    }
-    .qualities_us img {
-        width: 3rem;
-    }
-
-
-
-    
-    .footer-box{
-       margin: 0;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-content: space-around;
-    }
-    .footer-content {
-        width: 25%;
-    }
-    .footer-details {
-        flex-wrap: wrap;
-    }
-
-}
-
-@media screen and (max-width:300px){
-    html {
-        font-size: 7px;
-    }
-    
-} */

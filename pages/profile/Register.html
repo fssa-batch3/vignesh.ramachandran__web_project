@@ -28,59 +28,11 @@
         <link rel="icon" href="../../assets/img/main-logo.png">
 
         <script src="../../assets/JS/register & login.js"></script>
-        <!-- unique id creation -->
 
         <title>Register</title>
     </head>
 
     <body>
-        <!-- header starts -->
-        <!-- <header> 
-            <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
-
-            <div class="icon-left">
-            <img src="../../assets/img/main-logo.png" alt="Company Logo" class="logo"/>
-            <h1>SR</h1>
-            <div>
-            <p>Catering</p>
-            </div>
-            </div>
-        
-            <ul class="navigation" id="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-            <li><a href="../../index.html" class="navigation-link">HOME</a></li>
-            <li class="dropdown">
-            <span class="navigation-link">MENU</span>
-            <div class="dropdown-content">
-            <div>
-            <a href="../products/Menus/menu-morning.html" >Breakfast Menu</a>
-            <a href="../products/Menus/menu-lunch.html" >Lunch Menu</a>
-            <a href="../products/Menus/menu-hightea.html" >Hightea Menu</a>
-            <a href="../products/Menus/menu-dinner.html" >Dinner Menu</a>
-            <a href="../products/Menus/menu-custom.html" >Custom Menu</a>
-            </div>
-            </div>
-            </li>
-            <li><a href="../homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
-            <li><a href="../homepage/about us.html" class="navigation-link">ABOUT US</a></li>
-            <li><a href="../homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-            <li><a href="../homepage/my cart.html" class="navigation-link">MY CART</a></li>
-            </ul>
-
-            <div class="dropdown_profile">
-            <img src="../../assets/img/profile.png" alt="profile image"  />
-            <div class="dropdown_profile-content">
-            <div>
-            <a href="../profile/Profile page.html">My Profile</a>
-            <a href="../profile/register.html">Register</a>
-            <a href="../profile/Login.html">Log in</a>
-            <a href="../profile/my orders.html">My Orders</a>
-            </div>
-            </div>
-            </div>
-            </header> -->
-        <!-- header ends -->
 
         <!-- main starts -->
         <main>
@@ -130,7 +82,6 @@
                         <a href="./Login.html" class="exciting_user" type="button">Existing User?</a>
                     </div>
                 </form>
-                <!-- pattern="^[6-9]\d{9}$" -->
             </section>
             <!-- register form ends -->
         </main>
@@ -162,16 +113,15 @@
         <!-- script starts -->
         <script src="../../assets/JS/header.js"></script>
 
-        <script>const mobileInput = document.getElementById("phone_number");
+        <script>
+        const mobileInput = document.getElementById("phone_number");
         const errorMessage = document.querySelector(".error");
 
         mobileInput.addEventListener("input", () => {
           const inputValue = mobileInput.value.trim(); // remove leading/trailing whitespace
           const isValidInput =
-            /^[6-9]\d{9}$/.test(inputValue) && !/^\d*(\d)\1{9}\d*$/.test(inputValue); // use regex to match the updated criteria
+            /^[6-9]\d{9}$/.test(inputValue) && !/^\d*(\d)\1{9}\d*$/.test(inputValue);
           if (!isValidInput || inputValue === "") {
-            // formGroup.classList.remove('valid');
-            // formGroup.classList.add('invalid');
             if (inputValue === "") {
               errorMessage.textContent = "Please enter a mobile number.";
             }

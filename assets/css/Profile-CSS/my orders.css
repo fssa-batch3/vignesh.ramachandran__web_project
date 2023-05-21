@@ -63,7 +63,7 @@ span {
 }
 
 .order_info p {
-    font-family: var(--heading-fontfamily);
+    font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
     padding-bottom: 1rem;
 }
@@ -81,6 +81,13 @@ span {
     font-family: var(--heading-fontfamily);
     font-size: var(--h2-font);
     color: var(--text-color);
+}
+
+.ordMenSta {
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    font-weight: bold;
+    border-bottom: 1px solid black;
 }
 
 .order_price {
@@ -121,7 +128,7 @@ span {
 
 
 
-
+/* footer */
 footer {
     height: 10vh;
 }
@@ -154,10 +161,24 @@ footer {
     width: 3.125rem;
 
 }
+@media screen and (max-width:800px) {
+    html {
+        font-size: 12px;
+    }
+    .footer-details {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:460px){
+    html {
+        font-size: 10px;
+    }
+    
+}
 
 
 
-@media screen and (max-width:1000px){
+/* @media screen and (max-width:1000px){
     .head_order {
         grid-template-columns: none;
     }
@@ -213,4 +234,4 @@ footer {
         font-size: 7px;
     }
 
-}
+} */

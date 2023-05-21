@@ -29,12 +29,12 @@ for (let i = 0; i < findData.length; i++) {
   // create order ID paragraph
   const orderIdP = document.createElement("p");
   orderIdP.classList.add("order_id");
-  orderIdP.textContent = `Order ID :${findData[i].order_id}`;
+  orderIdP.textContent = `Order ID : ${findData[i].order_id}`;
   orderInfoDiv.append(orderIdP);
 
   // create order date paragraph
   const orderDateP = document.createElement("p");
-  orderDateP.textContent = `Order Date :${findData[i].order_date}`;
+  orderDateP.textContent = `Order Date : ${findData[i].order_date}`;
   orderInfoDiv.append(orderDateP);
 
   myOrdersListDiv.append(orderInfoDiv);
@@ -44,6 +44,8 @@ for (let i = 0; i < findData.length; i++) {
   const findOrderedProduct = orderData_user.filter(
     (data) => data.order_id === idea
   );
+
+  // console.log(findOrderedProduct);
 
   for (let j = 0; j < findOrderedProduct.length; j++) {
     const menu_id = `${findOrderedProduct[j].menu_id}`;
@@ -60,6 +62,24 @@ for (let i = 0; i < findData.length; i++) {
     const menuItemNameP = document.createElement("p");
     menuItemNameP.innerText = `${category_name.categoryName}  ${menu_name.menuName}`;
     orderMenuDiv.append(menuItemNameP);
+
+    const orderMenuStatus = document.createElement("span");
+    orderMenuStatus.setAttribute("class", "ordMenSta");
+
+    if (findOrderedProduct[j].order_status === "Not Delivered") {
+      orderMenuStatus.innerText = `(${findOrderedProduct[j].order_status})`;
+      orderMenuStatus.setAttribute("style", "color:var(--text-color)");
+    }
+    if (findOrderedProduct[j].order_status === "Delivered") {
+      orderMenuStatus.innerText = `(${findOrderedProduct[j].order_status})`;
+      orderMenuStatus.setAttribute("style", "color:var(--thickgreen-color)");
+    }
+    if (findOrderedProduct[j].order_status === "Cancelled") {
+      orderMenuStatus.innerText = `(${findOrderedProduct[j].order_status})`;
+      orderMenuStatus.setAttribute("style", "color:var(--second-color)");
+    }
+
+    orderMenuDiv.append(orderMenuStatus);
 
     // create menu item price paragraph
     const menuItemPriceP = document.createElement("p");
@@ -106,8 +126,7 @@ btnView.forEach((showProducts) => {
     const parent = this.closest(".my_orders_list");
     const order_id = parent
       .querySelector(".order_id")
-      .innerText.replace("Order ID :", "");
-    // console.log(order_id);
+      .innerText.replace("Order ID : ", "");
 
     window.location.href = `../profile/order_details.html?orderId=${order_id}`;
   });

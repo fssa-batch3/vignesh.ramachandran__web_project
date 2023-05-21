@@ -22,13 +22,15 @@ span {
     color: var(--second-color);
 }
 
-
-
-main {
+/* main {
     background-image: url("../../img/main\ food\ image.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    /* height: 100vh; */
+} */
+section {
+    margin: 2% 0;
+    display: flex;
+    justify-content: center;
 }
 .name_login {
     text-align: center;
@@ -37,26 +39,14 @@ main {
     color: var(--text-color);
     padding: 2rem 0;
 }
-/* .login {
-    display: flex;
-    width: 100%;
-    height: 90vh;
-    padding: 2rem 0;
-} */
+
 .login_page {
-    margin: auto;
     display: grid;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-evenly; */
-    /* height: 60vh; */
     max-width: 25rem;
-    border: 2px solid var(--second-color);
     border-radius: 3.125rem;
     padding: 2rem;
-    /* position: relative; */
     background-color: var(--other-color);
-    box-shadow:.625rem .625rem .625rem var(--bg-color);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 .login_page img {
     width: 40%;
@@ -67,17 +57,9 @@ main {
     font-family: var(--parah-fontfamily);
     font-size: var(--h2-font);
     padding: 1rem ;
-    /* display: flex;
-    flex-direction: row;
-    align-items: center; */
 }
 .input_box {
-    /* position: absolute;
-    margin-left: 12.5rem; */
-    /* height: 2.5rem; */
-    /* width: 45%; */
     border: 1px solid var(--text-color);
-    /* padding-left: 1.25rem; */
     border-radius: 1rem;
     padding: 1rem ;
     font-family: var(--parah-fontfamily);
@@ -123,21 +105,56 @@ input:focus{
     padding: 2rem 0;
     text-align: center;
 }
+
 .btn_login {
-    padding: .7rem 1.5rem;
-    /* width: 6.25rem; */
-    color: var(--bg-color);
-    background-color: var(--text-color);
+    position: relative;
+    padding: .5rem 1rem;
     font-family: var(--parah-fontfamily);
-    font-size: var(--parah-fontfamily);
+    font-size: var(--p-font);
     border-radius: 1.25rem;
     font-weight: bolder;
-    border: transparent;
-}
-.btn_login:hover {
-    transform: scale(1.1);
-    box-shadow: .5rem .5rem .625rem black;
-}
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: var(--text-color);
+    transition: 1s;
+    font-weight: bold;
+  }
+  
+  .btn_login::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 4%;
+    width: 93%;
+    height: 40%;
+    background-color: var(--other-color);
+    transition: 0.5s;
+    transform-origin: center;
+  }
+  
+  .btn_login::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: var(--other-color);
+    transition: 0.5s;
+  }
+  
+  .btn_login:hover::before, .btn_login:hover::after {
+    transform: scale(0)
+  }
+  
+  .btn_login:hover {
+    box-shadow: inset 0px 0px 25px #1479EA;
+  }
+
+
+
 .login_page p {
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
@@ -154,7 +171,6 @@ input:focus{
 
 
 footer {
-    /* height: 10vh; */
     background-color: var(--other-color);
 }
 .footer-details {
@@ -199,52 +215,3 @@ footer {
     }
     
 }
-
-
-/* @media screen and (max-width:400px){
-    html{
-        font-size: 8px;
-    }
-
-
-    .bx-menu {
-        display: block;
-    }
-    .navigation {
-        display: none;
-    }
-    .responsive-navigation {
-        display:none;
-        overflow: hidden;
-        position: absolute;
-        top: 9%;
-        right: -100px;
-        width: 80px;
-        z-index: 10001;
-        padding: 0;
-        background-color: var(--other-color);
-        transition: all .3s ;
-        border-radius: 1rem;
-    }
-    .responsive-navigation li {
-        padding: .5rem 0;
-        border-bottom: .5px solid var(--bg-color);
-
-    }
-    .bx-menu:hover .responsive-navigation {
-        display: block;
-        right: 0;
-    }
-    .login_page label {
-        flex-direction: column;
-    }
-    .input_box {
-        position: static;
-        margin: 0;
-    }
-
-    .footer-details {
-        flex-wrap: wrap;
-    }
-
-} */

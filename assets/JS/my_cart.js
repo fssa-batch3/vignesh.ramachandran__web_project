@@ -4,15 +4,7 @@ const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 const dishData = JSON.parse(localStorage.getItem("dishData"));
 const user_unique = JSON.parse(localStorage.getItem("user_unique"));
 
-// console.log(user_unique)
-
-// console.log(cartData)
-
 const cartData_user = cartData.filter((data) => data.user_id === user_unique);
-
-// console.log(cartData_user)
-
-// const m = moment().format("YYYY-MM-DD");
 
 for (let i = 0; i < cartData_user.length; i++) {
   const menuId = cartData_user[i].menu_id;
@@ -259,21 +251,6 @@ div_orderAll.append(btn_orderall);
 //     })
 // })
 
-// getting extra information like no.of.guest
-// let number_of_guest = document.querySelectorAll(".number")
-// number_of_guest.forEach(function (getGuest) {
-//     getGuest.addEventListener("click", function () {
-
-//         let parent = this.closest(".cart_end")
-//         update_btn = parent.querySelector(".update")
-//         update_btn.setAttribute("style", "display:block");
-
-//         order_btn = parent.querySelector(".order")
-//         order_btn.setAttribute("style", "display:none")
-
-//     })
-// })
-
 const number_of_guest = document.querySelectorAll(".number");
 number_of_guest.forEach((getGuest) => {
   getGuest.addEventListener("change", function empty() {
@@ -283,11 +260,14 @@ number_of_guest.forEach((getGuest) => {
     const pdts = cartData_user.find((data) => data.uniqueId === product_id);
 
     const quantity = parseInt(parent.querySelector(".number").value);
-    // console.log(quantity)
+    // console.log(quantity);
     if (quantity >= 1 && quantity <= 1500) {
       pdts.noOfGuest = quantity;
 
       localStorage.setItem("cartData", JSON.stringify(cartData));
+      window.location.reload();
+    } else if (isNaN(quantity)) {
+      alert("Please enter the no.of.guest");
       window.location.reload();
     } else {
       alert("You can't order food for above 1500 guest");
@@ -295,21 +275,6 @@ number_of_guest.forEach((getGuest) => {
     }
   });
 });
-
-// getting the date of delivery
-// let dateInput = document.querySelectorAll(".date");
-// dateInput.forEach(function (getDate) {
-//     getDate.addEventListener("click", function () {
-
-//         let parent = this.closest(".cart_end")
-//         update_btn = parent.querySelector(".update")
-//         update_btn.setAttribute("style", "display:block");
-
-//         order_btn = parent.querySelector(".order")
-//         order_btn.setAttribute("style", "display:none")
-
-//     })
-// })
 
 const dateInput = document.querySelectorAll(".date");
 dateInput.forEach((getDate) => {
@@ -339,11 +304,7 @@ orderBtn.forEach((orderFood) => {
     // const delivery_date = parent.querySelector(".date").value;
     const unique_id = parent.querySelector(".remove").getAttribute("data-id");
 
-    // console.log(unique_id)
-
     const find_cart = cartData.filter((data) => data.uniqueId === unique_id);
-
-    // console.log(find_cart[0].dateOfDelivery);
 
     if (find_cart[0].dateOfDelivery <= before_date) {
       alert("Delivery date should be at least 8 days from now");
@@ -353,40 +314,16 @@ orderBtn.forEach((orderFood) => {
   });
 });
 
-// orderall button function
+// orderall button get
+const orderallBtn = document.querySelector(".orderall");
+
 function orderAll() {
   let a = true;
-  const b = true;
+  // const b = true;
 
   const before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
 
-  // let parent = this.closest(".cart_end");
-  // let delivery_date = parent.querySelector(".date").value;
-  // let unique_id = parent.querySelector(".remove").getAttribute("data-id")
-
   for (let i = 0; i < cartData_user.length; i++) {
-    // const delivery_date = cartData_user[0].dateOfDelivery;
-
-    // if (delivery_date !== cartData_user[i].dateOfDelivery) {
-    //   alert("If you orderall all delivery date should be same");
-    //   b = false;
-    // }
-    // // console.log(b);
-
-    // if (b !== false) {
-    //   if (delivery_date <= before_date) {
-    //     alert(
-    //       "Delivery date should not be empty (or) Delivery date should be at least 8 days from now"
-    //     );
-    //     a = false;
-    //   }
-    //   // console.log(a);
-
-    //   if (a !== false) {
-    //     window.location.href = `../profile/Order page.html?cartStatus=${false}`;
-    //   }
-    // }
-
     console.log(before_date);
 
     if (cartData_user[i].dateOfDelivery <= before_date) {
@@ -402,8 +339,6 @@ function orderAll() {
   }
 }
 
-// orderall button get
-const orderallBtn = document.querySelector(".orderall");
 orderallBtn.addEventListener("click", orderAll);
 
 // remove from cart
@@ -417,13 +352,8 @@ removeBtn.forEach((removeCart) => {
 
     if (confirmed) {
       const cartid = this.dataset.id;
-      // console.log(cartid);
 
       const remove_menu = cartData.find((data) => data.uniqueId === cartid);
-      // function getIndex(e) {
-      //   return e.uniqueId == cartid;
-      // }
-      // const remove_menu = cartData.find(getIndex);
 
       const index = cartData.indexOf(remove_menu);
 

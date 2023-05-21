@@ -34,3 +34,56 @@ for (let i = 0; i < menuDataTrue.length; i++) {
 
   document.querySelector("div.mainmenu-list").append(div_lists);
 }
+
+// animation
+let slideIndex = 0;
+let timeoutID;
+let isTransitioning = false;
+function showSlides(n = 1) {
+  let i;
+  const slides = document.getElementsByClassName("slide_image");
+  const dots = document.getElementsByClassName("dot");
+  slideIndex += n;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  if (slideIndex < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  isTransitioning = false;
+  timeoutID = setTimeout(showSlides, 2500); // Change slide every 2.5 seconds
+}
+
+showSlides();
+
+function plusSlides(n) {
+  if (!isTransitioning) {
+    isTransitioning = true;
+    clearTimeout(timeoutID); // Cancel any scheduled transitions
+    showSlides(n);
+  }
+}
+
+function minusSlides(n) {
+  if (!isTransitioning) {
+    isTransitioning = true;
+    clearTimeout(timeoutID); // Cancel any scheduled transitions
+    showSlides(n);
+  }
+}
+
+function currentSlide(n) {
+  if (!isTransitioning) {
+    isTransitioning = true;
+    clearTimeout(timeoutID); // Cancel any scheduled transitions
+    showSlides(n - slideIndex);
+  }
+}

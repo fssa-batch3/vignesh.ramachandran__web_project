@@ -15,11 +15,7 @@ const orderDetails = orderProduct.filter(
   (data) => data.order_id === order_id_get
 );
 
-// console.log(orderDetails);
-
 // let orderDetails = orderData.filter((data) => data.user_id === user_unique);
-
-// console.log(orderDetails);
 
 for (let i = 0; i < orderDetails.length; i++) {
   const menu_id = `${orderDetails[i].menu_id}`;
@@ -28,8 +24,11 @@ for (let i = 0; i < orderDetails.length; i++) {
   const menu_name = newMenuData.find((data) => data.id === menu_id);
   const category_name = categoryData.find((data) => data.id === category_id);
 
-  // console.log(menu_name);
-  // console.log(category_name);
+  const cat_menudata = categoryData.filter((data) => data.menuType === menu_id);
+  // console.log(cat_menudata);
+
+  const cat_catdata = cat_menudata.find((data) => data.id === category_id);
+  // console.log(cat_catdata);
 
   // <div class="my-orders_list">
   const div_my_orders_list = document.createElement("div");
@@ -67,6 +66,14 @@ for (let i = 0; i < orderDetails.length; i++) {
   div_my_order_text.setAttribute("class", "my_order_text");
   div_my_orders_list.append(div_my_order_text);
 
+  const div_menuImage = document.createElement("div");
+  div_menuImage.setAttribute("class", "menuImage");
+  div_my_order_text.append(div_menuImage);
+
+  const img_menu = document.createElement("img");
+  img_menu.setAttribute("src", cat_catdata.categoryImage);
+  div_menuImage.append(img_menu);
+
   const div_subject = document.createElement("div");
   div_subject.setAttribute("class", "subject");
   div_my_order_text.append(div_subject);
@@ -97,7 +104,6 @@ for (let i = 0; i < orderDetails.length; i++) {
   const thisReviewData = reviewDetails.filter(
     (data) => data.order_id === order_id_get
   );
-  // console.log(thisReviewData);
 
   if (orderDetails[i].order_status === "Delivered") {
     let a = true;
@@ -300,12 +306,9 @@ cancelBtn.forEach((cancelOrder) => {
       const findData = orderDetails.filter(
         (data) => data.order_id === btn_order_id.value
       );
-      // console.log(findData)
 
       findData[0].order_status = "Cancelled";
       findData[0].cancel_reason = reason;
-      // console.log(findData[0]);
-      // console.log(orderProduct[1]);
 
       localStorage.setItem("orderProduct", JSON.stringify(orderProduct));
       alert("Order cancelled Sucessfully");
@@ -318,13 +321,9 @@ cancelBtn.forEach((cancelOrder) => {
   });
 });
 
-// const m = moment().format("YYYY-MM-DD");
-// console.log(m)
-
 const find_notDelivered_data = orderDetails.filter(
   (data) => data.order_status === "Not Delivered"
 );
-// console.log(find_notDelivered_data);
 
 for (let i = 0; i < find_notDelivered_data.length; i++) {
   if (find_notDelivered_data[i].delivery_date <= m) {
@@ -361,26 +360,3 @@ reviewBtn.forEach((reviewPage) => {
     window.location.href = `./review.html?orderId=${nxt_order_id}&menuId=${find_menuId[0].id}&categoryId=${find_categoryId[0].id}`;
   });
 });
-
-// view_orders();
-// // console.log(orderDetails)
-
-// const statusBtn = document.querySelectorAll(".btn_toggle");
-// statusBtn.forEach((showOrders) => {
-//   showOrders.addEventListener("click", function empty() {
-//     orderDetails = orderData.filter((data) => data.user_id === user_unique);
-
-//     const div_for_append = document.querySelector("div.orders");
-
-//     div_for_append.innerText = "";
-
-//     const parent = this.innerText;
-//     // console.log(parent);
-
-//     orderDetails = orderDetails.filter(
-//       (data) => data.orderStatus === `${parent}`
-//     );
-
-//     view_orders();
-//   });
-// })

@@ -96,12 +96,7 @@ body{
   #rate-5:checked ~ form h2:before{
     content: "I just love it ";
   }
-  /* .container form{
-    display: none;
-  } */
-  /* input:checked ~ form{
-    display: block;
-  } */
+
   #header{
     width: 100%;
     font-size: 25px;
@@ -117,8 +112,6 @@ body{
     overflow: hidden;
   }
   form .textarea textarea{
-    /* height: 100%; */
-    /* width: 100%; */
     outline: none;
     color: #eee;
     border: 1px solid #333;
