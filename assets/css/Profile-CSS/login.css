@@ -118,7 +118,6 @@ input:focus{
     background-color: transparent;
     color: var(--text-color);
     transition: 1s;
-    font-weight: bold;
   }
   
   .btn_login::after {
