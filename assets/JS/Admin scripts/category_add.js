@@ -1,12 +1,12 @@
 const menulist = document.querySelector(".menulist");
 
-// let menuData = JSON.parse(localStorage.getItem("menuData"));
+const newmenuData = JSON.parse(localStorage.getItem("menuData"));
 const categoryData = JSON.parse(localStorage.getItem("categoryData")) || [];
 
-for (let i = 0; i < menuData.length; i++) {
+for (let i = 0; i < newmenuData.length; i++) {
   const option = document.createElement("option");
-  option.value = menuData[i].id;
-  option.innerText = menuData[i].menuName;
+  option.value = newmenuData[i].id;
+  option.innerText = newmenuData[i].menuName;
 
   menulist.append(option);
 }

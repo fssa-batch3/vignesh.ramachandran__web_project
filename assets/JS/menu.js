@@ -29,7 +29,7 @@ for (let i = 0; i < menuDataTrue.length; i++) {
     "href",
     `./pages/products/Menus/category.html?menu=${menuDataTrue[i].id}`
   );
-  a.innerText = "read more...";
+  a.innerText = "view menu...";
   div_lists_text.append(a);
 
   document.querySelector("div.mainmenu-list").append(div_lists);

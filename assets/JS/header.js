@@ -1,6 +1,7 @@
 const root = window.location.origin;
+const newUser_unique = JSON.parse(localStorage.getItem("user_unique")) || "";
 
-console.log(root);
+// console.log(root);
 
 const after_login = `
 <header>
@@ -37,7 +38,7 @@ const after_login = `
         <img src="${root}/assets/img/profile.png" alt="profile image" />
         <div class="dropdown_profile-content">
             <div>
-                <a href="${root}/pages/profile/Profile page.html">My Profile</a>
+                <a href="${root}/pages/profile/Profile page.html?userId=${newUser_unique}">My Profile</a>
                 <a href="${root}/pages/profile/my orders.html">My Orders</a>
             </div>
         </div>

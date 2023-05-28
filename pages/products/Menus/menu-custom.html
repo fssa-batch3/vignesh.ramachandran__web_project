@@ -660,64 +660,64 @@
   },
 ];
 
-for (i = 0; i < custom_menu.length; i++) {
-          let div_variety_types;
-          let img_variety_types_img;
-          let div;
-          let heading;
-          let ul;
-          let list;
-          let input;
-          let types;
-          let price;
+for (let i = 0; i < custom_menu.length; i++) {
+          // let div_variety_types;
+          // let img_variety_types_img;
+          // let div;
+          // let heading;
+          // let ul;
+          // let list;
+          // let input;
+          // let types;
+          // let price;
 
-          div_variety_types = document.createElement("div");
+          const div_variety_types = document.createElement("div");
           div_variety_types.setAttribute("class", "variety_types");
           console.log(div_variety_types);
 
-          img_variety_types_img = document.createElement("img");
+          const img_variety_types_img = document.createElement("img");
           img_variety_types_img.setAttribute("class", "variety_types_img");
           img_variety_types_img.setAttribute("src", custom_menu[i].image.source);
           img_variety_types_img.setAttribute("alt", custom_menu[i].image.text);
           div_variety_types.append(img_variety_types_img);
 
-          div = document.createElement("div");
+          const div = document.createElement("div");
           div_variety_types.append(div);
 
-          heading = document.createElement("h2");
+          const heading = document.createElement("h2");
           heading.innerText = custom_menu[i].name;
           div.append(heading);
 
-            ul = document.createElement("ul");
+          const ul = document.createElement("ul");
           div.append(ul);
 
-          for (j = 0; j < custom_menu[i].sub_names.length; j++) {
-              list = document.createElement("li");
-              ul.append(list);
+          for (let j = 0; j < custom_menu[i].sub_names.length; j++) {
+            const list = document.createElement("li");
+            ul.append(list);
 
-    input = document.createElement("input");
+            const input = document.createElement("input");
               input.setAttribute("type", "checkbox");
               list.append(input);
 
-              types = document.createElement("p");
+              const types = document.createElement("p");
               types.innerText = custom_menu[i].sub_names[j].dish;
               list.append(types);
 
-              price = document.createElement("p");
+              const price = document.createElement("p");
               price.innerText = `₹` + ` ${custom_menu[i].sub_names[j].price}`;
               list.append(price);
           }
 
-          link = document.createElement("a");
+          const link = document.createElement("a");
           link.setAttribute("href", "../../homepage/my cart.html");
           div.append(link);
 
-          button_add_cart = document.createElement("button");
+          const button_add_cart = document.createElement("button");
           button_add_cart.setAttribute("class", "add_to_cart");
           button_add_cart.innerText = "Add to Cart";
           link.append(button_add_cart);
 
-          plus_image = document.createElement("img");
+          const plus_image = document.createElement("img");
           plus_image.setAttribute("class", "plus-image");
           plus_image.setAttribute("src", "../../../assets/img/plus.png");
           plus_image.setAttribute("alt", "plus image");

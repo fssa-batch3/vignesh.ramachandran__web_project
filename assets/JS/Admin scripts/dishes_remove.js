@@ -1,14 +1,14 @@
 const transactionTable = JSON.parse(localStorage.getItem("transactionTable"));
-// let menuData = JSON.parse(localStorage.getItem("menuData"));
+const newmenuData = JSON.parse(localStorage.getItem("menuData"));
 const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 const dishData = JSON.parse(localStorage.getItem("dishData"));
 
 const menulist = document.querySelector(".menulist");
 
-for (let i = 0; i < menuData.length; i++) {
+for (let i = 0; i < newmenuData.length; i++) {
   const option = document.createElement("option");
-  option.value = menuData[i].id;
-  option.innerText = menuData[i].menuName;
+  option.value = newmenuData[i].id;
+  option.innerText = newmenuData[i].menuName;
 
   menulist.append(option);
 }
@@ -72,6 +72,7 @@ function showDishes() {
     const findData3 = dishData.filter((product) =>
       findData2.some((find) => find.dish === product.id)
     );
+    // console.log(findData3);
 
     for (let i = 0; i < findData3.length; i++) {
       const div_field = document.createElement("div");
@@ -87,6 +88,14 @@ function showDishes() {
       newInput.id = `dish${i}`;
       newInput.value = findData3[i].name;
       newInput.setAttribute("readonly", "true");
+
+      const input_qty = document.createElement("input");
+      input_qty.type = "text";
+      input_qty.placeholder = "Enter Quantity";
+      input_qty.className = "input_qty";
+      input_qty.id = `qty${i}`;
+      input_qty.value = findData3[i].qty;
+      input_qty.required = "true";
 
       const priceInput = document.createElement("input");
       priceInput.type = "number";
@@ -126,6 +135,7 @@ function showDishes() {
       container.append(div_field);
       div_field.append(checkbox);
       div_field.append(newInput);
+      div_field.append(input_qty);
       div_field.append(priceInput);
     }
 
@@ -162,25 +172,24 @@ form_id.addEventListener("submit", (e) => {
 
   const checkbox = document.querySelector("input[type=checkbox]:checked").value;
   // console.log(checkbox);
-  // console.log(typeof checkbox);
-
-  // let m = findData2[0]["dishData"]
 
   let Dish_index = "";
 
   for (let i = 0; i < findData2.length; i++) {
-    if (findData2[i].dish == checkbox) {
+    if (findData2[i].dish === parseInt(checkbox)) {
       Dish_index = i;
     }
   }
-  console.log(Dish_index);
+  // console.log(Dish_index);
 
   const x = `status${Dish_index}`;
   // const y = `dish${Dish_index}`;
+  const y = `qty${Dish_index}`;
   const z = `price${Dish_index}`;
 
   // const up_name = document.getElementById(y).value;
   const up_price = document.getElementById(z).value;
+  const up_qty = document.getElementById(y).value;
   const up_status = document.getElementById(x).value;
 
   if (up_price !== "" && up_price !== "--" && up_price <= 150) {
@@ -211,6 +220,7 @@ form_id.addEventListener("submit", (e) => {
 
     // to change or update in dishdata
     findData3[Dish_index].status = up_status;
+    findData3[Dish_index].qty = up_qty;
     // findData3[Dish_index].name = up_name;
     findData3[Dish_index].price = up_price;
 
@@ -245,7 +255,7 @@ form_id.addEventListener("submit", (e) => {
 //         function getMenu(e) {
 //             return e.id === menuType;
 //         }
-//         findData = menuData.filter(getMenu)
+//         findData = newmenuData.filter(getMenu)
 //         // console.log(findData);
 
 //         let k = findData[0]["categoryData"]
