@@ -33,18 +33,18 @@ function addtoCart() {
     // console.log(findData);
     const dishDataTrue = findData.filter((data) => data.status === "true");
 
-    const dishes_id = [];
+    // const dishes_id = [];
 
-    for (let i = 0; i < dishDataTrue.length; i++) {
-      const value = dishDataTrue[i].id;
-      dishes_id.push({ id: value });
-    }
+    // for (let i = 0; i < dishDataTrue.length; i++) {
+    //   const value = dishDataTrue[i].id;
+    //   dishes_id.push({ id: value });
+    // }
 
     const cartData = JSON.parse(localStorage.getItem("cartData")) || [];
 
     const find_user = cartData.filter((data) => data.user_id === user_unique);
 
-    const no_of_guest = 1;
+    const no_of_guest = 50;
     const date_of_delivery = "";
     const uuid = uuidv4();
 
@@ -62,7 +62,7 @@ function addtoCart() {
         totalCost: cost,
         noOfGuest: no_of_guest,
         dateOfDelivery: date_of_delivery,
-        dishData: dishes_id,
+        // dishData: dishes_id,
         cartStatus: "false",
       });
       // console.log(cartData[0])
@@ -95,7 +95,7 @@ function addtoCart() {
           totalCost: cost,
           noOfGuest: no_of_guest,
           dateOfDelivery: date_of_delivery,
-          dishData: dishes_id,
+          // dishData: dishes_id,
           cartStatus: "false",
         });
         localStorage.setItem("cartData", JSON.stringify(cartData));

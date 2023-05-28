@@ -5,13 +5,13 @@ const transactionTable =
 // creating select option depends upon the menuData
 const menulist = document.querySelector(".menulist");
 
-// let menuData = JSON.parse(localStorage.getItem("menuData"));
+const newmenuData = JSON.parse(localStorage.getItem("menuData"));
 const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 
-for (let i = 0; i < menuData.length; i++) {
+for (let i = 0; i < newmenuData.length; i++) {
   const option = document.createElement("option");
-  option.value = menuData[i].id;
-  option.innerText = menuData[i].menuName;
+  option.value = newmenuData[i].id;
+  option.innerText = newmenuData[i].menuName;
 
   menulist.append(option);
 }
@@ -68,27 +68,32 @@ function addInput() {
       const div_field = document.createElement("div");
       div_field.setAttribute("class", "field");
 
+      const div_content = document.createElement("div");
+      div_content.setAttribute("class", "content");
+
       // create a new input element
       const newInput = document.createElement("input");
       newInput.type = "text";
       newInput.placeholder = "Enter Dish Name";
       newInput.id = n;
       newInput.name = "dish";
-      newInput.pattern = "[A-Za-z]+ [A-Za-z]+";
+      newInput.pattern = "^[A-Z\\s]+$";
       // newInput.id = "dish" + (n);
       newInput.required = "true";
 
       const span = document.createElement("span");
-      span.innerHTML = "*Enter the Dish name and quantity. Eg: SAMBAR VADA (1)";
+      span.innerHTML =
+        "*Enter the Dish name and quantity. Eg: SAMBAR VADA, 1 (or) 200g";
 
-      // let input_qty = document.createElement("input");
-      // input_qty.type = "number";
-      // input_qty.placeholder = "Enter Quantity";
-      // input_qty.className = "input_qty"
-      // input_qty.id = "qty" + n;
+      const input_qty = document.createElement("input");
+      input_qty.type = "text";
+      input_qty.placeholder = "Enter Quantity";
+      input_qty.className = "input_qty";
+      input_qty.id = `qty${n}`;
       // input_qty.pattern = "[0-9]{1,2}";
-      // input_qty.min =
-      // input_qty.required = "true";
+      // input_qty.min = "0";
+      // input_qty.max = "5";
+      input_qty.required = "true";
 
       const inputPrice = document.createElement("input");
       inputPrice.type = "number";
@@ -101,10 +106,11 @@ function addInput() {
 
       // append html tags depends upon our wish
       container.append(div_field);
-      div_field.appendChild(newInput);
-      div_field.append(inputPrice);
+      div_field.append(div_content);
+      div_content.appendChild(newInput);
+      div_content.append(input_qty);
+      div_content.append(inputPrice);
       div_field.append(span);
-      // div_field.append(input_qty);
 
       category_option.setAttribute("disabled", "true");
     } else {
@@ -135,26 +141,32 @@ function addInput() {
       const div_field = document.createElement("div");
       div_field.setAttribute("class", "field");
 
+      const div_content = document.createElement("div");
+      div_content.setAttribute("class", "content");
+
       // create a new input element
       const newInput = document.createElement("input");
       newInput.type = "text";
       newInput.placeholder = "Enter Dish Name";
       newInput.id = n;
       newInput.name = "dish";
-      // newInput.pattern = "[A-Z]+ [A-Z]+"
+      newInput.pattern = "^[A-Z\\s]+$";
       // newInput.id = "dish" + (n);
       newInput.required = "true";
 
       const span = document.createElement("span");
-      span.innerHTML = "*Enter the Dish name and quantity. Eg: SAMBAR VADA (1)";
+      span.innerHTML =
+        "*Enter the Dish name and quantity. Eg: SAMBAR VADA, 1 (or) 200g";
 
-      // let input_qty = document.createElement("input");
-      // input_qty.type = "number";
-      // input_qty.placeholder = "Enter Quantity";
-      // input_qty.className = "input_qty"
-      // input_qty.id = "qty" + n;
+      const input_qty = document.createElement("input");
+      input_qty.type = "text";
+      input_qty.placeholder = "Enter Quantity";
+      input_qty.className = "input_qty";
+      input_qty.id = `qty${n}`;
       // input_qty.pattern = "[0-9]{1,2}";
-      // input_qty.required = "true";
+      // input_qty.min = "0";
+      // input_qty.max = "5";
+      input_qty.required = "true";
 
       const inputPrice = document.createElement("input");
       inputPrice.type = "number";
@@ -167,10 +179,11 @@ function addInput() {
 
       // append html tags depends upon our wish
       container.append(div_field);
-      div_field.appendChild(newInput);
-      div_field.append(inputPrice);
+      div_field.append(div_content);
+      div_content.appendChild(newInput);
+      div_content.append(input_qty);
+      div_content.append(inputPrice);
       div_field.append(span);
-      // div_field.append(input_qty);
 
       category_option.setAttribute("disabled", "true");
     } else {
@@ -216,6 +229,7 @@ function getData(e) {
         alert("Please enter the Dish name");
       } else {
         const price = document.getElementById(`price${i}`).value;
+        const qty = document.getElementById(`qty${i}`).value;
         // console.log(price);
 
         // new code
@@ -265,6 +279,7 @@ function getData(e) {
             dishData.push({
               name: dishes,
               id: localDishcount + 1,
+              qty,
               price,
               status: "true",
             });
@@ -277,6 +292,7 @@ function getData(e) {
 
             // console.log(dishData);
             // console.log(transactionTable);
+            // console.log(dishData[dishData.length - 1]);
 
             localStorage.setItem("dishData", JSON.stringify(dishData));
             localStorage.setItem(
@@ -297,12 +313,13 @@ function getData(e) {
     for (let i = 1; i <= inputCount; i++) {
       const dishes = document.getElementById(i).value;
       const price = document.getElementById(`price${i}`).value;
+      const qty = document.getElementById(`qty${i}`).value;
 
       if (dishes.trim === "") {
         alert("Please enter the Dish name");
       } else {
         // pushing the all dishes into the dishName []
-        dishData.push({ name: dishes, id: i, price, status: "true" });
+        dishData.push({ name: dishes, id: i, price, qty, status: "true" });
         transactionTable.push({
           menuType,
           categoryType,
@@ -311,6 +328,7 @@ function getData(e) {
         });
       }
     }
+    // console.log(dishData[dishData.length - 1]);
 
     localStorage.setItem("dishData", JSON.stringify(dishData));
     localStorage.setItem("transactionTable", JSON.stringify(transactionTable));

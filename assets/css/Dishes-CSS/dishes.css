@@ -80,7 +80,7 @@ span {
     background-color: #f18e70;
     font-weight: bolder;
     border-radius: .625rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     box-shadow: .4rem .5rem .8rem rgb(61, 59, 59);
 }
 

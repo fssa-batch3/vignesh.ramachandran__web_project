@@ -15,6 +15,8 @@ const orderDetails = orderProduct.filter(
   (data) => data.order_id === order_id_get
 );
 
+// console.log(orderDetails);
+
 // let orderDetails = orderData.filter((data) => data.user_id === user_unique);
 
 for (let i = 0; i < orderDetails.length; i++) {
@@ -104,6 +106,8 @@ for (let i = 0; i < orderDetails.length; i++) {
   const thisReviewData = reviewDetails.filter(
     (data) => data.order_id === order_id_get
   );
+  // console.log(orderDetails);
+  // console.log(thisReviewData);
 
   if (orderDetails[i].order_status === "Delivered") {
     let a = true;
@@ -113,11 +117,41 @@ for (let i = 0; i < orderDetails.length; i++) {
           orderDetails[i].menu_id === thisReviewData[d].menu_id &&
           orderDetails[i].category_id === thisReviewData[d].category_id
         ) {
-          const rev_thanks = document.createElement("p");
-          rev_thanks.setAttribute("class", "rev_thanks");
-          rev_thanks.innerText = "Thanks for Rating..";
-          div_subject.append(rev_thanks);
+          const starWidget = document.createElement("div");
+          starWidget.classList.add("star-widget");
+
+          for (let c = 1; c <= 5; c++) {
+            const starInput = document.createElement("input");
+            starInput.setAttribute("type", "radio");
+            starInput.setAttribute("name", "rate");
+            starInput.setAttribute("id", `rate-${c}`);
+            starInput.setAttribute("value", c);
+
+            const starLabel = document.createElement("label");
+            starLabel.setAttribute("for", `rate-${c}`);
+            starLabel.classList.add("fa", "fa-star");
+
+            if (c <= thisReviewData[d].star) {
+              starInput.setAttribute("checked", true);
+              starLabel.setAttribute("style", "color:#fd4;");
+            }
+
+            starWidget.appendChild(starInput);
+            starWidget.appendChild(starLabel);
+          }
+
+          const p_feedback = document.createElement("p");
+          p_feedback.setAttribute("class", "revFeedback");
+          p_feedback.innerText = thisReviewData[d].feedback;
+
+          div_subject.append(starWidget);
+          div_subject.append(p_feedback);
           a = false;
+          // const rev_thanks = document.createElement("p");
+          // rev_thanks.setAttribute("class", "rev_thanks");
+          // rev_thanks.innerText = "Thanks for Rating..";
+          // div_subject.append(rev_thanks);
+          // a = false;
         }
       }
     }
@@ -138,15 +172,24 @@ for (let i = 0; i < orderDetails.length; i++) {
     div_subject.append(button_cancel);
 
     // one day before delivery cancel button will be disappeard
-    const getDate = orderDetails[i].dateOfDelivery;
+    const getDate = orderDetails[i].delivery_date;
+    // console.log(getDate);
 
     const date = moment(getDate);
+    // console.log(date);
     date.subtract(1, "days");
     const one_day_before = date.format("YYYY-MM-DD");
-    // console.log(one_day_before)
+    // console.log(one_day_before);
+
+    const one_week_before = date.subtract(6, "days").format("YYYY-MM-DD");
+    // console.log(one_week_before);
+
+    if (one_week_before <= m) {
+      button_cancel.setAttribute("style", "display:none");
+    }
 
     if (one_day_before === m) {
-      button_cancel.setAttribute("style", "display:none");
+      // button_cancel.setAttribute("style", "display:none");
 
       const arriving = document.createElement("p");
       arriving.setAttribute("class", "arr_status");

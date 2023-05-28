@@ -1,9 +1,9 @@
 // for getting menu id
 const menuId = new URLSearchParams(window.location.search).get("menu");
 
-// let menuData = JSON.parse(localStorage.getItem("menuData"));
+const newmenuData = JSON.parse(localStorage.getItem("menuData"));
 
-const menuDetails = menuData.find((data) => data.id === menuId);
+const menuDetails = newmenuData.find((data) => data.id === menuId);
 
 // for getting category id
 const categoryId = new URLSearchParams(window.location.search).get("category");
@@ -44,7 +44,7 @@ const findData3 = dishData.filter((product) =>
   findData2.some((find) => find.dish === product.id)
 );
 
-// filtering get status=true from menuData
+// filtering get status=true from newmenuData
 function getStatus(e) {
   return e.status === "true";
 }
@@ -59,7 +59,7 @@ div_content.prepend(un_ordered_list);
 
 for (let i = 0; i < dishDataTrue.length; i++) {
   const list = document.createElement("li");
-  list.innerText = `${dishDataTrue[i].name} - ${dishDataTrue[i].price}`;
+  list.innerText = `${dishDataTrue[i].name} - ${dishDataTrue[i].qty} - ₹ ${dishDataTrue[i].price}`;
   un_ordered_list.append(list);
 }
 
@@ -162,7 +162,6 @@ for (let k = 0; k < find_revData2.length; k++) {
 
   div_rating.append(divRevUser);
 }
-
 
 // related menu
 

@@ -9,6 +9,7 @@ const user_unique = JSON.parse(localStorage.getItem("user_unique"));
 // let menuData = JSON.parse(localStorage.getItem("menuData"));
 const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 // const dishData = JSON.parse(localStorage.getItem("dishData"));
+const addressData = JSON.parse(localStorage.getItem("addressData")) || [];
 
 const find_user = userData.filter((data) => data.email === user_unique);
 
@@ -79,9 +80,43 @@ if (cartStatus === "false" && cartData_user.length === 0) {
 // back function from myorders end
 
 // get data from userData
-document.getElementById("name").value = find_user[0].name;
-document.getElementById("email").value = find_user[0].email;
-document.getElementById("phone_number").value = find_user[0].phone_number;
+// document.getElementById("name").value = find_user[0].name;
+// document.getElementById("email").value = find_user[0].email;
+// document.getElementById("phone_number").value = find_user[0].phone_number;
+
+// getting default address
+const findUserAddress = addressData.filter(
+  (data) => (data.userId = user_unique)
+);
+
+let defaultAddress = "";
+let addressId = "";
+
+if (findUserAddress) {
+  defaultAddress = findUserAddress.find((data) => data.default === "true");
+  // console.log(defaultAddress);
+
+  if (defaultAddress) {
+    document.getElementById("address").value = `${defaultAddress.name} ,
+    ${defaultAddress.email} , 
+    ${defaultAddress.phone_number} ,
+    ${defaultAddress.door_no} , ${defaultAddress.street_name} , 
+    ${defaultAddress.sub_locality} , ${defaultAddress.city} , 
+    ${defaultAddress.district} - ${defaultAddress.pincode}`;
+
+    // getting default address
+    addressId = defaultAddress.addressId;
+    // console.log(addressId);
+  }
+}
+// console.log(defaultAddress);
+// console.log(addressId);
+
+const changeAdd = document.querySelector(".changeAdd");
+changeAdd.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.href = `../profile/address_book.html?userId=${user_unique}`;
+});
 
 if (cartId) {
   const cartdetails = cartData_user.filter((data) => data.uniqueId === cartId);
@@ -294,6 +329,7 @@ function placeOrder(e) {
   e.preventDefault();
   const orderData = JSON.parse(localStorage.getItem("orderData")) || [];
   const orderProduct = JSON.parse(localStorage.getItem("orderProduct")) || [];
+  // const deliveryAddressData = JSON.parse(localStorage.getItem("deliveryAddressData")) || [];
 
   let findData = "";
 
@@ -304,175 +340,99 @@ function placeOrder(e) {
     findData = cartData_user;
   }
 
-  // const ordered_product = [];
   let totalCost = 0;
 
-  // orderData []
   const order_id = findData[0].uniqueId;
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const phone_number = document.getElementById("phone_number").value;
-  let address = document
-    .getElementById("address")
-    .value.trim()
-    .split(/\s+/g)
-    .join(" ");
 
-  function validate() {
-    if (/^\s*$/g.test(address)) {
-      alert("Enter the valid address");
-      address = reset();
-    }
-  }
-  validate();
+  // const name = document.getElementById("name").value;
+  // const email = document.getElementById("email").value;
+  // const phone_number = document.getElementById("phone_number").value;
+  // let address = document
+  //   .getElementById("address")
+  //   .value.trim()
+  //   .split(/\s+/g)
+  //   .join(" ");
+
+  // function validate() {
+  //   if (/^\s*$/g.test(address)) {
+  //     alert("Enter the valid address");
+  //     address = reset();
+  //   }
+  // }
+  // validate();
 
   let menu_id;
   let category_id;
-  // let dish = "";
   let no_of_guest = 0;
   let price = 0;
   let delivery_date = "";
 
   if (confirm("Are you sure to confirm the order")) {
-    for (let i = 0; i < findData.length; i++) {
-      // ordered_product []
-      menu_id = findData[i].menu_id;
-      category_id = findData[i].category_id;
-      // dish = findData[i].dishData;
-      no_of_guest = findData[i].noOfGuest;
-      price = findData[i].totalCost * findData[i].noOfGuest;
-      delivery_date = findData[i].dateOfDelivery;
-
-      totalCost += findData[i].totalCost * findData[i].noOfGuest;
-
-      orderProduct.push({
-        order_id,
-        menu_id,
-        category_id,
-        no_of_guest,
-        price,
-        delivery_date,
-        order_status: "Not Delivered",
-      });
-    }
-
-    const order_date = moment().format("DD/MM/YYYY hh:mm:ssA");
-
-    orderData.push({
-      order_id,
-      user_id: email,
-      name,
-      phone_number,
-      address,
-      order_date,
-      totalCost,
-    });
-
-    alert("Order Placed Sucessfully");
-    localStorage.setItem("orderData", JSON.stringify(orderData));
-    localStorage.setItem("orderProduct", JSON.stringify(orderProduct));
-
-    if (cartId) {
-      for (let j = 0; j < cartData.length; j++) {
-        if (findData[0].uniqueId === cartData[j].uniqueId) {
-          cartData.splice(j, 1);
-          localStorage.setItem("cartData", JSON.stringify(cartData));
-          window.location.reload();
-        }
-      }
+    if (!findUserAddress || !defaultAddress) {
+      alert("Create a address (or) set a address to default");
+      // window.location.reload();
     } else {
-      for (let k = cartData.length - 1; k >= 0; k--) {
-        if (user_unique === cartData[k].user_id) {
-          cartData.splice(k, 1);
-        }
-      }
-      localStorage.setItem("cartData", JSON.stringify(cartData));
+      for (let i = 0; i < findData.length; i++) {
+        // ordered_product []
+        menu_id = findData[i].menu_id;
+        category_id = findData[i].category_id;
+        // dish = findData[i].dishData;
+        no_of_guest = findData[i].noOfGuest;
+        price = findData[i].totalCost * findData[i].noOfGuest;
+        delivery_date = findData[i].dateOfDelivery;
 
-      window.location.reload();
+        totalCost += findData[i].totalCost * findData[i].noOfGuest;
+
+        orderProduct.push({
+          order_id,
+          menu_id,
+          category_id,
+          no_of_guest,
+          price,
+          delivery_date,
+          order_status: "Not Delivered",
+        });
+      }
+
+      defaultAddress.selected = "true";
+      const order_date = moment().format("DD/MM/YYYY hh:mm:ssA");
+
+      orderData.push({
+        order_id,
+        user_id: user_unique,
+        addressId,
+        order_date,
+        totalCost,
+      });
+
+      alert("Order Placed Sucessfully");
+      // console.log(orderData);
+
+      localStorage.setItem("orderData", JSON.stringify(orderData));
+      localStorage.setItem("orderProduct", JSON.stringify(orderProduct));
+      localStorage.setItem("addressData", JSON.stringify(addressData));
+
+      if (cartId) {
+        for (let j = 0; j < cartData.length; j++) {
+          if (findData[0].uniqueId === cartData[j].uniqueId) {
+            cartData.splice(j, 1);
+            localStorage.setItem("cartData", JSON.stringify(cartData));
+            window.location.reload();
+          }
+        }
+      } else {
+        for (let k = cartData.length - 1; k >= 0; k--) {
+          if (user_unique === cartData[k].user_id) {
+            cartData.splice(k, 1);
+          }
+        }
+        localStorage.setItem("cartData", JSON.stringify(cartData));
+
+        window.location.reload();
+      }
+      window.location.href = "./my orders.html";
     }
-    window.location.href = "./my orders.html";
   }
 }
 
 form_id.addEventListener("submit", placeOrder);
-
-// let autocomplete;
-// let address1Field;
-// let address2Field;
-// let postalField;
-
-// function initAutocomplete() {
-//   address1Field = document.querySelector("#ship-address");
-//   address2Field = document.querySelector("#address2");
-//   postalField = document.querySelector("#postcode");
-//   // Create the autocomplete object, restricting the search predictions to
-//   // addresses in the US and Canada.
-//   autocomplete = new google.maps.places.Autocomplete(address1Field, {
-//     types: ["address"],
-//     componentRestrictions: {
-//       country: "in",
-//     },
-//     fields: ["address_components", "geometry"],
-//   });
-//   address1Field.focus();
-//   // When the user selects an address from the drop-down, populate the
-//   // address fields in the form.
-//   autocomplete.addListener("place_changed", fillInAddress);
-// }
-
-// function fillInAddress() {
-//   // Get the place details from the autocomplete object.
-//   const place = autocomplete.getPlace();
-//   let address1 = "";
-//   let postcode = "";
-
-//   // Get each component of the address from the place details,
-//   // and then fill-in the corresponding field on the form.
-//   // place.address_components are google.maps.GeocoderAddressComponent objects
-//   // which are documented at http://goo.gle/3l5i5Mr
-//   for (const component of place.address_components) {
-//     // @ts-ignore remove once typings fixed
-//     const componentType = component.types[0];
-
-//     switch (componentType) {
-//       case "street_number": {
-//         address1 = `${component.long_name} ${address1}`;
-//         break;
-//       }
-
-//       case "route": {
-//         address1 += component.short_name;
-//         break;
-//       }
-
-//       case "postal_code": {
-//         postcode = `${component.long_name}${postcode}`;
-//         break;
-//       }
-
-//       case "postal_code_suffix": {
-//         postcode = `${postcode}-${component.long_name}`;
-//         break;
-//       }
-//       case "locality":
-//         document.querySelector("#locality").value = component.long_name;
-//         break;
-//       case "administrative_area_level_1": {
-//         document.querySelector("#state").value = component.short_name;
-//         break;
-//       }
-//       case "country":
-//         document.querySelector("#country").value = component.long_name;
-//         break;
-//     }
-//   }
-
-//   address1Field.value = address1;
-//   postalField.value = postcode;
-//   // After filling the form with address components from the Autocomplete
-//   // prediction, set cursor focus on the second address line to encourage
-//   // entry of subpremise information such as apartment, unit, or floor number.
-//   address2Field.focus();
-// }
-
-// window.initAutocomplete = initAutocomplete;

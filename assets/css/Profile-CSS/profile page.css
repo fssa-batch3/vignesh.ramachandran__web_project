@@ -94,6 +94,12 @@ form h2 {
     padding-left: 1rem;
     font-size: var(--h2-font);
 }
+.profile_form div textarea {
+    color: var(--text-color);
+    padding: .2rem .2rem;
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+}
 /* .details{
     display: grid;
     gap: 1rem;
@@ -139,7 +145,6 @@ form h2 {
     font-family: var(--parah-fontfamily);
     font-size: 1rem;
     padding: .625rem 1.25rem;
-    border-radius: 1.25rem;
     border: transparent;
     font-weight: bold;
 }
@@ -155,6 +160,7 @@ form h2 {
     justify-content: space-around;
     color: var(--text-color);
     background-color: var(--other-color);
+    border-radius: 1.25rem;
 }
 .edit img {
     width: 1.25rem;
@@ -164,11 +170,13 @@ form h2 {
 .save {
     color: var(--bg-color);
     background-color: var(--thickgreen-color);
+    border-radius: 1.25rem;
 }
 
 .back  {
     color: var(--text-color);
     background-color: var(--other-color);
+    border-radius: 1.25rem;
 }
 .logout_button{
     display: grid;
@@ -179,6 +187,16 @@ form h2 {
     color: var(--bg-color);
     background-color: var(--second-color);
     padding: .5rem 1rem;
+    border-radius: 1.25rem;
+}
+#div_AddBtn {
+    display: flex;
+    justify-content: center;
+}
+.addbtn {
+    color: var(--bg-color);
+    background-color: var(--thickgreen-color);
+    border-radius: .4rem;
 }
 
 

@@ -2,6 +2,7 @@ const cartData = JSON.parse(localStorage.getItem("cartData"));
 // const menuData = JSON.parse(localStorage.getItem("menuData"));
 const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 const dishData = JSON.parse(localStorage.getItem("dishData"));
+const transactionTable = JSON.parse(localStorage.getItem("transactionTable"));
 const user_unique = JSON.parse(localStorage.getItem("user_unique"));
 
 const cartData_user = cartData.filter((data) => data.user_id === user_unique);
@@ -19,12 +20,23 @@ for (let i = 0; i < cartData_user.length; i++) {
   const category_name = categoryData.find((data) => data.id === categoryId);
   // console.log(category_name);
 
-  const n = cartData_user[i].dishData;
-
-  const finddish = dishData.filter((product) =>
-    n.some((find) => find.id === product.id)
+  // filtering the dish from the dishData using menu id and category id from the transactionTable
+  const menuDetails = transactionTable.filter(
+    (data) => data.menuType === menuId
   );
-  // console.log(finddish)
+
+  const categoryDetails = menuDetails.filter(
+    (data) => data.categoryType === categoryId
+  );
+
+  const findDishData = dishData.filter((product) =>
+    categoryDetails.some((find) => find.dish === product.id)
+  );
+
+  // console.log(findData);
+  const dishDataTrue = findDishData.filter((data) => data.status === "true");
+
+  // console.log(dishDataTrue);
 
   const divCartContent = document.createElement("div");
   divCartContent.setAttribute("role", "form");
@@ -46,9 +58,20 @@ for (let i = 0; i < cartData_user.length; i++) {
   divChange.setAttribute("class", "change");
   divCartContent.append(divChange);
 
+  const viewBtn = document.createElement("button");
+  viewBtn.setAttribute("class", "btn view");
+  viewBtn.innerText = "View";
+  divChange.append(viewBtn);
+
   const divCartDishes = document.createElement("div");
   divCartDishes.setAttribute("class", "cart_dishes");
+  divCartDishes.setAttribute("style", "display:none");
   divChange.append(divCartDishes);
+
+  const icon = document.createElement("i");
+  icon.setAttribute("class", "bx bx-x-circle");
+  icon.setAttribute("id", "closeDish");
+  divCartDishes.append(icon);
 
   // h3 = document.createElement("h3");
   // h3.innerText = cartData_user[i]["categoryName"] + " " + cartData_user[i]["menuName"];
@@ -62,12 +85,9 @@ for (let i = 0; i < cartData_user.length; i++) {
   ulDishes.setAttribute("class", "dishes");
   divCartDishes.append(ulDishes);
 
-  // let a = cartData_user[i]["dishData"]
-  // console.log(a)
-
-  for (let j = 0; j < finddish.length; j++) {
+  for (let j = 0; j < dishDataTrue.length; j++) {
     const li = document.createElement("li");
-    li.innerText = finddish[j].name;
+    li.innerText = dishDataTrue[j].name;
 
     ulDishes.append(li);
   }
@@ -81,7 +101,7 @@ for (let i = 0; i < cartData_user.length; i++) {
   divCartEnd.append(divCartEnd1);
 
   const label1 = document.createElement("label");
-  label1.innerText = "Date:";
+  label1.innerText = "Delivery Date:";
   divCartEnd1.append(label1);
 
   const input1 = document.createElement("input");
@@ -99,17 +119,21 @@ for (let i = 0; i < cartData_user.length; i++) {
   input2.setAttribute("type", "number");
   input2.setAttribute("class", "number");
   input2.setAttribute("required", "true");
-  input2.setAttribute("min", "1");
+  input2.setAttribute("min", "50");
   // input2.setAttribute("max", "1500")
   input2.setAttribute("value", cartData_user[i].noOfGuest);
   label2.append(input2);
 
-  const update = document.createElement("button");
-  update.setAttribute("type", "button");
-  update.setAttribute("class", "btn update");
-  update.setAttribute("style", "display:none");
-  update.innerText = "Update";
-  divCartEnd1.append(update);
+  const message = document.createElement("span");
+  message.innerText = "* No.of.guest should be minimum 50 and maximum 1500";
+  divCartEnd1.append(message);
+
+  // const update = document.createElement("button");
+  // update.setAttribute("type", "button");
+  // update.setAttribute("class", "btn update");
+  // update.setAttribute("style", "display:none");
+  // update.innerText = "Update";
+  // divCartEnd1.append(update);
 
   // img = document.createElement("img");
   // img.setAttribute("src", "../../assets/img/Dishes/ordinary tiffin.jpg");
@@ -132,26 +156,26 @@ for (let i = 0; i < cartData_user.length; i++) {
   divBtnCart.setAttribute("class", "btn_cart");
   divCartEnd.append(divBtnCart);
 
-  const a_1 = document.createElement("a");
-  // a_1.setAttribute("href", "../profile/Order page.html?cartId=" + cartData_user[i]["uniqueId"]);
-  divBtnCart.append(a_1);
+  // const a_1 = document.createElement("a");
+  // // a_1.setAttribute("href", "../profile/Order page.html?cartId=" + cartData_user[i]["uniqueId"]);
+  // divBtnCart.append(a_1);
 
   const button1 = document.createElement("button");
   button1.setAttribute("class", "btn order");
   button1.setAttribute("type", "button");
   button1.innerText = "ORDER";
-  a_1.append(button1);
+  divBtnCart.append(button1);
 
-  const a_2 = document.createElement("a");
-  a_2.setAttribute("href", "#");
-  divBtnCart.append(a_2);
+  // const a_2 = document.createElement("a");
+  // a_2.setAttribute("href", "#");
+  // divBtnCart.append(a_2);
 
   const button_2 = document.createElement("button");
   button_2.setAttribute("class", "btn remove");
   button_2.setAttribute("data-id", cartData_user[i].uniqueId);
   button_2.setAttribute("type", "button");
   button_2.innerText = "REMOVE";
-  a_2.append(button_2);
+  divBtnCart.append(button_2);
 
   const ensure = document.createElement("p");
   ensure.setAttribute("class", "ensure");
@@ -251,6 +275,30 @@ div_orderAll.append(btn_orderall);
 //     })
 // })
 
+const view_dish = document.querySelectorAll(".view");
+view_dish.forEach((getDish) => {
+  getDish.addEventListener("click", function viewDish() {
+    const parent = this.closest(".change");
+    const div_dish = parent.querySelector(".cart_dishes");
+
+    div_dish.removeAttribute("style");
+
+    parent.querySelector(".view").setAttribute("style", "display:none");
+  });
+});
+
+const close_dish = document.querySelectorAll(".bx-x-circle");
+close_dish.forEach((closedish) => {
+  closedish.addEventListener("click", function closeDish() {
+    const parent = this.closest(".change");
+    const div_dish = parent.querySelector(".cart_dishes");
+
+    div_dish.setAttribute("style", "display:none");
+
+    parent.querySelector(".view").removeAttribute("style");
+  });
+});
+
 const number_of_guest = document.querySelectorAll(".number");
 number_of_guest.forEach((getGuest) => {
   getGuest.addEventListener("change", function empty() {
@@ -261,13 +309,16 @@ number_of_guest.forEach((getGuest) => {
 
     const quantity = parseInt(parent.querySelector(".number").value);
     // console.log(quantity);
-    if (quantity >= 1 && quantity <= 1500) {
+    if (quantity >= 50 && quantity <= 1500) {
       pdts.noOfGuest = quantity;
 
       localStorage.setItem("cartData", JSON.stringify(cartData));
       window.location.reload();
     } else if (isNaN(quantity)) {
       alert("Please enter the no.of.guest");
+      window.location.reload();
+    } else if (quantity <= 50) {
+      alert("no.of.guest should be between 50 and 1500");
       window.location.reload();
     } else {
       alert("You can't order food for above 1500 guest");
@@ -279,6 +330,10 @@ number_of_guest.forEach((getGuest) => {
 const dateInput = document.querySelectorAll(".date");
 dateInput.forEach((getDate) => {
   getDate.addEventListener("change", function empty() {
+    const limit_date = moment().add({ days: 3 }).format("YYYY-MM-DD");
+    const max_date = moment().add({ months: 2 }).format("YYYY-MM-DD");
+    console.log(max_date);
+
     const parent = this.closest(".cart_end");
     const product_id = parent.querySelector(".remove").dataset.id;
 
@@ -288,8 +343,16 @@ dateInput.forEach((getDate) => {
 
     pdts.dateOfDelivery = date;
 
-    localStorage.setItem("cartData", JSON.stringify(cartData));
-    window.location.reload();
+    if (date >= limit_date && date <= max_date) {
+      localStorage.setItem("cartData", JSON.stringify(cartData));
+      window.location.reload();
+    } else if (date >= max_date) {
+      alert("Delivery date should be within 2 months from now");
+      window.location.reload();
+    } else {
+      alert("Delivery date should be atleast 3 days from now");
+      window.location.reload();
+    }
   });
 });
 
@@ -298,7 +361,8 @@ const orderBtn = document.querySelectorAll(".order");
 orderBtn.forEach((orderFood) => {
   orderFood.addEventListener("click", function empty() {
     // after checking the move to the order page
-    const before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
+    const limit_date = moment().add({ days: 3 }).format("YYYY-MM-DD");
+    const max_date = moment().add({ months: 2 }).format("YYYY-MM-DD");
 
     const parent = this.closest(".cart_end");
     // const delivery_date = parent.querySelector(".date").value;
@@ -306,11 +370,26 @@ orderBtn.forEach((orderFood) => {
 
     const find_cart = cartData.filter((data) => data.uniqueId === unique_id);
 
-    if (find_cart[0].dateOfDelivery <= before_date) {
-      alert("Delivery date should be at least 8 days from now");
-    } else {
+    if (
+      find_cart[0].dateOfDelivery >= limit_date &&
+      find_cart[0].dateOfDelivery <= max_date
+    ) {
       window.location.href = `../profile/Order page.html?cartId=${unique_id}`;
+    } else if (find_cart[0].dateOfDelivery >= max_date) {
+      alert("Delivery date should be within 2 months from now");
+      window.location.reload();
+    } else {
+      alert("Delivery date should be atleast 3 days from now");
+      // window.location.reload();
     }
+
+    // if (find_cart[0].dateOfDelivery <= limit_date) {
+    //   alert("Delivery date should be atleast 3 days from now");
+    // } else if (find_cart[0].dateOfDelivery) {
+
+    // } else {
+    //   window.location.href = `../profile/Order page.html?cartId=${unique_id}`;
+    // }
   });
 });
 
@@ -321,14 +400,14 @@ function orderAll() {
   let a = true;
   // const b = true;
 
-  const before_date = moment().add({ days: 7 }).format("YYYY-MM-DD");
+  const limit_date = moment().add({ days: 3 }).format("YYYY-MM-DD");
 
   for (let i = 0; i < cartData_user.length; i++) {
-    console.log(before_date);
+    // console.log(limit_date);
 
-    if (cartData_user[i].dateOfDelivery <= before_date) {
+    if (cartData_user[i].dateOfDelivery < limit_date) {
       alert(
-        "Delivery date should not be empty (or) Delivery date should be at least 8 days from now"
+        "Delivery date should not be empty (or) Delivery date should be at least 3 days from now"
       );
       a = false;
       break;

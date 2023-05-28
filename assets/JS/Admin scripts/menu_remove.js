@@ -1,11 +1,12 @@
+const newmenuData = JSON.parse(localStorage.getItem("menuData"));
 const menulist = document.querySelector(".menulist");
 
 let menuType = document.getElementById("menuName").value;
 
-for (let i = 0; i < menuData.length; i++) {
+for (let i = 0; i < newmenuData.length; i++) {
   const option = document.createElement("option");
-  option.value = menuData[i].id;
-  option.innerText = menuData[i].menuName;
+  option.value = newmenuData[i].id;
+  option.innerText = newmenuData[i].menuName;
 
   menulist.append(option);
 }
@@ -24,7 +25,7 @@ function showMenuDetails() {
 
   if (menuType !== "") {
     // filtering get data from menuData
-    findData = menuData.filter((data) => data.id === menuType);
+    findData = newmenuData.filter((data) => data.id === menuType);
 
     const menuName = document.getElementById("menuNameGet");
     const menuImage = document.getElementById("menuImageGet");
@@ -59,7 +60,7 @@ form_id.addEventListener("submit", () => {
   findData[0].description = upAbout;
   findData[0].status = upStatus;
 
-  localStorage.setItem("menuData", JSON.stringify(menuData));
+  localStorage.setItem("menuData", JSON.stringify(newmenuData));
   alert("Menu Details Edited Sucessfully ✅");
   window.location.reload();
 });
@@ -70,22 +71,22 @@ form_id.addEventListener("submit", () => {
 
 // function removeMenu() {
 
-//     let menuData = JSON.parse(localStorage.getItem("menuData"));
+//     const newmenuData = JSON.parse(localStorage.getItem("menuData"));
 //     menuType = document.getElementById("menuName").value;
 
 //     // filtering get data from menuData
 //     function getMenu(e) {
 //         return e.id === menuType;
 //     }
-//     findData = menuData.filter(getMenu)
+//     findData = newmenuData.filter(getMenu)
 //     // console.log(findData)
 
 //     // here finding the index of findData from menuData and delete
-//     for (i = 0; i < menuData.length; i++) {
+//     for (i = 0; i < newmenuData.length; i++) {
 
-//         if (findData[0]["menuName"] == menuData[i]["menuName"]) {
-//             menuData.splice(i, 1)
-//             localStorage.setItem("menuData", JSON.stringify(menuData));
+//         if (findData[0]["menuName"] == newmenuData[i]["menuName"]) {
+//             newmenuData.splice(i, 1)
+//             localStorage.setItem("menuData", JSON.stringify(newmenuData));
 //             alert("Menu Removed Sucessfully ✅")
 //             location.reload()
 //         }

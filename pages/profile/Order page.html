@@ -34,6 +34,8 @@
         <link rel="stylesheet" href="../../assets/css/Profile-CSS/order page.css">
 
         <link rel="icon" href="../../assets/img/main-logo.png">
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+
         <title>Order page</title>
     </head>
 
@@ -47,7 +49,7 @@
                     <div class="details">
                         <h2>CATERING ORDER</h2>
                         <h3>Personal Details</h3>
-                        <div class="name">
+                        <!-- <div class="name">
                             <label>NAME: </label>
                             <input
                                 type="text"
@@ -73,36 +75,11 @@
                                 placeholder="Phone number"
                                 readonly
                             >
+                        </div> -->
+                        <div class="event">
+                            <label>Event Name:</label>
+                            <input type="text" pattern="^[a-zA-Z\s]+$" required>
                         </div>
-                        <!-- <label class="full-field">
-                            <span class="form-label">Deliver to*</span>
-                            <input
-                              id="ship-address"
-                              name="ship-address"
-                              required
-                              autocomplete="off"
-                            >
-                        </label>
-                        <label class="full-field">
-                            <span class="form-label">Apartment, unit, suite, or floor #</span>
-                            <input id="address2" name="address2">
-                        </label>
-                        <label class="full-field">
-                            <span class="form-label">City*</span>
-                            <input id="locality" name="locality" required>
-                        </label>
-                        <label class="slim-field-left">
-                            <span class="form-label">State/Province*</span>
-                            <input id="state" name="state" required>
-                        </label>
-                        <label class="slim-field-right" for="postal_code">
-                            <span class="form-label">Postal code*</span>
-                            <input id="postcode" name="postcode" required>
-                        </label>
-                        <label class="full-field">
-                            <span class="form-label">Country/Region*</span>
-                            <input id="country" name="country" required>
-                        </label> -->
 
                         <div class="address">
                             <label>DELIVERY ADDRESS: </label>
@@ -110,8 +87,10 @@
                                 type="text"
                                 id="address"
                                 placeholder="Enter your delivery address"
-                                required="true"
+                                rows="6" cols="50"
+                                readonly
                             ></textarea>
+                            <button class="btn changeAdd">Change Address</button>
                         </div>
 
                         <!-- <a href="../profile/Thanks.html"> -->
