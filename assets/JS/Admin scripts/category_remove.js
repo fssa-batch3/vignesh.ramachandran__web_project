@@ -1,176 +1,154 @@
-
 // // creating select option depends upon the menuData
-// let menulist = document.querySelector(".menulist")
+const menulist = document.querySelector(".menulist");
 
-// let menuData = JSON.parse(localStorage.getItem("menuData"));
+const newmenuData = JSON.parse(localStorage.getItem("menuData"));
+const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 
-// for (i = 0; i < menuData.length; i++) {
-//     let option = document.createElement("option");
-//     option.value = menuData[i]["id"];
-//     option.innerText = menuData[i]["menuName"];
+for (let i = 0; i < newmenuData.length; i++) {
+  const option = document.createElement("option");
+  option.value = newmenuData[i].id;
+  option.innerText = newmenuData[i].menuName;
 
-//     menulist.append(option);
-
-// }
-
-// // let h = ""
-
-// // get the local storage value to the select and option for category name
-// let showCatergoy = document.querySelector(".show1")
-// showCatergoy.addEventListener("click", getCatDetails)
-
-// function getCatDetails() {
-//     let menuType = document.getElementById("menuName").value;
-
-//     function getMenu(e) {
-//         return e.id === menuType;
-//     }
-//     findData = menuData.filter(getMenu)
-
-//     // console.log(findData[0]["categoryData"][0])
-
-//     let h = findData[0]["categoryData"]
-
-//     // console.log(h);
-
-//     // creating select option depends upon the categoryData
-//     let categorylist = document.querySelector(".categorylist");
-
-//     for (i = 0; i < h.length; i++) {
-//         let option = document.createElement("option");
-//         option.value = h[i]["id"];
-//         option.innerText = h[i]["categoryName"];
-
-//         categorylist.append(option);
-//     }
-
-//     showCatergoy.setAttribute("style", "display:none");
-// }
-
-
-let categoryData = JSON.parse(localStorage.getItem("categoryData"))
-
-// creating select option depends upon the categoryData
-let categorylist = document.querySelector(".categorylist");
-
-for (i = 0; i < categoryData.length; i++) {
-    let option = document.createElement("option");
-    option.value = categoryData[i]["id"];
-    option.innerText = categoryData[i]["categoryName"];
-
-    categorylist.append(option);
+  menulist.append(option);
 }
 
+function getCatDetails() {
+  const menuType = document.getElementById("menuName").value;
+  const menu_option = document.querySelector("#menuName");
 
+  if (menuType !== "") {
+    const findData = categoryData.filter((data) => data.menuType === menuType);
+    // function getMenu(e) {
+    //   return e.menuType === menuType;
+    // }
+    // const findData = categoryData.filter(getMenu);
+    // console.log(findData);
 
+    // creating select option depends upon the categoryData
+    const categorylist = document.querySelector(".categorylist");
 
+    for (let i = 0; i < findData.length; i++) {
+      const option = document.createElement("option");
+      option.value = findData[i].id;
+      option.innerText = findData[i].categoryName;
 
+      categorylist.append(option);
+    }
 
+    showCatergoy.setAttribute("style", "display:none");
+    menu_option.setAttribute("disabled", "true");
+  } else {
+    alert("Select Menu type");
+  }
+}
 
+// get the local storage value to the select and option for category name
+const showCatergoy = document.querySelector(".show1");
+showCatergoy.addEventListener("click", getCatDetails);
 
-// show the details of the category
-let showDetails = document.querySelector(".show2")
-showDetails.addEventListener("click", showCatDetails);
+let findData = "";
+let findData2 = "";
 
 function showCatDetails() {
-    // let menuType = document.getElementById("menuName").value;
-    let categoryType = document.getElementById("categoryName").value;
-    console.log(categoryType)
+  const saveBtn = document.querySelector(".save");
+  const category_option = document.querySelector("#categoryName");
 
-    // // filtering menu
-    // function getMenu(e) {
-    //     return e.id === menuType;
-    // }
-    // findData = menuData.filter(getMenu)
-    // // console.log(findData[0]);
+  const menuType = document.getElementById("menuName").value;
+  const categoryType = document.getElementById("categoryName").value;
 
+  if (menuType === "") {
+    alert("Select Menu type");
+  } else if (menuType !== "" && categoryType !== "") {
+    // filtering menu
+    findData = categoryData.filter((data) => data.menuType === menuType);
+
+    console.log(findData);
 
     // let k = findData[0]["categoryData"]
     // console.log(k)
 
     // filtering category
-    function getCategory(e) {
-        return e.id == categoryType;
-    }
-    findData = categoryData.filter(getCategory);
+    findData2 = findData.filter((data) => data.id === categoryType);
 
-    // console.log(findData2[0]["categoryName"]);
+    console.log(findData2);
 
     // let yes = document.getElementById("categoryNameGet").value
-    let categoryName = document.getElementById("categoryNameGet")
-    // let categoryImage = document.getElementById("categoryImageGet")
+    const categoryName = document.getElementById("categoryNameGet");
+    const categoryStatus = document.getElementById("categoryStatusGet");
+    const categoryImage = document.getElementById("categoryImageGet");
     // let categoryPrice = document.getElementById("categoryPriceGet")
 
-    categoryName.value = findData[0]["categoryName"]
-    // categoryImage.value = categoryData[0]["categoryImage"]
+    categoryName.value = findData2[0].categoryName;
+    categoryStatus.value = findData2[0].status;
+    categoryImage.value = findData2[0].categoryImage;
     // categoryPrice.value = categoryData[0]["categoryPrice"]
 
     showDetails.setAttribute("style", "display:none");
+    category_option.setAttribute("disabled", "true");
+  } else {
+    alert("Click the Show category button (or) Select Category type");
+  }
 
+  saveBtn.removeAttribute("style");
 }
 
+// show the details of the category
+const showDetails = document.querySelector(".show2");
+showDetails.addEventListener("click", showCatDetails);
 
-// save edited (updated) details
-// let saveBtn = document.querySelector(".save");
-// saveBtn.addEventListener("click", saveData);
+// after updating form function
+const form_change = document.getElementById("change");
 
-// function saveData() {
-//     let upImage = document.getElementById("categoryImageGet").value;
-//     let upPrice = document.getElementById("categoryPriceGet").value;
+function saveData(e) {
+  e.preventDefault();
+  const upStatus = document.getElementById("categoryStatusGet").value;
+  const upImage = document.getElementById("categoryImageGet").value;
+  // let upPrice = document.getElementById("categoryPriceGet").value;
 
-//     findData2[0]["categoryImage"] = upImage;
-//     findData2[0]["categoryPrice"] = upPrice;
+  findData2[0].status = upStatus;
+  findData2[0].categoryImage = upImage;
+  // findData2[0]["categoryPrice"] = upPrice;
 
-//     // console.log(findData2[0])
+  localStorage.setItem("categoryData", JSON.stringify(categoryData));
+  alert("Category Details updated Sucessfully ✅");
+  window.location.reload();
+}
 
-//     localStorage.setItem("menuData", JSON.stringify(menuData));
-//     alert("Category Details updated Sucessfully ✅")
-//     location.reload()
+form_change.addEventListener("submit", saveData);
+
+// // delete the category from the menuData
+// let deleteBtn = document.querySelector(".delete");
+// deleteBtn.addEventListener("click", removeCategory);
+
+// function removeCategory() {
+//     // let menuType = document.getElementById("menuName").value;
+//     let categoryType = document.getElementById("categoryName").value;
+
+//     // // filtering menu
+//     // function getMenu(e) {
+//     //     return e.id === menuType;
+//     // }
+//     // findData = newmenuData.filter(getMenu)
+
+//     // let k = findData[0]["categoryData"]
+//     // // console.log(k)
+
+//     // filtering category
+//     function getCategory(e) {
+//         return e.id == categoryType;
+//     }
+//     findData = categoryData.filter(getCategory);
+//     // console.log(findData2[0]["categoryName"]);
+
+//     // here finding the index of findData from menuData and delete
+//     for (i = 0; i < categoryData.length; i++) {
+
+//         if (findData[0]["categoryName"] == categoryData[i]["categoryName"]) {
+
+//             categoryData.splice(i, 1)
+//             localStorage.setItem("categoryData", JSON.stringify(categoryData));
+//             alert("Category Deleted Sucessfully ✅")
+//             location.reload()
+//         }
+//     }
 // }
-
-
-// delete the category from the menuData
-let deleteBtn = document.querySelector(".delete");
-deleteBtn.addEventListener("click", removeCategory);
-
-function removeCategory() {
-    // let menuType = document.getElementById("menuName").value;
-    let categoryType = document.getElementById("categoryName").value;
-
-    // // filtering menu
-    // function getMenu(e) {
-    //     return e.id === menuType;
-    // }
-    // findData = menuData.filter(getMenu)
-
-
-    // let k = findData[0]["categoryData"]
-    // // console.log(k)
-
-    // filtering category
-    function getCategory(e) {
-        return e.id == categoryType;
-    }
-    findData = categoryData.filter(getCategory);
-    // console.log(findData2[0]["categoryName"]);
-
-
-    // here finding the index of findData from menuData and delete
-    for (i = 0; i < categoryData.length; i++) {
-
-        if (findData[0]["categoryName"] == categoryData[i]["categoryName"]) {
-
-            categoryData.splice(i, 1)
-            localStorage.setItem("categoryData", JSON.stringify(categoryData));
-            alert("Category Deleted Sucessfully ✅")
-            location.reload()
-        }
-    }
-}
-
-
-
-
-
-
-

@@ -1,132 +1,108 @@
-
-
-trasactionTable = JSON.parse(localStorage.getItem("transactionTable"));
-
-
-let addtoCartBtn = document.querySelector(".add_to_cart");
-addtoCartBtn.addEventListener("click", addtoCart);
-
+// const transactionTable = JSON.parse(localStorage.getItem("transactionTable"));
+// const dishData = JSON.parse(localStorage.getItem("dishData"));
+// const userData = JSON.parse(localStorage.getItem("userData"));
+const user_unique = JSON.parse(localStorage.getItem("user_unique"));
+// console.log(user_unique);
+const addtoCartBtn = document.querySelector(".add_to_cart");
 function addtoCart() {
-
+  if (user_unique == null) {
+    alert("Please Login");
+  } else {
     // for getting menu id from url
-    const menuId = new URLSearchParams(window.location.search).get("menu")
+    const menuId = new URLSearchParams(window.location.search).get("menu");
+    // console.log(menuId);
 
-    let menuDetails = transactionTable.filter(data =>
-        data.menuType === menuId)
-
-    console.log(menuDetails)
-
-    // for getting menu name from url
-
-    let menu_name = menuData.find(data =>
-        data.id === menuId);
-
-    console.log(menu_name["menuName"]);
+    const menuDetails = transactionTable.filter(
+      (data) => data.menuType === menuId
+    );
 
     // for getting category id from url
-    const categoryId = new URLSearchParams(window.location.search).get("category");
+    const categoryId = new URLSearchParams(window.location.search).get(
+      "category"
+    );
 
-    let categoryDetails = menuDetails.filter(data =>
-        data.categoryType === categoryId)
-
-    console.log(categoryDetails)
-
-    // for getting category name from url
-    let category_name = categoryData.find(data =>
-        data.id === categoryId);
-
-    console.log(category_name["categoryName"]);
+    const categoryDetails = menuDetails.filter(
+      (data) => data.categoryType === categoryId
+    );
 
     // filtering the dish from the dishData using menu id and category id from the transactionTable
-    let findData = dishData.filter(product =>
-        categoryDetails.some(find => find.dish === product.id))
+    const findData = dishData.filter((product) =>
+      categoryDetails.some((find) => find.dish === product.id)
+    );
 
+    // console.log(findData);
+    const dishDataTrue = findData.filter((data) => data.status === "true");
 
-    cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+    // const dishes_id = [];
 
-    let m_name = menu_name["menuName"];
-    let c_name = category_name["categoryName"];
-    let uuid = uuidv4();
+    // for (let i = 0; i < dishDataTrue.length; i++) {
+    //   const value = dishDataTrue[i].id;
+    //   dishes_id.push({ id: value });
+    // }
 
+    const cartData = JSON.parse(localStorage.getItem("cartData")) || [];
 
-    if (cartData.length == 0) {
-        let cost = 0
-        for (let i = 0; i < findData.length; i++) {
-            cost += parseInt(findData[i]["price"])
+    const find_user = cartData.filter((data) => data.user_id === user_unique);
+
+    const no_of_guest = 50;
+    const date_of_delivery = "";
+    const uuid = uuidv4();
+
+    if (find_user.length === 0) {
+      let cost = 0;
+      for (let i = 0; i < dishDataTrue.length; i++) {
+        cost += parseInt(dishDataTrue[i].price);
+      }
+      // console.log(cost)
+      cartData.push({
+        user_id: user_unique,
+        menu_id: menuId,
+        category_id: categoryId,
+        uniqueId: uuid,
+        totalCost: cost,
+        noOfGuest: no_of_guest,
+        dateOfDelivery: date_of_delivery,
+        // dishData: dishes_id,
+        cartStatus: "false",
+      });
+      // console.log(cartData[0])
+      alert("Menu added into the Cart ✅");
+      localStorage.setItem("cartData", JSON.stringify(cartData));
+      window.location.reload();
+    } else if (find_user.length !== 0) {
+      let a = true;
+      for (let i = 0; i < find_user.length; i++) {
+        if (
+          menuId === find_user[i].menu_id &&
+          categoryId === find_user[i].category_id
+        ) {
+          alert("This menu already in the cart ‼");
+          a = false;
         }
-        console.log(cost)
-        cartData.push({ menuName: m_name, categoryName: c_name, uniqueId: uuid, totalCost: cost, dishData: findData })
-        // console.log(cartData[0])
-        alert("Menu added into the Cart ✅")
+      }
+      if (a !== false) {
+        let cost = 0;
+        for (let i = 0; i < dishDataTrue.length; i++) {
+          cost += parseInt(dishDataTrue[i].price);
+        }
+
+        alert("Menu added into the Cart ✅");
+        cartData.push({
+          user_id: user_unique,
+          menu_id: menuId,
+          category_id: categoryId,
+          uniqueId: uuid,
+          totalCost: cost,
+          noOfGuest: no_of_guest,
+          dateOfDelivery: date_of_delivery,
+          // dishData: dishes_id,
+          cartStatus: "false",
+        });
         localStorage.setItem("cartData", JSON.stringify(cartData));
+        window.location.reload();
+      }
     }
-
-    else if (cartData !== 0) {
-
-        let a = true;
-        for (i = 0; i < cartData.length; i++) {
-
-            if (m_name == cartData[i]["menuName"] && c_name == cartData[i]["categoryName"]) {
-                alert("This menu already in the cart ‼")
-                a = false;
-            }
-        }
-        if (a !== false) {
-            let cost = 0
-            for (let i = 0; i < findData.length; i++) {
-                cost += parseInt(findData[i]["price"])
-            }
-            console.log(cost)
-
-            alert("Menu added into the Cart ✅")
-            cartData.push({ menuName: m_name, categoryName: c_name, uniqueId: uuid,totalCost: cost, dishData: findData })
-            localStorage.setItem("cartData", JSON.stringify(cartData));
-
-        }
-
-    }
-
-
-
-
-
-    // let menu_id = menuDetails["id"];
-    // let category_id = categoryDetails["id"];
-
-    // console.log(menu_id);
-    // console.log(category_id);
-
-
-
-    // 2nd method to get (filtering the dish from the dishData using menu id and category id from the transactionTable)
-
-    // // filtering Menu
-    // function getMenu(e) {
-    //     return e.menuType === menuId;
-    // }
-    // findData = transactionTable.filter(getMenu)
-    // // console.log(findData);
-
-
-    // //  filtering Category
-    // function getCategory(e) {
-    //     return e.categoryType === categoryId;
-    // }
-    // findData2 = findData.filter(getCategory)
-    // // console.log(findData2)
-
-    // // comparing the dish id from the findData2 to id from the dishData
-    // let findData3 = dishData.filter(product =>
-    //     findData2.some(find => find.dish === product.id))
-
-    // console.log(findData3);
-
-
-
-
-
-
-
-
-
+  }
 }
+
+addtoCartBtn.addEventListener("click", addtoCart);

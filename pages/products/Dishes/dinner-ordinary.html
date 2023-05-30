@@ -1,218 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
     family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
+            rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
-        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
+            rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-    <link rel="stylesheet" href="../../../assets/css/header.css">
-    <link rel="stylesheet" href="../../../assets/css/Dishes-CSS/dishes.css">
+        <link rel="stylesheet" href="../../../assets/css/header.css">
+        <link rel="stylesheet" href="../../../assets/css/Dishes-CSS/dishes.css">
 
-    <link rel="stylesheet" href="../../../assets/css/normalize.css">
+        <link rel="stylesheet" href="../../../assets/css/normalize.css">
 
-    <link rel="icon" href="../../../assets/img/main-logo.png">
+        <link rel="icon" href="../../../assets/img/main-logo.png">
 
-    <script src="../../../assets/JS/product.js"></script>
-    <title>Ordinary Dinner</title>
-</head>
+        <script src="../../../assets/JS/product.js"></script>
+        <title>Ordinary Dinner</title>
+    </head>
 
-<body>
-    <!-- header starts -->
-    <header>
-        <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
+    <body>
+        <!-- header starts -->
+        <header>
+            <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
 
-        <div class="icon-left">
-            <img src="../../../assets/img/main-logo.png" alt="Company Logo" class="logo" />
-            <h1>SR</h1>
-            <div>
-                <p>Catering</p>
+            <div class="icon-left">
+                <img src="../../../assets/img/main-logo.png" alt="Company Logo" class="logo">
+                <h1>SR</h1>
+                <div>
+                    <p>Catering</p>
+                </div>
             </div>
-        </div>
 
-        <ul class="navigation" id="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class="navigation" id="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-            <li><a href="../../../index.html" class="navigation-link">HOME</a></li>
-            <li class="dropdown">
-                <span class="navigation-link">MENU</span>
-                <div class="dropdown-content">
+                <li>
+                    <a href="../../../index.html" class="navigation-link">HOME</a>
+                </li>
+                <li class="dropdown">
+                    <span class="navigation-link">MENU</span>
+                    <div class="dropdown-content">
+                        <div>
+                            <a href="../Menus/menu-morning.html">Breakfast Menu</a>
+                            <a href="../Menus/menu-lunch.html">Lunch Menu</a>
+                            <a href="../Menus/menu-hightea.html">Hightea Menu</a>
+                            <a href="../Menus/menu-dinner.html">Dinner Menu</a>
+                            <a href="../Menus/menu-custom.html">Custom Menu</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="../../homepage/Events/events.html" class="navigation-link">EVENTS</a>
+                </li>
+                <li>
+                    <a href="../../homepage/about us.html" class="navigation-link">ABOUT US</a>
+                </li>
+                <li>
+                    <a href="../../homepage/contact us.html" class="navigation-link">CONTACT US</a>
+                </li>
+                <li>
+                    <a href="../../homepage/my cart.html" class="navigation-link">MY CART</a>
+                </li>
+            </ul>
+
+            <div class="dropdown_profile">
+                <img src="../../../assets/img/profile.png" alt="profile image">
+                <div class="dropdown_profile-content">
                     <div>
-                        <a href="../Menus/menu-morning.html">Breakfast Menu</a>
-                        <a href="../Menus/menu-lunch.html">Lunch Menu</a>
-                        <a href="../Menus/menu-hightea.html">Hightea Menu</a>
-                        <a href="../Menus/menu-dinner.html">Dinner Menu</a>
-                        <a href="../Menus/menu-custom.html">Custom Menu</a>
+                        <a href="../../profile/Profile page.html">My Profile</a>
+                        <a href="../../profile/register.html">Register</a>
+                        <a href="../../profile/Login.html">Log in</a>
+                        <a href="../../profile/my orders.html">My Orders</a>
                     </div>
                 </div>
-            </li>
-            <li><a href="../../homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
-            <li><a href="../../homepage/about us.html" class="navigation-link">ABOUT US</a></li>
-            <li><a href="../../homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-            <li><a href="../../homepage/my cart.html" class="navigation-link">MY CART</a></li>
-        </ul>
-
-        <div class="dropdown_profile">
-            <img src="../../../assets/img/profile.png" alt="profile image" />
-            <div class="dropdown_profile-content">
-                <div>
-                    <a href="../../profile/Profile page.html">My Profile</a>
-                    <a href="../../profile/register.html">Register</a>
-                    <a href="../../profile/Login.html">Log in</a>
-                    <a href="../../profile/my orders.html">My Orders</a>
-                </div>
             </div>
-        </div>
-    </header>
-    <!-- header ends -->
+        </header>
+        <!-- header ends -->
 
-    <!-- main starts -->
+        <!-- main starts -->
 
-    <main>
-        <!-- sub-menu starts -->
-        <div class="ingredient-image">
-            <h2>Ordinary Dinner</h2>
-        </div>
+        <main>
+            <!-- sub-menu starts -->
+            <div class="ingredient-image">
+                <h2>Ordinary Dinner</h2>
+            </div>
 
-        <section class="category">
-            <!-- <div class="content"> 
-                <h3><span>SR</span>'s Ordinary Dinner</h3>
-                <ul class="dishes">
-                    <li>  MINI IDLY</li>
-                    <li>  PAROTA WITH CHOPS</li>
-                    <li>  VEG MUSHROOM BRIYANI</li>
-                    <li>  GULAB JAMUN</li>
-                    <li>  COFFEE</li>
-                    <li>  MYSORE BONDA</li>
-                    <li>  MINI ONION UTTAPPAM</li>
+            <section class="category">
+                <div class="content"> 
+                    <h3>
+                        <span>SR</span>'s Ordinary Dinner
+                    </h3>
+                    <ul class="dishes">
+                    <li>  MINI IDLY (2) - 10 </li>
+                    <li>  PAROTA WITH CHOPS (2) - 30</li>
+                    <li>  VEG MUSHROOM BRIYANI - 50</li>
+                    <li>  GULAB JAMUN (2) - 20</li>
+                    <li>  COFFEE (1) - 10</li>
+                    <li>  MYSORE BONDA (1) - 10</li>
+                    <li>  MINI ONION UTTAPPAM (2) - 30</li>
                     <li>  COCONUT CHUTNY</li>
                     <li>  SAMBAR</li>
                     <li>  ONION RAITA</li>
-                    <li>  ICE CREAM</li>
-                    <li>  MINERAL WATER</li>
-                    <li>  BANANA LEAF</li>
-                </ul>
-                <div class="btn">
-                    <p>₹200/plate</p>
-                    <a href="../../homepage/my cart.html"><button class="add_to_cart">Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image"/></button></a>
-                    <a href="../../profile/Order page.html"><button class="buy_now">Buy Now</button></a>
-                </div>
-                <div class="about">
-                    <img src="../../../assets/img/Dishes/ordinary dinner.jpg" alt="ordinary dinner" />
+                    <li>  ICE CREAM (1) - 15</li>
+                    <li>  MINERAL WATER (1) - 10</li>
+                    <li>  BANANA LEAF (1) - 5</li>
+                    </ul>
+                    <div class="btn">
+                    <p>₹190/plate</p>
+                    <a href="../../homepage/my cart.html">
+<button class="add_to_cart">
+Add to Cart <img class="plus-image" src="../../../assets/img/plus.png" alt="plus image">
+</button>
+</a>
+                    <a href="../../profile/Order page.html">
+<button class="buy_now">Buy Now</button>
+</a>
+                    </div>
+                    <div class="about">
+                    <img src="../../../assets/img/Dishes/ordinary dinner.jpg" alt="ordinary dinner">
                     <div>
-                        <h2>Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious</h2>
-                        <p>We seek to impress your guests with our flavours and best culinary skills, our professionals can cater to your orders – be it vegetarian buffet, 
-                            non-vegetarian. Our menu includes Mini Idly, Parotta with Chops, Biryani, Sweet, Idiyapam, Bonda, Coffee, Special Chutney, Sambar, Coconut Chutney,
-                            Onion Raitha and etc. Our SR Catering make it as a best budgetary and tastiest dinner menu & a leading budget dinner service provider.
-                        </p>
+                    <h2>Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious</h2>
+                    <p>We seek to impress your guests with our flavours and best culinary skills, our professionals can cater to your orders – be it vegetarian buffet, 
+                    non-vegetarian. Our menu includes Mini Idly, Parotta with Chops, Biryani, Sweet, Idiyapam, Bonda, Coffee, Special Chutney, Sambar, Coconut Chutney,
+                    Onion Raitha and etc. Our SR Catering make it as a best budgetary and tastiest dinner menu & a leading budget dinner service provider.
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+            </section>
+            <!-- sub-menu ends -->
+
+            <!-- related menu starts -->
+            <section class="related-menu">
+                <h2 class="related-menu_heading">
+                    Related <span>Dinner</span> Menus
+                </h2>
+                <div class="related-menu_content">
+                    <div class="related-menu1">
+                        <img src="../../../assets/img/Dishes/special dinner.jpg" alt="special dinner">
+                        <a href="./dinner-special.html">
+                            <h2>
+                                <span>Special</span> Dinner
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="related-menu1">
+                        <img src="../../../assets/img/Dishes/vip dinner.jpg" alt="vip dinner">
+                        <a href="./dinner-vip.html">
+                            <h2>
+                                <span>VIP</span> Dinner
+                            </h2>
+                        </a>
                     </div>
                 </div>
-            </div> -->
-        </section>
-        <!-- sub-menu ends -->
 
-        <!-- related menu starts -->
-        <section class="related-menu">
-            <h2 class="related-menu_heading">Related <span>Dinner</span> Menus</h2>
-            <div class="related-menu_content">
-                <div class="related-menu1">
-                    <img src="../../../assets/img/Dishes/special dinner.jpg" alt="special dinner" />
-                    <a href="./dinner-special.html">
-                        <h2><span>Special</span> Dinner</h2>
-                    </a>
+            </section>
+            <!-- related menu ends -->
+        </main>
+        <!-- main ends -->
+
+        <!-- footer starts -->
+
+        <footer>
+            <div class="footer-box">
+                <div class="footer-content">
+                    <img src="../../../assets/img/main-logo.png" alt="Company Logo">
+                    <p>
+                        SR Catering service is a professional catering service provider located in Kumbakonam, catering both
+                        personal and corporate orders.
+                    </p>
                 </div>
-                <div class="related-menu1">
-                    <img src="../../../assets/img/Dishes/vip dinner.jpg" alt="vip dinner" />
-                    <a href="./dinner-vip.html">
-                        <h2><span>VIP</span> Dinner</h2>
-                    </a>
+                <div class="footer-content">
+                    <h3>
+                        <span>Breakfast</span> Menus
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="../Dishes/morning-ordinary.html" class="footer-navigation">Ordinary Breakfast</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/morning-special.html" class="footer-navigation">Special Breakfast</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/morning-vip.html" class="footer-navigation">VIP Breakfast</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-content">
+                    <h3>
+                        <span>Lunch</span> Menus
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="../Dishes/lunch-ordinary.html" class="footer-navigation">Ordinary Lunch</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/lunch-special.html" class="footer-navigation">Special Lunch</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/lunch-vip.html" class="footer-navigation">VIP Lunch</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-content">
+                    <h3>
+                        <span>Hightea</span> Menus
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="../Dishes/hightea-ordinary.html" class="footer-navigation">Ordinary Hightea</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/hightea-special.html" class="footer-navigation">Special Hightea</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/hightea-vip.html" class="footer-navigation">VIP Hightea</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-content">
+                    <h3>
+                        <span>Dinner</span> Menus
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="../Dishes/dinner-ordinary.html" class="footer-navigation">Ordinary Dinner</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/dinner-special.html" class="footer-navigation">Special Dinner</a>
+                        </li>
+                        <li>
+                            <a href="../Dishes/dinner-vip.html" class="footer-navigation">VIP Dinner</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-
-        </section>
-        <!-- related menu ends -->
-    </main>
-    <!-- main ends -->
-
-    <!-- footer starts -->
-
-    <footer>
-        <div class="footer-box">
-            <div class="footer-content">
-                <img src="../../../assets/img/main-logo.png" alt="Company Logo" />
+            <div class="footer-details">
                 <p>
-                    SR Catering service is a professional catering service provider located in Kumbakonam, catering both
-                    personal and corporate orders.
+                    Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span>
                 </p>
+                <p>(+91)6379370482</p>
+                <div class="footer-links">
+                    <a href="https://www.instagram.com/vicky_sk_forever?r=nametag">
+                        <img
+                            src="../../../assets/img/instagram.jpg" alt="instagram"> </a>
+                    <a href="https://www.facebook.com/profile.php?id=100011341742455">
+                        <img
+                            src="../../../assets/img/facebook.jpg" alt="facebook link"> </a>
+                    <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08">
+                        <img
+                            src="../../../assets/img/twitter.png" alt="twitter link"> </a>
+                </div>
             </div>
-            <div class="footer-content">
-                <h3><span>Breakfast</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/morning-ordinary.html" class="footer-navigation">Ordinary Breakfast</a></li>
-                    <li><a href="../Dishes/morning-special.html" class="footer-navigation">Special Breakfast</a></li>
-                    <li><a href="../Dishes/morning-vip.html" class="footer-navigation">VIP Breakfast</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Lunch</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/lunch-ordinary.html" class="footer-navigation">Ordinary Lunch</a></li>
-                    <li><a href="../Dishes/lunch-special.html" class="footer-navigation">Special Lunch</a></li>
-                    <li><a href="../Dishes/lunch-vip.html" class="footer-navigation">VIP Lunch</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Hightea</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/hightea-ordinary.html" class="footer-navigation">Ordinary Hightea</a></li>
-                    <li><a href="../Dishes/hightea-special.html" class="footer-navigation">Special Hightea</a></li>
-                    <li><a href="../Dishes/hightea-vip.html" class="footer-navigation">VIP Hightea</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Dinner</span> Menus</h3>
-                <ul>
-                    <li><a href="../Dishes/dinner-ordinary.html" class="footer-navigation">Ordinary Dinner</a></li>
-                    <li><a href="../Dishes/dinner-special.html" class="footer-navigation">Special Dinner</a></li>
-                    <li><a href="../Dishes/dinner-vip.html" class="footer-navigation">VIP Dinner</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-details">
-            <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
-            <p>(+91)6379370482</p>
-            <div class="footer-links">
-                <a href="https://www.instagram.com/vicky_sk_forever?r=nametag"> <img
-                        src="../../../assets/img/instagram.jpg" alt="instagram" /> </a>
-                <a href="https://www.facebook.com/profile.php?id=100011341742455"> <img
-                        src="../../../assets/img/facebook.jpg" alt="facebook link" /> </a>
-                <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"> <img
-                        src="../../../assets/img/twitter.png" alt="twitter link" /> </a>
-            </div>
-        </div>
 
-    </footer>
-    <!-- footer ends -->
+        </footer>
+        <!-- footer ends -->
 
-    <!-- script starts -->
-    <script>
-
-        // let menuData = JSON.parse(localStorage.getItem("menuData"));
+        <!-- script starts -->
+        <script>// let menuData = JSON.parse(localStorage.getItem("menuData"));
 
         // // filtering Dinner Menu
         // let findMenu = "4";
@@ -221,7 +279,6 @@
         //     return e.menuName === findMenu;
         // }
         // let findData = dishData.filter(getMenu)
-
 
         // //  filtering Category = ordinary
         // let findCategory = "1";
@@ -241,10 +298,6 @@
         // //     dishes[i]
         // // }
         // // console.log(dishes);
-
-
-
-
 
         // window.location =`../Dishes/dinner-ordinary.html?name=${getCategory}`
 
@@ -275,7 +328,7 @@
         // // for(i=0; i<dishes.length; i++){
         // //     list = document.createElement("li");
         // //     list.innerText = dishes[i]["name"];
-        // //     un_ordered_list.append(list); 
+        // //     un_ordered_list.append(list);
         // // }
 
         // for (i = 0; i < dinner_ord["dishes"].length; i++) {
@@ -338,11 +391,9 @@
         // div_details.append(details);
 
         // document.querySelector("section.category").append(div_content)
-
-
     </script>
-    <!-- script ends -->
+        <!-- script ends -->
 
-</body>
+    </body>
 
 </html>

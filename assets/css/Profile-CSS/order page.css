@@ -34,50 +34,41 @@ span {
 .my-order {
     background:linear-gradient(to bottom left, black 60%, white, green);
     padding: 3%;
-    /* display: grid;
-    height: 90vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center; */
 }
 .my-order_form{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 1rem;
     margin:auto;
     border: 3px solid var(--text-color);
     border-radius: 3.125rem;
-    /* width: 40%;
-    height: 80vh; */
     background-color: var(--other-color);
     padding: 2rem;
-}
-.details{
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 80%;
-    height: 75vh; */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
-    gap: 3rem;
-    padding: 4%;
 }
 .my-order_form h2 {
     font-family: var(--heading-fontfamily);
     font-size: var(--big-font);
     color: var(--second-color);
     text-align: center;
-    padding: 1rem;
-    
+    padding: 1rem; 
 }
 .my-order_form h3 {
     font-family: var(--parah-fontfamily);
     font-size: var(--h2-font);
     color: var(--text-color);
-    /* border: 2px solid var(--text-color); */
     text-align: center;
 }
+.details{
+    display: grid;
+    align-items: center;
+    gap: 2rem;
+    padding: 4%;
+}
+
+
 .details div {
     display: grid;
+    justify-items: center;
     gap: 1.5rem;
 }
 .details div label {
@@ -88,7 +79,6 @@ span {
     margin-right: 53%;
 }
 .details div input {
-    /* height: 2.5rem; */
     width: 80%;
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
@@ -101,17 +91,56 @@ span {
 .details div textarea {
     font-family: var(--parah-fontfamily);
     color: var(--text-color);
-    border: 2px solid var(--text-color);
+    border: 2px solid greenyellow;
     background-color: var(--bg-color);
     border-radius: 1.25rem;
     padding: 1rem;
     width: 80%;
-    /* height: 6.25rem; */
     line-height: 1.875rem;
 }
-.btn-submit {
-    background-color: var(--second-color);
+.order_details {
+    display: grid;
+    gap: 1rem;
+    border: 1px solid var(--text-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+.order_details h2{
+    font-family: var(--heading-fontfamily);
+    font-size: var(--h2-font);
+    color: var(--text-color);
+    text-align: center;
+}
+.seperation {
+    border-top:2px solid var(--bg-color) ;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 1rem;
+    display: grid;
+    gap: 1rem;
+}
+.seperation h2 {
+    padding-top: 1rem;
+}
+.seperation div, .sum_total, .last{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.order_details div label, .order_details div input{
+    font-family: var(--parah-fontfamily);
+    font-size: var(--p-font);
+    color: var(--text-color);
+    outline: none;
+    border: transparent;
+    padding: .5rem;
+}
+#totalcost {
+    background-color: var(--thickgreen-color);
     color: var(--bg-color);
+    font-weight: bold;
+}
+
+.btn {
     font-family: var(--parah-fontfamily);
     font-size: var(--p-font);
     font-weight: bold;
@@ -119,26 +148,32 @@ span {
     border-radius: 1.875rem;
     border: transparent;
 }
-.btn-submit:hover {
+.submit {
+    background-color: var(--second-color);
+    color: var(--bg-color);
+    width: 100px;
+}
+.changeAdd {
+    background-color: var(--thickgreen-color);
+    color: var(--bg-color);
+}
+.submit:hover {
     transform: scale(1.1);
     color: var(--text-color);
-    border: transparent;
+}
+.ensure {
+    font-family: var(--parah-fontfamily);
+    font-size: 15px;
+    opacity: .8;
+    text-align: center;
 }
 
 
-/* aside img {
-    border-radius: 3.125rem;
-    padding: 5rem;
-} */
-
-
-
+/* footer */
 footer {
-    /* height: 10vh; */
     background-color: var(--other-color);
 }
 .footer-details {
-    /* height: 16%; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -172,62 +207,11 @@ footer {
     .footer-details {
         flex-direction: column;
     }
-    aside,aside img {
-        display: none;
-    }
 }
+
 @media screen and (max-width:460px){
     html {
         font-size: 10px;
     }
     
 }
-
-
-/* @media screen and (max-width:400px){
-    html{
-        font-size: 8px;
-    }
-
-
-    .bx-menu {
-        display: block;
-    }
-    .navigation {
-        display: none;
-    }
-    .responsive-navigation {
-        display:none;
-        overflow: hidden;
-        position: absolute;
-        top: 9%;
-        right: -100px;
-        width: 80px;
-        z-index: 10001;
-        padding: 0;
-        background-color: var(--other-color);
-        transition: all .3s ;
-        border-radius: 1rem;
-    }
-    .responsive-navigation li {
-        padding: .5rem 0;
-        border-bottom: .5px solid var(--bg-color);
-
-    }
-    .bx-menu:hover .responsive-navigation {
-        display: block;
-        right: 0;
-    }
-    aside img {
-        display: none;
-    }
-    .my-order_form {
-        width: 90%;
-    }
-
-
-    .footer-details {
-        flex-wrap: wrap;
-    }
-
-} */

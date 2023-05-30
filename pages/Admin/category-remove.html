@@ -1,119 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
     family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
+            rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
-        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
+            rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
 
-    <link rel="icon" href="../../assets/img/main-logo.png">
+        <link rel="icon" href="../../assets/img/main-logo.png">
+    
+        <link rel="stylesheet" href="../../assets/css/header.css">
 
-    <link rel="stylesheet" href="../../assets/css/Admin/category remove.css">
-    <title>category Remove</title>
-</head>
+        <link rel="stylesheet" href="../../assets/css/Admin/category remove.css">
+        <title>category Remove</title>
+    </head>
 
-<body>
-    <header>
-        <div class="icon-left">
-            <img src="../../assets/img/main-logo.png" alt="Company Logo" class="logo" />
-            <img src="../../assets/img/Fav.png" alt="catering Logo" class="catering" />
-            <div>
-                <p>Catering</p>
-            </div>
-        </div>
+    <body>
+    
+        <main>
+            <section>
+                <form role="form" id="change">
+                    <h2>Category Remove</h2>
 
-        <ul class="navigation">
-            <li><a href="../../index.html" class="navigation-link">HOME</a></li>
+                    <div class="select_menu">
+                        <h3>Select Menu</h3>
+                        <select name="menu" id="menuName" class="menulist" required>
+                            <option value="">Select</option>
 
-            <li class="dropdown">
-                <span class="navigation-link">MENU</span>
-                <div class="dropdown-content">
-                    <div>
-                        <a href="../products/Menus/menu-morning.html">Breakfast Menu</a>
-                        <a href="../products/Menus/menu-lunch.html">Lunch Menu</a>
-                        <a href="../products/Menus/menu-hightea.html">Hightea Menu</a>
-                        <a href="../products/Menus/menu-dinner.html">Dinner Menu</a>
-                        <a href="../products/Menus/menu-custom.html">Custom Menu</a>
+                        </select>
+                        <button class="btn show1" type="button">Show Category</button>
                     </div>
-                </div>
-            </li>
-            <li><a href="../homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
-            <li><a href="../homepage/about us.html" class="navigation-link">ABOUT US</a></li>
-            <li><a href="../homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-            <li><a href="../homepage/my cart.html" class="navigation-link">MY CART</a></li>
-        </ul>
 
-        <div class="dropdown_profile">
-            <img src="../../assets/img/profile.png" alt="profile image" />
-            <div class="dropdown_profile-content">
-                <div>
-                    <a href="../profile/Profile page.html">My Profile</a>
-                    <a href="../profile/register.html">Register</a>
-                    <a href="../profile/Login.html">Log in</a>
-                    <a href="#">My Orders</a>
-                </div>
-            </div>
-        </div>
-    </header>
+                    <div class="select_category">
+                        <h3>Select Category</h3>
+                        <select name="category" id="categoryName" class="categorylist" required>
+                            <option value="">Select</option>
 
-    <main>
-        <section>
-            <form>
-                <h2>Category Remove</h2>
+                        </select>
+                        <button class="btn show2" type="button">Show Details</button>
+                    </div>
+                    <div class="category_details">
+                        <input type="text" class="category_name" id="categoryNameGet" pattern="^[a-zA-Z\s]+$"
+                        title="Enter alphabets only" required readonly>
+                        <select name="" id="categoryStatusGet" required>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                        <input type="url" class="category_image" id="categoryImageGet" pattern="https?://.+" title="It should be URL.eg:http, https" required>
+                        <!-- <input type="number" class="category_price" id="categoryPriceGet"  /> -->
+                    </div>
 
-                <!-- <div class="select_menu">
-                    <h3>Select Menu</h3>
-                    <select name="menu" id="menuName" class="menulist">
-                        <option value="">Select</option>
+                    <!-- <button class="btn delete" type="button">Delete</button> -->
+                    <button type="submit" class="btn save" style="display: none;">Save</button>
 
-                    </select>
-                    <button class="btn show1" type="button">Show Category</button>
-                </div> -->
+                </form>
+            </section>
 
+        </main>
 
-                <div class="select_category">
-                    <h3>Select Category</h3>
-                    <select name="category" id="categoryName" class="categorylist">
-                        <option value="">Select</option>
+        <script src="../../assets/JS/header.js"></script>
 
-                    </select>
-                    <button class="btn show2" type="button">Show Details</button>
-                </div>
-                <div class="category_details">
-                    <input type="text" class="category_name" id="categoryNameGet" readonly />
-                    <!-- <input type="text" class="category_image" id="categoryImageGet" /> -->
-                    <!-- <input type="number" class="category_price" id="categoryPriceGet"  /> -->
-                </div>
+        <script src="../../assets/JS/Admin scripts/category_remove.js"></script>
 
-                <button class="btn delete" type="button">Delete</button>
-                <!-- <button type="button" class="btn save">Save</button> -->
-
-            </form>
-        </section>
-
-    </main>
-
-    <script src="../../assets/JS/Admin scripts/category_remove.js"></script>
-
-
-
-
-</body>
+    </body>
 
 </html>

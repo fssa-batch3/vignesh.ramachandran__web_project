@@ -1,166 +1,72 @@
-// const addBtn = document.querySelector(".bx-plus");
-// const div_input = document.querySelector(".input_group");
-// const div_input2 = document.querySelector(".input_group2")
+const form_id = document.querySelector("#form_id");
 
-// addBtn.addEventListener("click", addInput);
+function getData(e) {
+  e.preventDefault();
 
-// function addInput() {
+  const menuType = document.getElementById("menuName").value;
+  // console.log(menuType);
+  const menuImage = document.getElementById("menuImage").value;
+  const menuAbout = document.getElementById("menuAbout").value;
 
-//     const div_field = document.createElement("div");
-//     div_field.className = "field";
+  const menuData = JSON.parse(localStorage.getItem("menuData")) || [];
 
-//     const name = document.createElement("input");
-//     name.type = "text";
-//     name.id = "name";
-//     name.placeholder = "Enter Menu Name";
+  const findData = menuData.filter(
+    (data) => data.menuName.toLowerCase() === menuType.toLowerCase()
+  );
 
-//     const image = document.createElement("input");
-//     image.type = "file";
-//     image.id = "image";
+  // console.log(findData);
 
-//     const description = document.createElement("textarea")
-//     description.type = "text";
-//     description.placeholder = "Enter About Menu";
-//     description.className = "about_menu";
+  const n = findData.length;
 
-//     const btn = document.createElement("i");
-//     btn.className = "bx bx-x";
-//     btn.addEventListener("click", removeInput);
-
-//     const addCategory = document.createElement("p");
-//     addCategory.innerText = "Add Category";
-//     addCategory.className = "add_category";
-
-//     const plus = document.createElement("i");
-//     plus.className = "bx bx-plus";
-//     plus.addEventListener("click", addInput2)
-
-//     div_input.append(div_field);
-//     div_field.append(name);
-//     div_field.append(image);
-//     div_field.append(description);
-//     div_field.append(btn);
-//     div_field.append(addCategory);
-//     addCategory.append(plus)
-
-// }
-
-
-// // 2nd field
-// function addInput2() {
-//     const div_field2 = document.createElement("div");
-//     div_field2.setAttribute("class", "field");
-
-//     const name2 = document.createElement("input");
-//     name2.type = "text";
-//     name2.placeholder = "Enter Category Name";
-//     name2.id = "name";
-
-//     const image2 = document.createElement("input");
-//     image2.type = "file";
-//     image2.id = "image";
-
-//     const price = document.createElement("input");
-//     price.type = "number";
-//     price.placeholder = "Enter Price" 
-
-//     const btn = document.createElement("i");
-//     btn.className = "bx bx-x";
-//     btn.addEventListener("click", removeInput);
-
-
-//     div_input2.append(div_field2);
-//     div_field2.append(name2);
-//     div_field2.append(image2);
-//     div_field2.append(price)
-//     div_field2.append(btn);
-
-// }
-
-
-
-// input remove event
-// function removeInput() {
-//     this.parentElement.remove()
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let submitBtn = document.querySelector(".btn_submit");
-submitBtn.addEventListener("click", getData);
-
-function getData() {
-    let menuType = document.getElementById("menuName").value;
-    // console.log(menuType);
-    let menuImage = document.getElementById("menuImage").value;
-    let menuAbout = document.getElementById("menuAbout").value;
-
-    let menuData = JSON.parse(localStorage.getItem("menuData")) || [];
-
-    // let categoryData = [];
-
-    function getMenu(e) {
-        return e.menuName === menuType;
-    }
-    findData = menuData.filter(getMenu);
-    // console.log(findData)
-
-    let n = findData.length;
-
-    if (menuData.length == 0) {
-
-        for (i = 1; i <= n + 1; i++) {
-            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, "description": menuAbout});
-        }
-
-        // console.log(menuData);
-        localStorage.setItem("menuData", JSON.stringify(menuData));
-
-        location.reload();
-        alert("Menu Added Sucessfully ✅");
-
+  if (menuData.length === 0 && menuAbout !== "") {
+    for (let i = 1; i <= n + 1; i++) {
+      menuData.push({
+        menuName: menuType,
+        id: `${i}`,
+        image: menuImage,
+        status: "true",
+        description: menuAbout,
+      });
     }
 
-    else if (findData.length == 0) {
+    // console.log(menuData);
+    localStorage.setItem("menuData", JSON.stringify(menuData));
 
-        let localMenucount = menuData.length;
+    alert("Menu Added Sucessfully ✅");
+    window.location.reload();
+  } else if (findData.length === 0) {
+    if (menuAbout.trim() === "") {
+      alert("Description should not be empty");
+    } else {
+      const localMenucount = menuData.length;
 
-        // console.log(localMenucount);
+      // console.log(localMenucount);
 
-        for (i = localMenucount + 1; i <= localMenucount + 1; i++) {
-            menuData.push({ "menuName": menuType, "id": i + "", "image": menuImage, "description": menuAbout, });
-        }
+      for (let i = localMenucount + 1; i <= localMenucount + 1; i++) {
+        menuData.push({
+          menuName: menuType,
+          id: `${i}`,
+          image: menuImage,
+          status: "true",
+          description: menuAbout,
+        });
+      }
 
-        // console.log(menuData);
-        localStorage.setItem("menuData", JSON.stringify(menuData));
+      // console.log(menuData);
+      localStorage.setItem("menuData", JSON.stringify(menuData));
 
-        location.reload();
-        alert("Menu Added Sucessfully ✅");
+      alert("Menu Added Sucessfully ✅");
+      window.location.reload();
     }
-
-
-    else if (menuType == findData[0]["menuName"]) {
-        alert(menuType + " " + "is already in the Database" + " " + "Create a new Menu")
-        location.reload()
-
-    }
- 
-
-
-
-
-
+  } else if (menuType.toLowerCase() === findData[0].menuName.toLowerCase()) {
+    alert(
+      `${menuType} ` +
+        `Menu is already in the Database` +
+        ` ` +
+        `Create a new Menu`
+    );
+    window.location.reload();
+  }
 }
+
+form_id.addEventListener("submit", getData);

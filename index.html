@@ -1,562 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&
     family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
+            rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
-        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kurale&display=swap"
+            rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
+        <link rel="stylesheet" href="./assets/css/header.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
 
-    <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/normalize.css">
 
-    <link rel="stylesheet" href="./assets/css/normalize.css">
+        <link rel="icon" href="./assets/img/main-logo.png">
 
-    <link rel="icon" href="./assets/img/main-logo.png">
+        <title>SR Catering</title>
 
-    <title>SR Catering</title>
-</head>
+    </head>
 
-<body>
+    <body>
+        <!-- main starts -->
 
-    <!-- Header starts -->
-    <header>
-        <div class="bx bx-menu" id="toggle" onclick="openNav()"></div>
+        <main>
 
-        <div class="icon-left">
-            <img src="./assets/img/main-logo.png" alt="Company Logo" class="logo" />
-            <h1>SR</h1>
-            <div>
-                <p>Catering</p>
-            </div>
-        </div>
+            <a href="./pages/profile/address_book.html"></a>
 
-        <ul class="navigation" id="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <!-- <img src="https://b.zmtcdn.com/data/dish_photos/9c9/bf7a221b2081f059d2e87eb649be59c9.jpg?output-format=webp" alt=""> -->
+            <!-- <img src="https://b.zmtcdn.com/data/dish_photos/e83/75a2e56fd7e36eb7cc4f146d16ad6e83.jpg?output-format=webp" alt=""> -->
 
-            <li><a href="./index.html" class="navigation-link">HOME</a></li>
-            <li class="dropdown">
-                <span class="navigation-link">MENU</span>
-                <div class="dropdown-content">
-                    <div>
-                        <a href="./pages/products/Menus/menu-morning.html">Breakfast Menu</a>
-                        <a href="./pages/products/Menus/menu-lunch.html">Lunch Menu</a>
-                        <a href="./pages/products/Menus/menu-hightea.html">Hightea Menu</a>
-                        <a href="./pages/products/Menus/menu-dinner.html">Dinner Menu</a>
-                        <a href="./pages/products/Menus/menu-custom.html">Custom Menu</a>
-                    </div>
+            <div class="image_slider">
+                <div class="slide_image">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/015/227d8c2ff600f91503cf49108b7d9015.jpg" alt="">
                 </div>
-            </li>
-            <li><a href="./pages/homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
-            <li><a href="./pages/homepage/about us.html" class="navigation-link">ABOUT US</a></li>
-            <li><a href="./pages/homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-            <li><a href="./pages/homepage/my cart.html" class="navigation-link">MY CART</a></li>
-        </ul>
-
-        <div class="dropdown_profile">
-            <img src="./assets/img/profile.png" alt="profile image" />
-            <div class="dropdown_profile-content">
-                <div>
-                    <a href="./pages/profile/Profile page.html">My Profile</a>
-                    <a href="./pages/profile/register.html">Register</a>
-                    <a href="./pages/profile/Login.html">Log in</a>
-                    <a href="./pages/profile/my orders.html">My Orders</a>
+                <div class="slide_image">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/eb9/160aa67bad2b96a5c7b681358758feb9.jpg" alt="">
                 </div>
-            </div>
-        </div>
-
-        <!-- <div class="bx bx-menu">
-            <ul class="responsive-navigation">
-                <li><a href="./index.html" class="navigation-link">HOME</a></li>
-                <li class="dropdown">
-                    <span class="navigation-link">MENU</span>
-                    <div class="dropdown-content">
-                        <div>
-                            <a href="./pages/products/Menus/menu-morning.html">Breakfast Menu</a>
-                            <a href="./pages/products/Menus/menu-lunch.html">Lunch Menu</a>
-                            <a href="./pages/products/Menus/menu-hightea.html">Hightea Menu</a>
-                            <a href="./pages/products/Menus/menu-dinner.html">Dinner Menu</a>
-                            <a href="./pages/products/Menus/menu-custom.html">Custom Menu</a>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="./pages/homepage/Events/events.html" class="navigation-link">EVENTS</a></li>
-                <li><a href="./pages/homepage/about us.html" class="navigation-link">ABOUT US</a></li>
-                <li><a href="./pages/homepage/contact us.html" class="navigation-link">CONTACT US</a></li>
-                <li><a href="./pages/homepage/my cart.html" class="navigation-link">MY CART</a></li>
-            </ul>
-        </div> -->
-
-    </header>
-
-    <!-- Header ends -->
-
-    <!-- main starts -->
-
-    <main class="123">
-
-        <!-- Food image starts -->
-        <div class="food-image">
-            <p> We are focussed on giving your event a new dimension</p>
-            <a href="./pages/homepage/contact us.html">
-                <button type="button">
-                    Contact Us
-                </button>
-            </a>
-        </div>
-        <!-- Food image ends -->
-
-        <!-- All menu list starts -->
-
-        <section class="allmenu-list">
-            <div class="name">
-                <h1><span>SR</span> Catering</h1>
+                <div class="slide_image">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/a97/02e417992eadc71ba9650b10fc4d9a97.jpg" alt="">
+                </div>
+                <div class="slide_image">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/717/2ba31dcfdb0db5aca8083b7f8662c717.jpg" alt="">
+                </div>
+                <div class="slide_image">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/6b7/1c5a969c81cb08db73a4d7f28e3526b7.jpg" alt="">
+                </div>
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
 
-            <div class="mainmenu-list">
-
-                <!-- <div class="lists">
-                    <img src="./assets/img/breakfast.jpg" alt="breakfast image" />
-                    <div class="lists-text">
-                        <h2><span>Breakfast</span> Menu</h2>
-                        <p>SR Catering Service offers best breakfast menu that is available for all parties and weddings; we also assist customers to create a personalized
-                         menu just according to client’s taste and perfect for the occasion
-                        </p>
-                        <a href="./pages/products/Menus/menu-morning.html" >read more...</a>
-                    </div>
-                </div>
-
-                <div class="lists">
-                    <img src="./assets/img/lunch.jpeg" alt="lunch image" />
-                    <div class="lists-text">
-                        <h2><span>Lunch</span> Menu</h2>
-                        <p>
-                            SR Catering Service provides delicious lunch menu that suits all functions and parties; we also allow clients to create a personalized
-                             menu just according to their taste, budget
-                        </p>
-                        <a href="./pages/products/Menus/menu-lunch.html">read more...</a>
-                    </div>
-                </div>
-
-                <div class="lists">
-                    <img src="./assets/img/hightea.jpg" alt="hightea image" />
-                    <div class="lists-text">
-                        <h2><span>High Tea</span> Menu</h2>
-                        <p>
-                            SR Catering Service gives evening tea and snacks menu which is available for all functions; we also help customers to create a personalized menu 
-                            just according to client’s taste and perfect for the occasion
-                        </p>
-                        <a href="./pages/products/Menus/menu-hightea.html">read more...</a>
-                    </div>
-                </div>
-
-                <div class="lists">
-                    <img src="./assets/img/dinner.jpg" alt="dinner image" />
-                    <div class="lists-text">
-                        <h2><span>Dinner</span> Menu</h2>
-                        <p>
-                            SR Catering Service present a detailed dinner menu which is available for all parties, wedding and reception; we also aid customers to create a 
-                            personalized and special menu just according to the taste and budget
-                        </p>
-                        <a href="./pages/products/Menus/menu-dinner.html">read more...</a>
-                    </div>
-                </div>
-
-                <div class="lists">
-                    <img src="./assets/img/custom menu.jpg" alt="custom menu image" />
-                    <div class="lists-text">
-                        <h2><span>Custom</span> Menu</h2>
-                        <p>SR Catering Service is offering a wide range of vegetarian and non vegetarian menus, also includes chinese varieties of noodles, fried rice, gravy etc... 
-                            we also assist customers to create a personalized and special menu just according to the taste, budget and perfect for the occasion
-                        </p>
-                        <a href="./pages/products/Menus/menu-custom.html">read more...</a>
-                    </div>
-                </div> -->
-            </div>
-        </section>
-        <!-- All menu list ends -->
-
-        <!-- Why choose us starts -->
-
-        <section class="why-choose-us">
-            <div class="why-choose-us-text">
-                <h2><span>WHY</span> CHOOSE US</h2>
-                <p>We are a divine brand that specializes in providing specialized Food Catering services. Our foods are
-                    well-prepared. Customers
-                    praise the taste, nutritional value, and affordability of the food.
-                </p>
-            </div>
-            <div class="why-we">
-                <div class="why-we-option">
-                    <img src="./assets/img/why choose us icon.png" alt="spoon icon" />
-                    <div class="why-we-option-text">
-                        <h3>Quality Food Items</h3>
-                        <p>
-                            We provide food with good nutrition and its original quality and flavour.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="why-we-option">
-                    <img src="./assets/img/why choose us icon.png" alt="spoon icon" />
-                    <div class="why-we-option-text">
-                        <h3>Professional Chefs</h3>
-                        <p>
-                            Food items are the most important aspect of any occasion or gathering, and you can have
-                            tasty food just by hiring a professional chef.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="why-we-option">
-                    <img src="./assets/img/why choose us icon.png" alt="spoon icon" />
-                    <div class="why-we-option-text">
-                        <h3>Budget-Friendly</h3>
-                        <p>
-                            A greater part of the food supplier provides cooking packages adapted to your budgets.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="why-we-option">
-                    <img src="./assets/img/why choose us icon.png" alt="spoon icon" />
-                    <div class="why-we-option-text">
-                        <h3>Belief</h3>
-                        <p>We are dedicated to delivering great catering services to our clients.</p>
-                    </div>
-                </div>
-                <div class="why-we-option">
-                    <img src="./assets/img/why choose us icon.png" alt="spoon icon" />
-                    <div class="why-we-option-text">
-                        <h3>Delivery On Time</h3>
-                        <p>One of the most important aspects of a Caterer-Customer relationship and timely delivery of
-                            ordered food.</p>
-                    </div>
-                </div>
-                <div class="why-we-option">
-                    <img src="./assets/img/why choose us icon.png" alt="spoon icon" />
-                    <div class="why-we-option-text">
-                        <h3>Event Planning</h3>
-                        <p>Whatever the occasion, our specialized catering team is ready to assist you in making your
-                            event a success.</p>
-                    </div>
+            <!-- The dots/circles -->
+            <div class="spin_roller">
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
                 </div>
             </div>
-        </section>
-        <!-- why choose us ends -->
 
-        <!-- why our service starts -->
+            <!-- Food image starts -->
+            <!-- <div class="food-image">
+                <p> We are focussed on giving your event a new dimension</p>
+                <a href="./pages/homepage/contact us.html">
+                    <button type="button">
+                        Contact Us
+                    </button>
+                </a>
+            </div> -->
+            <!-- Food image ends -->
 
-        <section class="our-service">
-            <div class="our-service-content">
-                <div class="our-service-text">
-                    <h2><span>Why</span> Our Catering Service</h2>
-                    <p>
-                        We provide all varieties of food to private and corporate clients with a range of tasty,
-                        stylish, friendly and professional
-                        catering services. We have a highly skilled team of professionals who will be highly intended to
-                        offer an orderly service
-                        inside the scheduled span of your energy. Our catering service provides catering for all
-                        occasions whether you are organizing
-                        a cocktail party for a corporate or charity event, a small intimate dinner party at home, or a
-                        full-scale wedding reception.
+            <!-- All menu list starts -->
+
+            <section class="allmenu-list">
+                <div class="name">
+                    <h1>
+                        <span>SR</span> Catering
+                    </h1>
+                </div>
+
+                <div class="mainmenu-list">
+
+                </div>
+            </section>
+            <!-- All menu list ends -->
+
+            <!-- Why choose us starts -->
+
+            <section class="why-choose-us">
+                <div class="why-choose-us-text">
+                    <h2>
+                        <span>WHY</span> CHOOSE US
+                    </h2>
+                    <p>We are a divine brand that specializes in providing specialized Food Catering services. Our foods are
+                        well-prepared. Customers
+                        praise the taste, nutritional value, and affordability of the food.
                     </p>
                 </div>
-                <img src="./assets/img/Catering.gif" alt="food image" class="our-service-img" />
-            </div>
-        </section>
-        <!-- why our service ends -->
+                <div class="why-we">
+                    <div class="why-we-option">
+                        <img src="./assets/img/why choose us icon.png" alt="spoon icon">
+                        <div class="why-we-option-text">
+                            <h3>Quality Food Items</h3>
+                            <p>
+                                We provide food with good nutrition and its original quality and flavour.
+                            </p>
+                        </div>
+                    </div>
 
-        <!-- how it works starts -->
+                    <div class="why-we-option">
+                        <img src="./assets/img/why choose us icon.png" alt="spoon icon">
+                        <div class="why-we-option-text">
+                            <h3>Professional Chefs</h3>
+                            <p>
+                                Food items are the most important aspect of any occasion or gathering, and you can have
+                                tasty food just by hiring a professional chef.
+                            </p>
+                        </div>
+                    </div>
 
-        <section class="how-it-works">
-            <h2><span>How</span> It Works</h2>
-            <div class="how-it-works_content">
+                    <div class="why-we-option">
+                        <img src="./assets/img/why choose us icon.png" alt="spoon icon">
+                        <div class="why-we-option-text">
+                            <h3>Budget-Friendly</h3>
+                            <p>
+                                A greater part of the food supplier provides cooking packages adapted to your budgets.
+                            </p>
+                        </div>
+                    </div>
 
-                <div class="how-it-works_text">
-                    <img src="./assets/img/how is works.jpg" alt="online order image">
-                    <h3>Order your-Food </h3>
-                    <div class="disappear">
-                        <p>
-                            The best food, the best service, attention to detail, and any extra arrangements you have
-                            ordered for your special event.
-                        </p>
+                    <div class="why-we-option">
+                        <img src="./assets/img/why choose us icon.png" alt="spoon icon">
+                        <div class="why-we-option-text">
+                            <h3>Belief</h3>
+                            <p>We are dedicated to delivering great catering services to our clients.</p>
+                        </div>
+                    </div>
+                    <div class="why-we-option">
+                        <img src="./assets/img/why choose us icon.png" alt="spoon icon">
+                        <div class="why-we-option-text">
+                            <h3>Delivery On Time</h3>
+                            <p>One of the most important aspects of a Caterer-Customer relationship and timely delivery of
+                                ordered food.</p>
+                        </div>
+                    </div>
+                    <div class="why-we-option">
+                        <img src="./assets/img/why choose us icon.png" alt="spoon icon">
+                        <div class="why-we-option-text">
+                            <h3>Event Planning</h3>
+                            <p>Whatever the occasion, our specialized catering team is ready to assist you in making your
+                                event a success.</p>
+                        </div>
                     </div>
                 </div>
+            </section>
+            <!-- why choose us ends -->
 
-                <div class="how-it-works_text">
-                    <img src="./assets/img/food making.jpg" alt="food preparing image">
-                    <h3>Food-Preparation</h3>
-                    <div class="disappear">
+            <!-- why our service starts -->
+
+            <section class="our-service">
+                <div class="our-service-content">
+                    <div class="our-service-text">
+                        <h2>
+                            <span>Why</span> Our Catering Service
+                        </h2>
                         <p>
-                            We also have skilled chefs on staff who can prepare a various varieties based on our
-                            customer’s preferences.
+                            We provide all varieties of food to private and corporate clients with a range of tasty,
+                            stylish, friendly and professional
+                            catering services. We have a highly skilled team of professionals who will be highly intended to
+                            offer an orderly service
+                            inside the scheduled span of your energy. Our catering service provides catering for all
+                            occasions whether you are organizing
+                            a cocktail party for a corporate or charity event, a small intimate dinner party at home, or a
+                            full-scale wedding reception.
                         </p>
                     </div>
+                    <img src="./assets/img/Catering.gif" alt="food image" class="our-service-img">
                 </div>
-                <div class="how-it-works_text">
-                    <img src="./assets/img/food deliver.jpg" alt="food delivery image">
-                    <h3>Delivery on--time</h3>
-                    <div class="disappear">
-                        <p>
-                            One of the most important aspects of a Caterer-Customer relationship is the timely delivery
-                            of ordered food.
-                        </p>
+            </section>
+            <!-- why our service ends -->
+
+            <!-- how it works starts -->
+
+            <section class="how-it-works">
+                <h2>
+                    <span>How</span> It Works
+                </h2>
+                <div class="how-it-works_content">
+
+                    <div class="how-it-works_text">
+                        <img src="./assets/img/how is works.jpg" alt="online order image">
+                        <h3>Order your-Food </h3>
+                        <div class="disappear">
+                            <p>
+                                The best food, the best service, attention to detail, and any extra arrangements you have
+                                ordered for your special event.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="how-it-works_text">
+                        <img src="./assets/img/food making.jpg" alt="food preparing image">
+                        <h3>Food-Preparation</h3>
+                        <div class="disappear">
+                            <p>
+                                We also have skilled chefs on staff who can prepare a various varieties based on our
+                                customer’s preferences.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="how-it-works_text">
+                        <img src="./assets/img/food deliver.jpg" alt="food delivery image">
+                        <h3>Delivery on--time</h3>
+                        <div class="disappear">
+                            <p>
+                                One of the most important aspects of a Caterer-Customer relationship is the timely delivery
+                                of ordered food.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- how it works ends -->
-        <div>
-            <img src="./assets/img/Homepage/walking chef.gif" class="gif" alt="walking chef">
-        </div>
+            </section>
+            <!-- how it works ends -->
+            <!-- <div>
+                <img src="./assets/img/Homepage/walking chef.gif" class="gif" alt="walking chef">
+            </div> -->
 
-    </main>
-    <!-- main ends -->
+        </main>
+        <!-- main ends -->
 
-    <!-- footer starts -->
-    <footer>
-        <div class="footer-box">
-            <div class="footer-content">
-                <img src="./assets/img/main-logo.png" alt="Company Logo" />
-                <p>
-                    SR Catering service is a professional catering service provider located in Kumbakonam, catering both
-                    personal and corporate orders.
-                </p>
-            </div>
-            <div class="footer-content">
-                <h3><span>Breakfast</span> Menus</h3>
-                <ul>
-                    <li><a href="./pages/products/Dishes/morning-ordinary.html" class="footer-navigation">Ordinary
-                            Breakfast</a></li>
-                    <li><a href="./pages/products/Dishes/morning-special.html" class="footer-navigation">Special
-                            Breakfast</a></li>
-                    <li><a href="./pages/products/Dishes/morning-vip.html" class="footer-navigation">VIP Breakfast</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Lunch</span> Menus</h3>
-                <ul>
-                    <li><a href="./pages/products/Dishes/lunch-ordinary.html" class="footer-navigation">Ordinary
-                            Lunch</a></li>
-                    <li><a href="./pages/products/Dishes/lunch-special.html" class="footer-navigation">Special Lunch</a>
-                    </li>
-                    <li><a href="./pages/products/Dishes/lunch-vip.html" class="footer-navigation">VIP Lunch</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Hightea</span> Menus</h3>
-                <ul>
-                    <li><a href="./pages/products/Dishes/hightea-ordinary.html" class="footer-navigation">Ordinary
-                            Hightea</a></li>
-                    <li><a href="./pages/products/Dishes/hightea-special.html" class="footer-navigation">Special
-                            Hightea</a></li>
-                    <li><a href="./pages/products/Dishes/hightea-vip.html" class="footer-navigation">VIP Hightea</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3><span>Dinner</span> Menus</h3>
-                <ul>
-                    <li><a href="./pages/products/Dishes/dinner-ordinary.html" class="footer-navigation">Ordinary
-                            Dinner</a></li>
-                    <li><a href="./pages/products/Dishes/dinner-special.html" class="footer-navigation">Special
-                            Dinner</a></li>
-                    <li><a href="./pages/products/Dishes/dinner-vip.html" class="footer-navigation">VIP Dinner</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-details">
-            <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
-            <p>(+91)6379370482</p>
-            <div class="footer-links">
-                <a href="https://www.instagram.com/vicky_sk_forever?r=nametag"> <img src="./assets/img/instagram.jpg"
-                        alt="instagram" /> </a>
-                <a href="https://www.facebook.com/profile.php?id=100011341742455"> <img src="./assets/img/facebook.jpg"
-                        alt="facebook link" /> </a>
-                <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"> <img
-                        src="./assets/img/twitter.png" alt="twitter link" /> </a>
-            </div>
-        </div>
-        <!-- <a href="./pages/products/Menus/menu-morning.html"></a> -->
-        <!-- <img src="https://freeimage.host/i/HWcKmOP" alt="" style="width: 200px; height: 200px;"> -->
+        <!-- script starts -->
+        <script src="./assets/JS/header.js"></script>
 
-    </footer>
-    <!-- footer ends -->
+        <script src="./assets/JS/main.js"></script>
 
-    <!-- script starts -->
-    <script>
-        function openNav() {
-            document.getElementById("sidenav").style.width = "190px";
-            // document.body.style.backgroundColor = "var(--other-color)";
-        }
+        <script src="./assets/JS/menu.js"></script>
 
-        function closeNav() {
-            document.getElementById("sidenav").style.width = "0";
-            // document.body.style.backgroundColor = "white";
-        }
+        <script src="./assets/JS/footer.js"></script>
 
-        // All menus lists
+        <!-- <script>
 
-        let menuData = JSON.parse(localStorage.getItem("menuData"));
+            if(user_id == "vignesh.ramachandran@fssa.freshworks.com"){
+            alert("Welcome Admin")
+            }
+            </script> -->
 
-        for (i = 0; i < menuData.length; i++) {
-            let div_lists;
-            let div_lists_text;
-            let img;
-            let h2;
-            let span;
-            let p;
-            let a;
+        <!-- script ends -->
 
-            div_lists = document.createElement("div");
-            div_lists.setAttribute("class", "lists");
-            console.log(div_lists);
-
-            img = document.createElement("img");
-            img.setAttribute("src", menuData[i]["image"]);
-            // img.setAttribute("alt", menus[i]["images"]["alt"]);
-            div_lists.append(img);
-
-            div_lists_text = document.createElement("div");
-            div_lists_text.setAttribute("class", "lists-text");
-            div_lists.append(div_lists_text);
-
-            h2 = document.createElement("h2");
-            h2.innerText = " Menu";
-            div_lists_text.append(h2);
-
-            span = document.createElement("span");
-            span.innerText = menuData[i]["menuName"];
-            h2.prepend(span);
-
-            p = document.createElement("p");
-            p.innerText = menuData[i]["description"];
-            div_lists_text.append(p);
-
-            a = document.createElement("a");
-            a.setAttribute("href", "./pages/products/Menus/category.html?menu=" + menuData[i]["id"]);
-            a.innerText = "read more...";
-            div_lists_text.append(a);
-
-
-            document.querySelector("div.mainmenu-list").append(div_lists);
-        }
-
-
-        // const menus =
-        //     [
-        //         {
-        //             name: "Breakfast",
-        //             description: "SR Catering Service offers best breakfast menu that is available for all parties and weddings; we also assist customers to create a personalized menu just according to client’s taste and perfect for the occasion",
-        //             images: {
-        //                 source: "./assets/img/breakfast.jpg",
-        //                 alt: "breakfast image"
-        //             },
-        //             link: "./pages/products/Menus/menu-morning.html",
-        //         },
-
-        //         {
-        //             name: "Lunch",
-        //             description: "SR Catering Service provides delicious lunch menu that suits all functions and parties; we also allow clients to create a personalized menu just according to their taste, budget",
-        //             images: {
-        //                 source: "./assets/img/lunch.jpeg",
-        //                 alt: "lunch image"
-        //             },
-        //             link: "./pages/products/Menus/menu-lunch.html",
-        //         },
-
-        //         {
-        //             name: "HighTea",
-        //             description: "SR Catering Service gives evening tea and snacks menu which is available for all functions; we also help customers to create a personalized menu just according to client’s taste and perfect for the occasion",
-        //             images: {
-        //                 source: "./assets/img/hightea.jpg",
-        //                 alt: "hightea image"
-        //             },
-        //             link: "./pages/products/Menus/menu-hightea.html",
-        //         },
-
-        //         {
-        //             name: "Dinner",
-        //             description: "SR Catering Service present a detailed dinner menu which is available for all parties, wedding and reception; we also aid customers to create a personalized and special menu just according to the taste and budget",
-        //             images: {
-        //                 source: "./assets/img/dinner.jpg",
-        //                 alt: "dinner image"
-        //             },
-        //             link: "./pages/products/Menus/menu-dinner.html",
-        //         },
-
-        //         {
-        //             name: "Custom",
-        //             description: "SR Catering Service is offering a wide range of vegetarian and non vegetarian menus, also includes chinese varieties of noodles, fried rice, gravy etc... we also assist customers to create a personalized and special menu just according to the taste, budget and perfect for the occasion",
-        //             images: {
-        //                 source: "./assets/img/custom menu.jpg",
-        //                 alt: "custom menu image"
-        //             },
-        //             link: "./pages/products/Menus/menu-custom.html"
-        //         },
-
-        //     ]
-
-        // for (i = 0; i < menus.length; i++) {
-        //     let div_lists;
-        //     let div_lists_text;
-        //     let img;
-        //     let h2;
-        //     let span;
-        //     let p;
-        //     let a;
-
-        //     div_lists = document.createElement("div");
-        //     div_lists.setAttribute("class", "lists");
-        //     console.log(div_lists);
-
-        //     img = document.createElement("img");
-        //     img.setAttribute("src", menus[i]["images"]["source"]);
-        //     img.setAttribute("alt", menus[i]["images"]["alt"]);
-        //     div_lists.append(img);
-
-        //     div_lists_text = document.createElement("div");
-        //     div_lists_text.setAttribute("class", "lists-text");
-        //     div_lists.append(div_lists_text);
-
-        //     h2 = document.createElement("h2");
-        //     h2.innerText = " Menu";
-        //     div_lists_text.append(h2);
-
-        //     span = document.createElement("span");
-        //     span.innerText = menus[i]["name"];
-        //     h2.prepend(span);
-
-        //     p = document.createElement("p");
-        //     p.innerText = menus[i]["description"];
-        //     div_lists_text.append(p);
-
-        //     a = document.createElement("a");
-        //     a.setAttribute("href", menus[i]["link"] + "?menu=" + menus[i]["name"]);
-        //     a.innerText = "read more...";
-        //     div_lists_text.append(a);
-
-
-        //     document.querySelector("div.mainmenu-list").append(div_lists);
-        // }
-
-    </script>
-    <!-- script ends -->
-
-</body>
+    </body>
 
 </html>
