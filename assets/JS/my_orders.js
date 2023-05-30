@@ -108,7 +108,7 @@ for (let i = 0; i < findData.length; i++) {
   // create ordered by paragraph
   const orderedByP = document.createElement("p");
   orderedByP.classList.add("order_by");
-  orderedByP.innerText = `Ordered By : ${findData[i].name}`;
+  orderedByP.innerText = `Ordered By : ${findData[i].user_id}`;
   myOrdersListDiv.append(orderedByP);
 
   // create view details button
@@ -130,4 +130,10 @@ btnView.forEach((showProducts) => {
 
     window.location.href = `../profile/order_details.html?orderId=${order_id}`;
   });
+});
+
+const loader = document.getElementById("preloader");
+
+window.addEventListener("load", () => {
+  loader.style.display = "none";
 });

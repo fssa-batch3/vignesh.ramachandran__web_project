@@ -86,6 +86,7 @@ function showDishes() {
       const newInput = document.createElement("input");
       newInput.type = "text";
       newInput.id = `dish${i}`;
+      newInput.pattern = "^[A-Z\\s]+$";
       newInput.value = findData3[i].name;
       newInput.setAttribute("readonly", "true");
 
@@ -99,6 +100,7 @@ function showDishes() {
 
       const priceInput = document.createElement("input");
       priceInput.type = "number";
+      priceInput.pattern = "[0-9]{1,3}";
       priceInput.id = `price${i}`;
       priceInput.value = findData3[i].price;
       priceInput.min = "0";

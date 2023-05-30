@@ -1,9 +1,10 @@
-// const orderData = JSON.parse(localStorage.getItem("orderData"));
+const orderData = JSON.parse(localStorage.getItem("orderData"));
 const orderProduct = JSON.parse(localStorage.getItem("orderProduct"));
 const newMenuData = JSON.parse(localStorage.getItem("menuData"));
 const categoryData = JSON.parse(localStorage.getItem("categoryData"));
 const transactionTable = JSON.parse(localStorage.getItem("transactionTable"));
 const dishData = JSON.parse(localStorage.getItem("dishData"));
+const addressData = JSON.parse(localStorage.getItem("addressData"));
 // const user_unique = JSON.parse(localStorage.getItem("user_unique"));
 
 const m = moment().format("YYYY-MM-DD");
@@ -15,9 +16,30 @@ const orderDetails = orderProduct.filter(
   (data) => data.order_id === order_id_get
 );
 
-// console.log(orderDetails);
+const findOrderData = orderData.find((data) => data.order_id === order_id_get);
 
-// let orderDetails = orderData.filter((data) => data.user_id === user_unique);
+const findAddress = addressData.find(
+  (data) => data.addressId === findOrderData.addressId
+);
+// console.log(findAddress);
+
+const div_address = document.createElement("div");
+div_address.setAttribute("class", "address_div");
+
+const h2_heading = document.createElement("h2");
+h2_heading.innerText = "Delivery Address";
+div_address.append(h2_heading);
+
+const p_address = document.createElement("p");
+p_address.innerText = `${findAddress.name}, ${findAddress.email}, ${findAddress.phone_number},
+  ${findAddress.door_no},
+  ${findAddress.street_name}, 
+  ${findAddress.sub_locality}, 
+  ${findAddress.city}, 
+  ${findAddress.district}- ${findAddress.pincode}. `;
+div_address.append(p_address);
+
+document.querySelector("section.my-orders").prepend(div_address);
 
 for (let i = 0; i < orderDetails.length; i++) {
   const menu_id = `${orderDetails[i].menu_id}`;

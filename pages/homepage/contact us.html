@@ -24,6 +24,13 @@
         <link rel="stylesheet" href="../../assets/css/normalize.css">
 
         <link rel="icon" href="../../assets/img/main-logo.png">
+
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+        (function(){emailjs.init("2MzGzccj7crwD7iWt");})();
+        </script>
         <title>Contact Us</title>
     </head>
 
@@ -108,18 +115,25 @@
 
                     <div class="contact-us_message">
                         <h2>Write a Message/Enquiry</h2>
-                        <form class="contact-us_form">
+                        <form class="contact-us_form" id="form_id">
                             <div>
-                                <input type="text" placeholder="Name">
-                                <input type="text" placeholder="Mobile">
+                                <input type="text" placeholder="Name" id="name" pattern="^[a-zA-Z\s]+$"
+                                title="Enter alphabets only" required="true">
+                                <input type="text" placeholder="Mobile" id="phone_number" title="Enter 10 number only" required="true">
+                                <div class="error">
+
+                                </div>
                             </div>
                             <div>
-                                <input type="email" placeholder="Email">
-                                <input type="text" placeholder="City">
+                                <input type="email" placeholder="Email" id="email"
+                                pattern="^([a-z]+[a-z0-9_+\-\. ]*[a-z0-9]+)@(gmail|fssa|yahoo|hotmail|outlook)\.(freshworks.com|com|net|org|edu|in)$"
+                                required="true">
+                                <input type="text" placeholder="City" id="city" pattern="^[a-zA-Z\s]+$"
+                                title="Enter alphabets only" required="true">
                             </div>
-                            <textarea type="text" placeholder="Message"></textarea>
+                            <textarea type="text" placeholder="Message" id="message" required="true"></textarea>
+                            <button type="submit">SEND MESSAGE</button> 
                         </form>
-                        <button >SEND MESSAGE</button> 
                     </div>
 
                 </div>
@@ -127,40 +141,62 @@
             <!-- contact us ends -->
         </main>
         <!-- main ends -->
-
-        <!-- footer starts -->
-
-        <!-- <footer>
-            <div class="footer-box">
-            <div class="footer-content">
-            <img src="../../assets/img/main-logo.png" alt="Company Logo" />
-            <p>
-            SR Catering service is a professional catering service provider located in Kumbakonam, catering both personal and corporate orders.
-            </p>
-            </div>
-            
-            </div>
-            <div class="footer-details">
-            <p>Copyright © 2021 - 2023 SR Catering - Website Designed By <span>vicky</span></p>
-            <p>(+91)6379370482</p>
-            <div class="footer-links">
-            <a href="https://www.instagram.com/vicky_sk_forever?r=nametag" > <img src="../../assets/img/instagram.jpg" alt="instagram"/> </a>
-            <a href="https://www.facebook.com/profile.php?id=100011341742455"> <img src="../../assets/img/facebook.jpg" alt="facebook link"/> </a>
-            <a href="https://twitter.com/SRVignesh06?t=zGFf0sZZJa_0oe8XfsLkOQ&s=08"> <img src="../../assets/img/twitter.png" alt="twitter link"/> </a>
-            </div>
-            </div>
-        
-            </footer> -->
-        <!-- footer ends -->
     
         <!-- script starts -->
         <script src="../../assets/JS/header.js"></script>
 
         <script>
                 const categoryData = JSON.parse(localStorage.getItem("categoryData"));
+
+                const mobileInput = document.getElementById("phone_number");
+                const errorMessage = document.querySelector(".error");
+
+                mobileInput.addEventListener("input", () => {
+                    const inputValue = mobileInput.value.trim(); // remove leading/trailing whitespace
+                    const isValidInput =
+                        /^[6-9]\d{9}$/.test(inputValue) && !/^\d*(\d)\1{9}\d*$/.test(inputValue);
+                    if (!isValidInput || inputValue === "") {
+                        if (inputValue === "") {
+                        errorMessage.textContent = "Please enter a mobile number.";
+                        }
+                        if (/^\d+$/.test(inputValue)) {
+                        errorMessage.textContent = "Enter a valid 10-digit mobile number.";
+                        } else {
+                        errorMessage.textContent = "Please enter digits only.";
+                        }
+                        errorMessage.style.color = "var(--second-color)";
+                    } else {
+                        errorMessage.textContent = "";
+                    }
+                });
+
+                const form_id = document.querySelector("#form_id");
+                form_id.addEventListener("submit", (e)=> {
+                    e.preventDefault();
+
+                    // email.js fucntion
+                    const details = {
+                        name : document.getElementById("name").value,
+                        email : document.getElementById("email").value,
+                        phone_number : document.getElementById("phone_number").value,
+                        city : document.getElementById("city").value,
+                        message : document.getElementById("message").value
+                    }
+                    const serviceId = "service_cd83xmf";
+                    const templateId = "template_fj3cgpb";
+
+                    emailjs.send(serviceId, templateId, details)
+                        .then((res) => {
+                            document.querySelector("form").reset();
+                            // console.log(res);
+                            alert("Message sended sucessfully")
+                        })
+                        .catch((err) => console.log(err));
+                })
         </script>
 
         <script src="../../assets/JS/footer.js"></script>
+
         <!-- script end -->
 
     </body>
