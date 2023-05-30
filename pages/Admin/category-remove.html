@@ -55,7 +55,8 @@
                         <button class="btn show2" type="button">Show Details</button>
                     </div>
                     <div class="category_details">
-                        <input type="text" class="category_name" id="categoryNameGet" pattern="[A-Za-z.]+" title="Enter name without name" readonly>
+                        <input type="text" class="category_name" id="categoryNameGet" pattern="^[a-zA-Z\s]+$"
+                        title="Enter alphabets only" required readonly>
                         <select name="" id="categoryStatusGet" required>
                             <option value="true">True</option>
                             <option value="false">False</option>

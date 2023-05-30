@@ -32,7 +32,7 @@ function fillInAddress() {
   let address1 = "";
   let postcode = "";
 
-  console.log(place);
+  // console.log(place);
 
   // Get each component of the address from the place details,
   // and then fill-in the corresponding field on the form.
@@ -90,6 +90,31 @@ function fillInAddress() {
 
 window.initAutocomplete = initAutocomplete;
 
+const mobileInput = document.getElementById("phone_number");
+const errorMessage = document.querySelector(".error");
+
+mobileInput.addEventListener("input", () => {
+  const inputValue = mobileInput.value.trim(); // remove leading/trailing whitespace
+  const isValidInput =
+    /^[6-9]\d{9}$/.test(inputValue) && !/^\d*(\d)\1{9}\d*$/.test(inputValue);
+  if (!isValidInput || inputValue === "") {
+    if (inputValue === "") {
+      errorMessage.textContent = "Please enter a mobile number.";
+    }
+    if (/^\d+$/.test(inputValue)) {
+      errorMessage.textContent = "Enter a valid 10-digit mobile number.";
+    } else {
+      errorMessage.textContent = "Please enter digits only.";
+    }
+    errorMessage.style.color = "var(--text-color)";
+  } else {
+    errorMessage.textContent = "";
+  }
+});
+
+const findUserAddress = addressData.filter((data) => data.userId === userId);
+// console.log(findUserAddress);
+
 const urlAddressId = new URLSearchParams(window.location.search).get(
   "addressId"
 );
@@ -112,7 +137,8 @@ if (urlAddressId) {
   document.getElementById("postcode").value = findAddress.pincode;
 
   const form_id = document.querySelector("#address-form");
-  form_id.addEventListener("click", () => {
+  form_id.addEventListener("submit", (s) => {
+    s.preventDefault();
     // getting data
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -126,9 +152,21 @@ if (urlAddressId) {
     const pincode = document.getElementById("postcode").value;
     const uuid = uuidv4();
 
-    if (findAddress.default === "true") {
-      findAddress.default = "false";
-      findAddress.status = "false";
+    const alreadyExists = findUserAddress.filter(
+      (e) =>
+        e.name === name &&
+        e.email === email &&
+        e.phone_number === phone_number &&
+        e.street_name === street_name &&
+        e.sub_locality === sub_locality &&
+        e.door_no === door_no &&
+        e.city === city &&
+        e.district === district &&
+        e.state === state &&
+        e.pincode === pincode
+    );
+
+    if (alreadyExists.length === 0) {
       addressData.push({
         userId,
         addressId: uuid,
@@ -142,13 +180,63 @@ if (urlAddressId) {
         district,
         state,
         pincode,
-        default: "true",
+        default: findAddress.default,
         status: "true",
         selected: "false",
       });
-    } else {
-      findAddress.default = "false";
       findAddress.status = "false";
+      findAddress.default = "false";
+      localStorage.setItem("addressData", JSON.stringify(addressData));
+      alert("Address Updated Sucessfully");
+      window.history.back();
+    } else if (alreadyExists[0].status === "true") {
+      alert("This address already in your book");
+      window.history.back();
+    } else {
+      findAddress.status = "false";
+      alreadyExists[0].status = "true";
+      alreadyExists[0].default = findAddress.default;
+      localStorage.setItem("addressData", JSON.stringify(addressData));
+      alert("Address Updated Sucessfully");
+      window.history.back();
+    }
+  });
+} else {
+  const form_id = document.querySelector("#address-form");
+  form_id.addEventListener("submit", (s) => {
+    s.preventDefault();
+    // getting data
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone_number = document.getElementById("phone_number").value;
+    const street_name = document.getElementById("ship-address").value;
+    const sub_locality = document.getElementById("sub_locality").value;
+    const door_no = document.getElementById("address2").value;
+    const city = document.getElementById("locality").value;
+    const district = document.getElementById("district").value;
+    const state = document.getElementById("state").value;
+    const pincode = document.getElementById("postcode").value;
+    const uuid = uuidv4();
+
+    console.log(findUserAddress);
+
+    const alreadyExists = findUserAddress.filter(
+      (e) =>
+        e.name === name &&
+        e.email === email &&
+        e.phone_number === phone_number &&
+        e.street_name === street_name &&
+        e.sub_locality === sub_locality &&
+        e.door_no === door_no &&
+        e.city === city &&
+        e.district === district &&
+        e.state === state &&
+        e.pincode === pincode
+    );
+
+    console.log(alreadyExists);
+
+    if (!alreadyExists || alreadyExists.length === 0) {
       addressData.push({
         userId,
         addressId: uuid,
@@ -166,47 +254,16 @@ if (urlAddressId) {
         status: "true",
         selected: "false",
       });
+      localStorage.setItem("addressData", JSON.stringify(addressData));
+      alert("Address added sucessfully");
+      window.history.back();
+    } else if (alreadyExists[0].status === "false") {
+      alreadyExists[0].status = "true";
+      localStorage.setItem("addressData", JSON.stringify(addressData));
+      alert("Address added sucessfully");
+      window.history.back();
+    } else {
+      alert("This address already exists");
     }
-    localStorage.setItem("addressData", JSON.stringify(addressData));
-    alert("Address Updated Sucessfully");
-    window.history.back();
-  });
-} else {
-  const form_id = document.querySelector("#address-form");
-  form_id.addEventListener("submit", () => {
-    // getting data
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone_number = document.getElementById("phone_number").value;
-    const street_name = document.getElementById("ship-address").value;
-    const sub_locality = document.getElementById("sub_locality").value;
-    const door_no = document.getElementById("address2").value;
-    const city = document.getElementById("locality").value;
-    const district = document.getElementById("district").value;
-    const state = document.getElementById("state").value;
-    const pincode = document.getElementById("postcode").value;
-    const uuid = uuidv4();
-
-    addressData.push({
-      userId,
-      addressId: uuid,
-      name,
-      email,
-      phone_number,
-      door_no,
-      street_name,
-      sub_locality,
-      city,
-      district,
-      state,
-      pincode,
-      default: "false",
-      status: "true",
-      selected: "false",
-    });
-
-    // localStorage.setItem("addressData", JSON.stringify(addressData));
-    alert("Address added sucessfully");
-    window.history.back();
   });
 }

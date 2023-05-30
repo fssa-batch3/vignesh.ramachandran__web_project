@@ -67,7 +67,6 @@ span {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    align-items: center;
 }
 .edit {
     font-family: var(--parah-fontfamily);

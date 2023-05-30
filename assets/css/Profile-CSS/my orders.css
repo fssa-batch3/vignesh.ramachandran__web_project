@@ -23,9 +23,15 @@ span {
     color: var(--second-color);
 }
 
-
-
 /* Content Start*/
+
+#preloader {
+    height: 100vh;
+    width: 100%;
+    background: rgb(251, 250, 250) url(../../img/preloader.gif) no-repeat center center;
+    position: fixed;
+    z-index: 100;
+}
 
 .ingredient-image {
     background-image: url(../../img/ingredient.jpg);
@@ -182,63 +188,3 @@ footer {
     }
     
 }
-
-
-
-/* @media screen and (max-width:1000px){
-    .head_order {
-        grid-template-columns: none;
-    }
-}
-
-@media screen and (max-width:400px) {
-    html {
-        font-size: 8px;
-    }
-
-
-    .bx-menu {
-        display: block;
-    }
-
-    .navigation {
-        display: none;
-    }
-
-    .responsive-navigation {
-        display: none;
-        overflow: hidden;
-        position: absolute;
-        top: 9%;
-        right: -100px;
-        width: 80px;
-        z-index: 10001;
-        padding: 0;
-        background-color: var(--other-color);
-        transition: all .3s;
-        border-radius: 1rem;
-    }
-
-    .responsive-navigation li {
-        padding: .5rem 0;
-        border-bottom: .5px solid var(--bg-color);
-
-    }
-
-    .bx-menu:hover .responsive-navigation {
-        display: block;
-        right: 0;
-    }
-
-    .footer-details {
-        flex-wrap: wrap;
-    }
-
-}
-
-@media screen and (max-width:300px) {
-    html {
-        font-size: 7px;
-    }
-
-} */
